@@ -1,0 +1,260 @@
+\begin{thebibliography}{39}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Applegate et~al.(2021)Applegate, D{\'\i}az, Hinder, Lu, Lubin,
+  O'Donoghue, and Schudy]{applegate2021practical}
+David Applegate, Mateo D{\'\i}az, Oliver Hinder, Haihao Lu, Miles Lubin,
+  Brendan O'Donoghue, and Warren Schudy.
+\newblock Practical large-scale linear programming using primal-dual hybrid
+  gradient.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  34:\penalty0 20243--20257, 2021.
+
+\bibitem[Ardestani-Jaafari and Delage(2016)]{ardestani2016robust}
+Amir Ardestani-Jaafari and Erick Delage.
+\newblock Robust optimization of sums of piecewise linear functions with
+  application to inventory problems.
+\newblock \emph{Operations Research}, 64\penalty0 (2):\penalty0 474--494, 2016.
+
+\bibitem[Ardestani-Jaafari and Delage(2018)]{ardestani2018value}
+Amir Ardestani-Jaafari and Erick Delage.
+\newblock The value of flexibility in robust location--transportation problems.
+\newblock \emph{Transportation Science}, 52\penalty0 (1):\penalty0 189--209,
+  2018.
+
+\bibitem[Bandi et~al.(2019)Bandi, Han, and Nohadani]{bandi2019sustainable}
+Chaithanya Bandi, Eojin Han, and Omid Nohadani.
+\newblock Sustainable inventory with robust periodic-affine policies and
+  application to medical supply chains.
+\newblock \emph{Management Science}, 65\penalty0 (10):\penalty0 4636--4655,
+  2019.
+
+\bibitem[Ben-Tal et~al.(2004)Ben-Tal, Goryashko, Guslitzer, and
+  Nemirovski]{ben2004adjustable}
+Aharon Ben-Tal, Alexander Goryashko, Elana Guslitzer, and Arkadi Nemirovski.
+\newblock Adjustable robust solutions of uncertain linear programs.
+\newblock \emph{Mathematical Programming}, 99\penalty0 (2):\penalty0 351--376,
+  2004.
+
+\bibitem[Ben-Tal et~al.(2005)Ben-Tal, Golany, Nemirovski, and
+  Vial]{ben2005retailer}
+Aharon Ben-Tal, Boaz Golany, Arkadi Nemirovski, and Jean-Philippe Vial.
+\newblock Retailer-supplier flexible commitments contracts: A robust
+  optimization approach.
+\newblock \emph{Manufacturing \& Service Operations Management}, 7\penalty0
+  (3):\penalty0 248--271, 2005.
+
+\bibitem[Ben-Tal et~al.(2015)Ben-Tal, Hazan, Koren, and Mannor]{ben2015oracle}
+Aharon Ben-Tal, Elad Hazan, Tomer Koren, and Shie Mannor.
+\newblock Oracle-based robust optimization via online learning.
+\newblock \emph{Operations Research}, 63\penalty0 (3):\penalty0 628--638, 2015.
+
+\bibitem[Bertsimas and Goyal(2012)]{bertsimas2012power}
+Dimitris Bertsimas and Vineet Goyal.
+\newblock On the power and limitations of affine policies in two-stage adaptive
+  optimization.
+\newblock \emph{Mathematical Programming}, 134\penalty0 (2):\penalty0 491--531,
+  2012.
+
+\bibitem[Bertsimas and Tsitsiklis(1997)]{bertsimas1997introduction}
+Dimitris Bertsimas and John~N Tsitsiklis.
+\newblock \emph{Introduction to Linear Optimization}, volume~6.
+\newblock Athena Scientific Belmont, MA, 1997.
+
+\bibitem[Bertsimas et~al.(2010)Bertsimas, Iancu, and
+  Parrilo]{bertsimas2010optimality}
+Dimitris Bertsimas, Dan~A Iancu, and Pablo~A Parrilo.
+\newblock Optimality of affine policies in multistage robust optimization.
+\newblock \emph{Mathematics of Operations Research}, 35\penalty0 (2):\penalty0
+  363--394, 2010.
+
+\bibitem[Bertsimas et~al.(2011)Bertsimas, Brown, and
+  Caramanis]{bertsimas2011theory}
+Dimitris Bertsimas, David~B Brown, and Constantine Caramanis.
+\newblock Theory and applications of robust optimization.
+\newblock \emph{SIAM Review}, 53\penalty0 (3):\penalty0 464--501, 2011.
+
+\bibitem[Bertsimas et~al.(2020)Bertsimas, Eikelder, Hertog, and
+  Trichakis]{bertsimas2020pareto}
+Dimitris Bertsimas, Stefan~ten Eikelder, Dick~den Hertog, and Nikolaos
+  Trichakis.
+\newblock Pareto adaptive robust optimality via a fourier-motzkin elimination
+  lens.
+\newblock \emph{arXiv preprint arXiv:2012.04419}, 2020.
+
+\bibitem[Daryalal et~al.(2023)Daryalal, Arslan, and Bodur]{daryalal2023two}
+Maryam Daryalal, Ayse~N Arslan, and Merve Bodur.
+\newblock Two-stage and lagrangian dual decision rules for multistage adaptive
+  robust optimization.
+\newblock \emph{arXiv preprint arXiv:2305.06190}, 2023.
+
+\bibitem[de~Ruiter et~al.(2016)de~Ruiter, Brekelmans, and den
+  Hertog]{de2016impact}
+Frans~JCT de~Ruiter, Ruud Brekelmans, and Dick den Hertog.
+\newblock The impact of the existence of multiple adjustable robust solutions.
+\newblock \emph{Mathematical Programming}, 160\penalty0 (1):\penalty0 531--545,
+  2016.
+
+\bibitem[Delage and Iancu(2015)]{delage2015robust}
+Erick Delage and Dan~A Iancu.
+\newblock Robust multistage decision making.
+\newblock In \emph{The Operations Research Revolution}, pages 20--46. INFORMS,
+  2015.
+
+\bibitem[Eikelder et~al.(2019)Eikelder, Ajdari, Bortfeld, Hertog,
+  et~al.]{eikelder2019adjustable}
+Stefan Eikelder, Ali Ajdari, Thomas Bortfeld, Dick~den Hertog, et~al.
+\newblock Adjustable robust treatment-length optimization in radiation therapy.
+\newblock \emph{arXiv preprint arXiv:1906.12116}, 2019.
+
+\bibitem[El~Housni and Goyal(2021)]{el2021optimality}
+Omar El~Housni and Vineet Goyal.
+\newblock On the optimality of affine policies for budgeted uncertainty sets.
+\newblock \emph{Mathematics of Operations Research}, 2021.
+
+\bibitem[Elzinga and Moore(1975)]{elzinga1975central}
+Jack Elzinga and Thomas~G Moore.
+\newblock A central cutting plane algorithm for the convex programming problem.
+\newblock \emph{Mathematical Programming}, 8:\penalty0 134--145, 1975.
+
+\bibitem[Gauvin et~al.(2017)Gauvin, Delage, and Gendreau]{gauvin2017decision}
+Charles Gauvin, Erick Delage, and Michel Gendreau.
+\newblock Decision rule approximations for the risk averse reservoir management
+  problem.
+\newblock \emph{European Journal of Operational Research}, 261\penalty0
+  (1):\penalty0 317--336, 2017.
+
+\bibitem[Georghiou et~al.(2019{\natexlab{a}})Georghiou, Kuhn, and
+  Wiesemann]{georghiou2019decision}
+Angelos Georghiou, Daniel Kuhn, and Wolfram Wiesemann.
+\newblock The decision rule approach to optimization under uncertainty:
+  methodology and applications.
+\newblock \emph{Computational Management Science}, 16\penalty0 (4):\penalty0
+  545--576, 2019{\natexlab{a}}.
+
+\bibitem[Georghiou et~al.(2019{\natexlab{b}})Georghiou, Tsoukalas, and
+  Wiesemann]{georghiou2019robust}
+Angelos Georghiou, Angelos Tsoukalas, and Wolfram Wiesemann.
+\newblock Robust dual dynamic programming.
+\newblock \emph{Operations Research}, 67\penalty0 (3):\penalty0 813--830,
+  2019{\natexlab{b}}.
+
+\bibitem[Georghiou et~al.(2021)Georghiou, Tsoukalas, and
+  Wiesemann]{georghiou2021optimality}
+Angelos Georghiou, Angelos Tsoukalas, and Wolfram Wiesemann.
+\newblock On the optimality of affine decision rules in robust and
+  distributionally robust optimization.
+\newblock \emph{Available at Optimization Online}, 2021.
+
+\bibitem[Gounaris et~al.(2013)Gounaris, Wiesemann, and
+  Floudas]{gounaris2013robust}
+Chrysanthos~E Gounaris, Wolfram Wiesemann, and Christodoulos~A Floudas.
+\newblock The robust capacitated vehicle routing problem under demand
+  uncertainty.
+\newblock \emph{Operations Research}, 61\penalty0 (3):\penalty0 677--693, 2013.
+
+\bibitem[Ho-Nguyen and K{\i}l{\i}n{\c{c}}-Karzan(2018)]{ho2018online}
+Nam Ho-Nguyen and Fatma K{\i}l{\i}n{\c{c}}-Karzan.
+\newblock Online first-order framework for robust convex optimization.
+\newblock \emph{Operations Research}, 66\penalty0 (6):\penalty0 1670--1692,
+  2018.
+
+\bibitem[Iancu and Trichakis(2014)]{iancu2014pareto}
+Dan~A Iancu and Nikolaos Trichakis.
+\newblock Pareto efficiency in robust optimization.
+\newblock \emph{Management Science}, 60\penalty0 (1):\penalty0 130--147, 2014.
+
+\bibitem[Iancu et~al.(2013)Iancu, Sharma, and
+  Sviridenko]{iancu2013supermodularity}
+Dan~A Iancu, Mayank Sharma, and Maxim Sviridenko.
+\newblock Supermodularity and affine policies in dynamic robust optimization.
+\newblock \emph{Operations Research}, 61\penalty0 (4):\penalty0 941--956, 2013.
+
+\bibitem[Li et~al.(2022)Li, Delage, Zhu, Pinedoc, and
+  Ma]{lia2022distributional}
+Hongming Li, Erick Delage, Ning Zhu, Michael Pinedoc, and Shoufeng Ma.
+\newblock Distributional robustness and inequity mitigation in disaster
+  preparedness of humanitarian operations.
+\newblock \emph{Available at Optimization Online}, 2022.
+
+\bibitem[Lorca et~al.(2016)Lorca, Sun, Litvinov, and
+  Zheng]{lorca2016multistage}
+Alvaro Lorca, X~Andy Sun, Eugene Litvinov, and Tongxin Zheng.
+\newblock Multistage adaptive robust optimization for the unit commitment
+  problem.
+\newblock \emph{Operations Research}, 64\penalty0 (1):\penalty0 32--51, 2016.
+
+\bibitem[Lu(2024)]{lu2024first}
+Haihao Lu.
+\newblock First-order methods for linear programming.
+\newblock \emph{arXiv preprint arXiv:2403.14535}, 2024.
+
+\bibitem[Lu and Yang(2023)]{lu2023cupdlp}
+Haihao Lu and Jinwen Yang.
+\newblock cupdlp. jl: A gpu implementation of restarted primal-dual hybrid
+  gradient for linear programming in julia.
+\newblock \emph{arXiv preprint arXiv:2311.12180}, 2023.
+
+\bibitem[Lu and Yang(2024)]{lu2024geometry}
+Haihao Lu and Jinwen Yang.
+\newblock On the geometry and refined rate of primal--dual hybrid gradient for
+  linear programming.
+\newblock \emph{Mathematical Programming}, pages 1--39, 2024.
+
+\bibitem[Lu et~al.(2023)Lu, Yang, Hu, Huangfu, Liu, Liu, Ye, Zhang, and
+  Ge]{lu2023cupdlpc}
+Haihao Lu, Jinwen Yang, Haodong Hu, Qi~Huangfu, Jinsong Liu, Tianhao Liu, Yinyu
+  Ye, Chuwen Zhang, and Dongdong Ge.
+\newblock cupdlp-c: A strengthened implementation of cupdlp for linear
+  programming by c language.
+\newblock \emph{arXiv preprint arXiv:2312.14832}, 2023.
+
+\bibitem[Postek and Shtern(2021)]{postek2021first}
+Krzysztof Postek and Shimrit Shtern.
+\newblock First-order algorithms for robust optimization problems via
+  convex-concave saddle-point lagrangian reformulation.
+\newblock \emph{arXiv preprint arXiv:2101.02669}, 2021.
+
+\bibitem[Postek et~al.(2023)Postek, Romeijnders, and
+  Wiesemann]{postek2023multi}
+Krzysztof Postek, Ward Romeijnders, and Wolfram Wiesemann.
+\newblock Multi-stage robust mixed-integer programming.
+\newblock 2023.
+
+\bibitem[Sani et~al.(2020)Sani, Bahn, and Delage]{sani2020affine}
+Sajad~Aliakbari Sani, Olivier Bahn, and Erick Delage.
+\newblock Affine decision rule approximation to immunize against demand
+  response uncertainty in smart grids’ capacity planning.
+\newblock \emph{European Journal of Operational Research}, 2020.
+
+\bibitem[Simchi-Levi et~al.(2019)Simchi-Levi, Trichakis, and
+  Zhang]{simchi2019designing}
+David Simchi-Levi, Nikolaos Trichakis, and Peter~Yun Zhang.
+\newblock Designing response supply chain against bioattacks.
+\newblock \emph{Operations Research}, 67\penalty0 (5):\penalty0 1246--1268,
+  2019.
+
+\bibitem[Wang and Delage(2023)]{delage2021column}
+Shanshan Wang and Erick Delage.
+\newblock A column generation scheme for distributionally robust multi-item
+  newsvendor problems.
+\newblock \emph{INFORMS Journal on Computing}, 2023.
+
+\bibitem[Yan{\i}ko{\u{g}}lu et~al.(2019)Yan{\i}ko{\u{g}}lu, Gorissen, and den
+  Hertog]{yanikouglu2019survey}
+{\.I}hsan Yan{\i}ko{\u{g}}lu, Bram~L Gorissen, and Dick den Hertog.
+\newblock A survey of adjustable robust optimization.
+\newblock \emph{European Journal of Operational Research}, 277\penalty0
+  (3):\penalty0 799--813, 2019.
+
+\bibitem[Zhen et~al.(2018)Zhen, Den~Hertog, and Sim]{zhen2018adjustable}
+Jianzhe Zhen, Dick Den~Hertog, and Melvyn Sim.
+\newblock Adjustable robust optimization via fourier--motzkin elimination.
+\newblock \emph{Operations Research}, 66\penalty0 (4):\penalty0 1086--1100,
+  2018.
+
+\end{thebibliography}

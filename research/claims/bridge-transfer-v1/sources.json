@@ -1,0 +1,164 @@
+{
+  "fresh_extractions": {
+    "artifacts/bridge/transfer-v1/author/source/A3-bbox.html": "c0d7e36ea9a3ec9ba2a30432c6a58505f6cd741116b853789d2a8f91865e7552",
+    "artifacts/bridge/transfer-v1/author/source/A3-p2-5.txt": "23d02c9c36a9184fc2db95d36f6836a5b3164d8fa41d7fcf16375d4a204456c5",
+    "artifacts/bridge/transfer-v1/author/source/A4-bbox.html": "664dd8c999ce5c9c9025472283ff07c754f8c9593e170160d3847f09377a7cd8",
+    "artifacts/bridge/transfer-v1/author/source/A4-p2-6.txt": "e7a525baa587b112e669e5325b1d114acf147b9bec7b2d5903f069a2f6df46e4",
+    "artifacts/bridge/transfer-v1/author/source/BT04-bbox.html": "ff02f7a444f22a588177000ad9a8ef97ebccb596b6f0ded911b36565146c4eb6",
+    "artifacts/bridge/transfer-v1/author/source/BT04-p3-5.txt": "8670992c2c7316600b9792c42173c0a13f0021793ee3eaf59b1370f4d6684ef0",
+    "artifacts/bridge/transfer-v1/author/source/BT04-p5.png": "8e2ec601abc2278542095db10bf2f6d9460188c332430ae6217eea82b098bf78",
+    "artifacts/bridge/transfer-v1/author/source/GTW20-bbox.html": "75e09132cdc0a99543a174700989372366072d6f8a137e5e17797ebc630ebe57",
+    "artifacts/bridge/transfer-v1/author/source/GTW20-p1-4.txt": "1ea33e9d1a27e0199c79dbcc34abb68defbb449c381204f47018271ea3a38502",
+    "artifacts/bridge/transfer-v1/author/source/ZHS18-bbox.html": "afb98ac8597908f3204a57526c1e9df10127fecd9f98a481c5c7dea1caf4fc5a",
+    "artifacts/bridge/transfer-v1/author/source/ZHS18-p1-6.txt": "cf34d8bb053ee9e4d595e6177b0c6ac20cd7bc409dbacce0a52bfff3b8bb28eb",
+    "artifacts/bridge/transfer-v1/author/source/ZHS18-p7-8.txt": "8ede61dadf83237c1186014dd1aae0b9ea57d76694b41cc512efa951574379b5"
+  },
+  "layout": "fresh pdftotext -layout and coordinate-bearing -bbox-layout; BT04 p5 image visually inspected",
+  "no_download": true,
+  "sources": [
+    {
+      "anchors": [
+        {
+          "page": 2,
+          "quote": "x(t + 1) = Ax(t) + Bu(t) + M w(t)",
+          "statement": "general stationary A/B/M, continuous U/W boxes and polyhedral XT"
+        },
+        {
+          "page": 3,
+          "quote": "max c\u22a4 x(T |x0 , u, w)",
+          "statement": "signed terminal linear worst cost and source support tightening"
+        },
+        {
+          "page": 4,
+          "quote": "\u0438\u0437\u043c\u0435\u0440\u0438\u0442\u044c \u0442\u0435\u043a\u0443\u0449\u0435\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435",
+          "statement": "current state then whole next control block"
+        },
+        {
+          "page": 6,
+          "quote": "Vj (xj ) = +\u221e",
+          "statement": "closure containment, Bellman cost and infeasibility convention"
+        }
+      ],
+      "authority": "original local PDF freshly extracted; historical summaries not authority",
+      "id": "A4",
+      "path": "research/sources/A4.pdf",
+      "physical_pages_read": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420"
+    },
+    {
+      "anchors": [
+        {
+          "page": 4,
+          "quote": "measure exactly the current state",
+          "statement": "one exact measurement and new whole control input"
+        },
+        {
+          "page": 5,
+          "quote": "is a convex polyhedron",
+          "statement": "epigraph level sets and optimal prefix problem"
+        }
+      ],
+      "authority": "original local PDF freshly extracted; historical summaries not authority",
+      "id": "A3",
+      "path": "corpus/our_papers/A3_\u041a\u043e\u0441\u0442\u044e\u043a\u0435\u0432\u0438\u0447_\u0414\u043c\u0438\u0442\u0440\u0443\u043a_2021.pdf",
+      "physical_pages_read": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "sha256": "2330f4ac22dd57b924b17f130a7937769ea6f6f56f825f1779102a038a347288"
+    },
+    {
+      "anchors": [
+        {
+          "page": 3,
+          "quote": "every variable xi may have its own information basis",
+          "statement": "information bases, normalization and fixed recourse"
+        },
+        {
+          "page": 5,
+          "quote": "Theorem 2.2 (see [12]). Assume that the uncertainty set Z is given as the convex hull",
+          "statement": "finite hull fixed-recourse exact LP"
+        }
+      ],
+      "authority": "original local PDF freshly extracted; historical summaries not authority",
+      "id": "BT04",
+      "path": "research/sources/BT04.pdf",
+      "physical_pages_read": [
+        3,
+        4,
+        5
+      ],
+      "sha256": "3ff5e8479fac4326cd4369ac01cefc30fd468681fa4a99af846eb05a4db44f3a"
+    },
+    {
+      "anchors": [
+        {
+          "page": 1,
+          "quote": "the nonempty and bounded uncertainty set",
+          "statement": "nonempty bounded polyhedron, affine first-stage data and fixed recourse"
+        },
+        {
+          "page": 3,
+          "quote": "Proposition 1 (Extreme Point Reformulation)",
+          "statement": "vertex reformulation equivalence"
+        },
+        {
+          "page": 4,
+          "quote": "does not hold if problem 3 exhibits random recourse",
+          "statement": "interpolation proof, random recourse boundary and affine restriction"
+        }
+      ],
+      "authority": "original local PDF freshly extracted; historical summaries not authority",
+      "id": "GTW20",
+      "path": "corpus/23_Georghiou_Tsoukalas_Wiesemann_2020.pdf",
+      "physical_pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sha256": "4c958b0111192ffd050c9d6a8bd4370a69a6ebbe8924bbe5fe8e60578b70086f"
+    },
+    {
+      "anchors": [
+        {
+          "page": 6,
+          "quote": "The matrix B",
+          "statement": "measurable rule class, affine data, fixed recourse, epigraph"
+        },
+        {
+          "page": 7,
+          "quote": "Theorem 1. X = X\\{l}",
+          "statement": "bounded-variable FME and equality of projection"
+        },
+        {
+          "page": 8,
+          "quote": "equivalently represented as a static robust optimization problem",
+          "statement": "repeated complete elimination and reconstruction"
+        }
+      ],
+      "authority": "original local PDF freshly extracted; historical summaries not authority",
+      "id": "ZHS18",
+      "path": "corpus/21_Zhen_denHertog_Sim_2018.pdf",
+      "physical_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3"
+    }
+  ]
+}

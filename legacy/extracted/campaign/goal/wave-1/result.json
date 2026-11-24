@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 1,
+  "stage": "G9",
+  "status": "done",
+  "scope": "synthesis-delivery-only",
+  "proposed_wave_disposition": "continue-needed",
+  "goal_achieved": false,
+  "scientific_attestation": false,
+  "actionableTarget": false,
+  "repairable": false,
+  "summary": "Engineering binding repaired under a new version and source comparison narrowed the search, but no substantive justified target or checked general proof exists. First scientific success is not established.",
+  "reportPath": "goal/wave-1/outcome.md",
+  "briefingPath": "reports/briefings/2026-11-13-goal-wave-1.md",
+  "parent_provenance": {
+    "parentRunId": "63c5a898-102a-4dd1-8c8c-6aa21c038242",
+    "parentState": "stopped",
+    "reviewAgentState": "cancelled",
+    "recovery": "coordinator-recovered persisted engineering observations, not agent terminal success",
+    "resumed_by_G9": false
+  },
+  "phases": [
+    {
+      "id": "G1",
+      "status": "done",
+      "scope": "engineering only",
+      "reportPath": "goal/engineering/report.md"
+    },
+    {
+      "id": "G2",
+      "status": "recovered-observations",
+      "scope": "cancelled terminal handoff; coordinator recovery only",
+      "reportPath": "artifacts/goal/wave-1/engineering-review/report.md",
+      "provenancePath": "artifacts/goal/wave-1/recovered-engineering-review.json"
+    },
+    {
+      "id": "G3",
+      "status": "done-no-target",
+      "reportPath": "goal/wave-1/literature.md",
+      "selections_considered": 1,
+      "second_selection": "unused"
+    },
+    {
+      "id": "G4",
+      "status": "not-started",
+      "record_status": "blocked",
+      "reason": "No justified substantive target; no new Astra call.",
+      "recordPath": "artifacts/goal/wave-1/phases/04-research-not-started.json"
+    },
+    {
+      "id": "G5",
+      "status": "skipped",
+      "reason": "No G4 target or candidate to prove."
+    },
+    {
+      "id": "G6",
+      "status": "done",
+      "scope": "source criticism and scoped exact replay; no scientific verdict",
+      "reportPath": "artifacts/goal/wave-1/scientific-review/report.md"
+    },
+    {
+      "id": "G7",
+      "status": "skipped",
+      "reason": "No concrete bounded mathematical repair identified."
+    },
+    {
+      "id": "G8",
+      "status": "skipped",
+      "reason": "No G7 repair to recheck."
+    },
+    {
+      "id": "G9",
+      "status": "done",
+      "scope": "requested synthesis files; no research/proof/code repair",
+      "reportPath": "goal/wave-1/outcome.md"
+    }
+  ],
+  "strongest_checked_mathematical_result": {
+    "kind": "inherited exact finite-instance continuous-domain certificate",
+    "instance": "D1 frozen rational dynamics; actual correlated complete paths; one state observation before whole continuation; fixed first program and signed bound",
+    "bound": "3/2",
+    "pairwise_feasible": true,
+    "joint_feasible": false,
+    "contradiction": "0 <= -1/2",
+    "reported_certified_prefix_value": "1/4",
+    "reported_certified_state_value": "2",
+    "verification": "G6 normal/-O actual-checker positive and negative multiplier controls plus separate dynamics/pair/witness/contradiction arithmetic",
+    "limitation": "G6 direct arithmetic did not independently rederive prefix optimum lower bound; no general theorem or established novelty; not rerun in G9",
+    "evidencePath": "artifacts/goal/wave-1/scientific-review/direct-arithmetic.json"
+  },
+  "proposed_arguments": [
+    {
+      "claim": "general residual-map correspondence",
+      "status": "inherited-informal"
+    },
+    {
+      "claim": "rank <= 1 with singleton nonemptiness plus pairwise compatibility",
+      "status": "unproved-sketch"
+    },
+    {
+      "claim": "coordinate-separable rank-two box subclass pairwise-to-joint",
+      "status": "unproved-sketch"
+    },
+    {
+      "claim": "task-specific conditional support statistic",
+      "status": "unselected-source-lead; availability unresolved"
+    }
+  ],
+  "general_lean_proof": false,
+  "primary_source_delta": {
+    "contribution_delta_established": false,
+    "comparison_authority": "G3/G6 original-page readings; G9 report synthesis, no fresh PDF reading",
+    "anchors": [
+      "BT04 physical pp3-5",
+      "A4 physical pp3-4",
+      "De Loera et al. physical pp1-3",
+      "ZHS18 physical pp7-8",
+      "MH18 physical pp5-6"
+    ],
+    "conclusion": "Elementary interval/product, dimension-Helly and generic elimination routes do not meet the goal. Correlated-information premise differences do not establish a new contribution.",
+    "coverage_limits": [
+      "Historical Helly/Radon/Hoffman originals uninspected",
+      "Sharp grouped fixed-normal classification unaudited",
+      "Decisive correlated partial-observation information-state theorem uninspected"
+    ],
+    "source_manifest": "goal/wave-1/source-manifest.json"
+  },
+  "unresolved_questions": [
+    "Which original theorem applies to correlated complete disturbance paths under restricted observation?",
+    "Is the proposed statistic observable or computable from the allowed history, rather than an oracle?",
+    "Can a useful non-elementary delta preserve fixed-first-program feasibility at every rational bound for the fixed terminal task?"
+  ],
+  "engineering_and_historical_limits": [
+    "New G1 binding rejects scoped bypass; immutable old validator and original terminal failure remain unchanged.",
+    "Historical synthesis KeyError: 'id' and missing historical F per-process streams remain preserved.",
+    "Historical C hygiene, D1/D2 quality, style, repair-development, G1 development and G2 fixture failures remain visible.",
+    "Astra frozen code retains 20 Ruff findings and format failure; fixed-instance checker is not a general interface.",
+    "Comparator uid-map permission denial remains; no bypass or rerun.",
+    "Full host-write containment unestablished; prior and G9 harness-managed oversized-read /tmp spills disclosed."
+  ],
+  "effort_and_billing": {
+    "G9_envelope": {
+      "minutes_max": 90,
+      "tool_calls_including_nested_max": 60,
+      "enforcement": "instructional"
+    },
+    "full_wave_wall_time": "unknown",
+    "full_wave_usage": "unknown",
+    "actual_provider_billing": "unknown",
+    "native_provider_retry_behavior": "unknown",
+    "provider_retry_or_fallback_requested_by_G9": false,
+    "historical_astra_accounting": {
+      "reported_duration": "about 7m16s",
+      "self_reported_calls": 35,
+      "pi_cost_USD": 2.608356,
+      "provider_invoice_verified": false
+    },
+    "exposure": "D1/D2 public instructionally separated; Astra inherited prior work; no blind/statistical/platform-superiority conclusion"
+  },
+  "next_wave": {
+    "kind": "bounded-primary-source-and-observation-availability-audit",
+    "owner": "coordinator",
+    "started_by_G9": false,
+    "new_evidence_required": [
+      "Original Iyengar (2005) Robust dynamic programming theorem pages",
+      "Original Wiesemann–Kuhn–Rustem (2013) Robust Markov decision processes theorem pages",
+      "If needed, an original correlated partial-observation information-state theorem"
+    ],
+    "source_identity_basis": "G6 read MH18 bibliography physical pp13-14; referenced theorems not yet inspected",
+    "discriminator": "Physically available observation/history map; task-specific terminal support summary; fixed first program and every rational bound, not only value equality.",
+    "suggested_envelope": {
+      "workers": 1,
+      "minutes_max": 90,
+      "tool_calls_including_nested_max": 60,
+      "source_grounded_selections_max": 2,
+      "proof_calls_before_justified_target": 0
+    },
+    "stop_conditions": [
+      "Source subsumes proposal",
+      "Proposal reduces to elementary residual-LP identity",
+      "Decisive original source unavailable: record exact access/resource blocker"
+    ],
+    "development_gate": "Useful non-elementary closest-source mismatch and frozen statement/controls before any Astra/proof allocation.",
+    "not_authorized": "Additional sensor authority, unchanged failed-prompt repetition, comparator bypass, platform construction"
+  },
+  "G9_verification": {
+    "scope": "identity and deliverable consistency only; not scientific verification",
+    "receiptPath": "artifacts/goal/wave-1/synthesis-v1/verification.json",
+    "protected_snapshot": "artifacts/goal/wave-1/synthesis-v1/protected-before.json",
+    "scientific_replay_run": false,
+    "fresh_source_research_run": false,
+    "code_repair_run": false,
+    "future_phase_or_workflow_result_preconditions": false,
+    "final_save_and_validation_owner": "coordinator after workflow saves return"
+  },
+  "evidence": [
+    {
+      "path": "docs/specs/2026-11-13-first-scientific-success-goal.md",
+      "sha256": "f933d107697296d9d5df2265695969852cd40cea8d20ea0cd88b495dd7e5b791",
+      "size_bytes": 15681
+    },
+    {
+      "path": "goal/engineering/report.md",
+      "sha256": "647d2476d49bea625d880fb468ad37fad37229793b1d8d5201a173dbcf78a90f",
+      "size_bytes": 7343
+    },
+    {
+      "path": "goal/engineering/gate.json",
+      "sha256": "b47c532b5730cfbc1da4a9aec1d2962475828d1b783e864024cd373b63f98ae5",
+      "size_bytes": 1450
+    },
+    {
+      "path": "artifacts/goal/wave-1/recovered-engineering-review.json",
+      "sha256": "28d1e0dc5d4687b9f85e2871a66bde6d72695e4226a23e6048909efc19041f7b",
+      "size_bytes": 1178
+    },
+    {
+      "path": "artifacts/goal/wave-1/engineering-review/report.md",
+      "sha256": "c3cee752b8fa8b4e1281d45f60872976263f3f3e37ac2b42c48e102ce38fc7bd",
+      "size_bytes": 9994
+    },
+    {
+      "path": "goal/wave-1/literature.md",
+      "sha256": "4850aa0efb42d3606a084309c153883c955b02a3611d214a53ed89f0faf23614",
+      "size_bytes": 14431
+    },
+    {
+      "path": "goal/wave-1/question.md",
+      "sha256": "d2ac0753dafc832748c9ba8456aaa3c85be6b9867fd81cf989257b100d80cac4",
+      "size_bytes": 5693
+    },
+    {
+      "path": "goal/wave-1/source-manifest.json",
+      "sha256": "cca8b324c6077cd9d7b0d60fea2b657ca130324a21b4083160c5e1e82c1c6839",
+      "size_bytes": 10450
+    },
+    {
+      "path": "goal/wave-1/claim-contract.json",
+      "sha256": "ea88d3f47f79c58f5c70387c5937d895a1da0a4f0964fe3d9358afa2952b85f6",
+      "size_bytes": 2946
+    },
+    {
+      "path": "artifacts/goal/wave-1/phases/04-research-not-started.json",
+      "sha256": "5e910cd1b1ab0781b742f112b9b0f7abe66f6a3ce2ddf2c585b658f191a1b562",
+      "size_bytes": 582
+    },
+    {
+      "path": "artifacts/goal/wave-1/scientific-review/report.md",
+      "sha256": "4eb12664fb564da355a4b8c49efebfc8f786323d634c0123dc71d22607f0b308",
+      "size_bytes": 14590
+    },
+    {
+      "path": "artifacts/goal/wave-1/scientific-review/executed-checks.json",
+      "sha256": "0ae6845216ca25636d36426b6df82b65ad66e856f7a211ffd103ed931485cd11",
+      "size_bytes": 10734
+    },
+    {
+      "path": "artifacts/goal/wave-1/scientific-review/direct-arithmetic.json",
+      "sha256": "0a7725f98b5604a77b4efca8688e231e0759bf786b1ce111a5fd83b2f7344e2f",
+      "size_bytes": 456
+    },
+    {
+      "path": "artifacts/goal/wave-1/scientific-review/final-verification.json",
+      "sha256": "35c35f75a84fa1530246003404521372288fc8a1d3409fad5b0a28a538bd5537",
+      "size_bytes": 238
+    },
+    {
+      "path": "artifacts/campaign/workflow-outcome.json",
+      "sha256": "2ebf048ef25679b4f156a7021517a163074f632079f8694c3f6fec2f02588bd8",
+      "size_bytes": 16043
+    },
+    {
+      "path": "artifacts/campaign/phases/12-final-review.json",
+      "sha256": "c0973218250ae41a0ecc7c70f0fb4889e4dc4dd30909264651b365aa8aa3e946",
+      "size_bytes": 11725
+    },
+    {
+      "path": "reports/briefings/2026-11-13-astra-outcome.md",
+      "sha256": "91e8014815ed0fcb5b6d3ad6d7f5b30eb1f023bd744053ab464e58c15570041e",
+      "size_bytes": 9860
+    },
+    {
+      "path": "artifacts/goal/wave-1/synthesis-v1/protected-before.json",
+      "sha256": "0ac4b2c3e136c822547a173e02450160ff3726c95ee7d30df78f15bd21a21829",
+      "size_bytes": 157030
+    },
+    {
+      "path": "goal/wave-1/outcome.md",
+      "sha256": "fc68a6b6447d6e61a41c3a3b9744784c54a358554d1c924d5ce53fc3de0b623f",
+      "size_bytes": 16624
+    },
+    {
+      "path": "reports/briefings/2026-11-13-goal-wave-1.md",
+      "sha256": "54e064fecd131bf6c6e369c380f5057d757b6f860270deb1ab725b740ff4f1bb",
+      "size_bytes": 7715
+    }
+  ]
+}

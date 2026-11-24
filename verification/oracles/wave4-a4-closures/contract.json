@@ -1,0 +1,55 @@
+{
+  "case_identity": "a4_independent_continuous_single_exact_state_closure_v1",
+  "cases": [
+    "a4_printed-r67",
+    "a4_reconstructed_decimal-r67",
+    "a4_printed-r104",
+    "a4_reconstructed_decimal-r104"
+  ],
+  "control": "continuous_box_radius_1",
+  "controls": [
+    "positive",
+    "incorrect_information",
+    "violated_terminal",
+    "false_objective",
+    "negative_multiplier",
+    "input_binding",
+    "closure_binding",
+    "missing_vertex"
+  ],
+  "disturbance": "independent_continuous_box_radius_1/2",
+  "environment": {
+    "numpy": "2.5.2",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scipy": "1.17.1"
+  },
+  "extra_scientific_cases": [],
+  "frozen_files": {
+    "artifacts/goal/wave-4/pilot/inputs/a4_printed.json": "4a900a987be67265d2fb43ad0db74188db0e3dccfb12d3212e00f9028504f2ca",
+    "artifacts/goal/wave-4/pilot/inputs/a4_reconstructed_decimal.json": "856e00ecc75bf5dc158dda82290bb22f9ea7c30bb5531179d1263747013d3e0d",
+    "goal/wave-4/check.py": "313a9c917be6ff124104063ca2aa1346abd90a6cc83baa2220fbcc121c080358",
+    "goal/wave-4/construct.py": "595104a21ac8385e535345282ed1463f87b82e1d1ffd67564765ee456e660318",
+    "goal/wave-4/m0_check.py": "a26e0dc2a547d562853a6643a2ce2c5806286adf59dc5b85b3589a8186021574",
+    "goal/wave-4/m0_generator.py": "7950f0c5fcfb1dde13853aaf973f5458a776b86fafa9a755c553920ee4dc9367"
+  },
+  "goalAchieved": false,
+  "horizon": 120,
+  "in_case_policy_checks": [
+    "every_vertex",
+    "center",
+    "edge_0_midpoint",
+    "zero_disturbance_measured_state_interface"
+  ],
+  "information": "exact_current_state_then_whole_suffix_no_later_measurements",
+  "objective": "maximize_guaranteed_terminal_x2",
+  "process_timeout_seconds": 240,
+  "round_control_denominator": 10000000000,
+  "round_dual_denominator": 1000000000000,
+  "schema": 1,
+  "solver_time_limit_seconds": 60,
+  "source_sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420",
+  "terminal_x": [
+    "2/1",
+    "10/1"
+  ]
+}

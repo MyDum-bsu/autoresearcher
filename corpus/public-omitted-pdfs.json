@@ -1,0 +1,154 @@
+{
+  "corpus/01_BenTal_Nemirovski_1999.pdf": {
+    "page_count": 13,
+    "sha256": "17034b3d6b9775e2cd144a2200b669598a186050d737006fddc678ad9b5ce105"
+  },
+  "corpus/02_BenTal_Goryashko_etal_2004.pdf": {
+    "page_count": 26,
+    "sha256": "3ff5e8479fac4326cd4369ac01cefc30fd468681fa4a99af846eb05a4db44f3a"
+  },
+  "corpus/03_Chen_Zhang_2009.pdf": {
+    "page_count": 14,
+    "sha256": "d914cd0f32887706473f189c4dd464eeee982efe397a9084cd5684f10ec3418a"
+  },
+  "corpus/04_Bertsimas_Goyal_Lu_2015.pdf": {
+    "page_count": 34,
+    "sha256": "91fe2751d14113006a1e9213ad2ed05d159a0aa9545a3f933148794b7309cb2f"
+  },
+  "corpus/05_Bertsimas_deRuiter_2016.pdf": {
+    "page_count": 13,
+    "sha256": "2f6f7ddbd5fd082603ebf2533c0ef86f6c37c74a54bd7c108f223467c3cd636e"
+  },
+  "corpus/06_Ayoub_Poss_2016.pdf": {
+    "page_count": 20,
+    "sha256": "f7dd561ed79a7caedbccdf41e72fa6097613f21416a573ac2de1cd210fd4c8d6"
+  },
+  "corpus/07_Xu_Burer_2017.pdf": {
+    "page_count": 27,
+    "sha256": "a9d2ba85ef599357a1775e137610211da361d588a89dd941cc42511532c51bd2"
+  },
+  "corpus/08_HaddadSisakht_Ryan_2018.pdf": {
+    "page_count": 20,
+    "sha256": "0fc0e659a6003b9705c3f253a6ce0d2ededc6df9e0b0cc063eb926b523685f0f"
+  },
+  "corpus/09_Marandi_denHertog_2018.pdf": {
+    "page_count": 14,
+    "sha256": "59c56d0aac12d2d6d00a643f14622c3128e06ccc88d6f0580d91748b0d2a8ab7"
+  },
+  "corpus/10_BenTal_ElHousni_Goyal_2018.pdf": {
+    "page_count": 38,
+    "sha256": "3856473c5ec6d328783136a609943534d2e032dce3eb7fef45aabd7585b8ddaf"
+  },
+  "corpus/11_Lu_Sturt_2022.pdf": {
+    "page_count": 57,
+    "sha256": "932d5b83462c6b1a94f4a805195d89e188105d47c708e6afaa379d69aa9fa16d"
+  },
+  "corpus/12_Zeng_Zhao_2013.pdf": {
+    "page_count": 5,
+    "sha256": "4422f348a9197e50e9a1b2fa51948f50aed84b91cbc21f7ca9452e2cd08076f7"
+  },
+  "corpus/13_Bertsimas_Shtern_2018.pdf": {
+    "page_count": 23,
+    "sha256": "28a7c477279393d0d8f88a4473cca625c611e01cde22020704c6ba8e4fdc5407"
+  },
+  "corpus/14_Tsang_Shehadeh_Curtis_2022.pdf": {
+    "page_count": 27,
+    "sha256": "e0c7574714be14a04856955acf9d8d363a5b08d588ec9297fcba5efe588b41ce"
+  },
+  "corpus/15_Chuong_Jeyakumar_2020.pdf": {
+    "page_count": 32,
+    "sha256": "a8f46660154d09ffa89f5b0c6dc54ba3ece4835214871b8eafd31944ed5e82e5"
+  },
+  "corpus/16_Chuong_Jeyakumar_Li_Woolnough_2021a.pdf": {
+    "page_count": 32,
+    "sha256": "386dfa3b8fa7df897be45bf17bf32f5d8c54ef08ad840221cd17836d93b193ef"
+  },
+  "corpus/17_Chuong_Jeyakumar_Li_Woolnough_2021b.pdf": {
+    "page_count": 23,
+    "sha256": "48143323542f3e3cce255c95722c5f6c91490bf4366ec1b38b063a8a2dd00f65"
+  },
+  "corpus/18_Jeyakumar_etal_2022.pdf": {
+    "page_count": 19,
+    "sha256": "13462f14db8e9886b4fde279a62d9d6bd258d0f6a6a5637ebb374059194eedfd"
+  },
+  "corpus/19_Zhang_2024.pdf": {
+    "page_count": 28,
+    "sha256": "8800140f1b5fe0f82672f5400d3b88b4553a1e88eea4c1611dc6b1ff92138941"
+  },
+  "corpus/20_Bertsimas_Georghiou_2014.pdf": {
+    "page_count": 35,
+    "sha256": "616e78f2a90571ce3a4d2f562d9dc63809c91f3f96101da6936d2561421c5469"
+  },
+  "corpus/21_Zhen_denHertog_Sim_2018.pdf": {
+    "page_count": 30,
+    "sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3"
+  },
+  "corpus/22_deRuiter_Zhen_denHertog_2018.pdf": {
+    "page_count": 21,
+    "sha256": "bb7fc8198f2d12a6d0df9071950e8ddfba12296f8f16ae8fcd6d3d0196d3e87e"
+  },
+  "corpus/23_Georghiou_Tsoukalas_Wiesemann_2020.pdf": {
+    "page_count": 19,
+    "sha256": "4c958b0111192ffd050c9d6a8bd4370a69a6ebbe8924bbe5fe8e60578b70086f"
+  },
+  "corpus/24_Georghiou_Tsoukalas_Wiesemann_2025.pdf": {
+    "page_count": 67,
+    "sha256": "a4897f257139c0cd30e4fef07c05067b68aeb45b30cbfe8e5438476ecbb7f8eb"
+  },
+  "corpus/extra/AS03.pdf": {
+    "page_count": 15,
+    "sha256": "54e8a93217e98e748f700ebf65cd354c43e9ad5c0811691c212c6e61200e2ab1"
+  },
+  "corpus/extra/BG10-author.pdf": {
+    "page_count": 22,
+    "sha256": "f4ed6f8d9b762e3e22d8584c6ddb8eab1a4d9dd182bcb83252accc269dfbb892"
+  },
+  "corpus/extra/dvm-2024.pdf": {
+    "page_count": 16,
+    "sha256": "1d3c1d3d4e0e0ba07ba138f3e9e53015b1fd9ec7da08d2f5d9c8f0faccd49842"
+  },
+  "corpus/extra/hanner-1956.pdf": {
+    "page_count": 23,
+    "sha256": "33ef8617a29a61ce3ee29315e530e348c23d0f52dd8e39f5a39beb17eb855c09"
+  },
+  "corpus/extra/helly-survey.pdf": {
+    "page_count": 13,
+    "sha256": "b13039b312b032af477281b4a8f7fcf4a2a3a02c464b005e2a60af85e7dd47d8"
+  },
+  "corpus/extra/iyengar-tr-2002-07.pdf": {
+    "page_count": 29,
+    "sha256": "cfd695ab5642ae6ddc41b9565a32478c3b2e83bee01012a3ec0133b0385fb55d"
+  },
+  "corpus/extra/wkr-2013.pdf": {
+    "page_count": 52,
+    "sha256": "8cbadb800e452ff17e90d78854a9ee9364aa7f4200ea76d5c5707803fb34a79b"
+  },
+  "corpus/intake/2207.03291.pdf": {
+    "page_count": 27,
+    "sha256": "cff68fa585627e330cea15838408aca67d0b7fe87f80a621e680f243620930ec"
+  },
+  "corpus/intake/2409.12630.pdf": {
+    "page_count": 25,
+    "sha256": "839e69a9e241e5a15acf141398530b0dbf4bae5fcf6ac64737988731e73433c1"
+  },
+  "corpus/intake/2608.22999.pdf": {
+    "page_count": 39,
+    "sha256": "b483a459aa26c27d86d82f4855ffd45b1098f2acaaa28685f4026c70f101383f"
+  },
+  "corpus/our_papers/A1_\u0411\u0430\u043b\u0430\u0448\u0435\u0432\u0438\u0447_2004.pdf": {
+    "page_count": 22,
+    "sha256": "4569a9d9dca6bacb4a2927a1c8c39689e5a3b73dced51ba1d08a290a28d5c9a1"
+  },
+  "corpus/our_papers/A2_\u0414\u043c\u0438\u0442\u0440\u0443\u043a_2018.pdf": {
+    "page_count": 18,
+    "sha256": "fca596196bdfe1f8740a767427fe1fd761a8c0712f6b3b314bf0832fe9d29dc9"
+  },
+  "corpus/our_papers/A3_\u041a\u043e\u0441\u0442\u044e\u043a\u0435\u0432\u0438\u0447_\u0414\u043c\u0438\u0442\u0440\u0443\u043a_2021.pdf": {
+    "page_count": 13,
+    "sha256": "2330f4ac22dd57b924b17f130a7937769ea6f6f56f825f1779102a038a347288"
+  },
+  "corpus/our_papers/A5_\u0414\u043c\u0438\u0442\u0440\u0443\u043a_\u0434\u0438\u0441\u0441\u0435\u0440\u0442\u0430\u0446\u0438\u044f_2022.pdf": {
+    "page_count": 41,
+    "sha256": "94d6b70331a4682b05b0e828e3fd346e4045f8b659075fd950a4c81471c71a66"
+  }
+}

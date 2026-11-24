@@ -1,0 +1,67 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "attempt": "owner-authorized supplementary Astra probe",
+  "status": "completed_scoped_probe_pending_independent_review",
+  "exposed_to_prior_results": true,
+  "blind_benchmark": false,
+  "approaches_used": 1,
+  "strongest_authored_result": {
+    "id": "A-S1",
+    "classification": "unproved-sketch",
+    "proof_status": "complete written elementary argument; not Lean-checked or independently adjudicated",
+    "statement": "For every finite nonempty family K_p={b in a common rational box V: Lb<=d_p}, if each nonzero row of L uses one coordinate and exactly two coordinates occur, rank(L)=2 and individual plus distinct-pair compatibility implies joint compatibility over Q.",
+    "mechanism": "Coordinate interval extrema are attained; any conflicting lower and upper endpoint identifies an empty singleton or an incompatible pair. Assemble all rational lower endpoints in the same box.",
+    "necessity_answer": "Rank at most one is not necessary for a structural-subclass guarantee. Rank two alone still does not guarantee pairwise sufficiency.",
+    "limits": ["Same axes as the common action box", "No rotated-image generalization", "All hidden suffixes retained", "No unconditional equality of prefix and state feasibility", "Rank is DG, excluding box rows"]
+  },
+  "finite_evidence": {
+    "classification": "exact-finite",
+    "cases": 4,
+    "checks_passed": 38,
+    "positive": "Rank-two dynamics with three merged prefixes, four complete paths including two suffixes for one prefix; full-dimensional nonnested residual rectangles; common feasible box [2,3] x [1,3].",
+    "negative_controls": ["False action", "Box violation", "Reversed cost sign", "Negative certificate multiplier", "Illegal suffix-dependent prefix policy"],
+    "certificates": ["q=-3 incompatible pair, every prefix individually feasible", "Two hidden suffixes make a singleton prefix infeasible", "Inherited triangular rank-two obstruction outside the subclass"],
+    "command": "timeout 30 python3 -B research/astra-probe/checks/check.py",
+    "exit_code": 0,
+    "elapsed_seconds": 0.028844908985774964,
+    "python_version": "3.12.3",
+    "manifest_sha256": "553e008b17504c418af2cca09bfb5292716557ba32ec75545573e11f7a97d377",
+    "stdout_sha256": "a8a589efa2a3dc85f5d0c08fb59ca88f2d0b0a08f19ecb6dd865f7202d600a0b",
+    "raw_stdout": "checks/stdout.json",
+    "raw_stderr": "checks/stderr.txt",
+    "observation": "checks/observation.json",
+    "general_theorem_checked": false,
+    "independent_authorship": false,
+    "retry_count": 0
+  },
+  "provenance": {
+    "actual_read_log": "checks/manifest.json:read_log",
+    "primary_pdf_inspection_this_attempt": false,
+    "source_claims": "Inherited frozen packet only; no new external theorem attribution",
+    "novelty": "unestablished; no claim",
+    "source_pool_changed": false
+  },
+  "blockers_and_omissions": [
+    "General theorem and dynamics correspondence await independent review/formalization.",
+    "Inherited comparator bwrap uid-map denial: no retry, bypass or formal release.",
+    "Inherited delivery validator unbound phase evidence and final B-output frozen-hash defect left untouched.",
+    "Lean, general project gates and automated style lint not run; scope kept to exact candidate-specific arithmetic.",
+    "Harness automatically spooled truncated tool output under /tmp; no OS-isolation claim. Worker subprocess TMPDIR/TMP/TEMP were campaign-local."
+  ],
+  "resources": {
+    "first_recorded_utc": "2026-11-13T02:22:19Z",
+    "scientific_execution_started_utc": "2026-11-13T02:25:20.025388+00:00",
+    "exact_session_start": "not instrumented",
+    "hard_budget_minutes": 45,
+    "tool_invocations_instructional_max": 40,
+    "search": "none",
+    "nested_agents": 0,
+    "installs": 0,
+    "model_changes": 0,
+    "commits_pushes_tracker_live_writes": 0,
+    "provider_model_billing_native_retries": "not audited; no model switch requested"
+  },
+  "remaining_obligation": "Independently review/formalize A-S1 and its mapping from the frozen one-measurement dynamics, preserving rational domains, individual feasibility, common coordinate box and hidden-suffix quantifiers.",
+  "scientific_status_promotion": false,
+  "human_attestation": false
+}

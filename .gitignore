@@ -1,0 +1,25 @@
+# Python & environments
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.import_linter_cache/
+uv.lock
+
+# Lean 4 build & Mathlib cache (kept outside Git / symlinked to Data volume)
+verification/lean/.lake
+verification/lean/.lake/
+verification/lean/build/
+*.olean
+*.ilean
+*.trace
+
+# OS & temporary scratch
+.DS_Store
+tmp/
+*.tmp
+.mcp.json

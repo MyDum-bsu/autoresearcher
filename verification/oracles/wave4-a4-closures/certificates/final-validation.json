@@ -1,0 +1,42 @@
+{
+  "candidateReadyForReview": true,
+  "controls": [
+    {
+      "case": "a4_printed-r67",
+      "normal_optimized_identical": true,
+      "positive": 1,
+      "rejected_invalid": 7
+    },
+    {
+      "case": "a4_reconstructed_decimal-r67",
+      "normal_optimized_identical": true,
+      "positive": 1,
+      "rejected_invalid": 7
+    },
+    {
+      "case": "a4_printed-r104",
+      "normal_optimized_identical": true,
+      "positive": 1,
+      "rejected_invalid": 7
+    },
+    {
+      "case": "a4_reconstructed_decimal-r104",
+      "normal_optimized_identical": true,
+      "positive": 1,
+      "rejected_invalid": 7
+    }
+  ],
+  "diagnostic_exit_codes": {
+    "focused-ruff": 0,
+    "full-path": 0,
+    "style-en": 1,
+    "style-ru": 1
+  },
+  "frozen_file_mismatches": [],
+  "full_path_checks": 12,
+  "goalAchieved": false,
+  "independent_stage_B": "not_run",
+  "origin_file_mismatches": [],
+  "resource_accounting": "manual instructional call limit; native retries, billing and exact Pi counter unavailable",
+  "scientific_classification": "useful_certified_reproduction_not_first_success"
+}

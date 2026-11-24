@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 3,
+  "scope": "source identities and physical-page statement anchors; no mathematical certification",
+  "sources": [
+    {
+      "id": "A4",
+      "path": "research/sources/A4.pdf",
+      "title": "N. M. Dmitruk (2022), multiple closure strategy in a linear control problem",
+      "original_version": "published original from existing source packet",
+      "anchors": [
+        {
+          "physical_page": 2,
+          "quote": "x(t + 1) = Ax(t) + Bu(t) + M w(t)",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 3,
+          "quote": "линейного терминального критерия качества",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 4,
+          "quote": "измерить текущее состояние",
+          "method": "pdftotext-layout"
+        }
+      ],
+      "pages_read": [
+        2,
+        3,
+        4
+      ],
+      "reading_modality": "fresh direct PDF layout extraction",
+      "whole_proof_read": false,
+      "sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420",
+      "page_count": 17
+    },
+    {
+      "id": "H1",
+      "path": "artifacts/goal/wave-3/sources/hanner-1956.pdf",
+      "title": "Olof Hanner, Intersections of translates of convex bodies",
+      "original_version": "Mathematica Scandinavica 4 (1956), printed pp65-87",
+      "doi": "10.7146/math.scand.a-10456",
+      "download_url": "https://journals.msp.org/mscand/article/download/2863/2862",
+      "landing_url": "https://www.mscand.dk/article/view/10456",
+      "anchors": [
+        {
+          "physical_page": 1,
+          "quote": "centrally symmetric",
+          "method": "visually-read-scan-plus-ocr-binding",
+          "image": "artifacts/goal/wave-3/sources/hanner-p1.png"
+        },
+        {
+          "physical_page": 2,
+          "quote": "parallelepiped",
+          "method": "visually-read-scan-plus-ocr-binding",
+          "image": "artifacts/goal/wave-3/sources/hanner-p2.png"
+        }
+      ],
+      "pages_read": [
+        1,
+        2
+      ],
+      "reading_modality": "original scan visually read; OCR only auxiliary binding",
+      "whole_proof_read": false,
+      "not_read": "complete proof and section 6; prepared pages3-4 were not used",
+      "sha256": "33ef8617a29a61ce3ee29315e530e348c23d0f52dd8e39f5a39beb17eb855c09",
+      "page_count": 23
+    },
+    {
+      "id": "Z1",
+      "path": "corpus/21_Zhen_denHertog_Sim_2018.pdf",
+      "title": "Zhen, den Hertog, Sim, Adjustable Robust Optimization via Fourier-Motzkin Elimination",
+      "original_version": "existing 2018 author manuscript; no final-version pagination claim",
+      "anchors": [
+        {
+          "physical_page": 7,
+          "quote": "Algorithm 1 Fourier-Motzkin Elimination for two-stage problems.",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 7,
+          "quote": "Theorem 1.",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 8,
+          "quote": "one can repeatedly apply Algorithm 1",
+          "method": "pdftotext-layout"
+        }
+      ],
+      "pages_read": [
+        7,
+        8
+      ],
+      "reading_modality": "fresh direct PDF layout extraction",
+      "whole_proof_read": false,
+      "proof_scope_read": "Theorem 1 proof on these pages, not whole paper",
+      "sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3",
+      "page_count": 30
+    },
+    {
+      "id": "DL",
+      "path": "goal/wave-1/sources/helly-survey.pdf",
+      "title": "De Loera, La Haye, Oliveros, Roldan-Pensado, Helly numbers of algebraic subsets of R^d",
+      "original_version": "arXiv:1508.02380v1 (2015-08-10)",
+      "url": "https://arxiv.org/pdf/1508.02380",
+      "anchors": [
+        {
+          "physical_page": 1,
+          "quote": "Eduard Helly stated his fundamental theorem",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 2,
+          "quote": "any subfield of R",
+          "method": "pdftotext-layout"
+        },
+        {
+          "physical_page": 3,
+          "quote": "the Helly number",
+          "method": "pdftotext-layout"
+        }
+      ],
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "reading_modality": "direct original PDF extract read; fresh page extract also saved",
+      "whole_proof_read": false,
+      "sha256": "b13039b312b032af477281b4a8f7fcf4a2a3a02c464b005e2a60af85e7dd47d8",
+      "page_count": 13
+    }
+  ],
+  "derivatives": [
+    {
+      "path": "artifacts/goal/wave-3/sources/A4-p2-4.txt",
+      "sha256": "ede1c86548ba1e53b27a0d7b547418cab089bf9dfd40dd5babf385ebd05dca99"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/DL-p1-3.txt",
+      "sha256": "d4da6ededc3eb5141d865fc601aadb78f6e3a292ab9c90ffc5681e0071f7d636"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/ZHS18-p7-8.txt",
+      "sha256": "8ede61dadf83237c1186014dd1aae0b9ea57d76694b41cc512efa951574379b5"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/arxiv-discovery.xml.error.txt",
+      "sha256": "9dcb0d007b12763c4b5d78416b1a8a3b12d4ced58163428b60b36ab8973e0ef9"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/crossref-discovery.json",
+      "sha256": "65aeabbb65ef54374b5593daf1e3d4f2599c95bbf0777d40949073a5460ca521"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/discovery.html",
+      "sha256": "47098f9dffb620079bb804b2d11b1dfb73e72db186fee301b25da142b0e7dc90"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-1956.txt",
+      "sha256": "ebb2c71ef2d4d1bd5e6523a737db556aad214db8181a5b8c83761f7bdb90a7ae"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-advertised-view-response.html",
+      "sha256": "4887b942e6c4499a1979de652770ca1b1dafcd68b6192c18da9ee41681383491"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p1.png",
+      "sha256": "ba9fdb61bbaf06d6b22287c45442f3d3bc8e2bee5a2fb05b42512bd342f33db7"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p1.txt",
+      "sha256": "6cdffb1a4ff0f33fd8d42069da0e6640d5786c96d38d21e878f95de79c9af911"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p2.png",
+      "sha256": "d4261cdab12ffa1c1a4d0056377b4aadec767737d6308104235138a497b00fa2"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p2.txt",
+      "sha256": "94d900b3cac1e293a872ba575f5f3576adfe6bbdf393dc10b3531c812bb52ac3"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p3.png",
+      "sha256": "63119d26e77cdd94065da66ba66367fc2319df2a53ed5150d872e8f564258fb3"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p3.txt",
+      "sha256": "87fcd60efaf167dd3f3f3f57de0d2224c0a62d5a1372c679234395f2dbd05880"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p4.png",
+      "sha256": "eb19ca4775e7450365ba2c3dbb2cd888f1fa19a09a39e1db0a3ad82826249349"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/hanner-p4.txt",
+      "sha256": "369f24aad1954d604af063664d86161b7377992146383cb3a3f87b46a91a3f87"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/helly-dimension-discovery.json",
+      "sha256": "ed1c13020118e2b984b08293b619e60f513cbfc45f6774ccd279ce5eda5d8033"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/helly-survey.txt",
+      "sha256": "b0a4e11bf7819024c438246f763c30f9f05cbfbe16ca67221528febf81a35313"
+    },
+    {
+      "path": "artifacts/goal/wave-3/sources/translates-landing.html",
+      "sha256": "ca8896bbdc3f88ff971f6365d7346ba99fa7e62810848f0a73b972c135e99458"
+    }
+  ],
+  "context_inputs": [
+    {
+      "path": "docs/specs/2026-11-13-first-success-wave-3-realizability.md",
+      "sha256": "c390914ffa209dd52c3445c17d1e456e57ceca0995a9f7a4258cc2b7f4c4b158"
+    },
+    {
+      "path": "docs/specs/2026-11-13-first-scientific-success-goal.md",
+      "sha256": "f933d107697296d9d5df2265695969852cd40cea8d20ea0cd88b495dd7e5b791"
+    },
+    {
+      "path": "FOUNDATION.md",
+      "sha256": "41cccffdf929c34e9a3b0d8866fc842ad026f5b046b09b34e62a58b897e3fe12"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "a71d81ced3666cdeab86dc75a6f119c86a83f9035cf2654fd0483f89be748447"
+    },
+    {
+      "path": "research/question.md",
+      "sha256": "6e6bbaff0d752c3bfe7e2f9ee78b3135e689e437e012730f4c482c3a31f786dc"
+    },
+    {
+      "path": "research/structured/derivation.md",
+      "sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7"
+    },
+    {
+      "path": "goal/wave-1/question.md",
+      "sha256": "d2ac0753dafc832748c9ba8456aaa3c85be6b9867fd81cf989257b100d80cac4"
+    },
+    {
+      "path": "goal/wave-1/literature.md",
+      "sha256": "4850aa0efb42d3606a084309c153883c955b02a3611d214a53ed89f0faf23614"
+    },
+    {
+      "path": "goal/wave-1/source-manifest.json",
+      "sha256": "cca8b324c6077cd9d7b0d60fea2b657ca130324a21b4083160c5e1e82c1c6839"
+    },
+    {
+      "path": "goal/wave-2/outcome.md",
+      "sha256": "513f15b2aef28a29b441ac6b0f7c434a117fc09141d007fd3521a5c48623a400"
+    },
+    {
+      "path": "docs/GLOSSARY.md",
+      "sha256": "db8eab0aaefecd0887776ff1971d67331102a6bba1aae33f8dc41bf1dc70cf9e"
+    }
+  ],
+  "uninspected_leads": [
+    "Kincses, The classification of 3- and 4-Helly-dimensional convex bodies, DOI 10.1007/BF00147938",
+    "Baladze and Boltyanskii, Belt bodies and Helly dimension, DOI 10.1070/SM1995v186n02ABEH000010",
+    "Dedicated sharp grouped fixed-normal positive-dependence classification; no original theorem acquired"
+  ],
+  "access_limitations": [
+    "Searcharvester produced no tool output",
+    "Google challenge HTML",
+    "arXiv discovery RemoteDisconnected",
+    "Advertised Hanner view link returned HTML; journal landing metadata identified the distinct actual download endpoint"
+  ],
+  "pdf_anchor_policy": "physical pages one-indexed; quotes bind short inspected fragments, not entire theorem truth"
+}

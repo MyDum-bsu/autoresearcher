@@ -1,0 +1,461 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "phase": "D2",
+  "disposition": "completed-with-declared-limits",
+  "question_id": "correlated-continuation-compatibility-v1",
+  "question_manifest": {
+    "path": "research/resource-manifest.json",
+    "sha256": "1ff15746b0a2c8c47499cefdeca9dc2fc6b95c92ef536ce2e9259d7b542373d8",
+    "size_bytes": 25229
+  },
+  "scientific_attestation": false,
+  "claims": [
+    {
+      "id": "D2-E1-v1",
+      "version": 1,
+      "evidence_kind": "exact-finite",
+      "statement": "At q=1 all three pairs of residual sets have the listed rational witnesses; the full state cell is infeasible by 0<=-1; all prefixes are individually feasible at q=0 and the state cell is feasible at q=2.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "The declared two-period two-dimensional rational instance; continuous-box impossibility certified by exact inequalities.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-P1-v1",
+      "version": 1,
+      "evidence_kind": "refuted-candidate",
+      "statement": "Universal pairwise compatibility implies joint compatibility within state cells in the question model.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "Original universal parent preserved; refutation by D2-E1-v1, not a source theorem refutation.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-E2-v1",
+      "version": 1,
+      "evidence_kind": "exact-finite",
+      "statement": "For the same-prefix two-suffix control, clairvoyant q=0 actions fail prefix consistency; no legal q=0 continuation exists, and q=1 has a common witness.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "Exactly the two-path timing control; no suffix revealed to the prefix policy.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-P2-v1",
+      "version": 1,
+      "evidence_kind": "refuted-candidate",
+      "statement": "Identical directional signatures are necessary for fixed-bound common feasibility.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "Refuted at q=2; says nothing about equality of all bound sets.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-C3-v1",
+      "version": 1,
+      "evidence_kind": "exact-finite",
+      "statement": "Unequal residual signatures can have a common continuation at q=2.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "Three declared RHS signatures and b=(1,1).",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-R1-v1",
+      "version": 1,
+      "evidence_kind": "unproved-sketch",
+      "statement": "General dynamics expand to a common continuation-row matrix with prefix-conditioned directional residual RHS.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [],
+      "scope": "Self-contained symbolic derivation; not compiled or generally machine-proved.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-C2-v1",
+      "version": 1,
+      "evidence_kind": "unproved-sketch",
+      "statement": "Equal directional residual signatures within every state cell suffice for equality of prefix/state bound feasibility at fixed a.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [],
+      "scope": "General implication from the derived row formula; no Lean or external theorem verdict.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-values-v1",
+      "version": 1,
+      "evidence_kind": "unproved-sketch",
+      "statement": "For D2-E1-v1 the explained full rational bound sets are q>=0 for prefix policies and q>=2 for state policies.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [
+        "D2-trajectories",
+        "D2-certificates"
+      ],
+      "scope": "Argument uses checked affine certificate identity 0<=q-2, positive witnesses and terminal nonnegativity. General quantification is explained in prose, not a Lean theorem.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    },
+    {
+      "id": "D2-C1-v1",
+      "version": 1,
+      "evidence_kind": "unresolved",
+      "statement": "Rank_Q(D G)<=1 suffices for pairwise-to-joint compatibility in each state cell.",
+      "statement_path": "research/structured/derivation.md",
+      "statement_sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "check_ids": [],
+      "scope": "Fresh successor must finish rational projection/interval/section argument or refute this child; not checked by the rank-two example.",
+      "limitations": [
+        "No novelty or human scientific attestation.",
+        "Independent phase F replay remains outstanding."
+      ]
+    }
+  ],
+  "check_observations": {
+    "schema_version": 1,
+    "started_utc": "2026-11-13T01:17:51.151093+00:00",
+    "finished_utc": "2026-11-13T01:17:51.716780+00:00",
+    "scientific_execution_wall_seconds": 0.56567595602246,
+    "manifest_sha256": "14338c2aeb178dc155bfe6001ba0921d74d6e01356bd77bcec3c68344269e907",
+    "checks": [
+      {
+        "id": "D2-trajectories",
+        "command": {
+          "cwd": "<workspace>/aro-discovery-campaign",
+          "argv": [
+            "python3",
+            "-B",
+            "research/structured/checks/trajectory_check.py"
+          ]
+        },
+        "observed_exit": 0,
+        "wall_seconds": 0.06479632901027799,
+        "stdout_path": "research/structured/checks/D2-trajectories.stdout.json",
+        "stdout_sha256": "9b6e7e2485742c50474bb648ab4d0fcf312933f518fbe5641cfe3f4a6efea3a8",
+        "stderr_path": "research/structured/checks/D2-trajectories.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "D2-certificates",
+        "command": {
+          "cwd": "<workspace>/aro-discovery-campaign",
+          "argv": [
+            "python3",
+            "-B",
+            "research/structured/checks/certificate_check.py"
+          ]
+        },
+        "observed_exit": 0,
+        "wall_seconds": 0.06494593201205134,
+        "stdout_path": "research/structured/checks/D2-certificates.stdout.json",
+        "stdout_sha256": "070d0b6978271917331d5d826ec1b9cc58dff519dfde8866f829ba364fd24733",
+        "stderr_path": "research/structured/checks/D2-certificates.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "D2-trajectories-optimized",
+        "command": {
+          "cwd": "<workspace>/aro-discovery-campaign",
+          "argv": [
+            "python3",
+            "-O",
+            "-B",
+            "research/structured/checks/trajectory_check.py"
+          ]
+        },
+        "observed_exit": 0,
+        "wall_seconds": 0.2156324770185165,
+        "stdout_path": "research/structured/checks/D2-trajectories-optimized.stdout.json",
+        "stdout_sha256": "9b6e7e2485742c50474bb648ab4d0fcf312933f518fbe5641cfe3f4a6efea3a8",
+        "stderr_path": "research/structured/checks/D2-trajectories-optimized.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "id": "D2-certificates-optimized",
+        "command": {
+          "cwd": "<workspace>/aro-discovery-campaign",
+          "argv": [
+            "python3",
+            "-O",
+            "-B",
+            "research/structured/checks/certificate_check.py"
+          ]
+        },
+        "observed_exit": 0,
+        "wall_seconds": 0.2185533469892107,
+        "stdout_path": "research/structured/checks/D2-certificates-optimized.stdout.json",
+        "stdout_sha256": "070d0b6978271917331d5d826ec1b9cc58dff519dfde8866f829ba364fd24733",
+        "stderr_path": "research/structured/checks/D2-certificates-optimized.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "normal_optimized_byte_equal": true,
+    "no_retries": true,
+    "provider_retries": "unknown",
+    "scope": "Executed author-created exact candidate checks; independent F replay remains required."
+  },
+  "frozen_manifest": {
+    "path": "research/structured/checks/manifest.json",
+    "sha256": "14338c2aeb178dc155bfe6001ba0921d74d6e01356bd77bcec3c68344269e907",
+    "size_bytes": 5846
+  },
+  "artifacts": [
+    {
+      "path": "research/structured/checks/D2-certificates-optimized.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "research/structured/checks/D2-certificates-optimized.stdout.json",
+      "sha256": "070d0b6978271917331d5d826ec1b9cc58dff519dfde8866f829ba364fd24733",
+      "size_bytes": 803
+    },
+    {
+      "path": "research/structured/checks/D2-certificates.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "research/structured/checks/D2-certificates.stdout.json",
+      "sha256": "070d0b6978271917331d5d826ec1b9cc58dff519dfde8866f829ba364fd24733",
+      "size_bytes": 803
+    },
+    {
+      "path": "research/structured/checks/D2-trajectories-optimized.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "research/structured/checks/D2-trajectories-optimized.stdout.json",
+      "sha256": "9b6e7e2485742c50474bb648ab4d0fcf312933f518fbe5641cfe3f4a6efea3a8",
+      "size_bytes": 1240
+    },
+    {
+      "path": "research/structured/checks/D2-trajectories.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "research/structured/checks/D2-trajectories.stdout.json",
+      "sha256": "9b6e7e2485742c50474bb648ab4d0fcf312933f518fbe5641cfe3f4a6efea3a8",
+      "size_bytes": 1240
+    },
+    {
+      "path": "research/structured/checks/certificate_check.py",
+      "sha256": "1e9f9f77af143402f02dcf2bd1ff0a70012a9def080d7cc41a705fcc0f9a0780",
+      "size_bytes": 4440
+    },
+    {
+      "path": "research/structured/checks/instances.json",
+      "sha256": "c2b3e52f61443bf964aadc2b2ac1678cc854a67e9af1098d5e7b12b670b8e5d5",
+      "size_bytes": 1640
+    },
+    {
+      "path": "research/structured/checks/manifest.json",
+      "sha256": "14338c2aeb178dc155bfe6001ba0921d74d6e01356bd77bcec3c68344269e907",
+      "size_bytes": 5846
+    },
+    {
+      "path": "research/structured/checks/run-observation.json",
+      "sha256": "873cc3c0708ed191bc2a5c5c123daa4e066c3e57f0611d71b2153e8cac1a91f5",
+      "size_bytes": 3260
+    },
+    {
+      "path": "research/structured/checks/trajectory_check.py",
+      "sha256": "9b9f2729a5fefc9311a13e60cac7b4e31b7a5900646d6658207f81a76d5fe6ae",
+      "size_bytes": 4997
+    },
+    {
+      "path": "research/structured/derivation.md",
+      "sha256": "58df6962f9848ba30ab0a76c42ec285f5ed35bf8663639eee5a45991a0fa5ac7",
+      "size_bytes": 14771
+    },
+    {
+      "path": "research/structured/research-plan.md",
+      "sha256": "b4eb6c59e6f316673b9a76f3d2906d67b038fb8cdb77326f4b3d9bc7fbeff64d",
+      "size_bytes": 4830
+    },
+    {
+      "path": "research/structured/handoff.md",
+      "binding_location": "research/structured/checks/final-inventory.json",
+      "reason": "Metadata-only post-verification qualification; old bytes and identity preserved."
+    }
+  ],
+  "sources": [
+    {
+      "id": "A4",
+      "pdf": {
+        "path": "research/sources/A4.pdf",
+        "sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420",
+        "size_bytes": 455385
+      },
+      "text": {
+        "path": "research/sources/A4-selected.txt",
+        "sha256": "a3991f9b8ad5f537650a1afd687fa744ddf239b0f5d5a2f9e5eec10828d9c9e6",
+        "size_bytes": 28279
+      },
+      "rendering": {
+        "path": "research/sources/A4-p4.png",
+        "sha256": "9068735caaba9d19d7e93a51f64764be63eafc59b5bff4f8dfc87a72908adad2",
+        "size_bytes": 397093
+      },
+      "actual_D2_read_scope": "Layout text PDF physical pp3-5, rendered PDF physical p4; other comparisons inherited from C.",
+      "premises": "Terminal constraints/signed minimax p3; block disturbance availability and measurement/program timing p4.",
+      "transfer_limit": "Our finite correlated paths and time-varying matrices are a declared model variant, not an A4 theorem application."
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch-1",
+      "parent": "D2-P1-v1",
+      "outcome": "refuted",
+      "distinct_child": "D2-C1-v1",
+      "stop": "Decisive exact three-prefix witness."
+    },
+    {
+      "id": "branch-2",
+      "parent": "D2-P2-v1",
+      "outcome": "refuted",
+      "distinct_children": [
+        "D2-C2-v1",
+        "D2-C3-v1"
+      ],
+      "stop": "Decisive q=2 unequal-signature compatibility witness."
+    },
+    {
+      "id": "branch-3",
+      "claim": "D2-C1-v1",
+      "outcome": "inconclusive",
+      "stop": "Reserved as a meaningful fresh-successor obligation; no rank-one proof/check executed."
+    }
+  ],
+  "operator_record": "research/structured/research-plan.md",
+  "strongest_checked_statement": "Explicit common-matrix dynamics admits three merged prefixes whose continuation sets intersect pairwise at q=1 but jointly produce 0<=-1.",
+  "negative_knowledge": [
+    "Pairwise compatibility fails in rank two.",
+    "Signature equality is not necessary for fixed-bound compatibility.",
+    "Complete-path assignments may illegally reveal a suffix to a prefix policy.",
+    "Compatibility at q=2 does not imply equality of entire bound sets."
+  ],
+  "remaining_obligation": "D2-C1-v1 rank-at-most-one rational interval/section implication.",
+  "successor_handoff": "research/structured/handoff.md",
+  "verification_output": "research/structured/verification.json",
+  "effort": {
+    "observed_prewrite_preflight_utc": "2026-11-13T01:12:39.568373+00:00",
+    "result_persisted_utc": "2026-11-13T01:22:37.097011+00:00",
+    "full_session_start_and_wall": "not instrumented; preflight observation excludes earlier authority/packet reads",
+    "scientific_execution_wall_seconds": 0.56567595602246,
+    "tool_invocations_including_nested_at_this_command": 45,
+    "tool_count_basis": "Manual count: each codemode wrapper plus each tools.read nested call; shell subprocesses bounded separately. Final verification record records later calls.",
+    "limit": 60,
+    "candidate_declarations": 3,
+    "check_processes": 4,
+    "parameter_search": false,
+    "requested_model": "current provider/model; charter requests openai/gpt-6.1-sol",
+    "effective_model_and_reasoning": "not independently audited; no model switch",
+    "token_usage": "not exposed",
+    "provider_billing": "unknown",
+    "native_provider_retry_settings": "unknown",
+    "shared_preparation_cost": "C source copies/extraction/rendering/packet and B tooling are separate; not attributed to D2",
+    "subprocess_retry_count": 0,
+    "tool_invocations_including_nested_at_result_amendment": 52
+  },
+  "not_run": [
+    {
+      "operation": "Lean experiment",
+      "reason": "Selected direct exact rational construction/certificate route; no general formal theorem claimed."
+    },
+    {
+      "operation": "native comparator",
+      "reason": "Common pool records bwrap uid-map denial; no retry or bypass."
+    },
+    {
+      "operation": "new literature search",
+      "reason": "Frozen same-source comparison pool; novelty unestablished."
+    },
+    {
+      "operation": "shared finite scalar evaluator",
+      "reason": "Does not implement this matrix/continuous-box/signed-cost model."
+    },
+    {
+      "operation": "independent F replay",
+      "reason": "Owned by subsequent reviewer, not this author."
+    },
+    {
+      "operation": "private trials and human attestation",
+      "reason": "Not authorized."
+    }
+  ],
+  "limitations": [
+    "Instructional attempt separation only, not privacy or filesystem isolation.",
+    "No D1 answer directory/phase payload read.",
+    "No all-purpose mathematical correctness from LLM approval.",
+    "No live state or sibling writes; tool-service transport created truncation spool paths outside our subprocess control during early multi-read output; no such spool was read or used as a scientific artifact.",
+    "Final campaign validator is coordinator-owned and not run here."
+  ],
+  "results_version": 2,
+  "engineering_disposition": "partial: focused Ruff failed; no retry",
+  "verification_qualification": {
+    "reason": "Metadata-only amendment after failed focused Ruff, preserving all scientific inputs/code/manifests/raw outputs.",
+    "preserved_results": "research/structured/results-before-verification.json",
+    "preserved_handoff": "research/structured/handoff-before-verification.md",
+    "failed_check_id": "D2-ruff-check",
+    "observed_exit": 1,
+    "diagnostic_count": 9,
+    "diagnostic_path": "research/structured/checks/D2-ruff-check.stdout",
+    "not_run": [
+      "D2-ruff-format",
+      "D2-style"
+    ],
+    "not_run_reason": "Final verification stopped after first unexpected check failure; no retry.",
+    "verification_contract_input_hash_policy": "Frozen verification-contract input hashes refer to original pre-qualification handoff/results bytes, preserved under the explicit snapshot names.",
+    "current_artifact_bindings": "research/structured/checks/final-inventory.json",
+    "independent_F_replay": "still required",
+    "safe_for_bounded_E_continuation": true
+  }
+}

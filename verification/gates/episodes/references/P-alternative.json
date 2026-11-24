@@ -1,0 +1,6 @@
+{
+  "episode": "P",
+  "proof": "  constructor\n  \u00b7 intro hg\n    obtain \u27e8g, hg\u27e9 := hg\n    intro p q hpq\n    exact (hg p).symm.trans ((congrArg g hpq).trans (hg q))\n  \u00b7 intro h\n    classical\n    let g : Obs \u2192 Action := fun o => if hp : \u2203 p, obs p = o then f (Classical.choose hp) else default\n    refine \u27e8g, ?_\u27e9\n    intro p\n    dsimp [g]\n    split\n    \u00b7 next hp => exact (h p _ (Classical.choose_spec hp).symm).symm\n    \u00b7 next hp => exact False.elim (hp \u27e8p, rfl\u27e9)",
+  "schema_version": 1,
+  "target": "observation_factorization"
+}

@@ -1,0 +1,24 @@
+{
+  "task": "aro-discovery-i24",
+  "purpose": "Evaluation-design source identities, not scientific corpus admission",
+  "sources": [
+    {
+      "filename": "tau-bench.pdf",
+      "url": "https://arxiv.org/pdf/2406.12045v1",
+      "inspected_pdf_pages": [
+        4,
+        5
+      ],
+      "sha256": "0ce66a1763d698c61bb311c3c874bf593d1e9a5bfff11bb35f6f72b981f6da56"
+    },
+    {
+      "filename": "putnam.pdf",
+      "url": "https://arxiv.org/pdf/2407.11214v1",
+      "inspected_pdf_pages": [
+        4,
+        23
+      ],
+      "sha256": "3dc5e4e490391e1227f905fb99bdcd1ea8101fb2e675313eddd07cbf1255e7df"
+    }
+  ]
+}

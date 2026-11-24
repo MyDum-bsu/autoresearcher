@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 2,
+  "status": "source-closure",
+  "goalAchieved": false,
+  "actionableTarget": false,
+  "proof_authorized": false,
+  "scientific_attestation": false,
+  "target": null,
+  "selection_limit": 2,
+  "selections_considered": 2,
+  "selections": [
+    {
+      "id": "W2-S1",
+      "statement": "For fixed first program a and fixed terminal task, augment the closure measurement z_a(p) with rho_p,j=max over s in S(p) of D_j eta(s), and preserve every prefix-feasible rational bound using a continuation depending on that pair.",
+      "assumptions": ["Actual finite correlated complete paths W", "Shared rational bounded continuation box", "One measured x_r only", "No prefix or suffix observation", "Fixed a,H,h,c,d0; all rational q"],
+      "disposition": "rejected-unavailable-or-elementary",
+      "availability_obligation": "rho_p must be constant on each fibre of p -> z_a(p) to be computable from the approved input",
+      "source_comparison": ["IY Assumption 1 p4 and Theorems 1-2 pp6-7 require their rectangular fully observed model", "WKR Proposition 2.4 p10 already shows usefulness of history for coupled uncertainty", "DVM Definition 1 p4 requires Pi=sigma(M)"],
+      "non_elementary_source_delta": null,
+      "reason": "An unobservable rho grants a new sensor; an observable rho adds no information and equal residual reconstruction is not a contribution.",
+      "falsification_route_not_executed": "Inspect equal-z prefixes for unequal rho; to establish an actual feasibility loss also require prefix feasibility witnesses and a rational common-continuation infeasibility certificate. Unequal rho alone is insufficient.",
+      "proof_needed_if_reopened": "First establish physically available input and a useful source-supported non-elementary remaining statement; then a checker-backed general proof or exact scoped separating certificate. Not authorized."
+    },
+    {
+      "id": "W2-S2",
+      "statement": "Use rho_bar_j(z)=max over p with z_a(p)=z and s in S(p) of D_j eta(s) as an available task-specific information summary.",
+      "assumptions": ["Same frozen model and information as W2-S1", "Known finite W, fixed a and exact z", "Actual unions of conditional suffix sets, not marginal products"],
+      "disposition": "rejected-reconstruction-no-justified-delta",
+      "availability_obligation": "Satisfied by finite model enumeration from z and known constants; realized p and suffix are not inferred",
+      "source_comparison": ["DVM Definition 1 and Theorem 1 pp4-5 give available-memory compression requirements", "WKR Proposition 2.4 p10 prevents presenting history benefit alone as a new mechanism", "Inherited wave-1 residual LPs already stack one common continuation within each state cell"],
+      "non_elementary_source_delta": null,
+      "reason": "This computes the approved state-cell robust problem, not the prefix oracle. Equal residual systems and rowwise maximization supply no useful non-elementary source delta.",
+      "falsification_route_not_executed": "Reject implementations selecting b by hidden prefix or suffix; check actual cell LPs at each q rather than a single optimum or sampled action menu.",
+      "proof_needed_if_reopened": "A genuinely changed source-grounded mechanism, with explicit rational attainment and feasibility quantifiers. No further proof work on reconstruction authorized."
+    }
+  ],
+  "model_path": "research/question.md",
+  "literature_path": "goal/wave-2/literature.md",
+  "availability_path": "goal/wave-2/availability.md",
+  "source_manifest_path": "goal/wave-2/source-manifest.json",
+  "source_versions": {
+    "IY": "CORC TR-2002-07, revised May 4, 2004; final 2005 journal PDF unavailable",
+    "WKR": "Original author manuscript dated February 9, 2012; final 2013 journal PDF not acquired",
+    "DVM": "arXiv:2301.05089v2, extended original author paper"
+  },
+  "closure_scope": "Conditional-support augmentation under the existing one-state-measurement information model only; no universal literature closure or priority judgment",
+  "remaining_limitations": ["No final journal-version equivalence established", "No sharp grouped-obstruction literature delta audited", "No new exact mathematical execution or general proof", "No source mismatch or search silence interpreted as novelty"],
+  "next_decision": "Coordinator inspects original version-qualified pages and information mapping; do not authorize proof of either rejected selection; change mathematical mechanism before another research wave.",
+  "billing": "unknown",
+  "native_provider_retry_behavior": "unknown"
+}

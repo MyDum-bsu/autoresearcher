@@ -1,0 +1,287 @@
+{
+  "continuation": {
+    "child": "equal-nonzero-v2",
+    "child_outcome": "finite-survival",
+    "consequences": {
+      "inconclusive": "park-child",
+      "negative": "revise-child",
+      "positive": "prepare-human-review"
+    },
+    "depends_on": [
+      "contradiction",
+      "restricted-check"
+    ],
+    "excluded": [
+      "universal-proof",
+      "novelty",
+      "attestation"
+    ],
+    "human_review": "pending",
+    "next_action": "compare-source-and-park",
+    "obligation": "source-assumptions",
+    "parent": "equal-all-v1",
+    "parent_outcome": "refuted"
+  },
+  "episode": "R",
+  "schema_version": 1,
+  "stages": [
+    {
+      "decision": "stop-parent-proof",
+      "evidence": {
+        "certificates": {
+          "prefix": {
+            "first_action": "1/1",
+            "information": "prefix",
+            "instance_id": "hidden-shift",
+            "normalized_input_sha256": "28b3cb4869c8e1c92efdbf34f8085edac3d1ff8647553e6f85146008058c402d",
+            "outcomes": [
+              {
+                "cost": "0/1",
+                "path": [
+                  "-1/1",
+                  "-1/1"
+                ],
+                "x1": "1/1",
+                "x2": "0/1"
+              },
+              {
+                "cost": "0/1",
+                "path": [
+                  "1/1",
+                  "1/1"
+                ],
+                "x1": "1/1",
+                "x2": "0/1"
+              }
+            ],
+            "policy": [
+              [
+                "-1/1",
+                "0/1"
+              ],
+              [
+                "1/1",
+                "-2/1"
+              ]
+            ],
+            "result": "optimal",
+            "schema_version": 1,
+            "value": "0/1"
+          },
+          "state": {
+            "first_action": "1/1",
+            "information": "state",
+            "instance_id": "hidden-shift",
+            "normalized_input_sha256": "28b3cb4869c8e1c92efdbf34f8085edac3d1ff8647553e6f85146008058c402d",
+            "outcomes": [
+              {
+                "cost": "1/1",
+                "path": [
+                  "-1/1",
+                  "-1/1"
+                ],
+                "x1": "1/1",
+                "x2": "-1/1"
+              },
+              {
+                "cost": "1/1",
+                "path": [
+                  "1/1",
+                  "1/1"
+                ],
+                "x1": "1/1",
+                "x2": "1/1"
+              }
+            ],
+            "policy": [
+              [
+                "1/1",
+                "-1/1"
+              ]
+            ],
+            "result": "optimal",
+            "schema_version": 1,
+            "value": "1/1"
+          }
+        },
+        "child": {
+          "case": "injective",
+          "certificates": {
+            "prefix": {
+              "first_action": "0/1",
+              "information": "prefix",
+              "instance_id": "strict_gain",
+              "normalized_input_sha256": "36518943222a77fad6f111df5fa253135b83638468e94ec8af6724367dfec18c",
+              "outcomes": [
+                {
+                  "cost": "0/1",
+                  "path": [
+                    "-1/1",
+                    "0/1"
+                  ],
+                  "x1": "-1/1",
+                  "x2": "0/1"
+                },
+                {
+                  "cost": "0/1",
+                  "path": [
+                    "1/1",
+                    "0/1"
+                  ],
+                  "x1": "1/1",
+                  "x2": "0/1"
+                }
+              ],
+              "policy": [
+                [
+                  "-1/1",
+                  "1/1"
+                ],
+                [
+                  "1/1",
+                  "-1/1"
+                ]
+              ],
+              "result": "optimal",
+              "schema_version": 1,
+              "value": "0/1"
+            },
+            "state": {
+              "first_action": "0/1",
+              "information": "state",
+              "instance_id": "strict_gain",
+              "normalized_input_sha256": "36518943222a77fad6f111df5fa253135b83638468e94ec8af6724367dfec18c",
+              "outcomes": [
+                {
+                  "cost": "0/1",
+                  "path": [
+                    "-1/1",
+                    "0/1"
+                  ],
+                  "x1": "-1/1",
+                  "x2": "0/1"
+                },
+                {
+                  "cost": "0/1",
+                  "path": [
+                    "1/1",
+                    "0/1"
+                  ],
+                  "x1": "1/1",
+                  "x2": "0/1"
+                }
+              ],
+              "policy": [
+                [
+                  "-1/1",
+                  "1/1"
+                ],
+                [
+                  "1/1",
+                  "-1/1"
+                ]
+              ],
+              "result": "optimal",
+              "schema_version": 1,
+              "value": "0/1"
+            }
+          },
+          "id": "equal-nonzero-v2",
+          "outcome": "finite-survival",
+          "parent": "equal-all-v1",
+          "restriction": "nonzero-prefix-gain"
+        },
+        "episode": "F",
+        "parent": "equal-all-v1",
+        "parent_outcome": "refuted",
+        "schema_version": 1,
+        "witness": "shift"
+      },
+      "stage": "contradiction"
+    },
+    {
+      "decision": "compare-source-and-park",
+      "evidence": {
+        "prefix": {
+          "first_action": "0/1",
+          "information": "prefix",
+          "instance_id": "strict_gain",
+          "normalized_input_sha256": "36518943222a77fad6f111df5fa253135b83638468e94ec8af6724367dfec18c",
+          "outcomes": [
+            {
+              "cost": "0/1",
+              "path": [
+                "-1/1",
+                "0/1"
+              ],
+              "x1": "-1/1",
+              "x2": "0/1"
+            },
+            {
+              "cost": "0/1",
+              "path": [
+                "1/1",
+                "0/1"
+              ],
+              "x1": "1/1",
+              "x2": "0/1"
+            }
+          ],
+          "policy": [
+            [
+              "-1/1",
+              "1/1"
+            ],
+            [
+              "1/1",
+              "-1/1"
+            ]
+          ],
+          "result": "optimal",
+          "schema_version": 1,
+          "value": "0/1"
+        },
+        "state": {
+          "first_action": "0/1",
+          "information": "state",
+          "instance_id": "strict_gain",
+          "normalized_input_sha256": "36518943222a77fad6f111df5fa253135b83638468e94ec8af6724367dfec18c",
+          "outcomes": [
+            {
+              "cost": "0/1",
+              "path": [
+                "-1/1",
+                "0/1"
+              ],
+              "x1": "-1/1",
+              "x2": "0/1"
+            },
+            {
+              "cost": "0/1",
+              "path": [
+                "1/1",
+                "0/1"
+              ],
+              "x1": "1/1",
+              "x2": "0/1"
+            }
+          ],
+          "policy": [
+            [
+              "-1/1",
+              "1/1"
+            ],
+            [
+              "1/1",
+              "-1/1"
+            ]
+          ],
+          "result": "optimal",
+          "schema_version": 1,
+          "value": "0/1"
+        }
+      },
+      "stage": "restricted-check"
+    }
+  ]
+}

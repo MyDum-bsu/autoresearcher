@@ -1,0 +1,1049 @@
+{
+  "schema_version": 1,
+  "project": "aro-discovery-v2",
+  "papers": [
+    {
+      "id": "bn99",
+      "title": "Robust solutions of uncertain linear programs",
+      "authors": [
+        "Aharon Ben-Tal",
+        "Arkadi Nemirovski"
+      ],
+      "year": 1999,
+      "venue": "Operations Research Letters 25(1):1-13",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/01_BenTal_Nemirovski_1999.pdf",
+      "source": "corpus",
+      "abstract": "Formulates static robust counterparts of uncertain linear programs under ellipsoidal and polyhedral uncertainty sets and derives tractable LP/SOCP reformulations.",
+      "key_results": [
+        "Static robust counterpart for linear programs under polyhedral and ellipsoidal uncertainty",
+        "Tractable conic dualization of row-wise robust constraints"
+      ],
+      "techniques": [
+        "conic_duality",
+        "support_function_reformulation"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "gen-nonbox-conic-uncertainty",
+          "relation": "technique_for",
+          "note": "Row-wise conic dualization of ellipsoidal/SOC uncertainty sets.",
+          "physical_pages": [
+            2,
+            3
+          ]
+        },
+        {
+          "node_id": "ax-fixed-recourse-box",
+          "relation": "baseline_for",
+          "note": "Static robust LP baseline prior to adjustable recourse.",
+          "physical_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pdf_sha256": "17034b3d6b9775e2cd144a2200b669598a186050d737006fddc678ad9b5ce105",
+      "page_count": 13
+    },
+    {
+      "id": "bgt04",
+      "title": "Adjustable robust solutions of uncertain linear programs",
+      "authors": [
+        "Aharon Ben-Tal",
+        "Alexander Goryashko",
+        "Elana Guslitzer",
+        "Arkadi Nemirovski"
+      ],
+      "year": 2004,
+      "venue": "Mathematical Programming, Ser. A 99:351-376",
+      "doi": "10.1007/s10107-003-0454-y",
+      "arxiv_id": null,
+      "corpus_path": "corpus/02_BenTal_Goryashko_etal_2004.pdf",
+      "source": "corpus",
+      "abstract": "Introduces two-stage Adjustable Robust Counterpart (ARC) and Affinely Adjustable Robust Counterpart (AARC / ADR), proves RC = ARC under constraint-wise separable compact convex uncertainty PLUS compactness of feasible recourse sets V_u (Thm. 2.1, physical pp. 4-5), and gives finite LP reformulation of AARC on polytopes (Thm. 3.3).",
+      "key_results": [
+        "Definition of fixed recourse, ARC, and AARC (affine decision rules)",
+        "Thm. 2.1 (physical pp. 4-5): RC = ARC under constraint-wise compact convex uncertainty Z = Z_1 x ... x Z_m AND compactness of the feasible recourse set V_u for every ARC-feasible first-stage u",
+        "Thm. 3.3: Finite LP reformulation of AARC over polyhedral uncertainty"
+      ],
+      "techniques": [
+        "affine_decision_rules",
+        "lp_duality_reformulation",
+        "constraint_wise_decomposition"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ax-fixed-recourse-box",
+          "relation": "supports",
+          "note": "Establishes fixed-recourse two-stage ARO formalism.",
+          "physical_pages": [
+            3,
+            4
+          ]
+        },
+        {
+          "node_id": "thm-t6-box-static-exact",
+          "relation": "supports",
+          "note": "Thm. 2.1 (physical pp. 4-5): RC = ARC under constraint-wise compact convex uncertainty AND compactness of feasible recourse sets V_u for every ARC-feasible u.",
+          "physical_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "baseline_for",
+          "note": "Introduces the affine decision rule approximation whose exactness O1 seeks to characterize.",
+          "physical_pages": [
+            8,
+            10
+          ]
+        }
+      ],
+      "pdf_sha256": "3ff5e8479fac4326cd4369ac01cefc30fd468681fa4a99af846eb05a4db44f3a",
+      "page_count": 26
+    },
+    {
+      "id": "cz09",
+      "title": "Uncertain Linear Programs: Extended Affinely Adjustable Robust Counterparts",
+      "authors": [
+        "Xin Chen",
+        "Yuhan Zhang"
+      ],
+      "year": 2009,
+      "venue": "Operations Research 57(6):1469-1482",
+      "doi": "10.1287/opre.1080.0605",
+      "arxiv_id": null,
+      "corpus_path": "corpus/03_Chen_Zhang_2009.pdf",
+      "source": "corpus",
+      "abstract": "Constructs an N-vs-1 separation between standard affine decision rules and adaptive optimum over the l1 cross-polytope and introduces Extended Affinely Adjustable Robust Counterparts (EAARC) via uncertainty lifting.",
+      "key_results": [
+        "Examples 1-2 (p. 6): V_ADR = N vs V_ARO = 1 on the l1 cross-polytope",
+        "Lifted EAARC recovers V_EAARC = V_ARO = 1 exactly on the cross-polytope"
+      ],
+      "techniques": [
+        "uncertainty_lifting",
+        "piecewise_linear_decision_rules"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ce-t3-chen-zhang",
+          "relation": "supports",
+          "note": "Direct source of T3 counterexample (ADR=3 vs ARO=EAARC=1 for N=3).",
+          "physical_pages": [
+            6
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "refutes",
+          "note": "Refutes any characterization predicting ADR exactness on l1 cross-polytopes.",
+          "physical_pages": [
+            6
+          ]
+        }
+      ],
+      "pdf_sha256": "d914cd0f32887706473f189c4dd464eeee982efe397a9084cd5684f10ec3418a",
+      "page_count": 14
+    },
+    {
+      "id": "bg10",
+      "title": "On the Power of Robust Solutions in Two-Stage Stochastic and Adaptive Optimization Problems",
+      "authors": [
+        "Dimitris Bertsimas",
+        "Vineet Goyal"
+      ],
+      "year": 2010,
+      "venue": "Mathematics of Operations Research 35(2):284-305",
+      "doi": "10.1287/moor.1090.0440",
+      "arxiv_id": null,
+      "corpus_path": "corpus/extra/BG10-author.pdf",
+      "source": "corpus",
+      "abstract": "Analyzes worst-case performance of static robust solutions relative to two-stage adaptive optimization and develops permutation-symmetry reductions for symmetric uncertainty sets.",
+      "key_results": [
+        "Approximation bounds for static solutions in two-stage adaptive optimization",
+        "Symmetry-reduction lemmas for permutation-invariant uncertainty sets"
+      ],
+      "techniques": [
+        "permutation_symmetry_reduction",
+        "static_approximation_bounds"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ce-t5-beg18-separating",
+          "relation": "technique_for",
+          "note": "Permutation-symmetry lemmas used in exact rational LP reduction of T5 (m=900).",
+          "physical_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "baseline_for",
+          "note": "Static vs two-stage adaptive performance gap baseline.",
+          "physical_pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pdf_sha256": "f4ed6f8d9b762e3e22d8584c6ddb8eab1a4d9dd182bcb83252accc269dfbb892",
+      "page_count": 22
+    },
+    {
+      "id": "zz13",
+      "title": "Solving two-stage robust optimization problems using a column-and-constraint generation method",
+      "authors": [
+        "Bo Zeng",
+        "Long Zhao"
+      ],
+      "year": 2013,
+      "venue": "Operations Research Letters 41(5):457-461",
+      "doi": "10.1016/j.orl.2013.05.003",
+      "arxiv_id": null,
+      "corpus_path": "corpus/12_Zeng_Zhao_2013.pdf",
+      "source": "corpus",
+      "abstract": "Develops column-and-constraint generation (C&CG) for exact finite-step solution of two-stage robust linear programs over polyhedral uncertainty sets.",
+      "key_results": [
+        "Finite-step convergence of C&CG over extreme points of polyhedral uncertainty"
+      ],
+      "techniques": [
+        "column_and_constraint_generation",
+        "vertex_enumeration"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-f4-vertex-lp-selector",
+          "relation": "technique_for",
+          "note": "Extreme-point master problem structure closely related to finite vertex-LP reduction F4.",
+          "physical_pages": [
+            2,
+            3
+          ]
+        }
+      ],
+      "pdf_sha256": "4422f348a9197e50e9a1b2fa51948f50aed84b91cbc21f7ca9452e2cd08076f7",
+      "page_count": 5
+    },
+    {
+      "id": "bg14",
+      "title": "Design of Near Optimal Decision Rules in Multistage Adaptive Mixed-Integer Optimization",
+      "authors": [
+        "Dimitris Bertsimas",
+        "Angelos Georghiou"
+      ],
+      "year": 2014,
+      "venue": "MIT Working Paper (2014)",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/20_Bertsimas_Georghiou_2014.pdf",
+      "source": "corpus",
+      "abstract": "Studies multistage adaptive optimization with piecewise linear and binary decision rules and quantifies worst-case and empirical suboptimality gaps of linear rules.",
+      "key_results": [
+        "Multistage piecewise linear decision rule architecture",
+        "Worst-case O(sqrt(k)) and empirical gap analysis for linear decision rules"
+      ],
+      "techniques": [
+        "piecewise_linear_decision_rules",
+        "multistage_policy_approximation"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "gen-multistage-k-closures",
+          "relation": "technique_for",
+          "note": "Multistage decision-rule modeling relevant to k >= 2 closure generalization G1.",
+          "physical_pages": [
+            2,
+            28
+          ]
+        }
+      ],
+      "pdf_sha256": "616e78f2a90571ce3a4d2f562d9dc63809c91f3f96101da6936d2561421c5469",
+      "page_count": 35
+    },
+    {
+      "id": "bgl15",
+      "title": "A tight characterization of the performance of static solutions in two-stage adjustable robust linear optimization",
+      "authors": [
+        "Dimitris Bertsimas",
+        "Vineet Goyal",
+        "Brian Y. Lu"
+      ],
+      "year": 2015,
+      "venue": "Mathematical Programming 150(2):281-319",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/04_Bertsimas_Goyal_Lu_2015.pdf",
+      "source": "corpus",
+      "abstract": "Gives a tight geometric characterization of the worst-case ratio between static and two-stage adaptive robust optimization via symmetry of the uncertainty set.",
+      "key_results": [
+        "Thm. 3.2: Tight geometric performance bound rho(U) <= m for static vs adjustable ARO",
+        "Vertex-representation alone is insufficient for static/affine exactness"
+      ],
+      "techniques": [
+        "geometric_symmetry_measure",
+        "worst_case_ratio_analysis"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "baseline_for",
+          "note": "Bounds worst-case value of adaptivity (static vs single recourse stage).",
+          "physical_pages": [
+            1,
+            9
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "baseline_for",
+          "note": "Geometric characterization benchmark for static/affine gap.",
+          "physical_pages": [
+            32
+          ]
+        }
+      ],
+      "pdf_sha256": "91fe2751d14113006a1e9213ad2ed05d159a0aa9545a3f933148794b7309cb2f",
+      "page_count": 34
+    },
+    {
+      "id": "bdr16",
+      "title": "Duality in Two-Stage Adaptive Linear Optimization: Faster Computation and Stronger Bounds",
+      "authors": [
+        "Dimitris Bertsimas",
+        "Frans J. C. T. de Ruiter"
+      ],
+      "year": 2016,
+      "venue": "INFORMS Journal on Computing 28(3):500-511",
+      "doi": "10.1287/ijoc.2016.0689",
+      "arxiv_id": null,
+      "corpus_path": "corpus/05_Bertsimas_deRuiter_2016.pdf",
+      "source": "corpus",
+      "abstract": "Derives an equivalent dualized two-stage adaptive linear optimization reformulation and establishes conditions for exactness under box and simplex uncertainty sets.",
+      "key_results": [
+        "Dualized two-stage ARO formulation with fewer variables/constraints",
+        "Exactness benchmarks for constraint-wise box and simplex uncertainty"
+      ],
+      "techniques": [
+        "dual_reformulation",
+        "extreme_point_reduction"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "thm-t6-box-static-exact",
+          "relation": "supports",
+          "note": "Reference benchmark for T6 constraint-wise box exactness (p. 12).",
+          "physical_pages": [
+            12
+          ]
+        },
+        {
+          "node_id": "conj-f4-vertex-lp-selector",
+          "relation": "technique_for",
+          "note": "Dual two-stage reformulation technique applicable to vertex-LP reduction.",
+          "physical_pages": [
+            6,
+            7
+          ]
+        }
+      ],
+      "pdf_sha256": "2f6f7ddbd5fd082603ebf2533c0ef86f6c37c74a54bd7c108f223467c3cd636e",
+      "page_count": 13
+    },
+    {
+      "id": "ap16",
+      "title": "Decomposition for adjustable robust linear optimization subject to uncertainty polytope",
+      "authors": [
+        "Josette Ayoub",
+        "Michael Poss"
+      ],
+      "year": 2016,
+      "venue": "Computational Management Science 13(2):219-239",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/06_Ayoub_Poss_2016.pdf",
+      "source": "corpus",
+      "abstract": "Studies exact vertex-based reformulations and decomposition for fixed-recourse two-stage ARO over polytopes and proves that vertex reduction fails under random recourse.",
+      "key_results": [
+        "Exact extreme-point reformulation under fixed recourse on polytopes",
+        "Counterexample showing vertex reduction fails under random recourse (p. 6)"
+      ],
+      "techniques": [
+        "vertex_reduction",
+        "convex_hull_interpolation"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-f4-vertex-lp-selector",
+          "relation": "technique_for",
+          "note": "Polytope vertex reduction and convex interpolation for fixed-recourse ARO.",
+          "physical_pages": [
+            4,
+            6
+          ]
+        }
+      ],
+      "pdf_sha256": "f7dd561ed79a7caedbccdf41e72fa6097613f21416a573ac2de1cd210fd4c8d6",
+      "page_count": 20
+    },
+    {
+      "id": "xb17",
+      "title": "A copositive approach for two-stage adjustable robust optimization with uncertain right-hand sides",
+      "authors": [
+        "Guanglin Xu",
+        "Samuel Burer"
+      ],
+      "year": 2017,
+      "venue": "Computational Optimization and Applications (2017)",
+      "doi": "10.1007/s10589-017-9974-x",
+      "arxiv_id": null,
+      "corpus_path": "corpus/07_Xu_Burer_2017.pdf",
+      "source": "corpus",
+      "abstract": "Proves exact copositive equivalence for fixed-recourse two-stage ARO, characterizes affine policies as inner cone IA(Q), and analyzes the SOC temporal network with Omega(s) affine gap.",
+      "key_results": [
+        "Thm. equivalence & sandwich v_AR <= v_IB <= v_AP via copositive and IA(Q) cones",
+        "Section 4.1 temporal network on Euclidean ball B_2^s: V_ADR = s vs V_ARO = (s+sqrt(s))/2"
+      ],
+      "techniques": [
+        "copositive_programming",
+        "inner_conic_approximation",
+        "soc_duality"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ce-t2-soc-temporal",
+          "relation": "supports",
+          "note": "Exact source of T2 SOC temporal network counterexample (arlp.tex lines 853-899).",
+          "physical_pages": [
+            15,
+            16,
+            17
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "technique_for",
+          "note": "Exact conic-membership characterization IA(Q) vs COP(Q) for ADR exactness.",
+          "physical_pages": [
+            10,
+            12
+          ]
+        },
+        {
+          "node_id": "gen-nonbox-conic-uncertainty",
+          "relation": "technique_for",
+          "note": "Conic/SOC handling of non-polyhedral Euclidean-ball uncertainty.",
+          "physical_pages": [
+            15,
+            17
+          ]
+        }
+      ],
+      "pdf_sha256": "a9d2ba85ef599357a1775e137610211da361d588a89dd941cc42511532c51bd2",
+      "page_count": 27
+    },
+    {
+      "id": "hsr18",
+      "title": "Conditions under which adjustability lowers the cost of a robust linear program",
+      "authors": [
+        "Ali Haddad-Sisakht",
+        "Sarah M. Ryan"
+      ],
+      "year": 2018,
+      "venue": "Annals of Operations Research 269:185-204",
+      "doi": "10.1007/s10479-018-2954-4",
+      "arxiv_id": null,
+      "corpus_path": "corpus/08_HaddadSisakht_Ryan_2018.pdf",
+      "source": "corpus",
+      "abstract": "Derives verifiable sufficient conditions under box uncertainty and fixed recourse for strict value of adjustability (V_static > V_ARO) via conflicting active constraints.",
+      "key_results": [
+        "Prop. 1: Sufficient condition for strict value of adjustability under box uncertainty",
+        "Non-necessity examples where known static-exactness conditions fail yet values coincide"
+      ],
+      "techniques": [
+        "active_constraint_sensitivity",
+        "box_duality_analysis"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "technique_for",
+          "note": "Directly informs verifiable sufficient conditions for strict measurement value V({r}) < V(empty).",
+          "physical_pages": [
+            6,
+            18
+          ]
+        }
+      ],
+      "pdf_sha256": "0fc0e659a6003b9705c3f253a6ce0d2ededc6df9e0b0cc063eb926b523685f0f",
+      "page_count": 20
+    },
+    {
+      "id": "mdh18",
+      "title": "When are static and adjustable robust optimization problems with constraint-wise uncertainty equivalent?",
+      "authors": [
+        "Ahmadreza Marandi",
+        "Dick den Hertog"
+      ],
+      "year": 2018,
+      "venue": "Mathematical Programming, Ser. A 170:555-568",
+      "doi": "10.1007/s10107-017-1166-z",
+      "arxiv_id": null,
+      "corpus_path": "corpus/09_Marandi_denHertog_2018.pdf",
+      "source": "corpus",
+      "abstract": "Generalizes constraint-wise static-adjustable equivalence to nonlinear convex robust optimization under compactness and convexity regularity assumptions.",
+      "key_results": [
+        "Static = adjustable under constraint-wise compact convex uncertainty and convexity/concavity"
+      ],
+      "techniques": [
+        "minimax_duality",
+        "constraint_wise_decomposition"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "thm-t6-box-static-exact",
+          "relation": "generalizes",
+          "note": "Extends M1 constraint-wise equivalence beyond linear boxes.",
+          "physical_pages": [
+            7
+          ]
+        },
+        {
+          "node_id": "conj-o8-quantifier-gap",
+          "relation": "technique_for",
+          "note": "Sion minimax conditions characterizing zero quantifier-order gap.",
+          "physical_pages": [
+            7,
+            8
+          ]
+        }
+      ],
+      "pdf_sha256": "59c56d0aac12d2d6d00a643f14622c3128e06ccc88d6f0580d91748b0d2a8ab7",
+      "page_count": 14
+    },
+    {
+      "id": "beg18",
+      "title": "A Tractable Approach for Designing Piecewise Affine Policies in Two-stage Adjustable Robust Optimization",
+      "authors": [
+        "Aharon Ben-Tal",
+        "Omar El Housni",
+        "Vineet Goyal"
+      ],
+      "year": 2018,
+      "venue": "arXiv:1801.06751 (2018)",
+      "doi": null,
+      "arxiv_id": "1801.06751v1",
+      "corpus_path": "corpus/10_BenTal_ElHousni_Goyal_2018.pdf",
+      "source": "corpus",
+      "abstract": "Introduces affine domination for tractable piecewise affine policies with O(sqrt(m)) approximation guarantee and constructs an Omega(sqrt(m)) separating family for affine policies.",
+      "key_results": [
+        "Eq. (ex:bad): Explicit fixed-recourse separating instance with Omega(sqrt(m)) ADR gap",
+        "Tractable piecewise affine dominance construction"
+      ],
+      "techniques": [
+        "affine_domination",
+        "piecewise_affine_policies",
+        "permutation_symmetry_reduction"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ce-t5-beg18-separating",
+          "relation": "supports",
+          "note": "Verbatim source of T5 separating family (m=900, V_ADR=1800/929 vs V_ARO<=1).",
+          "physical_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "refutes",
+          "note": "Rules out constant-factor or universal fixed-recourse ADR exactness.",
+          "physical_pages": [
+            14,
+            15
+          ]
+        }
+      ],
+      "pdf_sha256": "3856473c5ec6d328783136a609943534d2e032dce3eb7fef45aabd7585b8ddaf",
+      "page_count": 38
+    },
+    {
+      "id": "zds18",
+      "title": "Adjustable Robust Optimization via Fourier-Motzkin Elimination",
+      "authors": [
+        "Jianzhe Zhen",
+        "Dick den Hertog",
+        "Melvyn Sim"
+      ],
+      "year": 2018,
+      "venue": "Operations Research 66(4):1086-1100",
+      "doi": "10.1287/opre.2017.1714",
+      "arxiv_id": null,
+      "corpus_path": "corpus/21_Zhen_denHertog_Sim_2018.pdf",
+      "source": "corpus",
+      "abstract": "Eliminates adjustable variables via Fourier-Motzkin projection to tighten linear decision rules and establishes exactness of linear rules over simplex uncertainty.",
+      "key_results": [
+        "Fourier-Motzkin elimination reduces adjustable variables before applying ADR",
+        "Exactness of linear/affine decision rules on simplex uncertainty sets (p. 12)"
+      ],
+      "techniques": [
+        "fourier_motzkin_elimination",
+        "simplex_interpolation"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "thm-t7-simplex-exact",
+          "relation": "supports",
+          "note": "Direct ground truth anchor for T7 simplex exactness.",
+          "physical_pages": [
+            12
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "technique_for",
+          "note": "Projection-based elimination to diagnose exactness of ADR.",
+          "physical_pages": [
+            11,
+            12
+          ]
+        }
+      ],
+      "pdf_sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3",
+      "page_count": 30
+    },
+    {
+      "id": "gtw20",
+      "title": "A Primal-Dual Lifting Scheme for Two-Stage Robust Optimization",
+      "authors": [
+        "Angelos Georghiou",
+        "Angelos Tsoukalas",
+        "Wolfram Wiesemann"
+      ],
+      "year": 2020,
+      "venue": "Operations Research 68(2):572-590",
+      "doi": "10.1287/opre.2019.1873",
+      "arxiv_id": null,
+      "corpus_path": "corpus/23_Georghiou_Tsoukalas_Wiesemann_2020.pdf",
+      "source": "corpus",
+      "abstract": "Combines primal and dual uncertainty liftings to generate progressive inner (piecewise affine) and outer approximations of two-stage robust optimization problems.",
+      "key_results": [
+        "Primal-dual lifting produces matching lower and upper bounds for two-stage ARO"
+      ],
+      "techniques": [
+        "primal_dual_lifting",
+        "piecewise_linear_decision_rules"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-f4-vertex-lp-selector",
+          "relation": "technique_for",
+          "note": "Lifting-based piecewise affine selectors over polyhedral uncertainty.",
+          "physical_pages": [
+            2,
+            4
+          ]
+        },
+        {
+          "node_id": "gen-multistage-k-closures",
+          "relation": "technique_for",
+          "note": "Scalable primal-dual bounding template for multi-stage extensions.",
+          "physical_pages": [
+            2,
+            5
+          ]
+        }
+      ],
+      "pdf_sha256": "4c958b0111192ffd050c9d6a8bd4370a69a6ebbe8924bbe5fe8e60578b70086f",
+      "page_count": 19
+    },
+    {
+      "id": "cj20",
+      "title": "Generalized Farkas Lemma with Adjustable Variables and Two-Stage Robust Linear Programs",
+      "authors": [
+        "Thai Doan Chuong",
+        "Vaithilingam Jeyakumar"
+      ],
+      "year": 2020,
+      "venue": "Journal of Optimization Theory and Applications (2020)",
+      "doi": "10.1007/s10957-020-01753-3",
+      "arxiv_id": null,
+      "corpus_path": "corpus/15_Chuong_Jeyakumar_2020.pdf",
+      "source": "corpus",
+      "abstract": "Proves a generalized adjustable Farkas lemma under closed-cone regularity conditions yielding exact conic dual reformulations for two-stage robust linear programs.",
+      "key_results": [
+        "Adjustable Farkas lemma under closed-cone constraint qualification",
+        "Exact conic dual reformulation of two-stage robust LP (reformulation exactness)"
+      ],
+      "techniques": [
+        "generalized_farkas_lemma",
+        "conic_duality"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "gen-nonbox-conic-uncertainty",
+          "relation": "technique_for",
+          "note": "Closed-cone regularity conditions directly governing strong duality in conic F3.",
+          "physical_pages": [
+            3,
+            5
+          ]
+        }
+      ],
+      "pdf_sha256": "a8f46660154d09ffa89f5b0c6dc54ba3ece4835214871b8eafd31944ed5e82e5",
+      "page_count": 32
+    },
+    {
+      "id": "ls22",
+      "title": "On the Sparsity of Optimal Linear Decision Rules for a Class of Robust Optimization Problems with Box Uncertainty Sets",
+      "authors": [
+        "Haihao Lu",
+        "Bradley Sturt"
+      ],
+      "year": 2022,
+      "venue": "arXiv:2203.10661 (2022)",
+      "doi": null,
+      "arxiv_id": "2203.10661v4",
+      "corpus_path": "corpus/11_Lu_Sturt_2022.pdf",
+      "source": "corpus",
+      "abstract": "Establishes that in multistage network inventory control under box uncertainty there always exists an optimal linear decision rule with O(ET) nonzero parameters instead of O(ET^2).",
+      "key_results": [
+        "thm:main: O(ET) sparsity of optimal linear decision rules under box uncertainty"
+      ],
+      "techniques": [
+        "ldr_sparsity_analysis",
+        "multistage_box_duality"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "gen-multistage-k-closures",
+          "relation": "technique_for",
+          "note": "Structural sparsity of multistage box-uncertainty decision rules.",
+          "physical_pages": [
+            1,
+            8
+          ]
+        }
+      ],
+      "pdf_sha256": "932d5b83462c6b1a94f4a805195d89e188105d47c708e6afaa379d69aa9fa16d",
+      "page_count": 57
+    },
+    {
+      "id": "dvm24",
+      "title": "Approximate Information States for Worst-Case Control and Learning in Uncertain Systems",
+      "authors": [
+        "Aditya Dave",
+        "Nishanth Venkatesh",
+        "Andreas A. Malikopoulos"
+      ],
+      "year": 2024,
+      "venue": "IEEE Transactions on Automatic Control / arXiv:2301.05089",
+      "doi": null,
+      "arxiv_id": "2301.05089v2",
+      "corpus_path": "corpus/extra/dvm-2024.pdf",
+      "source": "corpus",
+      "abstract": "Develops exact and approximate information states for non-stochastic worst-case dynamic programming with partially observed states and bounded set-valued disturbances.",
+      "key_results": [
+        "Information-state dynamic programming sufficient conditions for worst-case control",
+        "Quantifies loss when compressing observation history to state/information summaries"
+      ],
+      "techniques": [
+        "information_state_dp",
+        "worst_case_dynamic_programming"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "gen-multistage-k-closures",
+          "relation": "technique_for",
+          "note": "Formalizes exact vs lossy history compression for k >= 2 closure schedules.",
+          "physical_pages": [
+            1,
+            4
+          ]
+        },
+        {
+          "node_id": "ce-d1-prefix-merge",
+          "relation": "supports",
+          "note": "Explains theoretically why merging prefixes loses predictive information state.",
+          "physical_pages": [
+            3,
+            4
+          ]
+        }
+      ],
+      "pdf_sha256": "1d3c1d3d4e0e0ba07ba138f3e9e53015b1fd9ec7da08d2f5d9c8f0faccd49842",
+      "page_count": 16
+    },
+    {
+      "id": "kur25",
+      "title": "Bounding the Optimal Number of Policies for Robust K-Adaptability",
+      "authors": [
+        "Jannis Kurtz"
+      ],
+      "year": 2025,
+      "venue": "arXiv:2409.12630v3 (2025)",
+      "doi": null,
+      "arxiv_id": "2409.12630v3",
+      "corpus_path": "corpus/intake/2409.12630.pdf",
+      "source": "corpus",
+      "abstract": "Proves tight upper bounds on the number K of contingency policies needed for exact K-adaptability in two-stage robust optimization and proves NP-completeness of minimal K.",
+      "key_results": [
+        "Thm. 2 & Thm. 11: Exact upper bounds on required policy count K",
+        "Thm. 29: Computing minimal exact K is NP-complete"
+      ],
+      "techniques": [
+        "k_adaptability_complexity",
+        "recourse_stable_regions"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "baseline_for",
+          "note": "Closest complexity benchmark (minimal policy count K vs minimal measurement schedule |R|).",
+          "physical_pages": [
+            5,
+            10,
+            21
+          ]
+        }
+      ],
+      "pdf_sha256": "839e69a9e241e5a15acf141398530b0dbf4bae5fcf6ac64737988731e73433c1",
+      "page_count": 25
+    },
+    {
+      "id": "gtw25",
+      "title": "On the Optimality of Affine Decision Rules in Distributionally Robust Optimization",
+      "authors": [
+        "Angelos Georghiou",
+        "Angelos Tsoukalas",
+        "Wolfram Wiesemann"
+      ],
+      "year": 2025,
+      "venue": "Working Paper (June 2025)",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/24_Georghiou_Tsoukalas_Wiesemann_2025.pdf",
+      "source": "corpus",
+      "abstract": "Proves four sufficient conditions (F, A, D, B — inverse-positive M-matrix recourse with dominating constraints) for ADR optimality on arbitrary supports and gives minimal counterexamples for each condition.",
+      "key_results": [
+        "Thm. 1 (p. 8): Conditions (F, A, D, B) imply exact ADR optimality on arbitrary supports",
+        "Prop. 1 (pp. 10, 45): Minimality counterexamples including 3/2 vs 5/4 for condition (B) and a non-necessity witness"
+      ],
+      "techniques": [
+        "inverse_positive_m_matrix_recourse",
+        "dominating_constraints"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "ce-t4-gtw25-cond-b",
+          "relation": "supports",
+          "note": "Direct source of T4 counterexample (3/2 vs 5/4 on [-1, 1]).",
+          "physical_pages": [
+            10,
+            45
+          ]
+        },
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "baseline_for",
+          "note": "Sharpest published sufficient condition (mechanism M2) and proof of non-necessity.",
+          "physical_pages": [
+            8,
+            10
+          ]
+        }
+      ],
+      "pdf_sha256": "a4897f257139c0cd30e4fef07c05067b68aeb45b30cbfe8e5438476ecbb7f8eb",
+      "page_count": 67
+    },
+    {
+      "id": "dh26",
+      "title": "When Is Two-Stage Sample Robust Optimization Asymptotically Optimal? A Simple Perspective",
+      "authors": [
+        "Ling Dai",
+        "Chin Pang Ho"
+      ],
+      "year": 2026,
+      "venue": "arXiv:2608.22999v1 (2026)",
+      "doi": null,
+      "arxiv_id": "2608.22999v1",
+      "corpus_path": "corpus/intake/2608.22999.pdf",
+      "source": "corpus",
+      "abstract": "Establishes combinatorial simplicity conditions on support polytopes for local linear feasibility in two-stage sample robust optimization and provides non-simple counterexamples.",
+      "key_results": [
+        "Thm. 2: Simple polytope supports yield local linear feasibility",
+        "Thm. 4: Non-simple supports admit feasibility counterexamples"
+      ],
+      "techniques": [
+        "polytope_simplicity_analysis",
+        "local_linear_feasibility"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-o1-adr-exactness-char",
+          "relation": "technique_for",
+          "note": "Combinatorial vertex-incidence perspective on linear feasibility vs value exactness.",
+          "physical_pages": [
+            1,
+            6
+          ]
+        }
+      ],
+      "pdf_sha256": "b483a459aa26c27d86d82f4855ffd45b1098f2acaaa28685f4026c70f101383f",
+      "page_count": 39
+    },
+    {
+      "id": "a2-dmitruk18",
+      "title": "Optimal guaranteed control with one closure in linear nonstationary systems",
+      "authors": [
+        "Natalia M. Dmitruk"
+      ],
+      "year": 2018,
+      "venue": "Computational Mathematics and Mathematical Physics 58(5):664-681",
+      "doi": "10.7868/S0044466918050010",
+      "arxiv_id": null,
+      "corpus_path": "corpus/our_papers/A2_Дмитрук_2018.pdf",
+      "source": "corpus",
+      "abstract": "Formulates linear terminal optimal guaranteed control with one pre-specified state-measurement closure moment and explicitly notes that optimal placement of the closure moment remains open (p. 681).",
+      "key_results": [
+        "Single-closure guaranteed control formulation and LP solution for fixed r",
+        "Explicit statement (p. 681) that choosing the optimal closure time r is an open problem"
+      ],
+      "techniques": [
+        "guaranteed_control_lp",
+        "parametric_reachability"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "baseline_for",
+          "note": "Primary school anchor explicitly posing optimal closure placement as open (p. 681).",
+          "physical_pages": [
+            18
+          ]
+        },
+        {
+          "node_id": "def-ogu-system",
+          "relation": "supports",
+          "note": "Single-closure guaranteed control model foundation.",
+          "physical_pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "pdf_sha256": "fca596196bdfe1f8740a767427fe1fd761a8c0712f6b3b314bf0832fe9d29dc9",
+      "page_count": 18
+    },
+    {
+      "id": "a4-dmitruk22",
+      "title": "Multiply-closed strategy in a linear terminal guaranteed-control problem",
+      "authors": [
+        "Natalia M. Dmitruk"
+      ],
+      "year": 2022,
+      "venue": "Trudy Instituta Matematiki i Mekhaniki UrO RAN 28(3):66-82",
+      "doi": "10.21538/0134-4889-2022-28-3-66-82",
+      "arxiv_id": null,
+      "corpus_path": "corpus/our_papers/A4_Дмитрук_2022.pdf",
+      "source": "corpus",
+      "abstract": "Develops multiply-closed guaranteed control strategies for fixed schedules via parametric LP duality, demonstrates non-monotonic dependence of value on single closure time r (r=67 vs r=104), and notes minimax vs maximin contrast.",
+      "key_results": [
+        "Parametric LP duality for fixed multi-closure schedules (p. 75)",
+        "Benchmark showing non-monotonic value dependence on single closure time r (p. 78)"
+      ],
+      "techniques": [
+        "parametric_lp_duality",
+        "closure_set_construction"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "thm-transfer-a4-v1",
+          "relation": "supports",
+          "note": "Source benchmark instances r=67 and r=104 verified in bridge-transfer-v1.",
+          "physical_pages": [
+            4,
+            12
+          ]
+        },
+        {
+          "node_id": "thm-f2-epigraph-equality",
+          "relation": "supports",
+          "note": "Primary physical-page specification for BridgeFormalV2.Data.",
+          "physical_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "node_id": "conj-o8-quantifier-gap",
+          "relation": "baseline_for",
+          "note": "Notes contrast between minimax and maximin guaranteed formulations.",
+          "physical_pages": [
+            4,
+            10
+          ]
+        }
+      ],
+      "pdf_sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420",
+      "page_count": 17
+    },
+    {
+      "id": "a5-dmitruk22-diss",
+      "title": "Optimal guaranteed control of linear systems with disturbances (Chapter 2, Dissertation)",
+      "authors": [
+        "Natalia M. Dmitruk"
+      ],
+      "year": 2022,
+      "venue": "Doctoral Dissertation, Chapter 2 (2022)",
+      "doi": null,
+      "arxiv_id": null,
+      "corpus_path": "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf",
+      "source": "corpus",
+      "abstract": "Systematizes the qualitative information ladder OC >= RO(k) >= DP (p. 39), proves polyhedral parametric closure-set representations (Thm. 2.1, Thm. 2.2, Lemma 2.5), and explicitly leaves optimal schedule placement outside scope (p. 75).",
+      "key_results": [
+        "Qualitative information ladder OC >= RO(k) >= DP (p. 39)",
+        "Thm. 2.1, Thm. 2.2, Lemma 2.5: Polyhedral parametric representation and piecewise-affine supports",
+        "Explicitly leaves optimal schedule placement outside scope (p. 75)"
+      ],
+      "techniques": [
+        "parametric_lp_basis_stability",
+        "polyhedral_closure_sets"
+      ],
+      "atlas_links": [
+        {
+          "node_id": "lem-p2-info-monotone",
+          "relation": "supports",
+          "note": "Qualitative information ladder motivating monotonicity over enlarged schedules (p. 39).",
+          "physical_pages": [
+            3
+          ]
+        },
+        {
+          "node_id": "gen-multistage-k-closures",
+          "relation": "baseline_for",
+          "note": "Multi-closure polyhedral framework (Thm. 2.1-2.2) guiding G1 generalization.",
+          "physical_pages": [
+            17,
+            19
+          ]
+        },
+        {
+          "node_id": "conj-o4-closure-scheduling",
+          "relation": "baseline_for",
+          "note": "Declares optimal closure placement open / outside scope (p. 75).",
+          "physical_pages": [
+            39
+          ]
+        }
+      ],
+      "pdf_sha256": "94d6b70331a4682b05b0e828e3fd346e4045f8b659075fd950a4c81471c71a66",
+      "page_count": 41
+    }
+  ]
+}

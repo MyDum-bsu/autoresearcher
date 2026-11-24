@@ -1,0 +1,93 @@
+\begin{thebibliography}{17}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{An et~al.(2014)An, Zeng, Zhang, and Zhao}]{An_et_al:2014}
+An, Y., Zeng, B., Zhang, Y., Zhao, L., 2014. Reliable $p$-median facility
+  location problem: Two-stage robust models and algorithms. Transportation
+  Research Part B: Methodological 64, 54--72.
+
+\bibitem[{Ayoub and Poss(2016)}]{Ayoub_Poss:2016}
+Ayoub, J., Poss, M., 2016. Decomposition for adjustable robust linear
+  optimization subject to uncertainty polytope. Computational Management
+  Science 13~(2), 219--239.
+
+\bibitem[{Bertsimas and Shtern(2018)}]{Bertsimas_Shtern:2018}
+Bertsimas, D., Shtern, S., 2018. A scalable algorithm for two-stage adaptive
+  linear optimization. arXiv preprint arXiv:1807.02812.
+
+\bibitem[{Bertsimas and Sim(2004)}]{Bertsimas_Sim:2004}
+Bertsimas, D., Sim, M., 2004. The price of robustness. Operations Research
+  52~(1), 35--53.
+
+\bibitem[{Denton et~al.(2010)Denton, Miller, Balasubramanian, and
+  Huschka}]{Denton_et_al:2010}
+Denton, B.~T., Miller, A.~J., Balasubramanian, H.~J., Huschka, T.~R., 2010.
+  Optimal allocation of surgery blocks to operating rooms under uncertainty.
+  Operations Research 58~(4-part-1), 802--816.
+
+\bibitem[{Du et~al.(2020)Du, Zhou, and Leus}]{Du_et_al:2020}
+Du, B., Zhou, H., Leus, R., 2020. A two-stage robust model for a reliable
+  p-center facility location problem. Applied Mathematical Modelling 77,
+  99--114.
+
+\bibitem[{Gabrel et~al.(2014)Gabrel, Murat, and Thiele}]{Gabrel_et_al:2014}
+Gabrel, V., Murat, C., Thiele, A., 2014. Recent advances in robust
+  optimization: An overview. European Journal of Operational Research 235~(3),
+  471--483.
+
+\bibitem[{Jiang et~al.(2012)Jiang, Zhang, Li, and Guan}]{Jiang_et_al:2012}
+Jiang, R., Zhang, M., Li, G., Guan, Y., 2012. Benders' decomposition for the
+  two-stage security constrained robust unit commitment problem. In: IIE Annual
+  Conference Proceedings. Institute of Industrial and Systems Engineers (IISE),
+  p.~1.
+
+\bibitem[{Mannino et~al.(2010)Mannino, Nilssen, and
+  Nordlander}]{Mannino_et_al:2010}
+Mannino, C., Nilssen, E., Nordlander, T., 2010. {SINTEF ICT: MSS-Adjusts
+  Surgery data}.
+  \url{https://www.sintef.no/Projectweb/Health-care-optimization/Testbed/},
+  accessed: 2022-04-18.
+
+\bibitem[{Neyshabouri and Berg(2017)}]{Neyshabouri_Berg:2017}
+Neyshabouri, S., Berg, B.~P., 2017. Two-stage robust optimization approach to
+  elective surgery and downstream capacity planning. European Journal of
+  Operational Research 260~(1), 21--40.
+
+\bibitem[{Ruiz and Conejo(2015)}]{Ruiz_Conejo:2015}
+Ruiz, C., Conejo, A.~J., 2015. Robust transmission expansion planning. European
+  Journal of Operational Research 242~(2), 390--401.
+
+\bibitem[{Thiele et~al.(2009)Thiele, Terry, and Epelman}]{Thiele_et_al:2009}
+Thiele, A., Terry, T., Epelman, M., 2009. Robust linear optimization with
+  recourse. Tech. rep., Available in Optimization Online.
+
+\bibitem[{T{\"o}nissen et~al.(2021)T{\"o}nissen, Arts, and
+  Shen}]{Tonissen_et_al:2021}
+T{\"o}nissen, D.~D., Arts, J.~J., Shen, Z.-J.~M., 2021. A column-and-constraint
+  generation algorithm for two-stage stochastic programming problems. TOP
+  29~(3), 781--798.
+
+\bibitem[{Wang et~al.(2019)Wang, Zhang, and Tang}]{Wang_et_al:2019}
+Wang, Y., Zhang, Y., Tang, J., 2019. A distributionally robust optimization
+  approach for surgery block allocation. European Journal of Operational
+  Research 273~(2), 740--753.
+
+\bibitem[{Zeng and Zhao(2013)}]{Zeng_Zhao:2013}
+Zeng, B., Zhao, L., 2013. Solving two-stage robust optimization problems using
+  a column-and-constraint generation method. Operations Research Letters
+  41~(5), 457--461.
+
+\bibitem[{Zhang and Liu(2022)}]{Zhang_Liu:2022}
+Zhang, X., Liu, X., 2022. A two-stage robust model for express service network
+  design with surging demand. European Journal of Operational Research 299~(1),
+  154--167.
+
+\bibitem[{Zugno and Conejo(2015)}]{Zugno_Conejo:2015}
+Zugno, M., Conejo, A.~J., 2015. A robust optimization approach to energy and
+  reserve dispatch in electricity markets. European Journal of Operational
+  Research 247~(2), 659--671.
+
+\end{thebibliography}

@@ -1,0 +1,1494 @@
+{
+  "schema_version": 1,
+  "project": "aro-discovery-v2",
+  "title_en": "Fundamental Mathematical Atlas: Guaranteed Control (OGU) <-> Two-Stage ARO, ADR Exactness, and Closure Scheduling",
+  "title_ru": "Фундаментальный математический атлас: ОГУ <-> двухэтапная ARO, точность ADR и выбор расписания замыканий",
+  "nodes": [
+    {
+      "id": "def-ogu-system",
+      "kind": "definition",
+      "status": "lean_proved",
+      "domain": "foundations",
+      "title_en": "Discrete-Time Linear Guaranteed Control Model (BridgeFormalV2.Data)",
+      "title_ru": "Линейная дискретная система гарантированного управления (BridgeFormalV2.Data)",
+      "statement_en": "Linear system x_{t+1} = A x_t + B u_t + E w_t on horizon T = r + q with box controls u_t in [umin, umax] and box disturbances w_t in [-rho, rho]^p; single exact state measurement at closure time r.",
+      "statement_ru": "Линейная система x_{t+1} = A x_t + B u_t + E w_t на горизонте T = r + q с ограничениями u_t in [umin, umax], w_t in [-rho, rho]^p и единственным точным измерением состояния в момент замыкания r.",
+      "formalized_scope": {
+        "proved_in_lean": "Nonemptiness of ControlBlock and NoiseBlock types for every BridgeFormalV2.Data instance (NonemptyBlocksGoal).",
+        "not_proved_in_lean": "Physical or engineering correspondence to arbitrary continuous-time systems or intermediate state constraints."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.nonempty_blocks",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem nonempty_blocks : NonemptyBlocksGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A3_Костюкевич_Дмитрук_2021.pdf",
+        "verification/lean/BridgeFormalV2/Model.lean"
+      ]
+    },
+    {
+      "id": "ax-fixed-recourse-box",
+      "kind": "axiom_assumption",
+      "status": "oracle_verified",
+      "domain": "foundations",
+      "title_en": "Fixed Recourse, Box Disturbance, and Borel Regularity Scope",
+      "title_ru": "Предпосылки модели: фиксированный рекурс, боксовое возмущение и измеримость по Борелю",
+      "statement_en": "Recourse matrices B and disturbance matrices E are independent of w; disturbances lie in compact boxes [-rho, rho]^p; second-stage policies are Borel-measurable on reachable state/deviation subtypes.",
+      "statement_ru": "Матрицы управления B и возмущения E не зависят от w (фиксированный рекурс); возмущения лежат в компактном боксе [-rho, rho]^p; политики второго этапа измеримы по Борелю.",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "corpus/02_BenTal_Goryashko_etal_2004.pdf",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "verification/lean/BridgeFormalV2/Model.lean"
+      ]
+    },
+    {
+      "id": "def-exogenous-deviation",
+      "kind": "definition",
+      "status": "lean_proved",
+      "domain": "foundations",
+      "title_en": "Exogenous Prefix Deviation Set Xi = L(W^r)",
+      "title_ru": "Экзогенное множество префиксных отклонений Xi = L(W^r)",
+      "statement_en": "Linear disturbance response deviation(w^-) = run(0, 0, w^-, r) defines an exogenous zonotope Z = range(deviation) independent of first-stage control a, with prefixState(a, w^-) = nominal(a) + deviation(w^-).",
+      "statement_ru": "Линейный отклик на прошлое возмущение deviation(w^-) задаёт экзогенный зонотоп Xi = L(W^r), не зависящий от первого блока управления a, причём x_r = s_0(a) + xi.",
+      "formalized_scope": {
+        "proved_in_lean": "ExogenousImageGoal: D.S a = (fun xi => D.nominal a + xi) '' D.Z for every D and first block a.",
+        "not_proved_in_lean": "Explicit finite H-representation or vertex enumeration complexity of the zonotope D.Z."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.exogenous_image",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem exogenous_image : ExogenousImageGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV2/Model.lean",
+        "corpus/02_BenTal_Goryashko_etal_2004.pdf"
+      ]
+    },
+    {
+      "id": "def-borel-policies",
+      "kind": "definition",
+      "status": "lean_proved",
+      "domain": "foundations",
+      "title_en": "Borel State Policies vs Exogenous ARO Deviation Policies",
+      "title_ru": "Borel-политики по состоянию ОГУ и экзогенные правила ARO",
+      "statement_en": "StatePolicy maps reachable states S(a) to suffix control blocks U^q with Borel measurability; DeviationPolicy maps exogenous deviations Z to U^q with Borel measurability; Related couples them by translation s = nominal(a) + xi.",
+      "statement_ru": "StatePolicy отображает достижимые состояния S(a) в суффикс управлений U^q по Борелю; DeviationPolicy отображает отклонения Xi в U^q; предикат Related связывает их обратимым сдвигом s = s_0(a) + xi.",
+      "formalized_scope": {
+        "proved_in_lean": "ObservationFibreGoal: equality of observed states prefixState a w1 = prefixState a w2 iff equality of exogenous deviations deviation w1 = deviation w2.",
+        "not_proved_in_lean": "Equivalence between Borel-measurable policies and arbitrary non-measurable strategies."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.observation_fibre",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem observation_fibre : ObservationFibreGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV2/Model.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf"
+      ]
+    },
+    {
+      "id": "def-future-support",
+      "kind": "definition",
+      "status": "lean_proved",
+      "domain": "foundations",
+      "title_en": "Directional Future-Disturbance Support Function and Tightened ARO Rows",
+      "title_ru": "Направленная опорная функция будущего возмущения и суженные строки ARO",
+      "statement_en": "For any linear row functional r, futureRowSupport(r) = rho * sum_{t,i} |r(A^{q-1-t} E e_i)| yields exact box support; TightenedAROBound replaces universal quantification over future w^+ by deterministic row tightening.",
+      "statement_ru": "Для любой линейной строки r величина futureRowSupport(r) = rho * sum_{t,i} |r(A^{q-1-t} E e_i)| задаёт точную опорную функцию будущего бокса; TightenedAROBound заменяет квантор по w^+ детерминированным сужением строк.",
+      "formalized_scope": {
+        "proved_in_lean": "AttainedSupportGoal: for box NoiseBlock D.q and any linear functional row, row(futureNoiseResponse wp) <= futureRowSupport row and an attaining box corner wp exists.",
+        "not_proved_in_lean": "Extension of futureRowSupport to non-box compact convex or conic disturbance sets W_t (tracked in gen-nonbox-conic-uncertainty)."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV3.Proofs.attained_support",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem attained_support : AttainedSupportGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV3/Goals.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-f1-expansion",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "bridge_core",
+      "title_en": "F1: Exact Chronological Linear Expansion and Prefix/Suffix Decomposition",
+      "title_ru": "F1: Точное хронологическое раскрытие линейной динамики и разложение на префикс и суффикс",
+      "statement_en": "For arbitrary matrices A, B, E (without invertibility of A or B=E), chronological recurrence run equals the explicit finite sum expansion, splits at r into nominal(a) + deviation(w^-), and matches the chronological two-block trajectory.",
+      "statement_ru": "Для произвольных матриц A, B, E (без обратимости A и без равенства B=E) рекуррентная траектория совпадает с явной линейной суммой, раскладывается в момент r на s_0(a) + L w^- и сохраняет хронологию двух блоков.",
+      "formalized_scope": {
+        "proved_in_lean": "ExpansionGoal, PrefixSplitGoal, SourceChronologyGoal, and SuffixExpansionGoal for arbitrary linear maps A, B, E on finite horizon T = r + q.",
+        "not_proved_in_lean": "Time-varying dynamics (A_t, B_t, E_t) or multi-closure k >= 2 block decompositions (tracked in gen-multistage-k-closures)."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.expansion",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem expansion : ExpansionGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.prefix_split",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem prefix_split : PrefixSplitGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.source_chronology",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem source_chronology : SourceChronologyGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.suffix_expansion",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem suffix_expansion : SuffixExpansionGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/01-intuition-and-map.md",
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV2/Goals.lean",
+        "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+        "verification/lean/AroProofs/BridgeF1F2.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-f2-policy-bijection",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "bridge_core",
+      "title_en": "F2a: Forward and Reverse Borel Policy Translation (OGU <-> Two-Stage ARO)",
+      "title_ru": "F2a: Прямой и обратный перевод Borel-политик ОГУ <-> двухэтапная ARO",
+      "statement_en": "Every Borel StatePolicy pi induces a related Borel DeviationPolicy y(xi) = pi(nominal(a) + xi), and every Borel DeviationPolicy y induces a related Borel StatePolicy pi(s) = y(s - nominal(a)), preserving all trajectories and guaranteed bounds.",
+      "statement_ru": "Каждой Borel-политике ОГУ pi соответствует связанное правило ARO y(xi) = pi(s_0(a) + xi), и обратно, с сохранением всех траекторий и гарантированных оценок.",
+      "formalized_scope": {
+        "proved_in_lean": "ForwardPolicyGoal and ReversePolicyGoal: explicit Borel-measurable translation maps preserving trajectories, suffix actions, and guaranteed bounds.",
+        "not_proved_in_lean": "Existence of an optimal attaining policy or reduction to finite-dimensional affine/piecewise-affine policy subclasses."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.forward_policy",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem forward_policy : ForwardPolicyGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.reverse_policy",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem reverse_policy : ReversePolicyGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV2/Goals.lean",
+        "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+        "verification/lean/AroProofs/BridgeF1F2.lean"
+      ]
+    },
+    {
+      "id": "thm-f2-epigraph-equality",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "bridge_core",
+      "title_en": "F2b: Exact Epigraph Level-Set Equality (sourceLevels = aroLevels)",
+      "title_ru": "F2b: Точное равенство множеств epigraph-уровней (sourceLevels = aroLevels)",
+      "statement_en": "For every BridgeFormalV2.Data instance D, the set of achievable guaranteed performance levels in the OGU problem equals the set of achievable epigraph levels in the exogenous two-stage ARO formulation: D.sourceLevels = D.aroLevels.",
+      "statement_ru": "Для любой системы BridgeFormalV2.Data множество достижимых гарантированных уровней в задаче ОГУ совпадает с множеством уровней экзогенной двухэтапной ARO: sourceLevels = aroLevels.",
+      "formalized_scope": {
+        "proved_in_lean": "EpigraphEqualityGoal: D.sourceLevels = D.aroLevels over Borel-measurable policies for every single-closure BridgeFormalV2.Data instance D.",
+        "not_proved_in_lean": "Attainment of the infimum of sourceLevels/aroLevels or finite vertex LP reformulation (tracked in conj-f4-vertex-lp-selector)."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.epigraph_equality",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem epigraph_equality : EpigraphEqualityGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/01-bridge-packet-01/01-intuition-and-map.md",
+        "research/guides/01-bridge-packet-01/02-propositions-and-chains.md",
+        "research/guides/02-math-atlas/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV2/Goals.lean",
+        "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+        "verification/lean/AroProofs/BridgeF1F2.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-f3-future-tightening",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "bridge_core",
+      "title_en": "F3: Exact Elimination of Future Disturbances w^+ via Box Support Functions",
+      "title_ru": "F3: Точное исключение будущих возмущений w^+ через опорные функции бокса",
+      "statement_en": "The ARO terminal state splits additively into nominal terminal + futureNoiseResponse(w^+), the box support futureRowSupport is attained by an explicit corner witness, and AROBound a y eta <-> TightenedAROBound a y eta.",
+      "statement_ru": "Терминальное состояние ARO аддитивно раскладывается на номинал и будущий отклик, опорная функция futureRowSupport достигается в вершине бокса, и AROBound эквивалентно TightenedAROBound.",
+      "formalized_scope": {
+        "proved_in_lean": "FutureExpansionGoal, RobustRowGoal, and ExactTighteningGoal: exact equivalence AROBound a y eta <-> TightenedAROBound a y eta for box future disturbances.",
+        "not_proved_in_lean": "Finite vertex-LP reduction over vert(Z) and measurable Borel selector construction (tracked in conj-f4-vertex-lp-selector)."
+      },
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV3.Proofs.future_expansion",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem future_expansion : FutureExpansionGoal :="
+        },
+        {
+          "decl": "BridgeFormalV3.Proofs.robust_row",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem robust_row : RobustRowGoal :="
+        },
+        {
+          "decl": "BridgeFormalV3.Proofs.exact_tightening",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem exact_tightening : ExactTighteningGoal :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV3/Goals.lean",
+        "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+        "verification/lean/AroProofs/BridgeF3Draft.lean"
+      ]
+    },
+    {
+      "id": "lem-p1-l1-rotation",
+      "kind": "lemma",
+      "status": "lean_proved",
+      "domain": "aro_exactness",
+      "title_en": "P1: L1-to-Linf Coordinate Rotation Identities in 2D Bridge Class",
+      "title_ru": "P1: Тождества поворота L1-нормы в 2D мост-классе",
+      "statement_en": "For all rationals a, b: |a| + |b| = max(|a+b|, |a-b|), yielding exact two-path closed-form bounds l2a_diff_two_path and l2a_sum_two_path for rotated sum/difference coordinates.",
+      "statement_ru": "Для любых рациональных a, b выполняется |a| + |b| = max(|a+b|, |a-b|), что даёт точные двупутевые формулы для повёрнутых координат суммы и разности.",
+      "formalized_scope": {
+        "proved_in_lean": "Exact rational identities l1_eq_max_sum_diff, l2a_diff_two_path, and l2a_sum_two_path over Q.",
+        "not_proved_in_lean": "Generalization of the L1-to-Linf rotation beyond 2D scalar/symmetric bridge coordinates."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.l1_eq_max_sum_diff",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l1_eq_max_sum_diff (a b : ℚ) : |a| + |b| = max |a + b| |a - b| :="
+        },
+        {
+          "decl": "AroProofs.Aroform.l2a_diff_two_path",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l2a_diff_two_path (d0 v T : ℚ) (hT : 0 ≤ T) : max |d0 + v * T| |d0 - v * T| = |d0| + |v| * T :="
+        },
+        {
+          "decl": "AroProofs.Aroform.l2a_sum_two_path",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l2a_sum_two_path (a e T : ℚ) (hT : 0 ≤ T) : max |a + 2 * e * T| |a - 2 * e * T| = |a| + 2 * |e| * T :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/Aroform.lean",
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md"
+      ]
+    },
+    {
+      "id": "lem-p2-info-monotone",
+      "kind": "lemma",
+      "status": "lean_proved",
+      "domain": "closure_scheduling",
+      "title_en": "P2: Order-Reversing Monotonicity of sInf on Set ENNReal",
+      "title_ru": "P2: Антимонотонность инфимума sInf на подмножествах Set ENNReal",
+      "statement_en": "Abstract lattice lemma proved in Lean 4: for any S, T : Set ENNReal with S <= T, sInf T <= sInf S. Applying this to closure schedules requires a separate proof (not yet formalized in Lean 4) that enlarging a schedule R <= R' induces inclusion of achievable level sets.",
+      "statement_ru": "Абстрактная порядковая лемма в Lean 4: для любых S, T : Set ENNReal из S <= T следует sInf T <= sInf S. Применение к расписаниям замыканий требует отдельного (пока не формализованного в Lean 4) доказательства включения множеств достижимых уровней при расширении расписания R <= R'.",
+      "formalized_scope": {
+        "proved_in_lean": "Abstract order-theoretic lemma ∀ {S T : Set ENNReal}, S ⊆ T → sInf T ≤ sInf S (AroProofs.Aroform.info_value_monotone).",
+        "not_proved_in_lean": "Concrete proof that enlarging a closure schedule R ⊆ R' induces inclusion of achievable OGU/ARO level sets (informal bridge to O4)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.info_value_monotone",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem info_value_monotone {S T : Set ENNReal} (hST : S ⊆ T) : sInf T ≤ sInf S :="
+        }
+      ],
+      "oracles": [],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/Aroform.lean",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-p3-1d-adr-exactness",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "aro_exactness",
+      "title_en": "P3: Exactness of Affine Chord Decision Rule in 1D Recourse",
+      "title_ru": "P3: Точность аффинного хордового правила в одномерной задаче рекурса",
+      "statement_en": "For any a, b in Q and zeta in [0, 1], the affine chord rule y(zeta) = max(a, 0) + (max(b, 0) - max(a, 0)) * zeta is feasible for max((1-zeta)a + zeta*b, 0) and achieves the exact adaptive optimum max(max(a, 0), max(b, 0)).",
+      "statement_ru": "Для любых a, b in Q и zeta in [0, 1] аффинное хордовое правило допустимо и достигает точного адаптивного оптимума max(max(a, 0), max(b, 0)).",
+      "formalized_scope": {
+        "proved_in_lean": "1D scalar rational recourse exactness on [0, 1] (AroProofs.Aroform.one_d_exactness).",
+        "not_proved_in_lean": "Multi-dimensional (d >= 2) bridge-class ADR exactness (currently oracle-verified in T1, open in O1)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.one_d_exactness",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem one_d_exactness (a b : ℚ) : (∃ Y0 Y1 : ℚ, ∀ ζ : ℚ, 0 ≤ ζ → ζ ≤ 1 → max ((1 - ζ) * a + ζ * b) 0 ≤ Y0 + Y1 * ζ ∧ 0 ≤ Y0 + Y1 * ζ ∧ Y0 + Y1 * ζ ≤ max (max a 0) (max b 0)) ∧ ∀ Y0 Y1 : ℚ, (∀ ζ : ℚ, 0 ≤ ζ → ζ ≤ 1 → max ((1 - ζ) * a + ζ * b) 0 ≤ Y0 + Y1 * ζ ∧ 0 ≤ Y0 + Y1 * ζ) → max (max a 0) (max b 0) ≤ max Y0 (Y0 + Y1) :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/Aroform.lean",
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md"
+      ]
+    },
+    {
+      "id": "thm-transfer-a4-v1",
+      "kind": "theorem",
+      "status": "oracle_verified",
+      "domain": "bridge_core",
+      "title_en": "Exact Rational OGU -> ARO Row Transfer on Dmitruk A4 (r=67, r=104)",
+      "title_ru": "Точный рациональный перенос ОГУ -> ARO на экземплярах A4 Дмитрук (r=67, r=104)",
+      "statement_en": "Solver-free exact Fraction verification across 4 frozen A4 instances (printed & reconstructed at r=67, r=104; 32 controls: 16 accepted, 16 rejected) confirming standard ARO robust rows, signed cost epigraph, and non-anticipative suffix replay.",
+      "statement_ru": "Бессолверная проверка в точных дробях Fraction на 4 замороженных экземплярах A4 (r=67, r=104; 32 контроля: 16 приняты, 16 отвергнуты) подтверждает эквивалентность робастных строк ARO и хронологии суффикса.",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py",
+        "verification/oracles/wave4-a4-closures/check.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "research/claims/bridge-transfer-v1/correspondence.md"
+      ]
+    },
+    {
+      "id": "thm-m0-finite-bellman",
+      "kind": "theorem",
+      "status": "oracle_verified",
+      "domain": "closure_scheduling",
+      "title_en": "M0 Finite Exact Bellman Oracle (State vs Prefix Policies & Open-Loop A4)",
+      "title_ru": "Точный конечный оракул Беллмана M0 (политики по состоянию и по префиксу)",
+      "statement_en": "Independent exact-rational Bellman dynamic programming over reachable state cells and disturbance prefixes (36 unit tests across pilot/baseline and pilot/checkers) separating state-only and prefix-history values.",
+      "statement_ru": "Независимое точное динамическое программирование Беллмана по ячейкам состояний и префиксам возмущений (36 тестов) разделяет значения политик по состоянию и по истории.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "verification/oracles/m0/pilot/baseline/finite_reference.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/03-traps-and-counterexamples.md",
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ]
+    },
+    {
+      "id": "lem-wave5-support-bound",
+      "kind": "lemma",
+      "status": "oracle_verified",
+      "domain": "closure_scheduling",
+      "title_en": "Wave-5 Dual Upper Bound on Value of Information (J <= V_0 <= V_r <= D_0 + Delta)",
+      "title_ru": "Двойственная верхняя оценка ценности информации Wave-5 (J <= V_0 <= V_r <= D_0 + Delta)",
+      "statement_en": "Partial verification (written policy-to-scalar reduction + SymPy slack identity + finite exact rational checks on 4 frozen A4 instances at r=67, 104 with 16 rejected invalid controls): using nonnegative dual multipliers, independent continuous-box extrema, constant open-loop inclusion V_0 <= V_r, and support triangle defect Delta >= 0, yields J <= V_0 <= V_r <= D_0 + Delta (and exact Delta = 0 at r = 104); general policy-to-scalar reduction is not yet Lean-formalized.",
+      "statement_ru": "Частичная верификация (письменная редукция политика -> скаляр + символьное тождество SymPy + точные рациональные проверки на 4 замороженных экземплярах A4 при r=67, 104 и 16 отвергнутых контролях): с опорой на неотрицательные двойственные множители, независимые экстремумы бокса, вложение открытого контура V_0 <= V_r и дефект неравенства треугольника Delta >= 0 даёт оценку J <= V_0 <= V_r <= D_0 + Delta (при r=104 точно Delta = 0); общая редукция в Lean 4 пока не формализована.",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/wave5-support-bound/verification/check.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "research/claims/wave5-support-bound/verification/proof.md",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-t1-bridge-exact",
+      "kind": "theorem",
+      "status": "oracle_verified",
+      "domain": "aro_exactness",
+      "title_en": "T1: Bridge-Class 1D & 2D ADR Exactness on Cube Vertices",
+      "title_ru": "T1: Точность аффинного правила в 1D и 2D мост-классе на вершинах куба",
+      "statement_en": "Exact rational LP solves both 1D (V_ARO = V_ADR = 3) and rotated 2D cube-vertex bridge instances (V_ARO = V_ADR = 9/2, gap = 0), showing ADR exactness outside standard simplex/M-matrix sufficient conditions.",
+      "statement_ru": "Точное рациональное ЛП подтверждает нулевой аффинный зазор в 1D (3 = 3) и 2D мост-классе на вершинах куба (9/2 = 9/2) вне стандартных достаточных условий M1–M2.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md"
+      ]
+    },
+    {
+      "id": "thm-t6-box-static-exact",
+      "kind": "theorem",
+      "status": "oracle_verified",
+      "domain": "aro_exactness",
+      "title_en": "T6: Constraint-Wise Box Uncertainty Static = ADR = ARO Exactness",
+      "title_ru": "T6: Покомпонентная боксовая неопределённость (статика = ADR = ARO)",
+      "statement_en": "Under constraint-wise box uncertainty, exact rational LP verifies V_static = V_ADR = V_ARO = 2 (gap = 0), grounding mechanism M1 (constraint-wise decomposition).",
+      "statement_ru": "При покомпонентной боксовой неопределённости точное ЛП подтверждает V_static = V_ADR = V_ARO = 2 (механизм M1).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "corpus/05_Bertsimas_deRuiter_2016.pdf",
+        "corpus/02_BenTal_Goryashko_etal_2004.pdf"
+      ]
+    },
+    {
+      "id": "thm-t7-simplex-exact",
+      "kind": "theorem",
+      "status": "oracle_verified",
+      "domain": "aro_exactness",
+      "title_en": "T7: Simplex Uncertainty Delta_2 Linear/Affine Exactness",
+      "title_ru": "T7: Точность линейных/аффинных правил на симплексе Delta_2",
+      "statement_en": "Over simplex uncertainty Delta_2, exact rational LP verifies V_ARO = V_ADR = 7 (gap = 0), grounding exact affine interpolation over affinely independent vertices.",
+      "statement_ru": "На симплексном множестве неопределённости Delta_2 точное ЛП подтверждает V_ARO = V_ADR = 7 (нулевой зазор).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/02-propositions-and-chains.md"
+      ],
+      "sources": [
+        "corpus/21_Zhen_denHertog_Sim_2018.pdf"
+      ]
+    },
+    {
+      "id": "ce-d1-prefix-merge",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "D1 Counterexample: Prefix Merging Strictly Degrades State-Only Optimal Value",
+      "title_ru": "Контрпример D1: слияние префиксов строго ухудшает значение политик по состоянию",
+      "statement_en": "Under correlated finite path sets, when distinct disturbance prefixes merge into the same measured state x_r, a state-only policy must choose a single suffix block; D1 certifies V_state = 2 > 1/4 = V_prefix strictly.",
+      "statement_ru": "На коррелированных конечных путях при слиянии разных префиксов в одно состояние x_r политика по состоянию обязана выбрать общий суффикс; D1 сертифицирует строгий разрыв V_state = 2 > 1/4 = V_prefix.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/D1-baseline/checks/check_candidate_v2.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/03-traps-and-counterexamples.md",
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "research/counterexamples/D1-baseline/derivation.md"
+      ]
+    },
+    {
+      "id": "ce-d2-pairwise-vs-joint",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "D2 Counterexample: Pairwise Compatibility Does Not Imply Joint Compatibility",
+      "title_ru": "Контрпример D2: попарная совместимость префиксов не влечёт совместную совместимость",
+      "statement_en": "Structured rank-2 residual triangle witness showing pairwise-compatible state-policy continuation sets K_p can have empty joint intersection; refutes naive pairwise reduction heuristics.",
+      "statement_ru": "Структурный треугольный контрпример с остаточной матрицей ранга 2 показывает, что попарная совместимость множеств продолжений K_p не гарантирует их общее пересечение.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/D2-structured/checks/certificate_check_v2.py",
+        "research/counterexamples/D2-structured/checks/trajectory_check_v2.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/03-traps-and-counterexamples.md",
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "research/counterexamples/D2-structured/derivation.md"
+      ]
+    },
+    {
+      "id": "ce-e-rank1-singleton",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "E Counterexample: Empty Continuation Set in a Singleton State Cell (Rank(L) <= 1)",
+      "title_ru": "Контрпример E: пустое множество продолжений в одноэлементной ячейке (rank(L) <= 1)",
+      "statement_en": "Refutes the literal distinct-pair compatibility claim at rank_Q(L) <= 1 (where L = D G is the common residual hard/cost constraint matrix, excluding box rows): in a singleton state cell |I| = 1, the distinct-pair premise holds vacuously even when the sole continuation set K_p = {b in V : L b <= d_p} is empty (witnessed at rank(L) = 0 and rank(L) = 1); repaired child E-R1-child-v1 adds explicit individual nonemptiness of every K_p.",
+      "statement_ru": "Опровергает буквальную формулировку «попарная совместимость разных префиксов достаточна при rank_Q(L) <= 1» (где L = D G — общая матрица остаточных ограничений, без строк бокса): в одноэлементной ячейке |I| = 1 условие на различные пары выполняется вакуумно, даже если само множество продолжений K_p пусто (свидетели при rank(L) = 0 и rank(L) = 1); исправленный потомок E-R1-child-v1 явно добавляет индивидуальную непустоту каждого K_p.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/E-rank1/checks/rank_one_check.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/03-traps-and-counterexamples.md",
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "research/counterexamples/E-rank1/derivation.md"
+      ]
+    },
+    {
+      "id": "ce-as1-rank2-separable",
+      "kind": "counterexample",
+      "status": "oracle_verified",
+      "domain": "counterexamples",
+      "title_en": "Astra Probe A-S1: Pairwise Compatibility Sufficiency in Coordinate-Separable Rank-2 Subclass",
+      "title_ru": "Проба Astra A-S1: достаточность попарной совместимости в покоординатно-разделимом подклассе rank(L) = 2",
+      "statement_en": "For common residual constraint matrix L = D G of rank_Q(L) = 2 where every nonzero row depends on a single continuation coordinate and all prefixes share a common coordinate box V, individual nonemptiness of every K_p plus distinct-pair compatibility suffices for joint continuation feasibility (written sketch + 38 exact rational checks on 4-path dynamics and D2 falsifier); disproves necessity of rank(L) <= 1 for pairwise-to-joint compatibility.",
+      "statement_ru": "Для общей матрицы остаточных ограничений L = D G ранга 2, где каждая ненулевая строка зависит от одной координаты продолжения и все префиксы делят общий координатный бокс V, индивидуальная непустота каждого K_p и попарная совместимость достаточны для совместной допустимости продолжения (38 точных проверок); опровергает необходимость условия rank(L) <= 1.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/astra-probe-AS1/checks/check.py"
+      ],
+      "guides": [
+        "research/guides/01-bridge-packet-01/03-traps-and-counterexamples.md",
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "research/counterexamples/astra-probe-AS1/derivation.md"
+      ]
+    },
+    {
+      "id": "ce-t2-soc-temporal",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "T2 Counterexample: Xu-Burer SOC Temporal Network on Euclidean Ball (Full-Matrix ADR Gap Omega(s))",
+      "title_ru": "Контрпример T2: SOC временная сеть Сюй-Бюрера на евклидовом шаре (зазор Omega(s) для полной матрицы ADR)",
+      "statement_en": "On the non-polyhedral unit Euclidean ball B_2^s (Xu-Burer 2017 Eq. (equ:temporal_simple)), even full unrestricted matrix ADR y(z) = y_0 + Y z has exact value V_ADR = s while V_ARO = (s + sqrt(s))/2 (s=2: 2 vs 1+sqrt(2)/2; s=4: 4 vs 3, gap = 1).",
+      "statement_ru": "На неполиэдральном единичном евклидовом шаре B_2^s (Xu-Burer 2017) даже полный матричный класс ADR y(z) = y_0 + Y z даёт V_ADR = s против V_ARO = (s + sqrt(s))/2 (s=2: 2 против 1+sqrt(2)/2; s=4: 4 против 3).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "corpus/07_Xu_Burer_2017.pdf",
+        "corpus/tex_src/07_Xu_Burer_2017/arlp.tex"
+      ]
+    },
+    {
+      "id": "ce-t3-chen-zhang",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "T3 Counterexample: Chen-Zhang N-vs-1 Polyhedral Cross-Polytope (ADR=3 vs ARO=EAARC=1)",
+      "title_ru": "Контрпример T3: полиэдральный кросс-политоп Чэня-Чжана N-против-1 (ADR=3 против ARO=EAARC=1)",
+      "statement_en": "Over the polyhedral N-dimensional l1 cross-polytope (N=3), exact rational LP yields V_ADR = 3 while V_ARO = 1 and lifted extended affine rule achieves V_EAARC = 1 (gap = 2 for standard ADR).",
+      "statement_ru": "На полиэдральном кросс-политопе l1 при N=3 точное ЛП даёт V_ADR = 3 против V_ARO = 1, тогда как расширенное аффинное правило EAARC достигает оптимума V_EAARC = 1.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "corpus/03_Chen_Zhang_2009.pdf"
+      ]
+    },
+    {
+      "id": "ce-t4-gtw25-cond-b",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "T4 Counterexample: GTW25 Condition-(B) Violation (3/2 vs 5/4)",
+      "title_ru": "Контрпример T4: нарушение условия (B) теоремы GTW25 (3/2 против 5/4)",
+      "statement_en": "Minimal single-condition violation of GTW25 Theorem 1 condition (B) (inverse-positive recourse): exact SymPy integral gives V_ARO = 5/4 while exact rational LP gives V_ADR = 3/2 (gap = 1/4).",
+      "statement_ru": "Минимальное нарушение условия (B) (обратно-положительный рекурс) теоремы GTW25: точный интеграл даёт V_ARO = 5/4, а точное ЛП для ADR даёт 3/2 (зазор 1/4).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "corpus/24_Georghiou_Tsoukalas_Wiesemann_2025.pdf"
+      ]
+    },
+    {
+      "id": "ce-t5-beg18-separating",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "T5 Counterexample: BEG18 Separating Family (m=900, Omega(sqrt(m)) Gap)",
+      "title_ru": "Контрпример T5: разделяющее семейство BEG18 (m=900, зазор Omega(sqrt(m)))",
+      "statement_en": "Verbatim BEG18 Eq. (ex:bad) at m=900 (sqrt(m)=30) via exact permutation-symmetry rational LP gives V_ADR = 1800/929 vs explicit adaptive witness V_ARO <= 1 (strict gap >= 871/929 > 0).",
+      "statement_ru": "Точная симметрийная редукция примера BEG18 Eq. (ex:bad) при m=900 даёт V_ADR = 1800/929 при явном адаптивном свидетеле V_ARO <= 1 (строгий зазор >= 871/929).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/03-traps-and-counterexamples.md"
+      ],
+      "sources": [
+        "corpus/10_BenTal_ElHousni_Goyal_2018.pdf",
+        "corpus/tex_src/10_BenTal_ElHousni_Goyal_2018/affine_domination.tex"
+      ]
+    },
+    {
+      "id": "conj-f4-vertex-lp-selector",
+      "kind": "open_conjecture",
+      "status": "lean_proved",
+      "domain": "bridge_core",
+      "title_en": "F4: Finite Vertex-LP Reduction & Measurable Borel Selector over Zonotope Xi = L(W^r)",
+      "title_ru": "F4: Конечная вершинная LP-редукция и измеримый Borel-селектор на зонотопе Xi = L(W^r)",
+      "statement_en": "TightenedAROBound over the compact zonotope Xi = L(W^r) reduces exactly to a finite linear program indexed by vert(Xi) with an explicitly constructed Borel-measurable convex-interpolation selector y: Xi -> U^q achieving the same epigraph levels.",
+      "statement_ru": "Условие TightenedAROBound на компактном зонотопе Xi = L(W^r) точно сводится к конечной задаче ЛП по вершинам vert(Xi) с явным измеримым по Борелю селектором y: Xi -> U^q и тем же множеством уровней.",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.borel_right_inverse_exists",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem borel_right_inverse_exists (D : Data) : ∃ s : D.Z → D.NoiseBlock D.r, Measurable s ∧ ∀ xi : D.Z, D.deviation (s xi) = xi.val :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_to_aro",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_to_aro (D : Data) (a : D.ControlBlock D.r) (uVert : Corner D → D.ControlBlock D.q) (eta : ℝ) (hvert : VertexLPBound D a uVert eta) : ∃ y : D.DeviationPolicy, D.TightenedAROBound a y eta ∧ D.AROBound a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_epigraph_eq_aro (D : Data) : vertexLPLevels D = D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_epigraph_eq_source",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_epigraph_eq_source (D : Data) : vertexLPLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.zonotopeVertices_finite",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem zonotopeVertices_finite (D : Data) : (zonotopeVertices D).Finite :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_to_aro",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_to_aro (D : Data) (a : D.ControlBlock D.r) (uExt : zonotopeVertices D → D.ControlBlock D.q) (eta : ℝ) (hext : ExtremeVertexLPBound D a uExt eta) : ∃ y : D.DeviationPolicy, D.TightenedAROBound a y eta ∧ D.AROBound a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_epigraph_eq_aro (D : Data) : extremeVertexLPLevels D = D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_epigraph_eq_source",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_epigraph_eq_source (D : Data) : extremeVertexLPLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_eq_corner_lp",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_eq_corner_lp (D : Data) : extremeVertexLPLevels D = vertexLPLevels D :="
+        }
+      ],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py",
+        "verification/oracles/exact_lp.py",
+        "verification/falsifiers/run01/falsify_f4.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/04-practice-and-attestation.md",
+        "research/guides/03-f4-vertex-lp-selector/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV3/Goals.lean",
+        "corpus/06_Ayoub_Poss_2016.pdf",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf"
+      ],
+      "falsification_criteria": {
+        "method": "exact_lp_and_selector_check",
+        "oracle_or_battery": "verification/oracles/exact_lp.py + verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "refutation_condition": "Any rational BridgeFormalV2.Data instance where vert(Xi) LP is feasible at level eta but no Borel-measurable selector y: Xi -> U^q satisfies TightenedAROBound at eta, or where interior Xi points strictly violate convex-hull feasibility."
+      },
+      "formalized_scope": {
+        "proved_in_lean": "Full F4 reduction for every BridgeFormalV2.Data without injectivity of L: explicit Borel right-inverse via lexicographic infimum induction, multilinear corner LP, finiteness of true extreme points vert(Xi), and exact epigraph equalities extremeVertexLPLevels = vertexLPLevels = aroLevels = sourceLevels (9 theorems).",
+        "not_proved_in_lean": "Algorithmic complexity of enumerating vert(Xi) in high dimension or multi-closure k >= 2 vertex LP."
+      }
+    },
+    {
+      "id": "conj-o4-closure-scheduling",
+      "kind": "open_conjecture",
+      "status": "open",
+      "domain": "closure_scheduling",
+      "title_en": "O4: Strict Value of Measurement Criterion and Optimal Closure Schedule Selection R",
+      "title_ru": "O4: Критерий строгой ценности измерения и выбор оптимального расписания замыканий R",
+      "statement_en": "Characterize verifiable algebraic/dual conditions under which adding a closure at r strictly improves guaranteed value (V({r}) < V(empty)) and characterize the combinatorial structure and complexity of selecting minimal-cardinality optimal schedule R.",
+      "statement_ru": "Найти проверяемые алгебраические/двойственные условия строгого выигрыша от замыкания V({r}) < V(empty) и охарактеризовать структуру и вычислительную сложность выбора оптимального расписания R минимальной мощности.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "research/claims/wave5-support-bound/verification/check.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md",
+        "corpus/our_papers/A2_Дмитрук_2018.pdf",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ],
+      "falsification_criteria": {
+        "method": "exact_rational_schedule_grid",
+        "oracle_or_battery": "verification/oracles/m0/pilot/checkers/finite_bellman.py + research/counterexamples/D1-baseline/checks/check_candidate_v2.py",
+        "refutation_condition": "A candidate criterion is refuted if any rational (A, B, E, H, c, T, r) grid instance satisfies the criterion yet exhibits V({r}) == V(empty), or violates the criterion yet achieves V({r}) < V(empty) (also checked against A4 r=67 vs r=104 non-monotonicity)."
+      }
+    },
+    {
+      "id": "conj-o1-adr-exactness-char",
+      "kind": "open_conjecture",
+      "status": "open",
+      "domain": "aro_exactness",
+      "title_en": "O1: Verifiable Necessary-and-Sufficient Condition for ADR Exactness Beyond M1-M2",
+      "title_ru": "O1: Проверяемое необходимое и достаточное условие точности ADR за пределами M1–M2",
+      "statement_en": "Identify a checkable structural condition on (A, h, B, Xi) that certifies V_ADR = V_ARO on both classical mechanisms (M1 box, simplex) and non-simplex bridge-class instances (T1) while strictly rejecting T2, T3, T4, and T5.",
+      "statement_ru": "Найти проверяемое структурное условие на (A, h, B, Xi), сертифицирующее V_ADR = V_ARO на классических случаях (T6, T7) и несимплексном мост-классе (T1) и строго отвергающее T2, T3, T4 и T5.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md",
+        "corpus/07_Xu_Burer_2017.pdf",
+        "corpus/24_Georghiou_Tsoukalas_Wiesemann_2025.pdf"
+      ],
+      "falsification_criteria": {
+        "method": "t1_t7_battery_predicate",
+        "oracle_or_battery": "verification/falsifiers/battery_t1_t7.py",
+        "refutation_condition": "Immediate falsification if the candidate predicate misclassifies ANY single instance in T1-T7 (must predict exact on T1, T6, T7 and not_exact on T2, T3, T4, T5) or fails exact rational LP search over randomized fixed-recourse polytopes."
+      }
+    },
+    {
+      "id": "conj-o8-quantifier-gap",
+      "kind": "open_conjecture",
+      "status": "open",
+      "domain": "closure_scheduling",
+      "title_en": "O8: Minimax vs Maximin Quantifier-Order Gap (V(R) - V_mm)",
+      "title_ru": "O8: Зазор порядка квантификаторов minimax против maximin (V(R) - V_mm)",
+      "statement_en": "Quantify the commitment gap V(R) - V_mm between minimax guaranteed control and its maximin relaxation, and establish sharp conditions under which the quantifier-order gap vanishes.",
+      "statement_ru": "Оценить зазор обязательства V(R) - V_mm между минимаксной задачей ОГУ и её максиминной релаксацией и установить острые условия обращения этого зазора в нуль.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/O8-sion-gap/checks/check_o8_gap.py",
+        "verification/oracles/exact_lp.py",
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "research/literature/exactness-essay/2026-10-20-essay-exactness-and-open-problems.ru.md",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "research/counterexamples/O8-sion-gap/derivation.md"
+      ],
+      "falsification_criteria": {
+        "method": "exact_lp_minimax_vs_maximin",
+        "oracle_or_battery": "verification/oracles/exact_lp.py + verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "refutation_condition": "Any proposed zero-gap criterion is refuted if an exact rational LP instance satisfies the criterion yet has V(R) > V_mm strictly, or any proposed upper bound is exceeded by exact rational evaluation."
+      }
+    },
+    {
+      "id": "gen-multistage-k-closures",
+      "kind": "generalization_target",
+      "status": "open",
+      "domain": "generalizations",
+      "title_en": "G1: Multi-Closure (k >= 2) Generalization of the OGU <-> Multistage ARO Bridge",
+      "title_ru": "G1: Обобщение моста ОГУ <-> многоэтапная ARO на k >= 2 замыканий",
+      "statement_en": "Extend F1-F3 from a single closure r to an arbitrary ordered schedule R = {0 < r_1 < ... < r_k < T} with nested exogenous deviation filtration (xi_1, ..., xi_k), comparing Markov state policies g_j(x_{r_j}) against history-dependent ARO policies y_j(xi_1, ..., xi_j).",
+      "statement_ru": "Расширить мост F1–F3 с одного замыкания r на произвольное упорядоченное расписание R = {r_1 < ... < r_k} с фильтрацией экзогенных отклонений, явно разделив марковские политики по состоянию и политики по истории (с учётом контрпримеров D1/D2).",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "research/counterexamples/D1-baseline/checks/check_candidate_v2.py",
+        "research/counterexamples/D2-structured/checks/trajectory_check_v2.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf",
+        "verification/lean/BridgeFormalV2/Model.lean"
+      ],
+      "falsification_criteria": {
+        "method": "multistage_bellman_state_vs_history",
+        "oracle_or_battery": "verification/oracles/m0/pilot/checkers/finite_bellman.py + D1/D2 counterexample checkers",
+        "refutation_condition": "Any naive claim that state-feedback equals full-history multistage ARO for k >= 2 is refuted immediately by prefix-merging witnesses (generalizing D1); a valid generalization must explicitly track either full measurement history (x_{r_1},...,x_{r_j}) or injectivity/observability assumptions."
+      }
+    },
+    {
+      "id": "gen-nonbox-conic-uncertainty",
+      "kind": "generalization_target",
+      "status": "open",
+      "domain": "generalizations",
+      "title_en": "G2: General Compact Convex / Conic Uncertainty Support Tightening (Beyond Box W)",
+      "title_ru": "G2: Обобщение сужения F3 на произвольные компактные выпуклые и конические множества W_t",
+      "statement_en": "Replace box disturbance W = [-rho, rho]^p in F3 with an arbitrary compact convex disturbance set W_t (both non-box polyhedral sets such as l1 cross-polytopes and genuinely non-polyhedral conic sets such as Euclidean l2 balls / SOC or spectrahedra) via its Minkowski support function h_{W_t}(r). Support-function future-noise elimination remains exact for any compact convex W_t, whereas finite vertex-LP reduction fails for non-polyhedral sets (l2 ball / SOC / spectrahedron) and ADR exactness is separately constrained by T2/T3.",
+      "statement_ru": "Заменить боксовое возмущение W = [-rho, rho]^p в F3 произвольным компактным выпуклым множеством W_t (как небоксовым полиэдральным вроде l1-кросс-политопа, так и неполиэдральным коническим — евклидовым шаром l2 / SOC или спектраэдром) через опорную функцию Минковского h_{W_t}(r). Исключение будущего шума через h_{W_t} остаётся точным для любого компакта W_t, но конечная вершинная LP не переносится на неполиэдральные множества (шар l2 / SOC / спектраэдр), а точность ADR отдельно ограничена контрпримерами T2 и T3.",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py",
+        "verification/falsifiers/sympy_counterexample_template.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/01-intuition-and-map.md",
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "verification/lean/BridgeFormalV3/Goals.lean",
+        "corpus/07_Xu_Burer_2017.pdf",
+        "corpus/03_Chen_Zhang_2009.pdf"
+      ],
+      "falsification_criteria": {
+        "method": "conic_duality_and_slater_gap_check",
+        "oracle_or_battery": "verification/falsifiers/sympy_counterexample_template.py + verification/falsifiers/battery_t1_t7.py",
+        "refutation_condition": "Within the hypothesis domain of compact convex conic sets W_t (polyhedral, SOC/l2 ball, or spectrahedron), a conic-dual tightening reformulation is refuted if there exists a feasible decision (x, u) satisfying sup_{w in W_t} r^T (R_w w) <= b whose conic dual reformulation yields inconsistent feasibility/value or a strict strong-duality gap (e.g., under Slater/regularity failure on a concrete conic instance). Overclaims of finite vertex-LP reduction on non-polyhedral W_t or ADR exactness are separately bounded by T2/T3."
+      }
+    },
+    {
+      "id": "ce-o8-sion-gap",
+      "kind": "counterexample",
+      "status": "falsified",
+      "domain": "counterexamples",
+      "title_en": "O8 Counterexample: Strict Quantifier-Order Gap V({1})=2 > 0=V_mm on 1D Box System",
+      "title_ru": "Контрпример O8: строгий зазор порядка квантификаторов V({1})=2 > 0=V_mm на 1D-системе",
+      "statement_en": "Exact rational LP on a feasible 1D single-closure BridgeFormalV2.Data instance (A=2, B=1, E=1, U=[-1,1], rho=1, H=1, g in [-2,4], c=1) certifies V(empty)=4, V({1})=2, V_mm_prefix=0, V_mm_full=0 (strict commitment gap 2), refuting Sion-style zero-gap conjectures.",
+      "statement_ru": "Точное рациональное ЛП на 1D-системе BridgeFormalV2.Data (A=2, B=1, E=1, U=[-1,1], rho=1, H=1, g in [-2,4], c=1) сертифицирует V(empty)=4, V({1})=2, V_mm_prefix=0, V_mm_full=0 (строгий зазор 2), опровергая наивную гипотезу Сиона о нулевом зазоре.",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/O8-sion-gap/checks/check_o8_gap.py"
+      ],
+      "guides": [
+        "research/guides/02-math-atlas/04-practice-and-attestation.md"
+      ],
+      "sources": [
+        "research/counterexamples/O8-sion-gap/derivation.md"
+      ]
+    },
+    {
+      "id": "thm-g2-conic-support",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "generalizations",
+      "title_en": "G2 (Direct Tightening): General Compact / Conic Minkowski Support Elimination & 2D L2 Non-Polyhedrality",
+      "title_ru": "G2 (прямое сужение): точное исключение будущего шума на компактных и конических W_t и неполиэдральность 2D-круга",
+      "statement_en": "Generalizes F3 future-noise elimination to arbitrary nonempty compact stage sets W_t via Minkowski support functions, recovers F3 for boxes, proves closed forms for l1 cross-polytopes and l2 SOC balls, and proves the 2D l2 ball is not a finite convex hull.",
+      "statement_ru": "Обобщает исключение будущего шума F3 на произвольные непустые компактные множества W_t через опорные функции Минковского, воспроизводит F3 на боксах, доказывает замкнутые формулы для l1-кросс-политопа и l2-шара и неполиэдральность 2D-круга.",
+      "formalized_scope": {
+        "proved_in_lean": "Stage-wise Minkowski support attainment, exact row and full tightening for arbitrary nonempty compact W_t, F3 box specialization, l1/l2 closed forms, and 2D l2-ball non-polyhedrality (7 theorems).",
+        "not_proved_in_lean": "Conic SDP dual reformulations, Slater regularity conditions, and ADR exactness on spectrahedra (remaining Run-02+ frontier in gen-nonbox-conic-uncertainty)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_attained_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_attained_support (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (row : Vec D.n →ₗ[ℝ] ℝ) : (∀ wp : StageNoiseBlock D W, row (generalFutureNoiseResponse D wp.val) ≤ stageFutureRowSupport D W row) ∧ (∃ wp : StageNoiseBlock D W, row (generalFutureNoiseResponse D wp.val) = stageFutureRowSupport D W row) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_robust_row",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_robust_row (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (row : Vec D.n →ₗ[ℝ] ℝ) (z : Vec D.n) (bound : ℝ) : (∀ wp : StageNoiseBlock D W, row (z + generalFutureNoiseResponse D wp.val) ≤ bound) ↔ row z + stageFutureRowSupport D W row ≤ bound :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_exact_tightening",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_exact_tightening (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (a : D.ControlBlock D.r) (y : D.DeviationPolicy) (eta : ℝ) : GeneralAROBound D W a y eta ↔ GeneralTightenedAROBound D W a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.box_support_eq_f3",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem box_support_eq_f3 (D : Data) (row : Vec D.n →ₗ[ℝ] ℝ) : let Wbox : Fin D.q → Set (Vec D.p) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l1_cross_polytope_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l1_cross_polytope_support {p : ℕ} (hp : 0 < p) {r : ℝ} (hr : 0 ≤ r) (v : Vec p) : let hne : (Finset.univ : Finset (Fin p)).Nonempty :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l2_soc_ball_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l2_soc_ball_support {p : ℕ} {r : ℝ} (hr : 0 ≤ r) (v : Vec p) : IsCompact (l2Ball p r) ∧ (l2Ball p r).Nonempty ∧ minkowskiSupport (l2Ball p r) v = r * nonnegSqrt (∑ i : Fin p, (v i) ^ 2) ∧ 0 ≤ minkowskiSupport (l2Ball p r) v ∧ (minkowskiSupport (l2Ball p r) v) ^ 2 = r ^ 2 * ∑ i : Fin p, (v i) ^ 2 :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l2_ball_not_finset_conv_2d",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l2_ball_not_finset_conv_2d {r : ℝ} (hr : 0 < r) : ¬ ∃ T : Finset (Vec 2), (∀ t ∈ T, t ∈ l2Ball 2 r) ∧ (∀ x ∈ l2Ball 2 r, InFinsetConv T x) :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_g2.py"
+      ],
+      "guides": [
+        "research/guides/04-g2-conic-support/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+        "corpus/07_Xu_Burer_2017.pdf",
+        "corpus/03_Chen_Zhang_2009.pdf"
+      ]
+    },
+    {
+      "id": "thm-o4-single-closure-value",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "closure_scheduling",
+      "title_en": "O4 (Single-Closure Foundation): Open-Loop vs Single-Closure Separation Criterion & Concrete Gap Witness",
+      "title_ru": "O4 (одно замыкание): критерий строгого выигрыша от измерения и машинный свидетель разрыва 4 > 2",
+      "statement_en": "Establishes open-loop monotonicity, zero-gain sufficient conditions (unconstrained terminal / terminal-kernel prefix), shared-corner LP characterization of open-loop feasibility, exact finite corner-separation criterion for strict gain, and a concrete witness with V({1}) <= 2 < 4 <= V(empty).",
+      "statement_ru": "Устанавливает монотонность программного управления, достаточные условия нулевого выигрыша, описание программного управления через общий угловой ЛП, точный критерий разделения и конкретный свидетель V({1}) <= 2 < 4 <= V(empty).",
+      "formalized_scope": {
+        "proved_in_lean": "Single-closure monotonicity, two zero-gain criteria, shared-corner LP characterization, strict-gain iff corner-separation equivalence, and concrete 4 > 2 witness (7 theorems).",
+        "not_proved_in_lean": "Minimal-cardinality optimal schedule selection R, closed-form optimal r*, and complexity for |R| >= 2 (remaining Run-02+ frontier in conj-o4-closure-scheduling)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_subset_aro",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_subset_aro (D : Data) : openLoopLevels D ⊆ D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_subset_source",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_subset_source (D : Data) : openLoopLevels D ⊆ D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.zero_gain_of_unconstrained_terminal",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem zero_gain_of_unconstrained_terminal (D : Data) (hrows : D.rows = 0) : D.aroLevels = openLoopLevels D ∧ D.sourceLevels = openLoopLevels D :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.zero_gain_of_prefix_in_terminal_kernel",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem zero_gain_of_prefix_in_terminal_kernel (D : Data) (hH : ∀ w : D.NoiseBlock D.r, D.H ((D.A ^ D.q) (D.deviation w)) = 0) (hc : ∀ w : D.NoiseBlock D.r, D.c ((D.A ^ D.q) (D.deviation w)) = 0) : D.aroLevels = openLoopLevels D ∧ D.sourceLevels = openLoopLevels D :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_eq_shared_corner_lp",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_eq_shared_corner_lp (D : Data) : openLoopLevels D = {eta | ∃ a : D.ControlBlock D.r, ∃ b : D.ControlBlock D.q, SharedCornerLPBound D a b eta} :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.strict_gain_iff_corner_separation",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem strict_gain_iff_corner_separation (D : Data) (eta : ℝ) : (eta ∈ D.aroLevels ∧ eta ∉ openLoopLevels D) ↔ (∃ a : D.ControlBlock D.r, ∃ uVert : Corner D → D.ControlBlock D.q, VertexLPBound D a uVert eta) ∧ (∀ a : D.ControlBlock D.r, ∀ b : D.ControlBlock D.q, ∃ σ : Corner D, ¬ TightenedAt D a (D.deviation (cornerNoise D σ)) b eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.exists_strict_value_of_measurement_gap",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem exists_strict_value_of_measurement_gap : ∃ D : Data, (2 : ℝ) ∈ D.sourceLevels ∧ (2 : ℝ) ∈ D.aroLevels ∧ ∀ eta ∈ openLoopLevels D, (4 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_o4.py"
+      ],
+      "guides": [
+        "research/guides/05-o4-closure-value/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-g1-multistage-bridge",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "generalizations",
+      "title_en": "G1 (Multistage Bridge): Arbitrary k-Closure OGU <-> Multistage ARO Equivalence & Markov vs History Separation",
+      "title_ru": "G1 (многоэтапный мост): эквивалентность ОГУ <-> многоэтапная ARO для любого k и строгое разделение Markov vs History",
+      "statement_en": "Proves chronological stage splitting, causal Borel forward/reverse policy bijections, exact epigraph equality multistageHistoryLevels = multistageAroLevels for arbitrary k and joint disturbance set Omega, Markov subset inclusion, and a k=2 witness defeating nonlinear Borel signaling (0 vs >= 2).",
+      "statement_ru": "Доказывает поэтапное разложение, причинные борелевские биекции политик, точное равенство уровней multistageHistoryLevels = multistageAroLevels для любого k и любого Omega, включение марковских политик и k=2 свидетель разрыва 0 против >= 2.",
+      "formalized_scope": {
+        "proved_in_lean": "Arbitrary-k stage split, causal Borel history-state <-> history-deviation policy translations, exact epigraph equality over arbitrary Omega, Markov inclusion, and k=2 Markov-vs-History separation witness (6 theorems).",
+        "not_proved_in_lean": "Multistage F3/F4 vertex-LP reduction for k >= 2 and Lean formalization of D2 pairwise-vs-joint obstruction (remaining Run-02+ frontier in gen-multistage-k-closures)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_stage_split",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_stage_split (D : Data) (l : ℕ) (x : Vec D.n) (u : D.ControlBlock l) (w : D.NoiseBlock l) : D.run x (blockAt u.val) (blockAt w.val) l = stageNominal D l x u + stageDeviation D l w :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_forward_policy",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_forward_policy (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) (P : HistoryStatePolicy D len) : ∃ Y : HistoryDeviationPolicy D len, (∀ w : MultiNoise D len, ∀ m : ℕ, (hm : m ≤ k + 1) → historyAroRollout D Y w m hm = historyStateRollout D P w m hm) ∧ (∀ eta : ℝ, HistoryStateBound D len Ω P eta ↔ HistoryAroBound D len Ω Y eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_reverse_policy",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_reverse_policy (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) (Y : HistoryDeviationPolicy D len) : ∃ P : HistoryStatePolicy D len, (∀ w : MultiNoise D len, ∀ m : ℕ, (hm : m ≤ k + 1) → historyStateRollout D P w m hm = historyAroRollout D Y w m hm) ∧ (∀ eta : ℝ, HistoryStateBound D len Ω P eta ↔ HistoryAroBound D len Ω Y eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_history_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_history_epigraph_eq_aro (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) : multistageHistoryLevels D len Ω = multistageAroLevels D len Ω :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_markov_subset_history",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_markov_subset_history (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) : multistageMarkovLevels D len Ω ⊆ multistageHistoryLevels D len Ω ∧ multistageMarkovLevels D len Ω ⊆ multistageAroLevels D len Ω :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.exists_markov_strictly_weaker_than_history_k2",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem exists_markov_strictly_weaker_than_history_k2 : (0 : ℝ) ∈ multistageHistoryLevels k2WitnessData k2UnitLen k2CorrelatedOmega ∧ (0 : ℝ) ∈ multistageAroLevels k2WitnessData k2UnitLen k2CorrelatedOmega ∧ ∀ eta ∈ multistageMarkovLevels k2WitnessData k2UnitLen k2CorrelatedOmega, (2 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_g1.py"
+      ],
+      "guides": [
+        "research/guides/06-g1-multistage-bridge/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/BridgeG1Multistage.lean",
+        "corpus/our_papers/A4_Дмитрук_2022.pdf",
+        "corpus/our_papers/A5_Дмитрук_диссертация_2022.pdf"
+      ]
+    },
+    {
+      "id": "thm-o1-adr-simplex-1d-2d",
+      "kind": "theorem",
+      "status": "lean_proved",
+      "domain": "aro_exactness",
+      "title_en": "O1 (Partial): Simplex Exactness, Barycentric-Syzygy T3 Obstruction & 1D-vs-2D Bridge ADR Dichotomy",
+      "title_ru": "O1 (частично): точность ADR на симплексе, барицентрические сизигии T3 и дихотомия 1D против 2D в BridgeFormalV2",
+      "statement_en": "Proves static <= ADR <= ARO inclusion, exactness of ADR on arbitrary d-simplices Delta_d, barycentric-syzygy coupling and Chen-Zhang T3 gap (1 vs >= 3), exactness of ADR for every 1D BridgeFormalV2.Data instance, and a concrete 2D BridgeFormalV2.Data gap witness (6 vs >= 8).",
+      "statement_ru": "Доказывает цепочку static <= ADR <= ARO, точность ADR на любом d-симплексе Delta_d, барицентрические сизигии и разрыв T3 (1 против >= 3), точность ADR для каждой 1D-системы BridgeFormalV2.Data и 2D-свидетель строгого зазора (6 против >= 8).",
+      "formalized_scope": {
+        "proved_in_lean": "General fixed-recourse inclusion, d-simplex ADR exactness, barycentric-syzygy coupling, T3 gap (1 vs >= 3), universal 1D BridgeFormalV2 ADR exactness, and concrete 2D strict gap witness 6 vs >= 8 (7 theorems).",
+        "not_proved_in_lean": "General checkable necessary-and-sufficient condition for V_ADR = V_ARO beyond simplices/1D, full 2D classification, and Lean formalization of GTW25 M2 and T2/T4/T5 (remaining Run-02+ frontier in conj-o1-adr-exactness-char)."
+      },
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.static_subset_adr_subset_aro",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem static_subset_adr_subset_aro {d m k : ℕ} (P : FixedRecourseARO d m k) (Ξ : Set (Fin d → ℝ)) : staticLevels P Ξ ⊆ adrLevels P Ξ ∧ adrLevels P Ξ ⊆ aroLevels P Ξ :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.adr_exact_on_simplex",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem adr_exact_on_simplex {d m k : ℕ} (P : FixedRecourseARO d m k) : adrLevels P (stdSimplex d) = aroLevels P (stdSimplex d) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.barycentric_syzygy_adr_coupling",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem barycentric_syzygy_adr_coupling {d m : ℕ} {ι₁ ι₂ : Type*} [Fintype ι₁] [Fintype ι₂] (α : ι₁ → ℝ) (β : ι₂ → ℝ) (hα : ∑ a, α a = 1) (hβ : ∑ b, β b = 1) (ξ : ι₁ → Fin d → ℝ) (ζ : ι₂ → Fin d → ℝ) (hbary : ∑ a, α a • ξ a = ∑ b, β b • ζ b) (y0 : Fin m → ℝ) (Y : (Fin d → ℝ) →ₗ[ℝ] (Fin m → ℝ)) : ∑ a, α a • (y0 + Y (ξ a)) = ∑ b, β b • (y0 + Y (ζ b)) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.chen_zhang_t3_adr_gap",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem chen_zhang_t3_adr_gap : (1 : ℝ) ∈ aroLevels chenZhangT3 l1CrossPolytope3 ∧ ∀ eta ∈ adrLevels chenZhangT3 l1CrossPolytope3, (3 : ℝ) ≤ eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.bridge_adr_subset_aro_and_source",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem bridge_adr_subset_aro_and_source (D : Data) : bridgeAdrLevels D ⊆ D.aroLevels ∧ bridgeAdrLevels D ⊆ D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.bridge_adr_exact_1d",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem bridge_adr_exact_1d (D : Data) (hn : D.n = 1) : bridgeAdrLevels D = D.aroLevels ∧ bridgeAdrLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.exists_bridge_2d_strict_adr_gap",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem exists_bridge_2d_strict_adr_gap : ∃ D : Data, D.n = 2 ∧ (6 : ℝ) ∈ D.aroLevels ∧ (6 : ℝ) ∈ D.sourceLevels ∧ ∀ eta ∈ bridgeAdrLevels D, (8 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_o1.py"
+      ],
+      "guides": [
+        "research/guides/07-o1-adr-exactness/01-intuition-and-map.md"
+      ],
+      "sources": [
+        "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+        "corpus/03_Chen_Zhang_2009.pdf",
+        "corpus/24_Georghiou_Tsoukalas_Wiesemann_2025.pdf"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "def-exogenous-deviation",
+      "target": "def-ogu-system",
+      "relation": "depends_on"
+    },
+    {
+      "source": "def-exogenous-deviation",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "def-borel-policies",
+      "target": "def-exogenous-deviation",
+      "relation": "depends_on"
+    },
+    {
+      "source": "def-future-support",
+      "target": "def-ogu-system",
+      "relation": "depends_on"
+    },
+    {
+      "source": "def-future-support",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f1-expansion",
+      "target": "def-ogu-system",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f1-expansion",
+      "target": "def-exogenous-deviation",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f2-policy-bijection",
+      "target": "thm-f1-expansion",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f2-policy-bijection",
+      "target": "def-borel-policies",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f2-epigraph-equality",
+      "target": "thm-f2-policy-bijection",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f3-future-tightening",
+      "target": "thm-f2-epigraph-equality",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-f3-future-tightening",
+      "target": "def-future-support",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-p3-1d-adr-exactness",
+      "target": "lem-p1-l1-rotation",
+      "relation": "depends_on"
+    },
+    {
+      "source": "lem-p2-info-monotone",
+      "target": "def-ogu-system",
+      "relation": "related_gap"
+    },
+    {
+      "source": "thm-transfer-a4-v1",
+      "target": "thm-f3-future-tightening",
+      "relation": "special_case_of"
+    },
+    {
+      "source": "thm-m0-finite-bellman",
+      "target": "lem-p2-info-monotone",
+      "relation": "depends_on"
+    },
+    {
+      "source": "lem-wave5-support-bound",
+      "target": "thm-f3-future-tightening",
+      "relation": "depends_on"
+    },
+    {
+      "source": "lem-wave5-support-bound",
+      "target": "lem-p2-info-monotone",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-t1-bridge-exact",
+      "target": "thm-p3-1d-adr-exactness",
+      "relation": "generalizes"
+    },
+    {
+      "source": "thm-t6-box-static-exact",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-t7-simplex-exact",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "ce-d1-prefix-merge",
+      "target": "thm-m0-finite-bellman",
+      "relation": "depends_on"
+    },
+    {
+      "source": "ce-d2-pairwise-vs-joint",
+      "target": "ce-d1-prefix-merge",
+      "relation": "generalizes"
+    },
+    {
+      "source": "ce-e-rank1-singleton",
+      "target": "ce-d2-pairwise-vs-joint",
+      "relation": "related_gap"
+    },
+    {
+      "source": "ce-as1-rank2-separable",
+      "target": "ce-e-rank1-singleton",
+      "relation": "generalizes"
+    },
+    {
+      "source": "ce-as1-rank2-separable",
+      "target": "ce-d2-pairwise-vs-joint",
+      "relation": "related_gap"
+    },
+    {
+      "source": "ce-t2-soc-temporal",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "ce-t3-chen-zhang",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "ce-t4-gtw25-cond-b",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "ce-t5-beg18-separating",
+      "target": "ax-fixed-recourse-box",
+      "relation": "depends_on"
+    },
+    {
+      "source": "conj-f4-vertex-lp-selector",
+      "target": "thm-f3-future-tightening",
+      "relation": "open_gap"
+    },
+    {
+      "source": "conj-f4-vertex-lp-selector",
+      "target": "thm-transfer-a4-v1",
+      "relation": "generalizes"
+    },
+    {
+      "source": "conj-o4-closure-scheduling",
+      "target": "lem-wave5-support-bound",
+      "relation": "open_gap"
+    },
+    {
+      "source": "conj-o4-closure-scheduling",
+      "target": "thm-m0-finite-bellman",
+      "relation": "depends_on"
+    },
+    {
+      "source": "conj-o1-adr-exactness-char",
+      "target": "thm-t1-bridge-exact",
+      "relation": "open_gap"
+    },
+    {
+      "source": "conj-o1-adr-exactness-char",
+      "target": "thm-t6-box-static-exact",
+      "relation": "generalizes"
+    },
+    {
+      "source": "conj-o1-adr-exactness-char",
+      "target": "thm-t7-simplex-exact",
+      "relation": "generalizes"
+    },
+    {
+      "source": "ce-t2-soc-temporal",
+      "target": "conj-o1-adr-exactness-char",
+      "relation": "refutes"
+    },
+    {
+      "source": "ce-t3-chen-zhang",
+      "target": "conj-o1-adr-exactness-char",
+      "relation": "refutes"
+    },
+    {
+      "source": "ce-t4-gtw25-cond-b",
+      "target": "conj-o1-adr-exactness-char",
+      "relation": "refutes"
+    },
+    {
+      "source": "ce-t5-beg18-separating",
+      "target": "conj-o1-adr-exactness-char",
+      "relation": "refutes"
+    },
+    {
+      "source": "conj-o8-quantifier-gap",
+      "target": "thm-f2-epigraph-equality",
+      "relation": "open_gap"
+    },
+    {
+      "source": "conj-o8-quantifier-gap",
+      "target": "lem-p2-info-monotone",
+      "relation": "depends_on"
+    },
+    {
+      "source": "gen-multistage-k-closures",
+      "target": "thm-f3-future-tightening",
+      "relation": "generalizes"
+    },
+    {
+      "source": "gen-multistage-k-closures",
+      "target": "conj-f4-vertex-lp-selector",
+      "relation": "open_gap"
+    },
+    {
+      "source": "ce-d1-prefix-merge",
+      "target": "gen-multistage-k-closures",
+      "relation": "refutes"
+    },
+    {
+      "source": "ce-d2-pairwise-vs-joint",
+      "target": "gen-multistage-k-closures",
+      "relation": "refutes"
+    },
+    {
+      "source": "gen-nonbox-conic-uncertainty",
+      "target": "thm-f3-future-tightening",
+      "relation": "generalizes"
+    },
+    {
+      "source": "ce-t2-soc-temporal",
+      "target": "gen-nonbox-conic-uncertainty",
+      "relation": "constrains_adr"
+    },
+    {
+      "source": "ce-t3-chen-zhang",
+      "target": "gen-nonbox-conic-uncertainty",
+      "relation": "constrains_adr"
+    },
+    {
+      "source": "ce-o8-sion-gap",
+      "target": "conj-o8-quantifier-gap",
+      "relation": "related_gap"
+    },
+    {
+      "source": "thm-g2-conic-support",
+      "target": "thm-f3-future-tightening",
+      "relation": "generalizes"
+    },
+    {
+      "source": "thm-g2-conic-support",
+      "target": "gen-nonbox-conic-uncertainty",
+      "relation": "special_case_of"
+    },
+    {
+      "source": "thm-o4-single-closure-value",
+      "target": "conj-f4-vertex-lp-selector",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-o4-single-closure-value",
+      "target": "conj-o4-closure-scheduling",
+      "relation": "special_case_of"
+    },
+    {
+      "source": "thm-g1-multistage-bridge",
+      "target": "thm-f2-epigraph-equality",
+      "relation": "generalizes"
+    },
+    {
+      "source": "thm-g1-multistage-bridge",
+      "target": "gen-multistage-k-closures",
+      "relation": "special_case_of"
+    },
+    {
+      "source": "thm-o1-adr-simplex-1d-2d",
+      "target": "thm-p3-1d-adr-exactness",
+      "relation": "generalizes"
+    },
+    {
+      "source": "thm-o1-adr-simplex-1d-2d",
+      "target": "conj-f4-vertex-lp-selector",
+      "relation": "depends_on"
+    },
+    {
+      "source": "thm-o1-adr-simplex-1d-2d",
+      "target": "conj-o1-adr-exactness-char",
+      "relation": "special_case_of"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "stage": "G3",
+  "status": "source-audit-complete-no-actionable-target",
+  "page_numbering": "physical PDF one-indexed; printed numbers separately documented in literature.md",
+  "sources": [
+    {
+      "path": "research/sources/BT04.pdf",
+      "sha256": "3ff5e8479fac4326cd4369ac01cefc30fd468681fa4a99af846eb05a4db44f3a",
+      "size_bytes": 170903,
+      "id": "BT04",
+      "title": "Ben-Tal et al. (2004), Adjustable robust solutions of uncertain linear programs",
+      "physical_pdf_pages_read": [
+        3,
+        4,
+        5
+      ],
+      "whole_pdf_read": false,
+      "url": null,
+      "live_corpus_admission": false,
+      "visual_pages_read": [],
+      "reading_method": "direct layout-preserving PDF extraction; A4 p4 additionally rendered",
+      "availability": "available-original-pdf"
+    },
+    {
+      "path": "research/sources/A4.pdf",
+      "sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420",
+      "size_bytes": 455385,
+      "id": "A4",
+      "title": "Dmitruk (2022), multiple closure strategies",
+      "physical_pdf_pages_read": [
+        2,
+        3,
+        4
+      ],
+      "whole_pdf_read": false,
+      "url": null,
+      "live_corpus_admission": false,
+      "visual_pages_read": [
+        4
+      ],
+      "reading_method": "direct layout-preserving PDF extraction; A4 p4 additionally rendered",
+      "availability": "available-original-pdf"
+    },
+    {
+      "path": "goal/wave-1/sources/helly-survey.pdf",
+      "sha256": "b13039b312b032af477281b4a8f7fcf4a2a3a02c464b005e2a60af85e7dd47d8",
+      "size_bytes": 395935,
+      "id": "DLHOR15",
+      "title": "De Loera, La Haye, Oliveros, Roldan-Pensado, Helly numbers of algebraic subsets of R^d",
+      "physical_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "whole_pdf_read": false,
+      "url": "https://arxiv.org/pdf/1508.02380",
+      "live_corpus_admission": false,
+      "visual_pages_read": [],
+      "reading_method": "direct layout-preserving PDF extraction; A4 p4 additionally rendered",
+      "availability": "available-original-pdf"
+    },
+    {
+      "path": "corpus/21_Zhen_denHertog_Sim_2018.pdf",
+      "sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3",
+      "size_bytes": 506548,
+      "id": "ZHS18",
+      "title": "Zhen, den Hertog, Sim (2018), Adjustable Robust Optimization via Fourier-Motzkin Elimination",
+      "physical_pdf_pages_read": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "whole_pdf_read": false,
+      "url": null,
+      "live_corpus_admission": false,
+      "visual_pages_read": [],
+      "reading_method": "direct layout-preserving PDF extraction; A4 p4 additionally rendered",
+      "availability": "available-original-pdf"
+    },
+    {
+      "path": "corpus/09_Marandi_denHertog_2018.pdf",
+      "sha256": "59c56d0aac12d2d6d00a643f14622c3128e06ccc88d6f0580d91748b0d2a8ab7",
+      "size_bytes": 459045,
+      "id": "MH18",
+      "title": "Marandi and den Hertog (2018), When are static and adjustable robust optimization problems with constraint-wise uncertainty equivalent?",
+      "physical_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "whole_pdf_read": false,
+      "url": null,
+      "live_corpus_admission": false,
+      "visual_pages_read": [],
+      "reading_method": "direct layout-preserving PDF extraction; A4 p4 additionally rendered",
+      "availability": "available-original-pdf"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "docs/specs/2026-11-13-first-scientific-success-goal.md",
+      "sha256": "f933d107697296d9d5df2265695969852cd40cea8d20ea0cd88b495dd7e5b791",
+      "size_bytes": 15681
+    },
+    {
+      "path": "FOUNDATION.md",
+      "sha256": "41cccffdf929c34e9a3b0d8866fc842ad026f5b046b09b34e62a58b897e3fe12",
+      "size_bytes": 35374
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "a71d81ced3666cdeab86dc75a6f119c86a83f9035cf2654fd0483f89be748447",
+      "size_bytes": 7343
+    },
+    {
+      "path": "docs/GLOSSARY.md",
+      "sha256": "db8eab0aaefecd0887776ff1971d67331102a6bba1aae33f8dc41bf1dc70cf9e",
+      "size_bytes": 20872
+    },
+    {
+      "path": "research/question.md",
+      "sha256": "6e6bbaff0d752c3bfe7e2f9ee78b3135e689e437e012730f4c482c3a31f786dc",
+      "size_bytes": 10744
+    },
+    {
+      "path": "research/resource-manifest.json",
+      "sha256": "1ff15746b0a2c8c47499cefdeca9dc2fc6b95c92ef536ce2e9259d7b542373d8",
+      "size_bytes": 25229
+    },
+    {
+      "path": "research/closest-results.md",
+      "sha256": "1cf5b9f069d9612a89812ec5cbf5870d39432eb193dce673c7087be391db04c1",
+      "size_bytes": 9611
+    },
+    {
+      "path": "research/continuation/derivation.md",
+      "sha256": "b7f7a8314a54a7aaf1b07cf20a2a06c3993a729fca2abeda017b623a55c13232",
+      "size_bytes": 9892
+    },
+    {
+      "path": "research/astra-probe/derivation.md",
+      "sha256": "49be10c75a7b0ef81eef250f89e6eaa455392d6b88c1e2f8f946c9f31313dfc2",
+      "size_bytes": 9045
+    },
+    {
+      "path": "reports/2026-11-13-coordinator-workflow-handoff.md",
+      "sha256": "38987d220da224262e562a3cea4fa0f0a0112ea01be037c099b8c4e3698a9eab",
+      "size_bytes": 4498
+    },
+    {
+      "path": "reports/briefings/2026-11-13-campaign-outcome.md",
+      "sha256": "2381bf3822cbdc400b18d85afaa849b92e2f0153c63635c8ecb8dc85167c5fef",
+      "size_bytes": 13299
+    },
+    {
+      "path": "reports/briefings/2026-11-13-astra-outcome.md",
+      "sha256": "91e8014815ed0fcb5b6d3ad6d7f5b30eb1f023bd744053ab464e58c15570041e",
+      "size_bytes": 9860
+    },
+    {
+      "path": "reports/briefings/2026-11-13-research-roadmap.md",
+      "sha256": "314d87e8715ca5f9a708864bf0d22c5e4c11338e12d8206a96836d36b04d7da9",
+      "size_bytes": 14622
+    }
+  ],
+  "derivatives": [
+    {
+      "path": "goal/wave-1/sources/A3-p3-4.txt",
+      "sha256": "57d12b7520dcbbbbe27b4458f60c5b6f7587667596929b91a46d20dd12d7ff2a",
+      "size_bytes": 11201
+    },
+    {
+      "path": "goal/wave-1/sources/A4-p2-6.txt",
+      "sha256": "e7a525baa587b112e669e5325b1d114acf147b9bec7b2d5903f069a2f6df46e4",
+      "size_bytes": 28657
+    },
+    {
+      "path": "goal/wave-1/sources/A4-p4.png",
+      "sha256": "6acaf42aeb41cd559d8f5f70b8388e2dae7f06dae7d633bbe9ecc355b7f23636",
+      "size_bytes": 423814
+    },
+    {
+      "path": "goal/wave-1/sources/BDR16-p1-3.txt",
+      "sha256": "d3c6eb88fc8b4205aaf9d75fba18ff88a2d311471cb0afb5d74a2c364b724a44",
+      "size_bytes": 30946
+    },
+    {
+      "path": "goal/wave-1/sources/BT04-p3-5.txt",
+      "sha256": "8670992c2c7316600b9792c42173c0a13f0021793ee3eaf59b1370f4d6684ef0",
+      "size_bytes": 10067
+    },
+    {
+      "path": "goal/wave-1/sources/BT04-p5.png",
+      "sha256": "8e2ec601abc2278542095db10bf2f6d9460188c332430ae6217eea82b098bf78",
+      "size_bytes": 272094
+    },
+    {
+      "path": "goal/wave-1/sources/MH18-p1-3.txt",
+      "sha256": "a88a85b1e56bf7b364d094764e5755ae336c2d2cb9d470f7e3b637787c8f7015",
+      "size_bytes": 9143
+    },
+    {
+      "path": "goal/wave-1/sources/MH18-p4-9.txt",
+      "sha256": "1519a214931464ffef9a7551eab5c4e827f3b858aff18b9408a428c1f577f95c",
+      "size_bytes": 18059
+    },
+    {
+      "path": "goal/wave-1/sources/ZHS18-p1-3.txt",
+      "sha256": "93e091149fbf42a95aeefafd0f0343666c97da477ae58626867ac34142a271b2",
+      "size_bytes": 7343
+    },
+    {
+      "path": "goal/wave-1/sources/ZHS18-p4-10.txt",
+      "sha256": "b3886b8243496f31353ac91fd7aa3ac99daf8e1104f76c186901a919c2b70613",
+      "size_bytes": 24609
+    },
+    {
+      "path": "goal/wave-1/sources/fixed-normals-search.xml",
+      "sha256": "388906d6a77f101b9e924cbb7dff5a10f1bf2347e5ff2b662068aaaf48c4a2ed",
+      "size_bytes": 5834
+    },
+    {
+      "path": "goal/wave-1/sources/helly-all.txt",
+      "sha256": "b0a4e11bf7819024c438246f763c30f9f05cbfbe16ca67221528febf81a35313",
+      "size_bytes": 36789
+    },
+    {
+      "path": "goal/wave-1/sources/helly-p1-6.txt",
+      "sha256": "0c8b45ffc07e71fc87cb01c75feb58e00566a1bc1f84fded7f686eaa252661fb",
+      "size_bytes": 17205
+    }
+  ],
+  "outputs": [
+    {
+      "path": "goal/wave-1/literature.md",
+      "sha256": "4850aa0efb42d3606a084309c153883c955b02a3611d214a53ed89f0faf23614",
+      "size_bytes": 14431
+    },
+    {
+      "path": "goal/wave-1/question.md",
+      "sha256": "d2ac0753dafc832748c9ba8456aaa3c85be6b9867fd81cf989257b100d80cac4",
+      "size_bytes": 5693
+    }
+  ],
+  "initial_selection_records": [
+    {
+      "path": "goal/wave-1/selection-record-literature.md",
+      "sha256": "6b2e79f6e22435a451deabd08817272fc62183df455f53619620e272a2454598",
+      "size_bytes": 398
+    },
+    {
+      "path": "goal/wave-1/selection-record-question.md",
+      "sha256": "e30c40ee431eea4f028b3207d2dc5e49e2af83475a871497e34843c4c8a61ff7",
+      "size_bytes": 264
+    },
+    {
+      "path": "goal/wave-1/selection-record-source-manifest.json",
+      "sha256": "5e0ce6845b6aa0ca384a33e0ebd886b7f81089d0986329d81a8cb254cf83b3f4",
+      "size_bytes": 1417
+    },
+    {
+      "path": "goal/wave-1/selection-record-claim-contract.json",
+      "sha256": "19cfcdeb7d737939c90201c6795c16ea7ded0a483d986a58ffcc25d03dc4edbe",
+      "size_bytes": 212
+    }
+  ],
+  "unavailable_or_uninspected_sources": [
+    {
+      "source": "Historical original Helly/Radon/Hoffman papers",
+      "state": "not acquired or inspected",
+      "consequence": "no complete historical or fixed-normal classification claim"
+    },
+    {
+      "source": "Dedicated fixed-normal positive-circuit / grouped obstruction classification",
+      "state": "not identified and inspected",
+      "consequence": "no justified delta for a sharp grouped criterion"
+    },
+    {
+      "source": "Original robust dynamic-programming references [18,21] cited by MH18 PDF p5 and correlated partial-observation extensions",
+      "state": "not acquired or inspected",
+      "consequence": "information-state lead is not actionable"
+    }
+  ],
+  "search_observations": [
+    {
+      "tool": "Searcharvester",
+      "queries": 2,
+      "result": "empty tool responses; no absence inference"
+    },
+    {
+      "path": "goal/wave-1/sources/fixed-normals-search.xml",
+      "result": "noisy arXiv matches; no absence inference"
+    }
+  ],
+  "validation_command": "timeout 30 python3 -B goal/wave-1/verify_source_packet.py",
+  "scientific_attestation": false,
+  "live_corpus_admission": false
+}

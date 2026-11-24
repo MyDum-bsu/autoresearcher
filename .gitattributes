@@ -1,0 +1,2 @@
+# Preserve exact primary-source bytes (incl. CRLF in TeX/bbl) for SHA-256 MANIFEST & git archive parity
+corpus/** -text

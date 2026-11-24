@@ -1,0 +1,75 @@
+schema_version: 1
+profile: single-question-pilot
+activation: draft
+language: en
+start_mode: manual
+provider: openai
+
+concurrency:
+  active_questions: 1
+  worker_slots: 1
+  paid_calls_in_flight: 1
+  publishers: 1
+
+limits:
+  pilot_run_count: 3
+  pilot_paid_usd_cents: 500
+  run_paid_usd_cents: 150
+  premium_paid_usd_cents_per_pilot: 200
+  premium_paid_usd_cents_per_run: 80
+  model_calls_per_run: 8
+  premium_calls_per_run: 1
+  context_tokens_per_worker_call: 12000
+  output_tokens_per_worker_call: 4000
+  context_tokens_per_premium_call: 20000
+  output_tokens_per_premium_call: 4000
+  tools_per_run: 24
+  attempts_per_question_version: 2
+  discrepancy_attempts: 2
+  max_consecutive_no_progress_runs: 2
+  run_wall_seconds: 1800
+  verifier_wall_seconds: 300
+  lease_seconds: 300
+  heartbeat_seconds: 30
+  scout_queries_per_question: 4
+  scout_pdfs_per_question: 3
+
+model_bindings:
+  worker_economy: null
+  worker_build: null
+  frontier_review: null
+
+model_candidates:
+  worker_economy: gpt-6-luna
+  worker_build: gpt-6.1-sol
+  frontier_review: gpt-6-astra
+
+routes:
+  resolve_ready_work: local_code
+  shortlist_literature: local_code
+  extract_evidence_draft: worker_economy
+  formulate_candidate: worker_economy
+  construct_falsifier: worker_build
+  implement_or_formalize: worker_build
+  resolve_scientific_fork: frontier_review
+  reconcile_model_discrepancy: frontier_review
+  verify_anchor_and_certificates: local_code
+  publish: trusted_local_service
+  assess_usefulness: owner
+  attest: owner
+
+premium:
+  execution: manual_only
+  manual_reviews_per_pilot: 1
+  requires_evidence_packet: true
+  requires_owner_approval: true
+  fallback: blocked_with_packet
+
+permissions:
+  worker_writes: [scratch, submission]
+  source_fetcher_writes: [quarantine]
+  judge_reads: [sealed_input, submission, pinned_checker]
+  holdout_access: evaluator_only
+  network_default: deny
+  corpus_promotion: owner_only
+  live_migration: disabled

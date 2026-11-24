@@ -1,0 +1,44 @@
+{
+  "C1": {
+    "status": "compiled",
+    "exit_code": 0,
+    "import_failure": false,
+    "expected": "compile"
+  },
+  "C2": {
+    "status": "failed",
+    "exit_code": 1,
+    "import_failure": false,
+    "expected": "compile"
+  },
+  "C3": {
+    "status": "compiled",
+    "exit_code": 0,
+    "import_failure": false,
+    "expected": "compile"
+  },
+  "C4": {
+    "status": "compiled",
+    "exit_code": 0,
+    "import_failure": false,
+    "expected": "compile"
+  },
+  "C5": {
+    "status": "rejected-needs-reason-inspection",
+    "exit_code": 1,
+    "import_failure": false,
+    "expected": "reject"
+  },
+  "C6": {
+    "status": "compiled",
+    "exit_code": 0,
+    "import_failure": false,
+    "expected": "compile"
+  },
+  "C6Negative": {
+    "status": "rejected-needs-reason-inspection",
+    "exit_code": 1,
+    "import_failure": false,
+    "expected": "reject"
+  }
+}

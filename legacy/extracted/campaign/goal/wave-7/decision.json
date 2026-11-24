@@ -1,0 +1,38 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "wave": 7,
+  "status": "no-actionable-target",
+  "actionableTarget": false,
+  "recommendedObligation": null,
+  "goalAchieved": false,
+  "scientificAttestation": false,
+  "proof_authorized": false,
+  "coordinatorInspectionRequired": true,
+  "firstSuccessCriteriaChanged": false,
+  "domainExhausted": false,
+  "scientificVerdict": "not issued; source-based selection assessment only",
+  "approvedDomain": "Two-stage fixed-recourse ARO and the OGU/ARO information/policy bridge, with supporting optimization and geometry; original scheduled-information questions remain agenda questions, not established gaps.",
+  "scopeChangeAuthorized": false,
+  "missingScientificInput": [
+    "A scientifically motivated source-native or owner-selected model restriction and precise quantified conclusion, fixing dynamics, uncertainty, observations, policy class and terminal task; not a restriction chosen only to exclude the old obstruction.",
+    "A positive substantive assumption-by-assumption delta against the closest inspected source result, rather than source noncoverage or an unproved historical lemma.",
+    "A same-scope discriminating verification/falsification consequence and intended domain use after target selection; none is invented in this review."
+  ],
+  "blockers": [
+    "No precise next scientific obligation with a defensible substantive source delta was identified from the bounded inspected agenda and local primary pages."
+  ],
+  "authorityBoundary": "Coordinator may inspect and freeze a new bounded obligation within existing authority. New information access, changed scientific scope outside the approved domain, or owner-controlled policy changes require owner authority. No execution is authorized by this review.",
+  "sourceReading": {
+    "A2": {"physicalPages": [15, 16], "renderedPages": []},
+    "A3": {"physicalPages": [5, 6, 7, 8], "renderedPages": [6]},
+    "A4": {"physicalPages": [2, 3, 4, 5, 6, 11, 12, 13], "additionalPartialPage": 14, "renderedPages": [4]},
+    "BT04": "pages 3-5 extracted only; not substantively inspected or used as fresh authority",
+    "earlierWaveDOIComparisons": "historical review read; original DOI PDFs not freshly read here"
+  },
+  "reportPath": "goal/wave-7/direction-review.md",
+  "briefingPath": "reports/briefings/2026-11-13-goal-wave-7.md",
+  "evidenceRoot": "artifacts/goal/wave-7",
+  "verificationCommand": "timeout 60 /usr/bin/python3 -B artifacts/goal/wave-7/verify_delivery.py",
+  "verificationScope": "Identity, source-page extraction and delivery only; no mathematical, novelty or attestation verdict.",
+  "nativeRetriesAndBilling": "unknown"
+}

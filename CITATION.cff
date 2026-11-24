@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this repository, its Lean 4 formalizations, falsifiers, or mathematical atlas in your research, please cite it as below."
+type: software
+title: "autoresearcher: Automated Research Discovery for Adaptive Robust Optimization"
+version: 2.0.0
+date-released: 2026-11-24
+license: MIT
+repository-code: "https://github.com/MyDum-bsu/autoresearcher"
+url: "https://github.com/MyDum-bsu/autoresearcher"
+authors:
+  - name: "ARO Discovery Contributors"
+keywords:
+  - adaptive-robust-optimization
+  - optimal-guaranteed-control
+  - lean4
+  - formal-verification
+  - affine-decision-rules
+  - value-of-information
+  - automated-research
+abstract: >-
+  Formal Lean 4 proof repository, exact rational falsification battery,
+  mathematical atlas, and LearnHarness study packs investigating the bridge
+  between Optimal Guaranteed Control (OGU) and two-stage Adaptive Robust
+  Optimization (ARO), the value of information under closure scheduling,
+  and exactness boundaries of affine decision rules (ADR).

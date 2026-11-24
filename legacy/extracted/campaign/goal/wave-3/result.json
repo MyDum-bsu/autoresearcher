@@ -1,0 +1,68 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "wave": 3,
+  "status": "source-closure",
+  "summary": "Two scope-qualified elementary realizability routes closed as success targets; no mathematical experiment or new contribution certified.",
+  "reportPath": "goal/wave-3/outcome.md",
+  "actionableTarget": false,
+  "proof_authorized": false,
+  "goalAchieved": false,
+  "blockers": [],
+  "scientific_limitations": [
+    "General derivations informal; not machine-proved",
+    "No independent scientific review; not a comprehensive literature closure"
+  ],
+  "mathematical_experiments": 0,
+  "verification": {
+    "command": "timeout 120 python3 -B artifacts/goal/wave-3/verify_delivery.py",
+    "stdout": "artifacts/goal/wave-3/verification.stdout",
+    "stderr": "artifacts/goal/wave-3/verification.stderr",
+    "receipt": "artifacts/goal/wave-3/verification.json",
+    "scope": "delivery-and-source-identity-only; actual execution in receipt"
+  },
+  "bindings": [
+    {
+      "path": "goal/wave-3/claim-contract.json",
+      "sha256": "3b49a4dff8fde020d540579744db2d6dc96e7751f439084be86566f9327bf960"
+    },
+    {
+      "path": "goal/wave-3/literature.md",
+      "sha256": "79e03caf6a09dc1e3599797b2b08a6e722bc456465bd9f1dab098257f4def1af"
+    },
+    {
+      "path": "goal/wave-3/outcome.md",
+      "sha256": "88390fdec5b9c157aa531e7eeb67a5369ec1d797cb730da6f9df239c976dd221"
+    },
+    {
+      "path": "goal/wave-3/plan.md",
+      "sha256": "ad7ace13e9151114a5b0958ba163a52fe6d67a09df5c2df3240d8441589e16fc"
+    },
+    {
+      "path": "goal/wave-3/realizability.md",
+      "sha256": "f3b50d8387540145446b416273c218531ba7a3aa9059a3a376e9ad306db3f813"
+    },
+    {
+      "path": "goal/wave-3/source-manifest.json",
+      "sha256": "7001b0f8902566a84315ef1c734d2636799518ee08212b7c1b7ea062acd81df5"
+    },
+    {
+      "path": "reports/briefings/2026-11-13-goal-wave-3.md",
+      "sha256": "6b5254d6e8be2e7b22ba80f987e45f8cf666c9abdb6d64b01ecc84be5a6be23d"
+    },
+    {
+      "path": "artifacts/goal/wave-3/verify_delivery.py",
+      "sha256": "3344ce4d9b93543550b8267e7ac31416913292603a5a914cc94820d533168451"
+    },
+    {
+      "path": "artifacts/goal/wave-3/parent-identities.json",
+      "sha256": "a92c886a2ad3214fa4f46f8935532c40aa30b756eee75d9c70c3681316b01033"
+    }
+  ],
+  "accounting": {
+    "call_cap": 60,
+    "enforcement": "instructional including nested tools",
+    "native_provider_retries": "unknown",
+    "actual_billing": "unknown",
+    "provider_changes": false
+  }
+}

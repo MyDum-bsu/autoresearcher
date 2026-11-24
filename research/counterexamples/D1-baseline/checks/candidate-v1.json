@@ -1,0 +1,64 @@
+{
+  "candidate_id": "D1-three-prefix-bound-sensitive-v1",
+  "question_id": "correlated-continuation-compatibility-v1",
+  "representation": "All scalar numerical data are exact rational strings; matrices are row-major.",
+  "T": 2,
+  "r": 1,
+  "n": 2,
+  "m": 2,
+  "d": 2,
+  "x_initial": ["0", "0"],
+  "A": [[["1", "0"], ["0", "1"]], [["1", "0"], ["0", "1"]]],
+  "B": [[["0", "0"], ["0", "0"]], [["1", "0"], ["0", "1"]]],
+  "E": [[["0", "0"], ["0", "0"]], [["1", "0"], ["0", "1"]]],
+  "lower": [["0", "0"], ["0", "0"]],
+  "upper": [["0", "0"], ["2", "2"]],
+  "first_program": ["0", "0"],
+  "H": [["-1", "0"], ["0", "-1"]],
+  "h": ["0", "0"],
+  "c": ["1", "1"],
+  "d0": "0",
+  "bound": "3/2",
+  "paths": [
+    {"id": "A", "w": [["0", "0"], ["0", "0"]]},
+    {"id": "B", "w": [["1", "0"], ["-1", "0"]]},
+    {"id": "C", "w": [["1", "0"], ["-1", "-1/4"]]},
+    {"id": "D", "w": [["0", "1"], ["0", "-1"]]}
+  ],
+  "prefix_labels": {"A": "p0", "B": "p1", "C": "p1", "D": "p2"},
+  "prefix_policy": {"p0": ["0", "0"], "p1": ["1", "1/4"], "p2": ["0", "1"]},
+  "pair_witnesses": [
+    {"prefixes": ["p0", "p1"], "b": ["1", "1/4"]},
+    {"prefixes": ["p0", "p2"], "b": ["0", "1"]},
+    {"prefixes": ["p1", "p2"], "b": ["1", "1"]}
+  ],
+  "state_optimal_witness": ["1", "1"],
+  "false_state_witness": ["1", "0"],
+  "anticipative_path_policy": {"A": ["0", "0"], "B": ["1", "0"], "C": ["1", "1/4"], "D": ["0", "1"]},
+  "certificates": {
+    "state_lower_bound": {
+      "rows": [["B:hard:0", "1"], ["D:hard:1", "1"], ["A:cost", "1"]],
+      "expected_lhs": ["0", "0", "-1"],
+      "expected_rhs": "-2",
+      "interpretation": "-tau <= -2; substituting tau=3/2 gives 0 <= -1/2"
+    },
+    "prefix_p1_lower_bound": {
+      "rows": [["B:hard:0", "1"], ["C:hard:1", "1"], ["B:cost", "1"]],
+      "expected_lhs": ["0", "0", "-1"],
+      "expected_rhs": "-1/4",
+      "interpretation": "-tau <= -1/4 for the single continuation assigned to p1"
+    }
+  },
+  "expected_controls": [
+    "equal measured states for all three distinct prefixes",
+    "all three pair witnesses and all prefix witnesses satisfy actual trajectories at q=3/2",
+    "all-prefix state certificate gives strictly negative contradiction at q=3/2",
+    "hard constraints alone feasible at b=(1,1)",
+    "prefix optimum 1/4 and state optimum 2 via witnesses and lower-bound certificates",
+    "false state witness rejected by actual hard terminal constraint",
+    "negative multiplier mutation rejected",
+    "cost-sign mutation invalidates the fixed certificate",
+    "anticipative path policy is pathwise feasible at q=0 but rejected because B and C share a prefix",
+    "legal p1 continuation fails q=0, demonstrating future suffix is not observed"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "stage": "G3",
+  "actionableTarget": false,
+  "selection_limit": 2,
+  "proof_authorized": false,
+  "scientific_attestation": false,
+  "target": null
+}

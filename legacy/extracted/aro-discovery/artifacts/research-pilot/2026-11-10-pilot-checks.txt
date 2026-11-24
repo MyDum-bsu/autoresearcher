@@ -1,0 +1,36 @@
+RESEARCH HARNESS PILOT - DESIGN CHECKS
+
+Input fingerprints (sha256):
+a8a792449acf2f6908c9c1043722412471253ad99ce63b1f2f7a3b23037fc9bc  specs/research-pilot/PilotPublication.tla
+ce6420d3b7991d59bc9bcae9ad177c54abf9de76676a1c438968c2ea00f63c34  specs/research-pilot/PilotPublication.cfg
+237ba5947d61fbbc7f85a31d25e6d7d3b1b628624bd7f8b78c088d7c4ba12558  specs/research-pilot/check_observation_fixtures.py
+20a09d95ed54ddcea8f6963993c790bc08988a989c1eb952dfbcf0f788592be4  specs/research-pilot/check_dmitruk_open_loop.py
+
+TLC jar sha256: 936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88
+TLC version: 2.19 (rev: 5a47802)
+
+Base configuration: 2 workers, 2 attempts, 1 question version
+Model checking completed. No error has been found.
+163 states generated, 94 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 9.
+
+AllowStaleSubmission = TRUE (one guard removed)
+Error: Invariant SingleCurrentWriter is violated.
+Witness: claim attempt 1 -> expire -> reclaim as attempt 2 -> submit fence 1.
+
+AllowGateBypass = TRUE (one guard removed)
+Error: Invariant AuthorizedCommit is violated.
+Witness: claim -> submit admissible evidence -> verify -> commit with gate closed.
+
+Finite observation fixtures: policy enumeration and state Bellman
+strict_gain: open=1, state=0, prefix=0, state_bellman=0
+correlated_hidden_disturbance: open=1, state=1, prefix=0, state_bellman=1
+independent_hidden_disturbance: open=1, state=1, prefix=1, state_bellman=1
+terminal_feasibility: open=inf, state=0, prefix=0, state_bellman=0
+
+Published baseline: A4 Example 1, PDF page 12
+Corpus anchors: A2 PDF page 15; A3 PDF pages 8-9; A4 PDF page 12.
+A4 Example 1 (maximize guaranteed terminal reward, open loop)
+Printed coefficient value: 1.495710098124
+Reconstructed coefficient value: 1.501101989382
+Both have exact feasible and upper-bound certificates for their input coefficients.

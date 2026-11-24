@@ -1,0 +1,92 @@
+{
+  "certificates": {
+    "prefix": {
+      "first_action": "0/1",
+      "information": "prefix",
+      "instance_id": "correlated_hidden_disturbance",
+      "normalized_input_sha256": "c290c57ab9940c541d01f73b2522b9eabcec609feeef3578906d30f94a37a105",
+      "outcomes": [
+        {
+          "cost": "0/1",
+          "path": [
+            "-1/1",
+            "-1/1"
+          ],
+          "x1": "0/1",
+          "x2": "0/1"
+        },
+        {
+          "cost": "0/1",
+          "path": [
+            "1/1",
+            "1/1"
+          ],
+          "x1": "0/1",
+          "x2": "0/1"
+        }
+      ],
+      "policy": [
+        [
+          "-1/1",
+          "1/1"
+        ],
+        [
+          "1/1",
+          "-1/1"
+        ]
+      ],
+      "result": "optimal",
+      "schema_version": 1,
+      "value": "0/1"
+    },
+    "state": {
+      "first_action": "-1/1",
+      "information": "state",
+      "instance_id": "correlated_hidden_disturbance",
+      "normalized_input_sha256": "c290c57ab9940c541d01f73b2522b9eabcec609feeef3578906d30f94a37a105",
+      "outcomes": [
+        {
+          "cost": "1/1",
+          "path": [
+            "-1/1",
+            "-1/1"
+          ],
+          "x1": "-1/1",
+          "x2": "-1/1"
+        },
+        {
+          "cost": "1/1",
+          "path": [
+            "1/1",
+            "1/1"
+          ],
+          "x1": "-1/1",
+          "x2": "1/1"
+        }
+      ],
+      "policy": [
+        [
+          "-1/1",
+          "1/1"
+        ]
+      ],
+      "result": "optimal",
+      "schema_version": 1,
+      "value": "1/1"
+    }
+  },
+  "collision": [
+    [
+      "-1/1",
+      "-1/1"
+    ],
+    [
+      "1/1",
+      "1/1"
+    ]
+  ],
+  "episode": "M",
+  "injective_implementable": true,
+  "schema_version": 1,
+  "state_implementable": false
+}

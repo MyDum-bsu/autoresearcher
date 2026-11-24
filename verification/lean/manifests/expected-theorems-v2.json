@@ -1,0 +1,76 @@
+{
+  "status": "elaborated-goal-propositions-unproved",
+  "proofDirectory": "bridge/formal-env-v2/lean/BridgeFormalV2/Proofs",
+  "targets": [
+    {
+      "node": "prerequisite",
+      "type": "BridgeFormalV2.NonemptyBlocksGoal",
+      "declaration": "BridgeFormalV2.Proofs.nonempty_blocks"
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.ExpansionGoal",
+      "declaration": "BridgeFormalV2.Proofs.expansion"
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.PrefixSplitGoal",
+      "declaration": "BridgeFormalV2.Proofs.prefix_split"
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.SourceChronologyGoal",
+      "declaration": "BridgeFormalV2.Proofs.source_chronology"
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.SuffixExpansionGoal",
+      "declaration": "BridgeFormalV2.Proofs.suffix_expansion"
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ExogenousImageGoal",
+      "declaration": "BridgeFormalV2.Proofs.exogenous_image"
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ObservationFibreGoal",
+      "declaration": "BridgeFormalV2.Proofs.observation_fibre"
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ForwardPolicyGoal",
+      "declaration": "BridgeFormalV2.Proofs.forward_policy"
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ReversePolicyGoal",
+      "declaration": "BridgeFormalV2.Proofs.reverse_policy"
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.EpigraphEqualityGoal",
+      "declaration": "BridgeFormalV2.Proofs.epigraph_equality"
+    }
+  ],
+  "missingNodes": [
+    "F3",
+    "F4"
+  ],
+  "axiomAllowlist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "controls": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+  ],
+  "controlsDocument": "bridge/formal-v1/statement-map.md",
+  "proofsPresent": false,
+  "amendmentNote": "V2 syntax/namespace/reducibility amendment; independent semantic review required. Original goal predicates and hypotheses must be compared against V1."
+}

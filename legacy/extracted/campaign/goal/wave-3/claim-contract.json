@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 3,
+  "status": "source-closure",
+  "actionableTarget": false,
+  "proof_authorized": false,
+  "goalAchieved": false,
+  "model_source": "research/question.md",
+  "actual_observation_map": "O_a(p)=x_r(a,p). For both displayed two-period constructions E0=A0=B0=0 and x0=0, hence O_a(p)=0 for every distinct prefix. The controller sees only this state, not the prefix label or suffix. One complete continuation b is selected before w_r.",
+  "policy_quantifiers": "Fix rational data,a,q,W first. Prefix comparison: exists v:P->V, forall complete w in W. Physical state policy: exists g:O_a(P)->V, forall complete w in W; on a state cell use ONE common b=g(z).",
+  "selections": [
+    {
+      "id": "W3-S1",
+      "scope": "Unrestricted campaign model class; any finite rational fixed-normal family with at least one row, positive control dimension and a shared rational bounded box.",
+      "fixed_data": "Within a family: T=2,r=1,n=J,control dimension=d, D=I_J, G=L, V, q=0, h=0,c=e_J,d0=0, erased first transition and identity terminal disturbance channel. For a given L,V,J,d this same template works for all finite RHS lists.",
+      "varying_data": "Across desired L,V,J,d the embedding template may differ. Within each chosen template only W changes: distinct erased rational prefix labels ell_p and suffixes -delta_p.",
+      "statement": "K_p={b in V:L b<=delta_p} is obtained exactly from complete paths (ell_p,-delta_p). State-cell compatibility therefore contains generic fixed-normal compatibility.",
+      "source_comparison": "Z1 physical pp7-8 supplies known exact linear elimination; DL physical pp1-3 gives generic rational Helly background. The explicit elementary embedding is a model translation, not a claimed source theorem or contribution.",
+      "disposition": "rejected-as-first-success-elementary-embedding",
+      "evidence_level": "informal-algebraic-reconstruction-not-machine-proved"
+    },
+    {
+      "id": "W3-S2",
+      "scope": "The existing D2 two-period campaign template at fixed q=1; no additional disturbance-amplitude domain beyond the finite rational W input.",
+      "fixed_data": "T=2,r=1,n=m=d=2,x0=0,A0=B0=E0=A1=0,B1=E1=I2,U0={0},V=[0,2]^2 intersect Q^2,H=-I2,h=0,c=(1,1),d0=0,q=1; measurement x1 before b and w1.",
+      "varying_data": "Only finite nonempty correlated rational complete-path sets W, including conditional suffix membership and erased prefix labels. No matrices, rows, sensors, control domains or q change.",
+      "statement": "Realizable directional maxima are exactly rho1+rho2+rho3>=0. Before clipping, nonempty residuals are translated right triangles of scale 0<=t=1-sum(rho)<=1; afterward intersect the same V. This excludes the generic residual V itself, but the inherited D2 three-prefix obstruction remains realizable.",
+      "source_comparison": "H1 Main Theorem physical pp1-2 already covers a triangle's familiar pairwise-intersecting translate obstruction. I(K) is a minimum obstruction invariant, not a Helly number. DL gives the separate rational planar upper bound; Z1 gives generic elimination. None is represented as a theorem proving this support-vector characterization.",
+      "disposition": "rejected-as-first-success-elementary-template-reconstruction-with-no-established-nontrivial-delta",
+      "evidence_level": "informal-derivation-plus-read-only-inherited-instance-not-replayed"
+    }
+  ],
+  "tested_statement": null,
+  "mathematical_experiments": {
+    "executed": false,
+    "instance_count": 0,
+    "frozen_inventory": null,
+    "positive_controls": [],
+    "invalid_controls": [],
+    "reason": "No useful non-elementary discriminator survived either selection. Source/delivery verification is not a mathematical experiment."
+  },
+  "result_scope": "Scoped source closure of two proposed success routes, not a new theorem, comprehensive fixed-normal classification, proof verification or novelty verdict.",
+  "limits": [
+    "All general constructions/characterizations in realizability.md remain informal, not machine-checked.",
+    "No new exact mathematical check, Lean proof, comparator or independent scientific reviewer was invoked.",
+    "Hanner original theorem statement pp1-2 was visually read; its complete proof and section 6 homothety result were not inspected.",
+    "Historical Helly/Radon/Nagy originals and a dedicated sharp grouped fixed-normal/positive-dependence classification were not acquired.",
+    "Printed A4 has stationary real dynamics and product box disturbance availability; no transfer of its full theorem to correlated W is claimed.",
+    "Strict support-vector restrictions do not alone establish strict residual-set restrictions; the displayed V separation addresses that separately.",
+    "Finite instances cannot establish universal theorems; the old D2 example is cited without a fresh replay.",
+    "Coordinator inspection and human scientific judgment remain required; this dossier authorizes no proof agent or scientific status change."
+  ],
+  "next_evidence_needed": "An independently motivated frozen template and exact admissibility model excluding the known obstruction, with a concrete non-elementary consequence compared against an inspected original closest theorem. Do not repeat these loops on search silence."
+}

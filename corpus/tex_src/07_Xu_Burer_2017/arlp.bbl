@@ -1,0 +1,258 @@
+\begin{thebibliography}{10}
+
+\bibitem{Anstreicher.2009}
+Kurt~M Anstreicher.
+\newblock Semidefinite programming versus the reformulation-linearization
+  technique for nonconvex quadratically constrained quadratic programming.
+\newblock {\em Journal of Global Optimization}, 43(2-3):471--484, 2009.
+
+\bibitem{mosek}
+MOSEK ApS.
+\newblock {\em The MOSEK optimization toolbox for MATLAB manual. Version 8.0.},
+  2016.
+
+\bibitem{Ardestani-Jaafari.Delage.2014}
+Amir Ardestani-Jaafari and Erick Delage.
+\newblock The value of flexibility in robust location-transportation problem.
+\newblock {\em Les Cahiers du GERAD G--2014--83, GERAD, HEC Montr{\'e}al},
+  2014.
+
+\bibitem{Ardestani-Jaafari.Delage.2016}
+Amir Ardestani-Jaafari and Erick Delage.
+\newblock Linearized robust counterparts of two-stage robust optimization
+  problem with applications in operations management.
+\newblock Manuscript, HEC Montreal, 2016.
+
+\bibitem{Ardestani-Jaafari.Delage.2016a}
+Amir Ardestani-Jaafari and Erick Delage.
+\newblock Robust optimization of sums of piecewise linear functions with
+  application to inventory problems.
+\newblock {\em Operations research}, 64(2):474--494, 2016.
+
+\bibitem{Ardestani-Jaafari.Delage.2017}
+Amir Ardestani-Jaafari and Erick Delage, May 2017.
+\newblock Private communication.
+
+\bibitem{Atamturk.Zhang.2007}
+Alper Atamt{\"u}rk and Muhong Zhang.
+\newblock Two-stage robust network flow and design under demand uncertainty.
+\newblock {\em Operations Research}, 55(4):662--673, 2007.
+
+\bibitem{Ben-Tal.Goryashko.Guslitzer.Nemirovski.2004}
+A.~Ben-Tal, A.~Goryashko, E.~Guslitzer, and A.~Nemirovski.
+\newblock Adjustable robust solutions of uncertain linear programs.
+\newblock {\em Math. Program., Ser. A}, 99:351--376, 2004.
+
+\bibitem{Ben-Tal.Nemirovski.1999}
+A.~Ben-Tal and A.~Nemirovski.
+\newblock Robust solutions of uncertain linear programs.
+\newblock {\em Operations Research Letters}, 25(1):1--14, 1999.
+
+\bibitem{Ben-Tal.Boaz.Shimrit.2009}
+Aharon Ben-Tal, Golany Boaz, and Shtern Shimrit.
+\newblock Robust multi-echelon multi-period inventory control.
+\newblock {\em European Journal of Operational Research}, 199(3):922--935,
+  2009.
+
+\bibitem{Ben-Tal.Chung.Mandala.Yao.2011}
+Aharon Ben-Tal, Byung Do~Chung, Supreet~Reddy Mandala, and Tao Yao.
+\newblock Robust optimization for emergency logistics planning: Risk mitigation
+  in humanitarian relief supply chains.
+\newblock {\em Transportation research part B: methodological},
+  45(8):1177--1189, 2011.
+
+\bibitem{Ben-Tal.Golany.Nemirovski.Vial.2005}
+Aharon Ben-Tal, Boaz Golany, Arkadi Nemirovski, and Jean-Philippe Vial.
+\newblock Retailer-supplier flexible commitments contracts: a robust
+  optimization approach.
+\newblock {\em Manufacturing \& Service Operations Management}, 7(3):248--271,
+  2005.
+
+\bibitem{Bertsimas.Goyal.Lu.2014}
+D.~Bertsimas, V.~Goyal, and P.~Y. Lu.
+\newblock A tight characterization of the performance of static solutions in
+  two-stage adjustable robust linear optimization.
+\newblock {\em Mathematical Programming Ser. A}, 150(2):281--319, 2014.
+
+\bibitem{Bertsimas.Litvinov.Sun.Zhao.Zheng.2013}
+D.~Bertsimas, E.~Litvinov, X.~A. Sun, J.~Zhao, and T.~Zheng.
+\newblock Adaptive robust optimization for the security constrained unit
+  commitment problem.
+\newblock {\em {IEEE} transactions on power systems}, 28(1):52--63, 2013.
+
+\bibitem{Bertsimas.Ruiter.2016}
+Dimitris Bertsimas and Frans~JCT de~Ruiter.
+\newblock Duality in two-stage adaptive linear optimization: Faster computation
+  and stronger bounds.
+\newblock {\em INFORMS Journal on Computing}, 28(3):500--511, 2016.
+
+\bibitem{Bertsimas.Iancu.Parrilo.2011}
+Dimitris Bertsimas, Dan~Andrei Iancu, and Pablo~A Parrilo.
+\newblock A hierarchy of near-optimal policies for multistage adaptive
+  optimization.
+\newblock {\em IEEE Transactions on Automatic Control}, 56(12):2809--2824,
+  2011.
+
+\bibitem{Burer.2009}
+S.~Burer.
+\newblock On the copositive representation of binary and continuous nonconvex
+  quadratic programs.
+\newblock {\em Mathematical Programming Series A}, 120(2):479--495, September
+  2009.
+
+\bibitem{Burer.2011}
+Samuel Burer.
+\newblock Copositive programming.
+\newblock In M.F. Anjos and J.B. Lasserre, editors, {\em Handbook of
+  Semidefinite, Cone and Polynomial Optimization: Theory, Algorithms, Software
+  and Applications}, International Series in Operational Research and
+  Management Science, pages 201--218. Springer, 2011.
+
+\bibitem{Burer.2015}
+Samuel Burer.
+\newblock A gentle, geometric introduction to copositive optimization.
+\newblock {\em Mathematical Programming}, 151(1):89--116, 2015.
+
+\bibitem{Burer.Dong.2012}
+Samuel Burer and Hongbo Dong.
+\newblock Representing quadratically constrained quadratic programs as
+  generalized copositive programs.
+\newblock {\em Operations Research Letters}, 40:203--206, 2012.
+
+\bibitem{Chang.Rao.Tawarmalani.2017}
+Yiyang Chang, Sanjay Rao, and Mohit Tawarmalani.
+\newblock Robust validation of network designs under uncertain demands and
+  failures.
+\newblock In {\em 14th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 17)}, pages 347--362, Boston, MA, 2017. USENIX
+  Association.
+
+\bibitem{Chen.Zhang.2009}
+Xin Chen and Yuhan Zhang.
+\newblock Uncertain linear programs: Extended affinely adjustable robust
+  counterparts.
+\newblock {\em Operations Research}, 57(6):1469--1482, 2009.
+
+\bibitem{Delage.Iancu.2015}
+Erick Delage and Dan~A. Iancu.
+\newblock {\em Robust Multistage Decision Making}, chapter~2, pages 20--46.
+\newblock INFORMS, 2015.
+
+\bibitem{Doulabi.Jaillet.Pesant.Rousseau.2016}
+Seyed Hossein~Hashemi Doulabi, Patrick Jaillet, Gilles Pesant, and Louis-Martin
+  Rousseau.
+\newblock Exploiting the structure of two-stage robust optimization models with
+  integer adversarial variables.
+\newblock Manuscript, MIT, 2016.
+
+\bibitem{Eichfelder.Jahn.2008}
+G.~Eichfelder and J.~Jahn.
+\newblock Set-semidefinite optimization.
+\newblock {\em Journal of Convex Analysis}, 15:767--801, 2008.
+
+\bibitem{Fonseca.Rustem.2012}
+Raquel~J Fonseca and Ber{\c{c}} Rustem.
+\newblock International portfolio management with affine policies.
+\newblock {\em European Journal of Operational Research}, 223(1):177--187,
+  2012.
+
+\bibitem{Gabrel.Lacroix.Murat.Remli.2014}
+Virginie Gabrel, Mathieu Lacroix, C{\'e}cile Murat, and Nabila Remli.
+\newblock Robust location transportation problems under uncertain demands.
+\newblock {\em Discrete Applied Mathematics}, 164:100--111, 2014.
+
+\bibitem{Gorissen.Hertog.2013}
+Bram~L Gorissen and Dick Den~Hertog.
+\newblock Robust counterparts of inequalities containing sums of maxima of
+  linear functions.
+\newblock {\em European Journal of Operational Research}, 227(1):30--43, 2013.
+
+\bibitem{Grotschel.Lovasz.Shrijver.1981}
+Martin Gr{\"o}tschel, L{\'a}szl{\'o} Lov{\'a}sz, and Alexander Schrijver.
+\newblock The ellipsoid method and its consequences in combinatorial
+  optimization.
+\newblock {\em Combinatorica}, 1(2):169--197, 1981.
+
+\bibitem{Hadjiyiannis.Goulart.Kuhn.2011}
+M.~J. Hadjiyiannis, P.~J. Goulart, and D.~Kuhn.
+\newblock A scenario approach for estimating the suboptimality of linear
+  decision rules in two-stage robust optimization.
+\newblock In {\em 50th {IEEE} conference on decision and control and {E}uropean
+  control conference (CDC-ECC)}, Orlando, FL, USA, December 12-15 2011.
+
+\bibitem{Hanasusanto.Kuhn.2016}
+Grani~A Hanasusanto and Daniel Kuhn.
+\newblock Conic programming reformulations of two-stage distributionally robust
+  linear programs over wasserstein balls.
+\newblock {\em arXiv preprint arXiv:1609.07505}, 2016.
+
+\bibitem{Konno.1976}
+Hiroshi Konno.
+\newblock A cutting plane algorithm for solving bilinear programs.
+\newblock {\em Math. Program.}, 11:14--27, 1976.
+
+\bibitem{lofberg2004yalmip}
+Johan Lofberg.
+\newblock Yalmip: A toolbox for modeling and optimization in matlab.
+\newblock In {\em Computer Aided Control Systems Design, 2004 IEEE
+  International Symposium on}, pages 284--289. IEEE, 2004.
+
+\bibitem{Poss.Raack.2013}
+Michael Poss and Christian Raack.
+\newblock Affine recourse for the robust network design problem: Between static
+  and dynamic routing.
+\newblock {\em Networks}, 61(2):180--198, 2013.
+
+\bibitem{Schrijver.1986}
+Alexander Schrijver.
+\newblock {\em Theory of linear and integer programming}.
+\newblock Wiley-Interscience Series in Discrete Mathematics. John Wiley \&
+  Sons, Ltd., Chichester, 1986.
+\newblock A Wiley-Interscience Publication.
+
+\bibitem{Sherali.Adams.2013}
+Hanif~D Sherali and Warren~P Adams.
+\newblock {\em A reformulation-linearization technique for solving discrete and
+  continuous nonconvex problems}, volume~31.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{Solyali.Cordeau.Laporte.2016}
+O{\u{g}}uz Solyal{\i}, Jean-Fran{\c{c}}ois Cordeau, and Gilbert Laporte.
+\newblock The impact of modeling on robust inventory management under demand
+  uncertainty.
+\newblock {\em Management Science}, 62(4):1188--1201, 2016.
+
+\bibitem{Sturm.Zhang.2003}
+Jos~F Sturm and Shuzhong Zhang.
+\newblock On cones of nonnegative quadratic functions.
+\newblock {\em Mathematics of Operations Research}, 28(2):246--267, 2003.
+
+\bibitem{Wang.Watson.Guan.2013}
+Q.~Wang, J.~P. Watson, and Y.~Guan.
+\newblock Two-stage robust optimization for nk contingency-constrained unit
+  commitment.
+\newblock {\em Power Systems, IEEE Transactions on}, 28:2366--2375, 2013.
+
+\bibitem{Wiesemann.Kuhn.Rustem.2011}
+W.~Wiesemann, D.~Kuhn, and B.~Rustem.
+\newblock Robust resource allocations in temporal networks.
+\newblock {\em Math. Programm., Ser. A}, 135(1):437--471, 2011.
+
+\bibitem{Zeng.Zhao.2013}
+B.~Zeng and L.~Zhao.
+\newblock Solving two-stage robust optimization problems using a
+  column-and-constraint generation method.
+\newblock {\em Operations Research letters}, 41:457--461, 2013.
+
+\bibitem{Zhao.Zeng.2012}
+Long Zhao and Bo~Zeng.
+\newblock Robust unit commitment problem with demand response and wind energy.
+\newblock In {\em Power and Energy Society General Meeting, 2012 IEEE}, pages
+  1--8. IEEE, 2012.
+
+\bibitem{Zuluaga.et.al.2006}
+Luis~F. Zuluaga, Juan Vera, and Javier Peña.
+\newblock {LMI} approximations for cones of positive semidefinite forms.
+\newblock {\em SIAM Journal on Optimization}, 16(4):1076--1091, 2006.
+
+\end{thebibliography}

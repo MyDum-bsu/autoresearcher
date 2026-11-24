@@ -1,0 +1,127 @@
+{
+  "claims": [
+    {
+      "evidence": [
+        "A4:physical2-6",
+        "A3:physical2-5"
+      ],
+      "id": "S1",
+      "kind": "source_model",
+      "limits": "Borel regularity is an explicit implementation convention, not a quoted source requirement.",
+      "statement": "General-A linear stationary dynamics, independent continuous box blocks, polyhedral terminal constraints, signed linear cost, one exact measurement then full suffix."
+    },
+    {
+      "evidence": [
+        "BT04:physical5:Theorem2.2",
+        "GTW20:physical3-4:Proposition1"
+      ],
+      "id": "S2",
+      "kind": "source_theorem",
+      "limits": "Does not imply affine-rule exactness or random-recourse exactness.",
+      "statement": "Finite convex-hull uncertainty and fixed recourse admit exact vertex LP."
+    },
+    {
+      "evidence": [
+        "correspondence.md:sections1-2"
+      ],
+      "id": "W1",
+      "kind": "written_derivation",
+      "limits": "Independent deviation removes first-stage translation; no inverse dynamics; not formalized.",
+      "statement": "State-policy and deviation-ARO witnesses preserve controls and complete trajectories in both directions."
+    },
+    {
+      "evidence": [
+        "correspondence.md:section3",
+        "A4:physical3"
+      ],
+      "id": "W2",
+      "kind": "written_derivation",
+      "limits": "Requires rectangular future support, not future observation.",
+      "statement": "Exact suffix support rows preserve all terminal constraints and signed epigraph."
+    },
+    {
+      "evidence": [
+        "correspondence.md:section4",
+        "S2"
+      ],
+      "id": "W3",
+      "kind": "written_derivation",
+      "limits": "Triangulation/regularity and degenerate cases are written mathematics; existing code covers only pinned invertible planar cases.",
+      "statement": "Vertex recourse extends to every real reachable state with a Borel relative-hull triangulation rule."
+    },
+    {
+      "evidence": [
+        "correspondence.md:section2"
+      ],
+      "id": "W4",
+      "kind": "written_derivation",
+      "limits": "Not a trajectory-preserving transformation of arbitrary informed path policies; no correlated-path extension.",
+      "statement": "Dropping path fibre consistency preserves existence only because identical observations share identical feasible suffix sets."
+    },
+    {
+      "evidence": [
+        "correspondence.md:section4"
+      ],
+      "id": "W5",
+      "kind": "written_derivation",
+      "limits": "May identify distinct observed states and alter policies/trajectories; not a policy bijection.",
+      "statement": "Terminal-image reduction is value-exact despite singular propagation in this model."
+    },
+    {
+      "evidence": [
+        "correspondence.md:section5",
+        "A3:physical5",
+        "A4:physical5-6"
+      ],
+      "id": "W6",
+      "kind": "written_derivation",
+      "limits": "Outer closure approximation is relaxation only; cannot certify an admissible policy.",
+      "statement": "State-image containment in exact cost-level closure set is equivalent to a state-policy guarantee."
+    },
+    {
+      "evidence": [
+        "ZHS18:physical6-8",
+        "methods-and-boundaries.md"
+      ],
+      "id": "S3",
+      "kind": "source_theorem_application",
+      "limits": "No FME implementation or runtime advantage is claimed.",
+      "statement": "Complete bounded-coordinate FME preserves projection; partial FME plus affine rules is conditional approximation."
+    },
+    {
+      "evidence": [
+        "case-contract.json",
+        "numeric-ledger.json",
+        "artifacts/bridge/transfer-v1/author/normal.stdout",
+        "artifacts/bridge/transfer-v1/author/optimized.stdout"
+      ],
+      "id": "N1",
+      "kind": "exact_fixed_instance_check",
+      "limits": "Reuses legacy checker and original certificates; nonzero gaps are not exact optima; does not judge general derivation.",
+      "statement": "Four stored certificates satisfy interpreted standard ARO terminal/cost rows in exact rational arithmetic."
+    },
+    {
+      "evidence": [
+        "case-contract.json",
+        "artifacts/bridge/transfer-v1/author/normal.stdout"
+      ],
+      "id": "N2",
+      "kind": "exact_fixed_instance_check",
+      "limits": "Semantic timing table is finite; not a universal hostile-policy verifier; metadata rejection is separately labeled.",
+      "statement": "Sign, terminal row and information controls discriminate accepted and invalid mappings normally and with -O."
+    },
+    {
+      "evidence": [
+        "FOUNDATION.md:sections3-5",
+        "correspondence.md"
+      ],
+      "id": "F0",
+      "kind": "formal_proof_not_supplied",
+      "limits": "No Lean build or human attestation.",
+      "statement": "No full transfer theorem has been machine-formalized or admitted to a thesis."
+    }
+  ],
+  "firstScientificSuccessAchieved": false,
+  "novelContributionClaimed": false,
+  "scientificAttestation": false
+}

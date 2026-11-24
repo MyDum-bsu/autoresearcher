@@ -1,0 +1,13 @@
+# Local F3 candidate proof work after provider refusal
+
+Owner explicitly requested continuing. No provider/worker requests or network changes are made. The official offline continuation failed with a non-transient OpenAI403 before a reviewer response; original stopped review files and failed run remain immutable.
+
+The saved partial review compiled the four F3 propositions, inspected source anchors and parent proofs, but did not deliver a complete independent semantic review. It is NOT promoted to readyForProof. Current coordinator-local work prepares candidate Lean proofs of the unchanged sealed targets. This is a declared development-stage sequencing adjustment under the owner's continuation request, not successful completion of the missing review gate. Acceptance still requires source/model fidelity review and independent kernel/control replay; no whole-bridge or scientific status promotion follows.
+
+Read actual F3 Goal definitions and existing F1/F2 proofs. Prove the real future-response expansion, an explicit finite-box sign witness and exact directional support, the universal robust-row equivalence, and the same ARO terminal/cost tightening. Never weaken a target or insert its conclusion as a hypothesis. Sources and seals remain unchanged. New proof source only BridgeFormalV3/Proofs/LocalSupports.lean in active project bridge/formal-env-v2/lean; evidence only artifacts/bridge/formal-v3-local/.
+
+Every compiler development execution saves its exact source snapshot, stdout/stderr and exit code before the next edit. A successful local proof is kernel evidence relative to these definitions, not an accepted independent source review. Print exact theorem types and transitive axioms, allow only propext/Classical.choice/Quot.sound; no sorry/custom axioms/native-evaluation/unsafe shortcuts. Use existing imports only, no full Mathlib import/download/install. Maintain 600 MiB disk reserve and task-local temp/cache.
+
+Core proof idea to check, not assume: express each future-noise coordinate through standard basis, use the already proved recurrence expansion, bound each scalar coefficient times bounded noise, and select noise signs to attain the finite sum. Apply the row theorem separately to negative and positive H rows and to signed c. Distinct row maximizers need not coincide. Actual policy type still has no future-noise argument.
+
+F4 and Borel versus unrestricted source-policy existence remain separate obligations. Beads records development state, not mathematical authority. No commits/pushes/live journal/blueprint/corpus/glossary/config/status writes, human attestation, new worker/workflow or API retry.

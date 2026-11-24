@@ -1,0 +1,41 @@
+{
+  "files": {
+    "artifacts/research-pilot-m0/finite-independent.json": {
+      "bound_in_m0_manifest": true,
+      "sha256": "431a985c860fd13fb456af1288c150414dd633c626c82f1bc8f737b8d06c7831"
+    },
+    "artifacts/research-pilot-m0/finite-reference.json": {
+      "bound_in_m0_manifest": true,
+      "sha256": "431a985c860fd13fb456af1288c150414dd633c626c82f1bc8f737b8d06c7831"
+    },
+    "pilot/baseline/README.md": {
+      "bound_in_m0_manifest": false,
+      "sha256": "d1097e23848d4e225b3590e6cb0aaae222ceb1a902d36b0274adf745d4e871d7"
+    },
+    "pilot/baseline/finite_reference.py": {
+      "bound_in_m0_manifest": true,
+      "sha256": "289835fea26134c27baa892dcd39f04fe489dc0938a44856d146856487cd6dd0"
+    },
+    "pilot/baseline/test_finite_reference.py": {
+      "bound_in_m0_manifest": true,
+      "sha256": "77f48c8401892247b087adfe599a290202a53a14411b250a42ce494098825944"
+    },
+    "pilot/checkers/README.md": {
+      "bound_in_m0_manifest": false,
+      "sha256": "9707cc0ded7218a619195434dee08646606415b4371ff8af33526357d2c70758"
+    },
+    "pilot/checkers/finite_bellman.py": {
+      "bound_in_m0_manifest": true,
+      "sha256": "e041bb9bc99eb72ec7b29f5821d798b43179a62db6f8d9c8d96ac897780b8523"
+    },
+    "pilot/checkers/test_finite_bellman.py": {
+      "bound_in_m0_manifest": true,
+      "sha256": "f978e368ac37b3e61bf59b2943bee320d4b471f5d265343d784c0e4e8055b6b9"
+    }
+  },
+  "schema_version": 1,
+  "scientific_status_change": false,
+  "source": "aro-discovery-baseline M0 finite subset",
+  "source_base_commit": "df8027532ebc8f59e37c63aabf9b2d2cd7b843ac",
+  "source_manifest_sha256": "eae9824241b6c1f1482a16f45bc6cb32b4d0a40366b4206cc5f3784d2c60d4e9"
+}

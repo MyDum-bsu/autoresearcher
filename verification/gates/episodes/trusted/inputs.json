@@ -1,0 +1,78 @@
+{
+  "hidden": {
+    "first_actions": [
+      "-1/1",
+      "0/1",
+      "1/1"
+    ],
+    "instance_id": "correlated_hidden_disturbance",
+    "paths": [
+      [
+        "-1/1",
+        "-1/1"
+      ],
+      [
+        "1/1",
+        "1/1"
+      ]
+    ],
+    "prefix_gain": "0/1",
+    "schema_version": 1,
+    "second_actions": [
+      "-1/1",
+      "0/1",
+      "1/1"
+    ],
+    "terminal_interval": null
+  },
+  "injective": {
+    "first_actions": [
+      "-1/1",
+      "0/1",
+      "1/1"
+    ],
+    "instance_id": "strict_gain",
+    "paths": [
+      [
+        "-1/1",
+        "0/1"
+      ],
+      [
+        "1/1",
+        "0/1"
+      ]
+    ],
+    "prefix_gain": "1/1",
+    "schema_version": 1,
+    "second_actions": [
+      "-1/1",
+      "0/1",
+      "1/1"
+    ],
+    "terminal_interval": null
+  },
+  "shift": {
+    "first_actions": [
+      "1/1"
+    ],
+    "instance_id": "hidden-shift",
+    "paths": [
+      [
+        "-1/1",
+        "-1/1"
+      ],
+      [
+        "1/1",
+        "1/1"
+      ]
+    ],
+    "prefix_gain": "0/1",
+    "schema_version": 1,
+    "second_actions": [
+      "-2/1",
+      "-1/1",
+      "0/1"
+    ],
+    "terminal_interval": null
+  }
+}

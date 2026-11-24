@@ -1,0 +1,121 @@
+{
+  "target_count": 10,
+  "targets": [
+    {
+      "node": "prerequisite",
+      "type": "BridgeFormalV2.NonemptyBlocksGoal",
+      "declaration": "BridgeFormalV2.Proofs.nonempty_blocks",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.ExpansionGoal",
+      "declaration": "BridgeFormalV2.Proofs.expansion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.PrefixSplitGoal",
+      "declaration": "BridgeFormalV2.Proofs.prefix_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.SourceChronologyGoal",
+      "declaration": "BridgeFormalV2.Proofs.source_chronology",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F1",
+      "type": "BridgeFormalV2.SuffixExpansionGoal",
+      "declaration": "BridgeFormalV2.Proofs.suffix_expansion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ExogenousImageGoal",
+      "declaration": "BridgeFormalV2.Proofs.exogenous_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ObservationFibreGoal",
+      "declaration": "BridgeFormalV2.Proofs.observation_fibre",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ForwardPolicyGoal",
+      "declaration": "BridgeFormalV2.Proofs.forward_policy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.ReversePolicyGoal",
+      "declaration": "BridgeFormalV2.Proofs.reverse_policy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    },
+    {
+      "node": "F2",
+      "type": "BridgeFormalV2.EpigraphEqualityGoal",
+      "declaration": "BridgeFormalV2.Proofs.epigraph_equality",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "compiler_exit": 0
+    }
+  ],
+  "missing_nodes": [
+    "F3",
+    "F4"
+  ],
+  "unrestricted_source_policy_comparison": "unproved",
+  "whole_transfer_accepted": false
+}

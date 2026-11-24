@@ -1,0 +1,25 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "wave": 6,
+  "decision": "source-closure",
+  "status": "source-closure",
+  "classification": "elementary reconstruction, not verbatim theorem coverage",
+  "goalAchieved": false,
+  "proof_authorized": false,
+  "actionableTarget": false,
+  "candidateReady": false,
+  "coordinatorInspectionRequired": true,
+  "scientificVerdict": "not issued; source-comparison recommendation only",
+  "rationale": "Actual D0+Delta is the Lagrangian upper estimate of the separate suffix-support prefix relaxation. A3 provides matching control/support machinery. Named DOI results have material hypotheses not established by model-preserving reduction; their nonapplication does not establish substantive novelty.",
+  "closestSource": "A3, physical pp3-8, especially (13)-(19)",
+  "decisiveSourceGap": null,
+  "remainingProofGap": "The prior universal policy/support implication is not formally checked; no proof expenditure authorized for this reconstruction.",
+  "blockers": [],
+  "stopActions": [
+    "no new numerical sweep",
+    "no renamed proof of the same cutoff",
+    "no replacement direction"
+  ],
+  "reportPath": "goal/wave-6/comparison.md",
+  "identityOutput": "artifacts/goal/wave-6/identity-verification.stdout.txt"
+}

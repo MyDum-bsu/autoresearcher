@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-11-13T01:23:02.183916+00:00",
+  "verification_contract_sha256": "424faba96a328762bd0c5cba09ac70d430564429c60dd053f9c431037ed50990",
+  "checks": [
+    {
+      "id": "D2-ruff-check",
+      "argv": [
+        "ruff",
+        "check",
+        "--no-cache",
+        "research/structured/checks/trajectory_check.py",
+        "research/structured/checks/certificate_check.py"
+      ],
+      "observed_exit": 1,
+      "stdout_path": "research/structured/checks/D2-ruff-check.stdout",
+      "stderr_path": "research/structured/checks/D2-ruff-check.stderr",
+      "stdout_sha256": "34d37fc0f319ceb6a3ff11c8aad5743afcc19e67f429f648c099111739e921ec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "hygiene_problems": [],
+  "inspected_files": [
+    "research/structured/checks/D2-certificates-optimized.stderr",
+    "research/structured/checks/D2-certificates-optimized.stdout.json",
+    "research/structured/checks/D2-certificates.stderr",
+    "research/structured/checks/D2-certificates.stdout.json",
+    "research/structured/checks/D2-ruff-check.stderr",
+    "research/structured/checks/D2-ruff-check.stdout",
+    "research/structured/checks/D2-trajectories-optimized.stderr",
+    "research/structured/checks/D2-trajectories-optimized.stdout.json",
+    "research/structured/checks/D2-trajectories.stderr",
+    "research/structured/checks/D2-trajectories.stdout.json",
+    "research/structured/checks/certificate_check.py",
+    "research/structured/checks/instances.json",
+    "research/structured/checks/manifest.json",
+    "research/structured/checks/run-observation.json",
+    "research/structured/checks/trajectory_check.py",
+    "research/structured/checks/verification-contract.json",
+    "research/structured/derivation.md",
+    "research/structured/handoff.md",
+    "research/structured/research-plan.md",
+    "research/structured/results.json"
+  ],
+  "shared_common_pool_files_unchanged": 75,
+  "scientific_checks_hashes_valid": true,
+  "tool_invocations_including_nested_at_verification": 46,
+  "no_check_retries": true,
+  "independent_F_replay": "not run by this author"
+}

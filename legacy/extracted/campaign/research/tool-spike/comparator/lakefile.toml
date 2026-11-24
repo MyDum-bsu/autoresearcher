@@ -1,0 +1,21 @@
+name = "campaign_spike"
+version = "0.1.0"
+defaultTargets = ["Challenge", "Valid", "Wrong", "Dependent", "Axiom", "Semantic"]
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Valid"
+
+[[lean_lib]]
+name = "Wrong"
+
+[[lean_lib]]
+name = "Dependent"
+
+[[lean_lib]]
+name = "Axiom"
+
+[[lean_lib]]
+name = "Semantic"

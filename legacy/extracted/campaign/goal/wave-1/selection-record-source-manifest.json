@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage": "pre-final-comparison",
+  "sources": [
+    {
+      "path": "research/question.md",
+      "sha256": "6e6bbaff0d752c3bfe7e2f9ee78b3135e689e437e012730f4c482c3a31f786dc"
+    },
+    {
+      "path": "research/resource-manifest.json",
+      "sha256": "1ff15746b0a2c8c47499cefdeca9dc2fc6b95c92ef536ce2e9259d7b542373d8"
+    },
+    {
+      "path": "research/astra-probe/derivation.md",
+      "sha256": "49be10c75a7b0ef81eef250f89e6eaa455392d6b88c1e2f8f946c9f31313dfc2"
+    },
+    {
+      "path": "research/continuation/derivation.md",
+      "sha256": "b7f7a8314a54a7aaf1b07cf20a2a06c3993a729fca2abeda017b623a55c13232"
+    },
+    {
+      "path": "research/sources/A4.pdf",
+      "sha256": "4f26e650ec6c86e7058e9a2228d8b12bd20fbcd1f8a4ba0c45a3cae8135ec420"
+    },
+    {
+      "path": "research/sources/BT04.pdf",
+      "sha256": "3ff5e8479fac4326cd4369ac01cefc30fd468681fa4a99af846eb05a4db44f3a"
+    },
+    {
+      "path": "goal/wave-1/sources/helly-survey.pdf",
+      "sha256": "b13039b312b032af477281b4a8f7fcf4a2a3a02c464b005e2a60af85e7dd47d8"
+    },
+    {
+      "path": "corpus/21_Zhen_denHertog_Sim_2018.pdf",
+      "sha256": "4dd3a2459894eefe1267516892cfd4df9d20af133484c886ccc377883b90b6c3"
+    },
+    {
+      "path": "corpus/09_Marandi_denHertog_2018.pdf",
+      "sha256": "59c56d0aac12d2d6d00a643f14622c3128e06ccc88d6f0580d91748b0d2a8ab7"
+    }
+  ],
+  "live_corpus_admission": false
+}

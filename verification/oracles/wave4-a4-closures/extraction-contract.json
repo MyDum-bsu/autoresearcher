@@ -1,0 +1,8 @@
+{
+  "cases_unchanged": true,
+  "controls_unchanged": true,
+  "extractor_sha256": "f0548263760123d9cff2f3dcf51c8a84f73c85099b06307d1f2ffa61e4eb9590",
+  "formula": "2+suffix_x_support+prefix_x_support-suffix_control_x_capacity <= nominal_terminal_prefix_x <= 10-suffix_x_support-prefix_x_support+suffix_control_x_capacity",
+  "parent_contract_sha256": "6bcf2706ef15e97af487cb5b8fcd062c81b17067c739b7830ca8d76aa52d306b",
+  "reason": "Printed r67 preserved proposal failed exact suffix repair after rounding at a saturated terminal row. Repair common prefix viability before suffixes. No solver retry."
+}

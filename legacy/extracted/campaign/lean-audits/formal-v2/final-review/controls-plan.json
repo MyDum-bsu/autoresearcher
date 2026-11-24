@@ -1,0 +1,30 @@
+{
+  "C1": {
+    "expected": "compile",
+    "meaning": "Actual C1 real data, bounded controls/noise, measurable constant witness, SourceBound -2 and corresponding AROBound -2"
+  },
+  "C2": {
+    "expected": "compile",
+    "meaning": "Nonempty uncertainty/controls, nonempty terminal intervals [5,5], empty sourceLevels via zero disturbances"
+  },
+  "C3": {
+    "expected": "compile",
+    "meaning": "Two distinct cancelling prefix histories give equal observation and arbitrary-policy suffix; independently varied futures"
+  },
+  "C4": {
+    "expected": "compile",
+    "meaning": "All terminal Rows -2, zero-disturbance rejection of -3, opposite signed criterion violates -2"
+  },
+  "C5": {
+    "expected": "reject",
+    "meaning": "False -3 target rejected for bound mismatch after imported c4Reject proves zero-disturbance contradiction"
+  },
+  "C6": {
+    "expected": "compile",
+    "meaning": "No single state policy obeys incompatible future-conditioned suffix demands"
+  },
+  "C6Negative": {
+    "expected": "reject",
+    "meaning": "Constant-policy construction of forbidden future demand rejected at incompatible control equality"
+  }
+}

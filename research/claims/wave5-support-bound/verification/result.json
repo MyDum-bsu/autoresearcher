@@ -1,0 +1,47 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "wave": 5,
+  "stage": "B",
+  "status": "partial",
+  "candidateReady": true,
+  "goalAchieved": false,
+  "disposition": "finite exact application reproduced; general reduction written with partially checked symbolic algebra",
+  "exactApplication": {
+    "models": ["a4_printed", "a4_reconstructed_decimal"],
+    "closures": [67, 104],
+    "rows": 4,
+    "primalDualEquality": true,
+    "bothTerminalStripSides": true,
+    "r104ExactZeroDefect": true,
+    "r67StrictlyPositiveDefect": true,
+    "invalidFiniteControlsRejected": 16,
+    "normalExit": 0,
+    "optimizedExit": 0,
+    "normalOptimizedByteIdentical": true
+  },
+  "generalProofCoverage": {
+    "writtenModelAndQuantifierReduction": "provided, not formally checked",
+    "universalPolynomialSlackIdentity": "checked with SymPy 1.14.0",
+    "triangleDefectDecompositionIdentity": "checked with SymPy 1.14.0",
+    "wrongUpperSlackSign": "rejected by symbolic identity check",
+    "generalOrderAndSupportPremises": "written proof only",
+    "fullUniversalFormalTheorem": "not run; no compiled mathlib dependencies at inspected paths",
+    "comparator": "not invoked"
+  },
+  "engineeringLimits": {
+    "ruffCheckExit": 1,
+    "ruffFindings": 18,
+    "ruffFormatCheckExit": 1,
+    "qualityDeltaExit": 1,
+    "qualityDeltaReason": "no local quality baseline or usable git HEAD for new directory",
+    "technicalStyleExit": 1,
+    "technicalStyleFlags": 2
+  },
+  "unresolved": [
+    "The full universal policy theorem is not checker-backed; finite certificates and symbolic scalar identities do not discharge that obligation.",
+    "Closest original-source comparison and novelty assessment remain Stage C/coordinator obligations.",
+    "The fixed-input research checker is not lint-clean."
+  ],
+  "reportPath": "goal/wave-5/verification/handoff.md",
+  "continuationOwner": "coordinator"
+}

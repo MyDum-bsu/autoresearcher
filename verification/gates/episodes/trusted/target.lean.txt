@@ -1,0 +1,11 @@
+import Lean
+
+-- PUBLIC bounded representation lemma; human statement correspondence pending.
+theorem observation_factorization
+    {Path Obs Action : Type} [Inhabited Action]
+    (obs : Path → Obs) (f : Path → Action) :
+    (∃ g : Obs → Action, ∀ p, g (obs p) = f p) ↔
+      (∀ p q, obs p = obs q → f p = f q) := by
+{{PROOF}}
+
+#print axioms observation_factorization

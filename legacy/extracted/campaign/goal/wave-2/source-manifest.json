@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 2,
+  "page_numbering": "physical PDF one-indexed; author-version printed numbers agree for quoted pages",
+  "sources": [
+    {
+      "id": "IY",
+      "path": "goal/wave-2/sources/iyengar-tr-2002-07.pdf",
+      "title": "Robust dynamic programming",
+      "version": "CORC TR-2002-07, revised May 4, 2004",
+      "url": "http://www.corc.ieor.columbia.edu/reports/techreports/tr-2002-07.pdf",
+      "page_count": 29,
+      "physical_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visual_pages_read": [],
+      "sha256": "cfd695ab5642ae6ddc41b9565a32478c3b2e83bee01012a3ec0133b0385fb55d",
+      "size_bytes": 292405,
+      "anchors": [
+        {
+          "physical_pdf_page": 1,
+          "quote": "CORC Tech Report TR-2002-07",
+          "raw_path": "artifacts/goal/wave-2/IY-p1.stdout"
+        },
+        {
+          "physical_pdf_page": 1,
+          "quote": "Revised May 4, 2004",
+          "raw_path": "artifacts/goal/wave-2/IY-p1.stdout"
+        },
+        {
+          "physical_pdf_page": 4,
+          "quote": "Assumption 1 (Rectangularity)",
+          "raw_path": "artifacts/goal/wave-2/IY-p4.stdout"
+        },
+        {
+          "physical_pdf_page": 6,
+          "quote": "Theorem 1 (Bellman equation)",
+          "raw_path": "artifacts/goal/wave-2/IY-p6.stdout"
+        },
+        {
+          "physical_pdf_page": 7,
+          "quote": "Theorem 2 (Markov optimality)",
+          "raw_path": "artifacts/goal/wave-2/IY-p7.stdout"
+        }
+      ],
+      "extracts": [
+        {
+          "path": "artifacts/goal/wave-2/IY-p1.stdout",
+          "sha256": "bc44758e08ceb86683a1ef1f082f65fe73c2fd7befb855949b23be02cb1b5da7",
+          "size_bytes": 3285,
+          "physical_pdf_page": 1
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p2.stdout",
+          "sha256": "a7b380a5526e422b375f815db04f4fdc8e2df95fca6a12c89eb5e12a9a97b87c",
+          "size_bytes": 4659,
+          "physical_pdf_page": 2
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p3.stdout",
+          "sha256": "ae2af188a3500bf3a306c03b4cbf45f7ee4ac58efef226066b75e3cb45f764da",
+          "size_bytes": 4182,
+          "physical_pdf_page": 3
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p4.stdout",
+          "sha256": "9cc2da8c0edff8e1703c1ac01e938dc65b1edaf6d26282e0dcf19e346fe0ddab",
+          "size_bytes": 4938,
+          "physical_pdf_page": 4
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p5.stdout",
+          "sha256": "43acd0a3c2d760250529d3dbc1430a2710f0133552e3b50a9ef6270b13133313",
+          "size_bytes": 5466,
+          "physical_pdf_page": 5
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p6.stdout",
+          "sha256": "36e405a4d89aefd003aa4ac865b0143989dfeb14ea411fe38ea5ad5997a91ffb",
+          "size_bytes": 6452,
+          "physical_pdf_page": 6
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p7.stdout",
+          "sha256": "d806f287d4ad0377f6932a9fc818d2b34c9c7b4797c2746cd0bc515f11fa76a5",
+          "size_bytes": 5224,
+          "physical_pdf_page": 7
+        },
+        {
+          "path": "artifacts/goal/wave-2/IY-p8.stdout",
+          "sha256": "5d235972918dc0eaf892a0cf20cee09cc507c6e9e7529e97be5ac727c8b4d2b3",
+          "size_bytes": 4667,
+          "physical_pdf_page": 8
+        }
+      ],
+      "pdfinfo": {
+        "path": "artifacts/goal/wave-2/IY-pdfinfo.stdout",
+        "sha256": "7d393b923d64f15a48873d1b6254bf79a29f81ca2b1b5b35a26a7dfdee60e8ac",
+        "size_bytes": 350
+      },
+      "whole_pdf_read": false,
+      "live_corpus_admission": false,
+      "reading_method": "Direct original PDF layout extraction; WKR physical p10 also visually inspected"
+    },
+    {
+      "id": "WKR",
+      "path": "goal/wave-2/sources/wkr-2013.pdf",
+      "title": "Robust Markov Decision Processes",
+      "version": "Original author manuscript, February 9, 2012",
+      "url": "https://optimization-online.org/wp-content/uploads/2010/05/2610.pdf",
+      "page_count": 52,
+      "physical_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "visual_pages_read": [
+        10
+      ],
+      "sha256": "8cbadb800e452ff17e90d78854a9ee9364aa7f4200ea76d5c5707803fb34a79b",
+      "size_bytes": 751303,
+      "anchors": [
+        {
+          "physical_pdf_page": 1,
+          "quote": "Robust Markov Decision Processes",
+          "raw_path": "artifacts/goal/wave-2/WKR-p1.stdout"
+        },
+        {
+          "physical_pdf_page": 1,
+          "quote": "February 9, 2012",
+          "raw_path": "artifacts/goal/wave-2/WKR-p1.stdout"
+        },
+        {
+          "physical_pdf_page": 6,
+          "quote": "We say that an ambiguity set",
+          "raw_path": "artifacts/goal/wave-2/WKR-p6.stdout"
+        },
+        {
+          "physical_pdf_page": 8,
+          "quote": "Proposition 2.3",
+          "raw_path": "artifacts/goal/wave-2/WKR-p8.stdout"
+        },
+        {
+          "physical_pdf_page": 10,
+          "quote": "Proposition 2.4 (General Ambiguity Sets)",
+          "raw_path": "artifacts/goal/wave-2/WKR-p10.stdout"
+        },
+        {
+          "physical_pdf_page": 11,
+          "quote": "Theorem 2.6",
+          "raw_path": "artifacts/goal/wave-2/WKR-p11.stdout"
+        }
+      ],
+      "extracts": [
+        {
+          "path": "artifacts/goal/wave-2/WKR-p1.stdout",
+          "sha256": "90ea2d478d1ce248205da631ee59f306df16e37916dcac6898c2702a50ec7bcc",
+          "size_bytes": 2630,
+          "physical_pdf_page": 1
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p2.stdout",
+          "sha256": "e2bec0d3c09d689fb0be010f2dad3bef45daff7991a764af9798d5fbe0f54137",
+          "size_bytes": 3776,
+          "physical_pdf_page": 2
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p3.stdout",
+          "sha256": "76cd36812b6fe72513c4c918792d81e51520e18d50837516cdeb7f5327095b32",
+          "size_bytes": 3683,
+          "physical_pdf_page": 3
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p4.stdout",
+          "sha256": "fac32b6d8a89ee9e71f6381037900ec009ad56c4f492367c09cd56c1137192cf",
+          "size_bytes": 3229,
+          "physical_pdf_page": 4
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p5.stdout",
+          "sha256": "cb037656d30fd4bac1cbbac5efc97fa6d0c0ccbe635d70b93faf46936b897e0e",
+          "size_bytes": 3022,
+          "physical_pdf_page": 5
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p6.stdout",
+          "sha256": "e2fef5b2516bc0934814f1a946cf8853ee33b084b70b3476570a4447b9939844",
+          "size_bytes": 4055,
+          "physical_pdf_page": 6
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p7.stdout",
+          "sha256": "3f26daabd47d6a3dae6b847cdd5aa25c2d74b337c09a7131042b81f18aaab793",
+          "size_bytes": 3372,
+          "physical_pdf_page": 7
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p8.stdout",
+          "sha256": "99fd3ce528ba4c815fbcac982207e90e6f0cd755a7b43f39eb2f54c37af6f5c1",
+          "size_bytes": 3332,
+          "physical_pdf_page": 8
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p9.stdout",
+          "sha256": "32316b9e0865c97fa1b1314bfdbbf709b3e6c80aca8aea6e5857541cde1c4556",
+          "size_bytes": 3319,
+          "physical_pdf_page": 9
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p10.stdout",
+          "sha256": "6fe0a1c49fd5da12013017ac6eb7fb554f709eb59e746524b14786fe397bf67e",
+          "size_bytes": 3785,
+          "physical_pdf_page": 10
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p11.stdout",
+          "sha256": "2ab93b3ae11060e11953348c8ef850e2b428c8aea61e8cf1a8bc6d39b355766b",
+          "size_bytes": 3492,
+          "physical_pdf_page": 11
+        },
+        {
+          "path": "artifacts/goal/wave-2/WKR-p12.stdout",
+          "sha256": "c12bf31c3c55b70e4648e63811c110ea0109e47a74fa6767fb38564775334023",
+          "size_bytes": 3603,
+          "physical_pdf_page": 12
+        }
+      ],
+      "pdfinfo": {
+        "path": "artifacts/goal/wave-2/WKR-pdfinfo.stdout",
+        "sha256": "a6f92903be2e4b03e297902f7073a81b587cd231e1800bd1b7ad5067c2a5d98e",
+        "size_bytes": 461
+      },
+      "whole_pdf_read": false,
+      "live_corpus_admission": false,
+      "reading_method": "Direct original PDF layout extraction; WKR physical p10 also visually inspected"
+    },
+    {
+      "id": "DVM",
+      "path": "goal/wave-2/sources/dvm-2024.pdf",
+      "title": "Approximate Information States for Worst-Case Control and Learning in Uncertain Systems",
+      "version": "arXiv:2301.05089v2 extended original",
+      "url": "https://arxiv.org/pdf/2301.05089v2",
+      "page_count": 16,
+      "physical_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "visual_pages_read": [],
+      "sha256": "1d3c1d3d4e0e0ba07ba138f3e9e53015b1fd9ec7da08d2f5d9c8f0faccd49842",
+      "size_bytes": 687486,
+      "anchors": [
+        {
+          "physical_pdf_page": 1,
+          "quote": "Information States for Worst-Case",
+          "raw_path": "artifacts/goal/wave-2/DVM-p1.stdout"
+        },
+        {
+          "physical_pdf_page": 3,
+          "quote": "independent uncertain variables",
+          "raw_path": "artifacts/goal/wave-2/DVM-p3.stdout"
+        },
+        {
+          "physical_pdf_page": 3,
+          "quote": "perfect recall",
+          "raw_path": "artifacts/goal/wave-2/DVM-p3.stdout"
+        },
+        {
+          "physical_pdf_page": 4,
+          "quote": "Definition 1.",
+          "raw_path": "artifacts/goal/wave-2/DVM-p4.stdout"
+        },
+        {
+          "physical_pdf_page": 4,
+          "quote": "Theorem 1.",
+          "raw_path": "artifacts/goal/wave-2/DVM-p4.stdout"
+        },
+        {
+          "physical_pdf_page": 5,
+          "quote": "Systems with partially observed states",
+          "raw_path": "artifacts/goal/wave-2/DVM-p5.stdout"
+        }
+      ],
+      "extracts": [
+        {
+          "path": "artifacts/goal/wave-2/DVM-p1.stdout",
+          "sha256": "579b81909c350a25a3810c4f43a306a99bfd0724c7e9719fa426f420712394c9",
+          "size_bytes": 9082,
+          "physical_pdf_page": 1
+        },
+        {
+          "path": "artifacts/goal/wave-2/DVM-p2.stdout",
+          "sha256": "2d08f0208ae59fce201d59134c2c4744bfd84f880b7e5ee2411fa60c59b7c1e5",
+          "size_bytes": 7340,
+          "physical_pdf_page": 2
+        },
+        {
+          "path": "artifacts/goal/wave-2/DVM-p3.stdout",
+          "sha256": "3d326407a48497c3e0710405cac8ecb4df03dd4cafbd524fdb5ad0889a67e0d1",
+          "size_bytes": 9251,
+          "physical_pdf_page": 3
+        },
+        {
+          "path": "artifacts/goal/wave-2/DVM-p4.stdout",
+          "sha256": "6ac2cc4790acc8e2e32db6ab6c94929af901e24230e8c39751966f5bf680ff07",
+          "size_bytes": 8989,
+          "physical_pdf_page": 4
+        },
+        {
+          "path": "artifacts/goal/wave-2/DVM-p5.stdout",
+          "sha256": "3a71ec79c8e8aa47570f4cc41535ca8ccdb31855babb5a36707ce85036c6f78b",
+          "size_bytes": 9089,
+          "physical_pdf_page": 5
+        }
+      ],
+      "pdfinfo": {
+        "path": "artifacts/goal/wave-2/DVM-pdfinfo.stdout",
+        "sha256": "5628c78941abbe360b7a9fcb2ea0499f6ffd72fc0c171d490ba038f08c1213de",
+        "size_bytes": 546
+      },
+      "whole_pdf_read": false,
+      "live_corpus_admission": false,
+      "reading_method": "Direct original PDF layout extraction; WKR physical p10 also visually inspected"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "FOUNDATION.md",
+      "sha256": "41cccffdf929c34e9a3b0d8866fc842ad026f5b046b09b34e62a58b897e3fe12",
+      "size_bytes": 35374
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "a71d81ced3666cdeab86dc75a6f119c86a83f9035cf2654fd0483f89be748447",
+      "size_bytes": 7343
+    },
+    {
+      "path": "research/question.md",
+      "sha256": "6e6bbaff0d752c3bfe7e2f9ee78b3135e689e437e012730f4c482c3a31f786dc",
+      "size_bytes": 10744
+    },
+    {
+      "path": "docs/specs/2026-11-13-first-scientific-success-goal.md",
+      "sha256": "f933d107697296d9d5df2265695969852cd40cea8d20ea0cd88b495dd7e5b791",
+      "size_bytes": 15681
+    },
+    {
+      "path": "docs/specs/2026-11-13-first-success-wave-2-source-audit.md",
+      "sha256": "81508e7f4275890b2b91c1e1374d4419f8769ebcb48bed5813a09ef8a74bd7fb",
+      "size_bytes": 5876
+    },
+    {
+      "path": "goal/wave-1/question.md",
+      "sha256": "d2ac0753dafc832748c9ba8456aaa3c85be6b9867fd81cf989257b100d80cac4",
+      "size_bytes": 5693
+    },
+    {
+      "path": "goal/wave-1/claim-contract.json",
+      "sha256": "ea88d3f47f79c58f5c70387c5937d895a1da0a4f0964fe3d9358afa2952b85f6",
+      "size_bytes": 2946
+    },
+    {
+      "path": "goal/wave-1/source-manifest.json",
+      "sha256": "cca8b324c6077cd9d7b0d60fea2b657ca130324a21b4083160c5e1e82c1c6839",
+      "size_bytes": 10450
+    },
+    {
+      "path": "artifacts/goal/wave-1/scientific-review/report.md",
+      "sha256": "4eb12664fb564da355a4b8c49efebfc8f786323d634c0123dc71d22607f0b308",
+      "size_bytes": 14590
+    }
+  ],
+  "access_records": [
+    {
+      "path": "artifacts/goal/wave-2/acquisition/arxiv-search.xml",
+      "sha256": "2a5ca3ced929a554f108b00a0fe6b3894d60efa66107ad9d009208c1700492d7",
+      "size_bytes": 9691
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/bing-iyengar.xml",
+      "sha256": "b4e0d23829cebe48fa07131784e83cfabe621c85091e288a87097819bc1ede6e",
+      "size_bytes": 6789
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-404.html",
+      "sha256": "b53417484988b4d261497e55d7990204e375279d44e2bd5cfd0ec0415f42d2d8",
+      "size_bytes": 1174
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-author-pdf.headers",
+      "sha256": "2ddac2323f208cdc2522da59d2d817951e750d6991374e12a0ce2fe68b034bf3",
+      "size_bytes": 1994
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-author-response",
+      "sha256": "0df2f8342c057a772e526f0750476880e727a363847dde6a52d93e9f39e21474",
+      "size_bytes": 53479
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-author.html",
+      "sha256": "c47dc5ddf2ef0b3c8ca5cbda74205e0a44214ff0227c1eed306f4797c70017b3",
+      "size_bytes": 5572
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-citeseer-response",
+      "sha256": "eae7797665b8bf6275bd67aebbdf42fb5d80df5e0007d46a87017907298dcd86",
+      "size_bytes": 4663
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-citeseer.headers",
+      "sha256": "e123c1dff1542ff10322d54e486e66f9816b6fcad4e7c130af63950cacc645de",
+      "size_bytes": 1066
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-commons.json",
+      "sha256": "68856635e153785aae64cf773137a9a412a33e0dac96ba783739e044c1b3f962",
+      "size_bytes": 1622
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-corc-apex.headers",
+      "sha256": "c958655a9070f02d9ea25d77739857745752184d6bd18f76ac2446dd834e2156",
+      "size_bytes": 66
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-corc-http.headers",
+      "sha256": "dadea1c7236026de8a805c5e1f1e4694f026dcfa095c5aafa0c8c056ea834820",
+      "size_bytes": 407
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-corc.headers",
+      "sha256": "f55260227c507b4e203ec14ceb78ce8e64d11734111bed9bd18936a3bd4d48f3",
+      "size_bytes": 39
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-openalex.json",
+      "sha256": "f594c4f5b8b7c42fa66a674fa6530ecb59707d8b0b4736a62a1a2929477b5987",
+      "size_bytes": 12136
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-pdfinfo.txt",
+      "sha256": "7d393b923d64f15a48873d1b6254bf79a29f81ca2b1b5b35a26a7dfdee60e8ac",
+      "size_bytes": 350
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-publisher-response",
+      "sha256": "bc6fd9b0da8de40f7aeaf8ecb9e87655a6c64b4fc4db7cc44e29c8029d197aea",
+      "size_bytes": 5513
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-publisher.headers",
+      "sha256": "575e5b65cba431677cc0eb7381c865c7538e5acf53ce505a1999fa1aa450fa0c",
+      "size_bytes": 1906
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar-s2.json",
+      "sha256": "c7253af2ff20cd3d1fd6411cbc51ad0b227e0c2908ccfe89dfac0aca3b5492f9",
+      "size_bytes": 318
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/iyengar.headers",
+      "sha256": "f48d36feb5ef47be101a8a20ad10fa18f086005096810a98308a6129ea21908a",
+      "size_bytes": 841
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/oo-search.html",
+      "sha256": "4e7b7a3306291922d318b61290b4e1b790e35630680446a57534a4f65a7b1a26",
+      "size_bytes": 122231
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/oo-search.json",
+      "sha256": "3bbc625317f33a0bcd44918c8fb0268a7ef89750f15d62749ae99c6c34c0e5c5",
+      "size_bytes": 25895
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/search-iyengar.html",
+      "sha256": "4a2dc9b8046920a06611a7a2e1361596aaa44861bf74545cae83c92c2135d47b",
+      "size_bytes": 93225
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/search-partial.html",
+      "sha256": "bb9a5caf54e7fee683ef6ef303fc69747afbb7682c8193610753b37e242b8988",
+      "size_bytes": 93414
+    },
+    {
+      "path": "artifacts/goal/wave-2/acquisition/wkr.headers",
+      "sha256": "e04b10a536c602d8d4f9a4d1af9cd251ee0e33fc2a7c6b69743efc42f1eb0ab2",
+      "size_bytes": 382
+    }
+  ],
+  "version_limitations": [
+    "Final 2005 IY journal PDF unavailable",
+    "Final 2013 WKR journal PDF not acquired",
+    "Author-version theorem numbering is not asserted for final journal versions"
+  ],
+  "live_corpus_admission": false,
+  "scientific_attestation": false
+}

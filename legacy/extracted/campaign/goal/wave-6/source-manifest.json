@@ -1,0 +1,279 @@
+{
+  "task_id": "aro-discovery-k4t",
+  "wave": 6,
+  "root": "<workspace>/aro-discovery-campaign",
+  "branch": "task/aro-discovery-k4t-campaign",
+  "goalAchieved": false,
+  "proof_authorized": false,
+  "sources": [
+    {
+      "id": "A3",
+      "doi": "10.33581/2520-6508-2021-2-38-50",
+      "path": "research/sources/A3.pdf",
+      "sha256": "2330f4ac22dd57b924b17f130a7937769ea6f6f56f825f1779102a038a347288",
+      "version": "Published journal article, 2021, pp38-50; pre-existing local PDF",
+      "physicalPagesRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "renderedPagesRead": [
+        6
+      ],
+      "comparePath": "corpus/our_papers/A3_Костюкевич_Дмитрук_2021.pdf",
+      "parentManifest": "research/resource-manifest.json",
+      "anchors": [
+        {
+          "page": 4,
+          "statement": "Definitions 3 and information pattern",
+          "quote": "measure exactly the current state"
+        },
+        {
+          "page": 6,
+          "statement": "Proposition (12), support LP and dual (13)-(14)",
+          "quote": "The problem dual to (13) has the form"
+        },
+        {
+          "page": 8,
+          "statement": "Lifted support (18)-(19)",
+          "quote": "f (a ) = f0 + la, l = q0"
+        }
+      ]
+    },
+    {
+      "id": "AS03",
+      "doi": "10.1109/TAC.2003.817920",
+      "path": "goal/wave-6/sources/AS03.pdf",
+      "sha256": "54e8a93217e98e748f700ebf65cd354c43e9ad5c0811691c212c6e61200e2ab1",
+      "version": "IEEE-formatted published article, TAC 48(10), 2003, pp1684-1698, hosted by author; DOI visible p1",
+      "physicalPagesRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "renderedPagesRead": [
+        2,
+        4
+      ],
+      "url": "https://sontaglab.org/FTPDIR/angeli-sontag-monotone-TAC03.pdf",
+      "errataPath": "goal/wave-6/sources/AS03-errata.txt",
+      "anchors": [
+        {
+          "page": 2,
+          "statement": "Definition II.1, ordered controlled flow",
+          "quote": "A controlled dynamical system"
+        },
+        {
+          "page": 4,
+          "statement": "Proposition III.2, Corollary III.3",
+          "quote": "is cooperative if and only if the following properties hold"
+        },
+        {
+          "page": 6,
+          "statement": "Definition V.1 is an equilibrium characteristic, not static-policy optimality",
+          "quote": "globally asymptotically stable equilibrium"
+        }
+      ]
+    },
+    {
+      "id": "BGL15",
+      "doi": "10.1007/s10107-014-0768-y",
+      "path": "corpus/04_Bertsimas_Goyal_Lu_2015.pdf",
+      "sha256": "91fe2751d14113006a1e9213ad2ed05d159a0aa9545a3f933148794b7309cb2f",
+      "version": "MIT repository author's final manuscript, post peer review, no publisher formatting/copy editing; repository cover physical p1; manuscript p1=physical p2",
+      "physicalPagesRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "renderedPagesRead": [],
+      "repositoryHandle": "1721.1/103403",
+      "anchors": [
+        {
+          "page": 4,
+          "statement": "Model (1.1) and nonnegative packing restrictions",
+          "quote": "we can not handle covering constraints involving second-stage variables"
+        },
+        {
+          "page": 11,
+          "statement": "Theorem 1 static equality and existential converse",
+          "quote": "zAR = zRob if T (U, h) is convex for all h > 0"
+        },
+        {
+          "page": 15,
+          "statement": "Theorem 2 multiplicative bound; extra x,c nonnegative",
+          "quote": "both non-negative"
+        },
+        {
+          "page": 21,
+          "statement": "Theorem 5, independent B/d uncertainty",
+          "quote": "U = U B × U d"
+        },
+        {
+          "page": 25,
+          "statement": "Theorem 6 RHS extension, constraint-wise uncertainty",
+          "quote": "then the static solution is optimal"
+        }
+      ]
+    },
+    {
+      "id": "BG10",
+      "doi": "10.1287/moor.1090.0440",
+      "path": "goal/wave-6/sources/BG10-author.pdf",
+      "sha256": "f4ed6f8d9b762e3e22d8584c6ddb8eab1a4d9dd182bcb83252accc269dfbb892",
+      "version": "Published MOR 35(2), May 2010, pp284-305; INFORMS author courtesy copy hosted at MIT. Filename does not mean preprint; DOI visible p1.",
+      "physicalPagesRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "renderedPagesRead": [],
+      "url": "https://www.mit.edu/~dbertsim/papers/Robust%20Optimization/On%20the%20Power%20of%20Robust%20Solutions%20in%20Two-Stage%20Stochastic%20and%20Adaptive%20Optimization%20Problems.pdf",
+      "anchors": [
+        {
+          "page": 4,
+          "statement": "Restrictions on initial covering model",
+          "quote": "the assumed nonnegativity of the right-hand side"
+        },
+        {
+          "page": 16,
+          "statement": "Theorem 4.1, factor two for positive RHS uncertainty",
+          "quote": "Then,"
+        },
+        {
+          "page": 19,
+          "statement": "Theorem 5.1, factor four for positive joint uncertainty",
+          "quote": "Theorem 5.1."
+        },
+        {
+          "page": 20,
+          "statement": "Theorem 5.3: equality for entrywise data hypercube",
+          "quote": "Let"
+        },
+        {
+          "page": 21,
+          "statement": "Joint worst data scenario in proof of Theorem 5.3",
+          "quote": "Because the uncertainty set is a hypercube"
+        }
+      ]
+    }
+  ],
+  "additionalDirectlyCitedOriginals": 0,
+  "wholePdfRead": false,
+  "identityLimitation": "Hashes bind the bytes read, not publisher authenticity by themselves; DOI/version identity was read on original title/cover pages. Newly captured parent hashes are not a fabricated before-session snapshot.",
+  "parentInputs": [
+    {
+      "path": "docs/specs/2026-11-13-first-success-wave-6-source-decision.md",
+      "sha256": "6270d5603f590a2304fb5957d429eab79bae7c10c299b0c283fc153928eb494b"
+    },
+    {
+      "path": "docs/specs/2026-11-13-first-scientific-success-goal.md",
+      "sha256": "f933d107697296d9d5df2265695969852cd40cea8d20ea0cd88b495dd7e5b791"
+    },
+    {
+      "path": "FOUNDATION.md",
+      "sha256": "41cccffdf929c34e9a3b0d8866fc842ad026f5b046b09b34e62a58b897e3fe12"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "a71d81ced3666cdeab86dc75a6f119c86a83f9035cf2654fd0483f89be748447"
+    },
+    {
+      "path": "goal/wave-5/astra/derivation.md",
+      "sha256": "05bf2f83ca533f528f90295b505c2cdf9a553f199bcfe3d4d7f616b615ded034"
+    },
+    {
+      "path": "goal/wave-5/verification/proof.md",
+      "sha256": "1a5ea1ae2d126274540f4688e6f1d6368dc2dcb6633fd95887c7cfb678b90b48"
+    },
+    {
+      "path": "artifacts/goal/wave-5/independent-review/report.md",
+      "sha256": "35dbc673da9ad1e8dcb0a53fdd3102ce2d46ff956eb97346275542ed207e750a"
+    }
+  ],
+  "derivedEvidence": [
+    {
+      "path": "goal/wave-6/scratch/A3-reading.txt",
+      "sha256": "4e4cc65ae45f9afc3f7f0dce65e4310efe0c859bed92748f2012e394ab3905c0"
+    },
+    {
+      "path": "goal/wave-6/scratch/AS03-reading.txt",
+      "sha256": "5197d631cb431f3f94a68078e21393f83dd70e62275e46be27a0a8d7ec3d1bb1"
+    },
+    {
+      "path": "goal/wave-6/scratch/BG10-reading.txt",
+      "sha256": "46276621c8c7c3e6d94040a61c2420c5568965d57d9782c3ff8e663c24db133a"
+    },
+    {
+      "path": "goal/wave-6/scratch/BGL-reading.txt",
+      "sha256": "f53ec1ceff500ad15d5894fae2d80ae56348aeb09b98c2cf30abbb2608223e29"
+    },
+    {
+      "path": "goal/wave-6/scratch/parent-reading.txt",
+      "sha256": "c59a1f70dbaa0b6d468957cd8e5a1ca0dbaba159dd827a9e5c846c0526e5723b"
+    },
+    {
+      "path": "goal/wave-6/scratch/ratio-and-extension-reading.txt",
+      "sha256": "b6fcea5dd2fbe3030472432f7a14da05ae8d1d2df678113b5c8fd2d3d46ff58d"
+    },
+    {
+      "path": "goal/wave-6/scratch/supplemental-reading.txt",
+      "sha256": "feaa39cf75d6f91f4dc443be2b3e5ab3e2646bc073c309a0041031c118a854b5"
+    },
+    {
+      "path": "goal/wave-6/scratch/A3-p6.png",
+      "sha256": "04c2acd51050b5524707daa5c46072f5b35d42fe37d7f148ad04d21c3b48b877"
+    },
+    {
+      "path": "goal/wave-6/scratch/AS03-p2.png",
+      "sha256": "92d6f22d21bc979f7beb309bed584947a49d7ff366f83d92cbca6f29ebc3284b"
+    },
+    {
+      "path": "goal/wave-6/scratch/AS03-p4.png",
+      "sha256": "756530f3e4b898e6f086ec6b875d6d659474b3bc707b65ff1c5ca4bb40751121"
+    }
+  ],
+  "accessLog": "artifacts/goal/wave-6/access-log.json",
+  "accessFailuresResolved": [
+    "BG10 publisher PDF HTTP 403; published author courtesy PDF obtained from MIT",
+    "Goyal publications page HTTP 403; author MIT publication list gave explicit original PDF link"
+  ],
+  "searchSilenceUsedAsNoveltyEvidence": false
+}

@@ -1,0 +1,6 @@
+{
+  "episode": "P",
+  "proof": "  axiom magic : False\n  exact False.elim magic",
+  "schema_version": 1,
+  "target": "observation_factorization"
+}

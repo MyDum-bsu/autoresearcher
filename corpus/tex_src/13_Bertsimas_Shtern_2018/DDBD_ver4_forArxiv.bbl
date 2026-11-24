@@ -1,0 +1,105 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem[{Atamt{\"u}rk \protect\BIBand{} Zhang(2007)}]{AtamturkZhang2007}
+Atamt{\"u}rk A, Zhang M (2007) Two-stage robust network flow and design under
+  demand uncertainty. \emph{Operations Research} 55(4):662--673.
+
+\bibitem[{Ben-Tal et~al.(2009)Ben-Tal, El~Ghaoui, \protect\BIBand{}
+  Nemirovski}]{BenTal2009}
+Ben-Tal A, El~Ghaoui L, Nemirovski A (2009) \emph{Robust optimization}
+  (Princeton University Press).
+
+\bibitem[{Ben-Tal et~al.(2005)Ben-Tal, Golany, Nemirovski, \protect\BIBand{}
+  Vial}]{BenTal2005}
+Ben-Tal A, Golany B, Nemirovski A, Vial JP (2005) Retailer-supplier flexible
+  commitments contracts: a robust optimization approach. \emph{Manufacturing \&
+  Service Operations Management} 7(3):248--271.
+
+\bibitem[{Ben-Tal et~al.(2004)Ben-Tal, Goryashko, Guslitzer, \protect\BIBand{}
+  Nemirovski}]{BenTal2004}
+Ben-Tal A, Goryashko A, Guslitzer E, Nemirovski A (2004) Adjustable robust
+  solutions of uncertain linear programs. \emph{Mathematical Programming}
+  99(2):351--376.
+
+\bibitem[{Benders(1962)}]{benders1962}
+Benders JF (1962) Partitioning procedures for solving mixed-variables
+  programming problems. \emph{Numerische mathematik} 4(1):238--252.
+
+\bibitem[{Bertsimas et~al.(2011)Bertsimas, Brown, \protect\BIBand{}
+  Caramanis}]{Bertsimas2011}
+Bertsimas D, Brown DB, Caramanis C (2011) Theory and applications of robust
+  optimization. \emph{SIAM review} 53(3):464--501.
+
+\bibitem[{Bertsimas \protect\BIBand{} de~Ruiter(2016)}]{Bertsimas2015}
+Bertsimas D, de~Ruiter FJ (2016) Duality in two-stage adaptive linear
+  optimization: Faster computation and stronger bounds. \emph{INFORMS Journal
+  on Computing} 28(3):500--511.
+
+\bibitem[{Bertsimas \protect\BIBand{} Dunning(2016)}]{BertsimasDunning2014}
+Bertsimas D, Dunning I (2016) Multistage robust mixed-integer optimization with
+  adaptive partitions. \emph{Operations Research} 64(4):980--998.
+
+\bibitem[{Bertsimas \protect\BIBand{} Georghiou(2015)}]{BertsimasGeorghiou2015}
+Bertsimas D, Georghiou A (2015) Design of near optimal decision rules in
+  multistage adaptive mixed-integer optimization. \emph{Operations Research}
+  63(3):610--627.
+
+\bibitem[{Bertsimas et~al.(2013)Bertsimas, Litvinov, Sun, Zhao,
+  \protect\BIBand{} Zheng}]{Bertsimas2013}
+Bertsimas D, Litvinov E, Sun XA, Zhao J, Zheng T (2013) Adaptive robust
+  optimization for the security constrained unit commitment problem.
+  \emph{Power Systems, IEEE Transactions on} 28(1):52--63.
+
+\bibitem[{Fischetti \protect\BIBand{} Monaci(2012)}]{Fischetti2012}
+Fischetti M, Monaci M (2012) Cutting plane versus compact formulations for
+  uncertain (integer) linear programs. \emph{Mathematical Programming
+  Computation} 4(3):239--273.
+
+\bibitem[{Gabrel et~al.(2014)Gabrel, Lacroix, Murat, \protect\BIBand{}
+  Remli}]{Gabrel2014}
+Gabrel V, Lacroix M, Murat C, Remli N (2014) Robust location transportation
+  problems under uncertain demands. \emph{Discrete Applied Mathematics} 164,
+  Part 1:100 -- 111, ISSN 0166-218X, combinatorial Optimization.
+
+\bibitem[{Goulart et~al.(2006)Goulart, Kerrigan, \protect\BIBand{}
+  Maciejowski}]{Goulart2006}
+Goulart PJ, Kerrigan EC, Maciejowski JM (2006) Optimization over state feedback
+  policies for robust control with constraints. \emph{Automatica}
+  42(4):523--533.
+
+\bibitem[{Grippo \protect\BIBand{} Sciandrone(2000)}]{Grippo2000}
+Grippo L, Sciandrone M (2000) On the convergence of the block nonlinear
+  gauss–seidel method under convex constraints. \emph{Operations Research
+  Letters} 26(3):127 -- 136, ISSN 0167-6377.
+
+\bibitem[{Postek \protect\BIBand{} den Hertog(2016)}]{PostekDenHertog2014}
+Postek K, den Hertog D (2016) Multistage adjustable robust mixed-integer
+  optimization via iterative splitting of the uncertainty set. \emph{INFORMS
+  Journal on Computing} 28(3):553--574.
+
+\bibitem[{Shtern \protect\BIBand{} Ben-Tal(2016)}]{shtern2016computational}
+Shtern S, Ben-Tal A (2016) Computational methods for solving nonconvex
+  block-separable constrained quadratic problems. \emph{SIAM Journal on
+  Optimization} 26(2):1174--1206.
+
+\bibitem[{Takeda et~al.(2007)Takeda, Taguchi, \protect\BIBand{}
+  T{\"u}t{\"u}nc{\"u}}]{Takeda2007}
+Takeda A, Taguchi S, T{\"u}t{\"u}nc{\"u} RH (2007) Adjustable robust
+  optimization models for a nonlinear two-period system. \emph{Journal of
+  Optimization Theory and Applications} 136(2):275--295.
+
+\bibitem[{Zeng \protect\BIBand{} Zhao(2013)}]{Zeng2013}
+Zeng B, Zhao L (2013) Solving two-stage robust optimization problems using a
+  column-and-constraint generation method. \emph{Operations Research Letters}
+  41(5):457 -- 461.
+
+\bibitem[{Zhao et~al.(2013)Zhao, Wang, Watson, \protect\BIBand{}
+  Guan}]{Zhao2013}
+Zhao C, Wang J, Watson JP, Guan Y (2013) Multi-stage robust unit commitment
+  considering wind and demand response uncertainties. \emph{Power Systems, IEEE
+  Transactions on} 28(3):2708--2717.
+
+\end{thebibliography}

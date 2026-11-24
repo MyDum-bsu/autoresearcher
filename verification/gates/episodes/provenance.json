@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "destination": "vendor/finite_reference.py",
+      "sha256": "289835fea26134c27baa892dcd39f04fe489dc0938a44856d146856487cd6dd0",
+      "source_path": "pilot/baseline/finite_reference.py"
+    },
+    {
+      "destination": "vendor/finite_bellman.py",
+      "sha256": "e041bb9bc99eb72ec7b29f5821d798b43179a62db6f8d9c8d96ac897780b8523",
+      "source_path": "pilot/checkers/finite_bellman.py"
+    }
+  ],
+  "public": true,
+  "snapshot_sha256": "e9b141955d00fb0bc68a9bff1869fdcd2b65ef519f12c41a4a82b36d6a92d71f",
+  "source_commit": "df8027532ebc8f59e37c63aabf9b2d2cd7b843ac",
+  "source_worktree": "aro-discovery-dossier"
+}

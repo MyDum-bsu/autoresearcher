@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "source_atlas": "research/atlas/atlas.json",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "summary": {
+    "total_nodes": 37,
+    "total_edges": 60,
+    "lean_proved_nodes": 16,
+    "lean_audited_declarations": 55,
+    "status_counts": {
+      "falsified": 8,
+      "lean_proved": 16,
+      "open": 5,
+      "oracle_verified": 8
+    }
+  },
+  "nodes": [
+    {
+      "id": "def-ogu-system",
+      "kind": "definition",
+      "domain": "foundations",
+      "title": "Discrete-Time Linear Guaranteed Control Model (BridgeFormalV2.Data)",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.nonempty_blocks",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem nonempty_blocks : NonemptyBlocksGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Nonemptiness of ControlBlock and NoiseBlock types for every BridgeFormalV2.Data instance (NonemptyBlocksGoal).",
+        "not_proved_in_lean": "Physical or engineering correspondence to arbitrary continuous-time systems or intermediate state constraints."
+      }
+    },
+    {
+      "id": "ax-fixed-recourse-box",
+      "kind": "axiom_assumption",
+      "domain": "foundations",
+      "title": "Fixed Recourse, Box Disturbance, and Borel Regularity Scope",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py"
+      ],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "def-exogenous-deviation",
+      "kind": "definition",
+      "domain": "foundations",
+      "title": "Exogenous Prefix Deviation Set Xi = L(W^r)",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.exogenous_image",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem exogenous_image : ExogenousImageGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "ax-fixed-recourse-box",
+        "def-ogu-system"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "ExogenousImageGoal: D.S a = (fun xi => D.nominal a + xi) '' D.Z for every D and first block a.",
+        "not_proved_in_lean": "Explicit finite H-representation or vertex enumeration complexity of the zonotope D.Z."
+      }
+    },
+    {
+      "id": "def-borel-policies",
+      "kind": "definition",
+      "domain": "foundations",
+      "title": "Borel State Policies vs Exogenous ARO Deviation Policies",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.observation_fibre",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem observation_fibre : ObservationFibreGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "def-exogenous-deviation"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "ObservationFibreGoal: equality of observed states prefixState a w1 = prefixState a w2 iff equality of exogenous deviations deviation w1 = deviation w2.",
+        "not_proved_in_lean": "Equivalence between Borel-measurable policies and arbitrary non-measurable strategies."
+      }
+    },
+    {
+      "id": "def-future-support",
+      "kind": "definition",
+      "domain": "foundations",
+      "title": "Directional Future-Disturbance Support Function and Tightened ARO Rows",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV3.Proofs.attained_support",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem attained_support : AttainedSupportGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "ax-fixed-recourse-box",
+        "def-ogu-system"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "AttainedSupportGoal: for box NoiseBlock D.q and any linear functional row, row(futureNoiseResponse wp) <= futureRowSupport row and an attaining box corner wp exists.",
+        "not_proved_in_lean": "Extension of futureRowSupport to non-box compact convex or conic disturbance sets W_t (tracked in gen-nonbox-conic-uncertainty)."
+      }
+    },
+    {
+      "id": "thm-f1-expansion",
+      "kind": "theorem",
+      "domain": "bridge_core",
+      "title": "F1: Exact Chronological Linear Expansion and Prefix/Suffix Decomposition",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.expansion",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem expansion : ExpansionGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.prefix_split",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem prefix_split : PrefixSplitGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.source_chronology",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem source_chronology : SourceChronologyGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.suffix_expansion",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Dynamics.lean",
+          "lean_signature": "theorem suffix_expansion : SuffixExpansionGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "def-exogenous-deviation",
+        "def-ogu-system"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "ExpansionGoal, PrefixSplitGoal, SourceChronologyGoal, and SuffixExpansionGoal for arbitrary linear maps A, B, E on finite horizon T = r + q.",
+        "not_proved_in_lean": "Time-varying dynamics (A_t, B_t, E_t) or multi-closure k >= 2 block decompositions (tracked in gen-multistage-k-closures)."
+      }
+    },
+    {
+      "id": "thm-f2-policy-bijection",
+      "kind": "theorem",
+      "domain": "bridge_core",
+      "title": "F2a: Forward and Reverse Borel Policy Translation (OGU <-> Two-Stage ARO)",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.forward_policy",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem forward_policy : ForwardPolicyGoal :="
+        },
+        {
+          "decl": "BridgeFormalV2.Proofs.reverse_policy",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem reverse_policy : ReversePolicyGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "def-borel-policies",
+        "thm-f1-expansion"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "ForwardPolicyGoal and ReversePolicyGoal: explicit Borel-measurable translation maps preserving trajectories, suffix actions, and guaranteed bounds.",
+        "not_proved_in_lean": "Existence of an optimal attaining policy or reduction to finite-dimensional affine/piecewise-affine policy subclasses."
+      }
+    },
+    {
+      "id": "thm-f2-epigraph-equality",
+      "kind": "theorem",
+      "domain": "bridge_core",
+      "title": "F2b: Exact Epigraph Level-Set Equality (sourceLevels = aroLevels)",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV2.Proofs.epigraph_equality",
+          "file": "verification/lean/BridgeFormalV2/Proofs/Policies.lean",
+          "lean_signature": "theorem epigraph_equality : EpigraphEqualityGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "thm-f2-policy-bijection"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "EpigraphEqualityGoal: D.sourceLevels = D.aroLevels over Borel-measurable policies for every single-closure BridgeFormalV2.Data instance D.",
+        "not_proved_in_lean": "Attainment of the infimum of sourceLevels/aroLevels or finite vertex LP reformulation (tracked in conj-f4-vertex-lp-selector)."
+      }
+    },
+    {
+      "id": "thm-f3-future-tightening",
+      "kind": "theorem",
+      "domain": "bridge_core",
+      "title": "F3: Exact Elimination of Future Disturbances w^+ via Box Support Functions",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "BridgeFormalV3.Proofs.future_expansion",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem future_expansion : FutureExpansionGoal :="
+        },
+        {
+          "decl": "BridgeFormalV3.Proofs.robust_row",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem robust_row : RobustRowGoal :="
+        },
+        {
+          "decl": "BridgeFormalV3.Proofs.exact_tightening",
+          "file": "verification/lean/BridgeFormalV3/Proofs/Support.lean",
+          "lean_signature": "theorem exact_tightening : ExactTighteningGoal :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [
+        "def-future-support",
+        "thm-f2-epigraph-equality"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "FutureExpansionGoal, RobustRowGoal, and ExactTighteningGoal: exact equivalence AROBound a y eta <-> TightenedAROBound a y eta for box future disturbances.",
+        "not_proved_in_lean": "Finite vertex-LP reduction over vert(Z) and measurable Borel selector construction (tracked in conj-f4-vertex-lp-selector)."
+      }
+    },
+    {
+      "id": "lem-p1-l1-rotation",
+      "kind": "lemma",
+      "domain": "aro_exactness",
+      "title": "P1: L1-to-Linf Coordinate Rotation Identities in 2D Bridge Class",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.l1_eq_max_sum_diff",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l1_eq_max_sum_diff (a b : ℚ) : |a| + |b| = max |a + b| |a - b| :="
+        },
+        {
+          "decl": "AroProofs.Aroform.l2a_diff_two_path",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l2a_diff_two_path (d0 v T : ℚ) (hT : 0 ≤ T) : max |d0 + v * T| |d0 - v * T| = |d0| + |v| * T :="
+        },
+        {
+          "decl": "AroProofs.Aroform.l2a_sum_two_path",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem l2a_sum_two_path (a e T : ℚ) (hT : 0 ≤ T) : max |a + 2 * e * T| |a - 2 * e * T| = |a| + 2 * |e| * T :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Exact rational identities l1_eq_max_sum_diff, l2a_diff_two_path, and l2a_sum_two_path over Q.",
+        "not_proved_in_lean": "Generalization of the L1-to-Linf rotation beyond 2D scalar/symmetric bridge coordinates."
+      }
+    },
+    {
+      "id": "lem-p2-info-monotone",
+      "kind": "lemma",
+      "domain": "closure_scheduling",
+      "title": "P2: Order-Reversing Monotonicity of sInf on Set ENNReal",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.info_value_monotone",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem info_value_monotone {S T : Set ENNReal} (hST : S ⊆ T) : sInf T ≤ sInf S :="
+        }
+      ],
+      "oracles": [],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Abstract order-theoretic lemma ∀ {S T : Set ENNReal}, S ⊆ T → sInf T ≤ sInf S (AroProofs.Aroform.info_value_monotone).",
+        "not_proved_in_lean": "Concrete proof that enlarging a closure schedule R ⊆ R' induces inclusion of achievable OGU/ARO level sets (informal bridge to O4)."
+      }
+    },
+    {
+      "id": "thm-p3-1d-adr-exactness",
+      "kind": "theorem",
+      "domain": "aro_exactness",
+      "title": "P3: Exactness of Affine Chord Decision Rule in 1D Recourse",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.Aroform.one_d_exactness",
+          "file": "verification/lean/AroProofs/Aroform.lean",
+          "lean_signature": "theorem one_d_exactness (a b : ℚ) : (∃ Y0 Y1 : ℚ, ∀ ζ : ℚ, 0 ≤ ζ → ζ ≤ 1 → max ((1 - ζ) * a + ζ * b) 0 ≤ Y0 + Y1 * ζ ∧ 0 ≤ Y0 + Y1 * ζ ∧ Y0 + Y1 * ζ ≤ max (max a 0) (max b 0)) ∧ ∀ Y0 Y1 : ℚ, (∀ ζ : ℚ, 0 ≤ ζ → ζ ≤ 1 → max ((1 - ζ) * a + ζ * b) 0 ≤ Y0 + Y1 * ζ ∧ 0 ≤ Y0 + Y1 * ζ) → max (max a 0) (max b 0) ≤ max Y0 (Y0 + Y1) :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "lem-p1-l1-rotation"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "1D scalar rational recourse exactness on [0, 1] (AroProofs.Aroform.one_d_exactness).",
+        "not_proved_in_lean": "Multi-dimensional (d >= 2) bridge-class ADR exactness (currently oracle-verified in T1, open in O1)."
+      }
+    },
+    {
+      "id": "thm-transfer-a4-v1",
+      "kind": "theorem",
+      "domain": "bridge_core",
+      "title": "Exact Rational OGU -> ARO Row Transfer on Dmitruk A4 (r=67, r=104)",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py",
+        "verification/oracles/wave4-a4-closures/check.py"
+      ],
+      "depends_on": [
+        "thm-f3-future-tightening"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "thm-m0-finite-bellman",
+      "kind": "theorem",
+      "domain": "closure_scheduling",
+      "title": "M0 Finite Exact Bellman Oracle (State vs Prefix Policies & Open-Loop A4)",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "verification/oracles/m0/pilot/baseline/finite_reference.py"
+      ],
+      "depends_on": [
+        "lem-p2-info-monotone"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "lem-wave5-support-bound",
+      "kind": "lemma",
+      "domain": "closure_scheduling",
+      "title": "Wave-5 Dual Upper Bound on Value of Information (J <= V_0 <= V_r <= D_0 + Delta)",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "research/claims/wave5-support-bound/verification/check.py"
+      ],
+      "depends_on": [
+        "lem-p2-info-monotone",
+        "thm-f3-future-tightening"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "thm-t1-bridge-exact",
+      "kind": "theorem",
+      "domain": "aro_exactness",
+      "title": "T1: Bridge-Class 1D & 2D ADR Exactness on Cube Vertices",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "thm-p3-1d-adr-exactness"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "thm-t6-box-static-exact",
+      "kind": "theorem",
+      "domain": "aro_exactness",
+      "title": "T6: Constraint-Wise Box Uncertainty Static = ADR = ARO Exactness",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "thm-t7-simplex-exact",
+      "kind": "theorem",
+      "domain": "aro_exactness",
+      "title": "T7: Simplex Uncertainty Delta_2 Linear/Affine Exactness",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-d1-prefix-merge",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "D1 Counterexample: Prefix Merging Strictly Degrades State-Only Optimal Value",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/D1-baseline/checks/check_candidate_v2.py"
+      ],
+      "depends_on": [
+        "thm-m0-finite-bellman"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-d2-pairwise-vs-joint",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "D2 Counterexample: Pairwise Compatibility Does Not Imply Joint Compatibility",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/D2-structured/checks/certificate_check_v2.py",
+        "research/counterexamples/D2-structured/checks/trajectory_check_v2.py"
+      ],
+      "depends_on": [
+        "ce-d1-prefix-merge"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-e-rank1-singleton",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "E Counterexample: Empty Continuation Set in a Singleton State Cell (Rank(L) <= 1)",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/E-rank1/checks/rank_one_check.py"
+      ],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-as1-rank2-separable",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "Astra Probe A-S1: Pairwise Compatibility Sufficiency in Coordinate-Separable Rank-2 Subclass",
+      "blueprint_status": "oracle_verified",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/astra-probe-AS1/checks/check.py"
+      ],
+      "depends_on": [
+        "ce-e-rank1-singleton"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-t2-soc-temporal",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "T2 Counterexample: Xu-Burer SOC Temporal Network on Euclidean Ball (Full-Matrix ADR Gap Omega(s))",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-t3-chen-zhang",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "T3 Counterexample: Chen-Zhang N-vs-1 Polyhedral Cross-Polytope (ADR=3 vs ARO=EAARC=1)",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-t4-gtw25-cond-b",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "T4 Counterexample: GTW25 Condition-(B) Violation (3/2 vs 5/4)",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "ce-t5-beg18-separating",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "T5 Counterexample: BEG18 Separating Family (m=900, Omega(sqrt(m)) Gap)",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "ax-fixed-recourse-box"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "conj-f4-vertex-lp-selector",
+      "kind": "open_conjecture",
+      "domain": "bridge_core",
+      "title": "F4: Finite Vertex-LP Reduction & Measurable Borel Selector over Zonotope Xi = L(W^r)",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.borel_right_inverse_exists",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem borel_right_inverse_exists (D : Data) : ∃ s : D.Z → D.NoiseBlock D.r, Measurable s ∧ ∀ xi : D.Z, D.deviation (s xi) = xi.val :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_to_aro",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_to_aro (D : Data) (a : D.ControlBlock D.r) (uVert : Corner D → D.ControlBlock D.q) (eta : ℝ) (hvert : VertexLPBound D a uVert eta) : ∃ y : D.DeviationPolicy, D.TightenedAROBound a y eta ∧ D.AROBound a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_epigraph_eq_aro (D : Data) : vertexLPLevels D = D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.vertex_lp_epigraph_eq_source",
+          "file": "verification/lean/AroProofs/BridgeF4CornerLP.lean",
+          "lean_signature": "theorem vertex_lp_epigraph_eq_source (D : Data) : vertexLPLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.zonotopeVertices_finite",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem zonotopeVertices_finite (D : Data) : (zonotopeVertices D).Finite :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_to_aro",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_to_aro (D : Data) (a : D.ControlBlock D.r) (uExt : zonotopeVertices D → D.ControlBlock D.q) (eta : ℝ) (hext : ExtremeVertexLPBound D a uExt eta) : ∃ y : D.DeviationPolicy, D.TightenedAROBound a y eta ∧ D.AROBound a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_epigraph_eq_aro (D : Data) : extremeVertexLPLevels D = D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_epigraph_eq_source",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_epigraph_eq_source (D : Data) : extremeVertexLPLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeF4VertexLP.extreme_vertex_lp_eq_corner_lp",
+          "file": "verification/lean/AroProofs/BridgeF4ExtremeLP.lean",
+          "lean_signature": "theorem extreme_vertex_lp_eq_corner_lp (D : Data) : extremeVertexLPLevels D = vertexLPLevels D :="
+        }
+      ],
+      "oracles": [
+        "research/claims/bridge-transfer-v1/check.py",
+        "verification/oracles/exact_lp.py",
+        "verification/falsifiers/run01/falsify_f4.py"
+      ],
+      "depends_on": [
+        "thm-f3-future-tightening",
+        "thm-transfer-a4-v1"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Full F4 reduction for every BridgeFormalV2.Data without injectivity of L: explicit Borel right-inverse via lexicographic infimum induction, multilinear corner LP, finiteness of true extreme points vert(Xi), and exact epigraph equalities extremeVertexLPLevels = vertexLPLevels = aroLevels = sourceLevels (9 theorems).",
+        "not_proved_in_lean": "Algorithmic complexity of enumerating vert(Xi) in high dimension or multi-closure k >= 2 vertex LP."
+      },
+      "falsification_criteria": {
+        "method": "exact_lp_and_selector_check",
+        "oracle_or_battery": "verification/oracles/exact_lp.py + verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "refutation_condition": "Any rational BridgeFormalV2.Data instance where vert(Xi) LP is feasible at level eta but no Borel-measurable selector y: Xi -> U^q satisfies TightenedAROBound at eta, or where interior Xi points strictly violate convex-hull feasibility."
+      }
+    },
+    {
+      "id": "conj-o4-closure-scheduling",
+      "kind": "open_conjecture",
+      "domain": "closure_scheduling",
+      "title": "O4: Strict Value of Measurement Criterion and Optimal Closure Schedule Selection R",
+      "blueprint_status": "open",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "research/claims/wave5-support-bound/verification/check.py"
+      ],
+      "depends_on": [
+        "lem-wave5-support-bound",
+        "thm-m0-finite-bellman"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "falsification_criteria": {
+        "method": "exact_rational_schedule_grid",
+        "oracle_or_battery": "verification/oracles/m0/pilot/checkers/finite_bellman.py + research/counterexamples/D1-baseline/checks/check_candidate_v2.py",
+        "refutation_condition": "A candidate criterion is refuted if any rational (A, B, E, H, c, T, r) grid instance satisfies the criterion yet exhibits V({r}) == V(empty), or violates the criterion yet achieves V({r}) < V(empty) (also checked against A4 r=67 vs r=104 non-monotonicity)."
+      }
+    },
+    {
+      "id": "conj-o1-adr-exactness-char",
+      "kind": "open_conjecture",
+      "domain": "aro_exactness",
+      "title": "O1: Verifiable Necessary-and-Sufficient Condition for ADR Exactness Beyond M1-M2",
+      "blueprint_status": "open",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py"
+      ],
+      "depends_on": [
+        "thm-t1-bridge-exact",
+        "thm-t6-box-static-exact",
+        "thm-t7-simplex-exact"
+      ],
+      "bounded_by_counterexamples": [
+        "ce-t2-soc-temporal",
+        "ce-t3-chen-zhang",
+        "ce-t4-gtw25-cond-b",
+        "ce-t5-beg18-separating"
+      ],
+      "adr_constrained_by": [],
+      "falsification_criteria": {
+        "method": "t1_t7_battery_predicate",
+        "oracle_or_battery": "verification/falsifiers/battery_t1_t7.py",
+        "refutation_condition": "Immediate falsification if the candidate predicate misclassifies ANY single instance in T1-T7 (must predict exact on T1, T6, T7 and not_exact on T2, T3, T4, T5) or fails exact rational LP search over randomized fixed-recourse polytopes."
+      }
+    },
+    {
+      "id": "conj-o8-quantifier-gap",
+      "kind": "open_conjecture",
+      "domain": "closure_scheduling",
+      "title": "O8: Minimax vs Maximin Quantifier-Order Gap (V(R) - V_mm)",
+      "blueprint_status": "open",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/O8-sion-gap/checks/check_o8_gap.py",
+        "verification/oracles/exact_lp.py",
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py"
+      ],
+      "depends_on": [
+        "lem-p2-info-monotone",
+        "thm-f2-epigraph-equality"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "falsification_criteria": {
+        "method": "exact_lp_minimax_vs_maximin",
+        "oracle_or_battery": "verification/oracles/exact_lp.py + verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "refutation_condition": "Any proposed zero-gap criterion is refuted if an exact rational LP instance satisfies the criterion yet has V(R) > V_mm strictly, or any proposed upper bound is exceeded by exact rational evaluation."
+      }
+    },
+    {
+      "id": "gen-multistage-k-closures",
+      "kind": "generalization_target",
+      "domain": "generalizations",
+      "title": "G1: Multi-Closure (k >= 2) Generalization of the OGU <-> Multistage ARO Bridge",
+      "blueprint_status": "open",
+      "lean_decls": [],
+      "oracles": [
+        "verification/oracles/m0/pilot/checkers/finite_bellman.py",
+        "research/counterexamples/D1-baseline/checks/check_candidate_v2.py",
+        "research/counterexamples/D2-structured/checks/trajectory_check_v2.py"
+      ],
+      "depends_on": [
+        "conj-f4-vertex-lp-selector",
+        "thm-f3-future-tightening"
+      ],
+      "bounded_by_counterexamples": [
+        "ce-d1-prefix-merge",
+        "ce-d2-pairwise-vs-joint"
+      ],
+      "adr_constrained_by": [],
+      "falsification_criteria": {
+        "method": "multistage_bellman_state_vs_history",
+        "oracle_or_battery": "verification/oracles/m0/pilot/checkers/finite_bellman.py + D1/D2 counterexample checkers",
+        "refutation_condition": "Any naive claim that state-feedback equals full-history multistage ARO for k >= 2 is refuted immediately by prefix-merging witnesses (generalizing D1); a valid generalization must explicitly track either full measurement history (x_{r_1},...,x_{r_j}) or injectivity/observability assumptions."
+      }
+    },
+    {
+      "id": "gen-nonbox-conic-uncertainty",
+      "kind": "generalization_target",
+      "domain": "generalizations",
+      "title": "G2: General Compact Convex / Conic Uncertainty Support Tightening (Beyond Box W)",
+      "blueprint_status": "open",
+      "lean_decls": [],
+      "oracles": [
+        "verification/falsifiers/battery_t1_t7.py",
+        "verification/falsifiers/sympy_counterexample_template.py"
+      ],
+      "depends_on": [
+        "thm-f3-future-tightening"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [
+        "ce-t2-soc-temporal",
+        "ce-t3-chen-zhang"
+      ],
+      "falsification_criteria": {
+        "method": "conic_duality_and_slater_gap_check",
+        "oracle_or_battery": "verification/falsifiers/sympy_counterexample_template.py + verification/falsifiers/battery_t1_t7.py",
+        "refutation_condition": "Within the hypothesis domain of compact convex conic sets W_t (polyhedral, SOC/l2 ball, or spectrahedron), a conic-dual tightening reformulation is refuted if there exists a feasible decision (x, u) satisfying sup_{w in W_t} r^T (R_w w) <= b whose conic dual reformulation yields inconsistent feasibility/value or a strict strong-duality gap (e.g., under Slater/regularity failure on a concrete conic instance). Overclaims of finite vertex-LP reduction on non-polyhedral W_t or ADR exactness are separately bounded by T2/T3."
+      }
+    },
+    {
+      "id": "ce-o8-sion-gap",
+      "kind": "counterexample",
+      "domain": "counterexamples",
+      "title": "O8 Counterexample: Strict Quantifier-Order Gap V({1})=2 > 0=V_mm on 1D Box System",
+      "blueprint_status": "falsified",
+      "lean_decls": [],
+      "oracles": [
+        "research/counterexamples/O8-sion-gap/checks/check_o8_gap.py"
+      ],
+      "depends_on": [],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": []
+    },
+    {
+      "id": "thm-g2-conic-support",
+      "kind": "theorem",
+      "domain": "generalizations",
+      "title": "G2 (Direct Tightening): General Compact / Conic Minkowski Support Elimination & 2D L2 Non-Polyhedrality",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_attained_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_attained_support (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (row : Vec D.n →ₗ[ℝ] ℝ) : (∀ wp : StageNoiseBlock D W, row (generalFutureNoiseResponse D wp.val) ≤ stageFutureRowSupport D W row) ∧ (∃ wp : StageNoiseBlock D W, row (generalFutureNoiseResponse D wp.val) = stageFutureRowSupport D W row) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_robust_row",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_robust_row (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (row : Vec D.n →ₗ[ℝ] ℝ) (z : Vec D.n) (bound : ℝ) : (∀ wp : StageNoiseBlock D W, row (z + generalFutureNoiseResponse D wp.val) ≤ bound) ↔ row z + stageFutureRowSupport D W row ≤ bound :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.general_exact_tightening",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem general_exact_tightening (D : Data) (W : Fin D.q → Set (Vec D.p)) (hW : ∀ t : Fin D.q, IsCompact (W t) ∧ (W t).Nonempty) (a : D.ControlBlock D.r) (y : D.DeviationPolicy) (eta : ℝ) : GeneralAROBound D W a y eta ↔ GeneralTightenedAROBound D W a y eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.box_support_eq_f3",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem box_support_eq_f3 (D : Data) (row : Vec D.n →ₗ[ℝ] ℝ) : let Wbox : Fin D.q → Set (Vec D.p) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l1_cross_polytope_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l1_cross_polytope_support {p : ℕ} (hp : 0 < p) {r : ℝ} (hr : 0 ≤ r) (v : Vec p) : let hne : (Finset.univ : Finset (Fin p)).Nonempty :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l2_soc_ball_support",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l2_soc_ball_support {p : ℕ} {r : ℝ} (hr : 0 ≤ r) (v : Vec p) : IsCompact (l2Ball p r) ∧ (l2Ball p r).Nonempty ∧ minkowskiSupport (l2Ball p r) v = r * nonnegSqrt (∑ i : Fin p, (v i) ^ 2) ∧ 0 ≤ minkowskiSupport (l2Ball p r) v ∧ (minkowskiSupport (l2Ball p r) v) ^ 2 = r ^ 2 * ∑ i : Fin p, (v i) ^ 2 :="
+        },
+        {
+          "decl": "AroProofs.BridgeG2ConicSupport.l2_ball_not_finset_conv_2d",
+          "file": "verification/lean/AroProofs/BridgeG2ConicSupport.lean",
+          "lean_signature": "theorem l2_ball_not_finset_conv_2d {r : ℝ} (hr : 0 < r) : ¬ ∃ T : Finset (Vec 2), (∀ t ∈ T, t ∈ l2Ball 2 r) ∧ (∀ x ∈ l2Ball 2 r, InFinsetConv T x) :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_g2.py"
+      ],
+      "depends_on": [
+        "gen-nonbox-conic-uncertainty",
+        "thm-f3-future-tightening"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Stage-wise Minkowski support attainment, exact row and full tightening for arbitrary nonempty compact W_t, F3 box specialization, l1/l2 closed forms, and 2D l2-ball non-polyhedrality (7 theorems).",
+        "not_proved_in_lean": "Conic SDP dual reformulations, Slater regularity conditions, and ADR exactness on spectrahedra (remaining Run-02+ frontier in gen-nonbox-conic-uncertainty)."
+      }
+    },
+    {
+      "id": "thm-o4-single-closure-value",
+      "kind": "theorem",
+      "domain": "closure_scheduling",
+      "title": "O4 (Single-Closure Foundation): Open-Loop vs Single-Closure Separation Criterion & Concrete Gap Witness",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_subset_aro",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_subset_aro (D : Data) : openLoopLevels D ⊆ D.aroLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_subset_source",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_subset_source (D : Data) : openLoopLevels D ⊆ D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.zero_gain_of_unconstrained_terminal",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem zero_gain_of_unconstrained_terminal (D : Data) (hrows : D.rows = 0) : D.aroLevels = openLoopLevels D ∧ D.sourceLevels = openLoopLevels D :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.zero_gain_of_prefix_in_terminal_kernel",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem zero_gain_of_prefix_in_terminal_kernel (D : Data) (hH : ∀ w : D.NoiseBlock D.r, D.H ((D.A ^ D.q) (D.deviation w)) = 0) (hc : ∀ w : D.NoiseBlock D.r, D.c ((D.A ^ D.q) (D.deviation w)) = 0) : D.aroLevels = openLoopLevels D ∧ D.sourceLevels = openLoopLevels D :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.openLoop_eq_shared_corner_lp",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem openLoop_eq_shared_corner_lp (D : Data) : openLoopLevels D = {eta | ∃ a : D.ControlBlock D.r, ∃ b : D.ControlBlock D.q, SharedCornerLPBound D a b eta} :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.strict_gain_iff_corner_separation",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem strict_gain_iff_corner_separation (D : Data) (eta : ℝ) : (eta ∈ D.aroLevels ∧ eta ∉ openLoopLevels D) ↔ (∃ a : D.ControlBlock D.r, ∃ uVert : Corner D → D.ControlBlock D.q, VertexLPBound D a uVert eta) ∧ (∀ a : D.ControlBlock D.r, ∀ b : D.ControlBlock D.q, ∃ σ : Corner D, ¬ TightenedAt D a (D.deviation (cornerNoise D σ)) b eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO4ClosureValue.exists_strict_value_of_measurement_gap",
+          "file": "verification/lean/AroProofs/BridgeO4ClosureValue.lean",
+          "lean_signature": "theorem exists_strict_value_of_measurement_gap : ∃ D : Data, (2 : ℝ) ∈ D.sourceLevels ∧ (2 : ℝ) ∈ D.aroLevels ∧ ∀ eta ∈ openLoopLevels D, (4 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_o4.py"
+      ],
+      "depends_on": [
+        "conj-f4-vertex-lp-selector",
+        "conj-o4-closure-scheduling"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Single-closure monotonicity, two zero-gain criteria, shared-corner LP characterization, strict-gain iff corner-separation equivalence, and concrete 4 > 2 witness (7 theorems).",
+        "not_proved_in_lean": "Minimal-cardinality optimal schedule selection R, closed-form optimal r*, and complexity for |R| >= 2 (remaining Run-02+ frontier in conj-o4-closure-scheduling)."
+      }
+    },
+    {
+      "id": "thm-g1-multistage-bridge",
+      "kind": "theorem",
+      "domain": "generalizations",
+      "title": "G1 (Multistage Bridge): Arbitrary k-Closure OGU <-> Multistage ARO Equivalence & Markov vs History Separation",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_stage_split",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_stage_split (D : Data) (l : ℕ) (x : Vec D.n) (u : D.ControlBlock l) (w : D.NoiseBlock l) : D.run x (blockAt u.val) (blockAt w.val) l = stageNominal D l x u + stageDeviation D l w :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_forward_policy",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_forward_policy (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) (P : HistoryStatePolicy D len) : ∃ Y : HistoryDeviationPolicy D len, (∀ w : MultiNoise D len, ∀ m : ℕ, (hm : m ≤ k + 1) → historyAroRollout D Y w m hm = historyStateRollout D P w m hm) ∧ (∀ eta : ℝ, HistoryStateBound D len Ω P eta ↔ HistoryAroBound D len Ω Y eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_reverse_policy",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_reverse_policy (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) (Y : HistoryDeviationPolicy D len) : ∃ P : HistoryStatePolicy D len, (∀ w : MultiNoise D len, ∀ m : ℕ, (hm : m ≤ k + 1) → historyStateRollout D P w m hm = historyAroRollout D Y w m hm) ∧ (∀ eta : ℝ, HistoryStateBound D len Ω P eta ↔ HistoryAroBound D len Ω Y eta) :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_history_epigraph_eq_aro",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_history_epigraph_eq_aro (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) : multistageHistoryLevels D len Ω = multistageAroLevels D len Ω :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.multistage_markov_subset_history",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem multistage_markov_subset_history (D : Data) {k : ℕ} (len : Fin (k + 1) → ℕ) (Ω : Set (MultiNoise D len)) : multistageMarkovLevels D len Ω ⊆ multistageHistoryLevels D len Ω ∧ multistageMarkovLevels D len Ω ⊆ multistageAroLevels D len Ω :="
+        },
+        {
+          "decl": "AroProofs.BridgeG1Multistage.exists_markov_strictly_weaker_than_history_k2",
+          "file": "verification/lean/AroProofs/BridgeG1Multistage.lean",
+          "lean_signature": "theorem exists_markov_strictly_weaker_than_history_k2 : (0 : ℝ) ∈ multistageHistoryLevels k2WitnessData k2UnitLen k2CorrelatedOmega ∧ (0 : ℝ) ∈ multistageAroLevels k2WitnessData k2UnitLen k2CorrelatedOmega ∧ ∀ eta ∈ multistageMarkovLevels k2WitnessData k2UnitLen k2CorrelatedOmega, (2 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_g1.py"
+      ],
+      "depends_on": [
+        "gen-multistage-k-closures",
+        "thm-f2-epigraph-equality"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "Arbitrary-k stage split, causal Borel history-state <-> history-deviation policy translations, exact epigraph equality over arbitrary Omega, Markov inclusion, and k=2 Markov-vs-History separation witness (6 theorems).",
+        "not_proved_in_lean": "Multistage F3/F4 vertex-LP reduction for k >= 2 and Lean formalization of D2 pairwise-vs-joint obstruction (remaining Run-02+ frontier in gen-multistage-k-closures)."
+      }
+    },
+    {
+      "id": "thm-o1-adr-simplex-1d-2d",
+      "kind": "theorem",
+      "domain": "aro_exactness",
+      "title": "O1 (Partial): Simplex Exactness, Barycentric-Syzygy T3 Obstruction & 1D-vs-2D Bridge ADR Dichotomy",
+      "blueprint_status": "proved",
+      "lean_decls": [
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.static_subset_adr_subset_aro",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem static_subset_adr_subset_aro {d m k : ℕ} (P : FixedRecourseARO d m k) (Ξ : Set (Fin d → ℝ)) : staticLevels P Ξ ⊆ adrLevels P Ξ ∧ adrLevels P Ξ ⊆ aroLevels P Ξ :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.adr_exact_on_simplex",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem adr_exact_on_simplex {d m k : ℕ} (P : FixedRecourseARO d m k) : adrLevels P (stdSimplex d) = aroLevels P (stdSimplex d) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.barycentric_syzygy_adr_coupling",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem barycentric_syzygy_adr_coupling {d m : ℕ} {ι₁ ι₂ : Type*} [Fintype ι₁] [Fintype ι₂] (α : ι₁ → ℝ) (β : ι₂ → ℝ) (hα : ∑ a, α a = 1) (hβ : ∑ b, β b = 1) (ξ : ι₁ → Fin d → ℝ) (ζ : ι₂ → Fin d → ℝ) (hbary : ∑ a, α a • ξ a = ∑ b, β b • ζ b) (y0 : Fin m → ℝ) (Y : (Fin d → ℝ) →ₗ[ℝ] (Fin m → ℝ)) : ∑ a, α a • (y0 + Y (ξ a)) = ∑ b, β b • (y0 + Y (ζ b)) :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.chen_zhang_t3_adr_gap",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem chen_zhang_t3_adr_gap : (1 : ℝ) ∈ aroLevels chenZhangT3 l1CrossPolytope3 ∧ ∀ eta ∈ adrLevels chenZhangT3 l1CrossPolytope3, (3 : ℝ) ≤ eta :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.bridge_adr_subset_aro_and_source",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem bridge_adr_subset_aro_and_source (D : Data) : bridgeAdrLevels D ⊆ D.aroLevels ∧ bridgeAdrLevels D ⊆ D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.bridge_adr_exact_1d",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem bridge_adr_exact_1d (D : Data) (hn : D.n = 1) : bridgeAdrLevels D = D.aroLevels ∧ bridgeAdrLevels D = D.sourceLevels :="
+        },
+        {
+          "decl": "AroProofs.BridgeO1ADRExactness.exists_bridge_2d_strict_adr_gap",
+          "file": "verification/lean/AroProofs/BridgeO1ADRExactness.lean",
+          "lean_signature": "theorem exists_bridge_2d_strict_adr_gap : ∃ D : Data, D.n = 2 ∧ (6 : ℝ) ∈ D.aroLevels ∧ (6 : ℝ) ∈ D.sourceLevels ∧ ∀ eta ∈ bridgeAdrLevels D, (8 : ℝ) ≤ eta :="
+        }
+      ],
+      "oracles": [
+        "verification/falsifiers/run01/falsify_o1.py"
+      ],
+      "depends_on": [
+        "conj-f4-vertex-lp-selector",
+        "conj-o1-adr-exactness-char",
+        "thm-p3-1d-adr-exactness"
+      ],
+      "bounded_by_counterexamples": [],
+      "adr_constrained_by": [],
+      "formalized_scope": {
+        "proved_in_lean": "General fixed-recourse inclusion, d-simplex ADR exactness, barycentric-syzygy coupling, T3 gap (1 vs >= 3), universal 1D BridgeFormalV2 ADR exactness, and concrete 2D strict gap witness 6 vs >= 8 (7 theorems).",
+        "not_proved_in_lean": "General checkable necessary-and-sufficient condition for V_ADR = V_ARO beyond simplices/1D, full 2D classification, and Lean formalization of GTW25 M2 and T2/T4/T5 (remaining Run-02+ frontier in conj-o1-adr-exactness-char)."
+      }
+    }
+  ]
+}

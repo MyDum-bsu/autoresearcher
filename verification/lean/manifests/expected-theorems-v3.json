@@ -1,0 +1,17 @@
+{
+  "status": "elaborated-propositions-unproved",
+  "targets": [
+    {"node": "F3", "type": "BridgeFormalV3.FutureExpansionGoal", "declaration": "BridgeFormalV3.Proofs.future_expansion"},
+    {"node": "F3", "type": "BridgeFormalV3.AttainedSupportGoal", "declaration": "BridgeFormalV3.Proofs.attained_support"},
+    {"node": "F3", "type": "BridgeFormalV3.RobustRowGoal", "declaration": "BridgeFormalV3.Proofs.robust_row"},
+    {"node": "F3", "type": "BridgeFormalV3.ExactTighteningGoal", "declaration": "BridgeFormalV3.Proofs.exact_tightening"}
+  ],
+  "proofDirectory": "bridge/formal-env-v2/lean/BridgeFormalV3/Proofs",
+  "parentModel": "bridge/formal-env-v2/lean/BridgeFormalV2/Model.lean",
+  "parentProofSeal": "artifacts/bridge/formal-v2/proof/proof-seal.json",
+  "candidate": "bridge/formal-env-v2/lean/BridgeFormalV3/Goals.lean",
+  "axiomAllowlist": ["propext", "Classical.choice", "Quot.sound"],
+  "remainingWholeBridgeObligations": ["F4", "Borel versus unrestricted source-policy existence"],
+  "proofsPresent": false,
+  "wholeTransferAccepted": false
+}

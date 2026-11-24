@@ -1,0 +1,58 @@
+{
+  "conjecture_id": "hyp-o8-1d-sion-zero-gap",
+  "atlas_node_id": "conj-o8-quantifier-gap",
+  "verdict": "REFUTED_AT_STAGE_2_FALSIFY_FIRST_BY_EXACT_LP",
+  "instance": {
+    "n": 1,
+    "m": 1,
+    "p": 1,
+    "rows": 1,
+    "r": 1,
+    "q": 1,
+    "A": 2,
+    "B": 1,
+    "E": 1,
+    "x0": 0,
+    "U": [
+      -1,
+      1
+    ],
+    "rho": 1,
+    "H": 1,
+    "gmin": -2,
+    "gmax": 4,
+    "c": 1
+  },
+  "V_empty": "4",
+  "V_r1": "2",
+  "V_r1_policy": [
+    "0",
+    "1",
+    "-1",
+    "2"
+  ],
+  "V_mm_prefix": "0",
+  "V_mm_prefix_grid": {
+    "-1": "0",
+    "0": "0",
+    "1": "0"
+  },
+  "V_mm_full": "0",
+  "V_mm_full_corners": {
+    "(-1,-1)": "-2",
+    "(-1,1)": "-2",
+    "(1,-1)": "-2",
+    "(1,1)": "0"
+  },
+  "continuous_box_certificate": {
+    "prefix_witness": "a(w0)=-w0, b(w0)=-1 => 2a+b+2w0 = -1 in [-1,3], obj = 0 for all w0 in [-1,1]",
+    "prefix_lower_bound": "2a+b+2w0 >= -1 => obj = 2a+b+2w0+1 >= 0 for all w0 in [-1,1]",
+    "full_closed_form": "f_full(w0,w1) = max(-2, 2(w0-1)+(w1-1)) <= 0 on [-1,1]^2, attained at (1,1)",
+    "certified_V_mm_prefix_continuous": "0",
+    "certified_V_mm_full_continuous": "0"
+  },
+  "gap_r1_vs_prefix_mm": "2",
+  "gap_r1_vs_full_mm": "2",
+  "value_of_measurement_Vempty_minus_Vr1": "2",
+  "sym_witness_Vr1": "1"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "description": "Frozen Lean 4 core definitions and target goals. Authors MUST NOT modify these files when synthesizing proofs.",
+  "frozen_files": {
+    "verification/lean/AroCore/Model.lean": "8b09a7ffd17974015d537627bf48f0d88064e6fd6dd70a1813c7e8cbad2d9484",
+    "verification/lean/AroCore/Goals.lean": "6a9f6e48df1264c61f73dedfcd96e3a93da24ecc2a1d52b8bb2b589f2a5319ec",
+    "verification/lean/BridgeFormalV2/Model.lean": "44d474e393f0d83dc215877aa9663fbf79c3c9887ed838305cb74048699e6a26",
+    "verification/lean/BridgeFormalV2/Goals.lean": "b3b949e681935df3491602dec2d0daf73ab15b711481b014b6e2a5abb61d2409"
+  }
+}

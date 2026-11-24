@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "phase": "E",
+  "disposition": "completed-with-declared-limits",
+  "scientific_attestation": false,
+  "question_id": "correlated-continuation-compatibility-v1",
+  "continuation_succeeded": true,
+  "new_result": "Singleton premise ambiguity resolved; corrected rank-one child constructively derived in prose; seven new exact boundary/timing controls executed, not predecessor checker replay.",
+  "parent_obligation": "D2-C1-v1 quoted in structured/handoff.md section 5",
+  "claims": [
+    {
+      "id": "E-parent-singleton-v1",
+      "evidence_kind": "refuted-candidate",
+      "statement": "Distinct-pair compatibility alone does not imply joint compatibility for singleton cells, already at rank zero and also at rank one. Parent remains valid under an alternative convention including self-pairs.",
+      "statement_path": "research/continuation/derivation.md",
+      "check_ids": [
+        "E-rank-one-normal",
+        "E-rank-one-optimized",
+        "E-hidden-suffix-control"
+      ],
+      "scope": "explicit rational dynamics-realizable singleton counterexamples, not refutation of a nonempty-residual child"
+    },
+    {
+      "id": "E-R1-child-v1",
+      "evidence_kind": "unproved-sketch",
+      "statement": "Finite residual family with common rational box and rank(L)<=1 has joint intersection iff every singleton and every distinct pair has nonempty intersection.",
+      "statement_path": "research/continuation/derivation.md",
+      "check_ids": [],
+      "scope": "constructive written general argument; no Lean proof and no machine theorem verdict"
+    },
+    {
+      "id": "E-fixed-boundary-v1",
+      "evidence_kind": "exact-finite",
+      "statement": "Six frozen rank<=1 rational dynamics systems have exactly the observed singleton/pair/joint feasibility, with rational witnesses and explicit nonnegative infeasibility certificates.",
+      "statement_path": "research/continuation/derivation.md",
+      "check_ids": [
+        "E-rank-one-normal",
+        "E-rank-one-optimized"
+      ],
+      "scope": "six fixed cases only; two routes in one authored script, not independent F replay"
+    },
+    {
+      "id": "E-hidden-suffix-v1",
+      "evidence_kind": "exact-finite",
+      "statement": "One-prefix two-suffix rank-one instance permits q=2, refutes q=1 by 0<=-1, and rejects suffix-oracle q=0 actions for same-prefix mismatch.",
+      "statement_path": "research/continuation/timing-control.md",
+      "check_ids": [
+        "E-hidden-suffix-control"
+      ],
+      "scope": "one fixed correlated complete-path instance, continuous rational box"
+    }
+  ],
+  "scientific_checks": [
+    {
+      "id": "E-rank-one-normal",
+      "command": {
+        "cwd": "<workspace>/aro-discovery-campaign",
+        "argv": [
+          "python3",
+          "-B",
+          "research/continuation/checks/rank_one_check.py"
+        ]
+      },
+      "started_utc": "2026-11-13T01:30:12.558456+00:00",
+      "wall_seconds": 0.040438611002173275,
+      "observed_exit": 0,
+      "stdout_path": "research/continuation/checks/E-rank-one-normal.stdout.json",
+      "stdout_sha256": "566858c5eeef1d5346cb3ef95d4038c9740132ebc58f70291b3a531609b4a11d",
+      "stderr_path": "research/continuation/checks/E-rank-one-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "E-rank-one-optimized",
+      "command": {
+        "cwd": "<workspace>/aro-discovery-campaign",
+        "argv": [
+          "python3",
+          "-O",
+          "-B",
+          "research/continuation/checks/rank_one_check.py"
+        ]
+      },
+      "started_utc": "2026-11-13T01:30:12.599342+00:00",
+      "wall_seconds": 0.12108032498508692,
+      "observed_exit": 0,
+      "stdout_path": "research/continuation/checks/E-rank-one-optimized.stdout.json",
+      "stdout_sha256": "566858c5eeef1d5346cb3ef95d4038c9740132ebc58f70291b3a531609b4a11d",
+      "stderr_path": "research/continuation/checks/E-rank-one-optimized.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "E-hidden-suffix-control",
+      "schema_version": 1,
+      "manifest_path": "research/continuation/checks/timing-manifest.json",
+      "manifest_sha256": "b83b0abdaf54de801ad27d9c4379a5f4e7297140aae99a61994e37bb3df386ae",
+      "command": {
+        "cwd": "<workspace>/aro-discovery-campaign",
+        "argv": [
+          "python3",
+          "-B",
+          "research/continuation/checks/timing_control.py"
+        ]
+      },
+      "started_utc": "2026-11-13T01:31:59.475387+00:00",
+      "wall_seconds": 0.046598129032645375,
+      "observed_exit": 0,
+      "stdout_path": "research/continuation/checks/E-hidden-suffix.stdout.json",
+      "stdout_sha256": "984ad7125e85976f71fcede472ebbdab16d6d551aaaa082adb49c58943f2c3a8",
+      "stderr_path": "research/continuation/checks/E-hidden-suffix.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "verification": {
+    "path": "research/continuation/verification.json",
+    "observed": [
+      {
+        "id": "E-ruff-check",
+        "observed_exit": 0
+      },
+      {
+        "id": "E-ruff-format",
+        "observed_exit": 0
+      },
+      {
+        "id": "E-style-derivation",
+        "observed_exit": 0
+      },
+      {
+        "id": "E-style-reconstruction",
+        "observed_exit": 1
+      }
+    ],
+    "not_run": [
+      {
+        "id": "E-style-timing-control",
+        "reason": "Stopped the planned verification sequence after E-style-reconstruction exited 1; no retry."
+      }
+    ],
+    "failure": "E-style-reconstruction exit 1: one passive-result finding at reconstruction.md:46, phrase \"was performed\". Stylistic failure, not a mathematical refutation. Frozen text preserved.",
+    "final_results_and_handoff_style_lint": "not run: terminal reporting after stopped verification; no repeat or fallback"
+  },
+  "input_identity_record": "research/continuation/input-identities.json",
+  "later_read_input_identities": [
+    {
+      "path": "research/structured/checks/manifest.json",
+      "sha256": "14338c2aeb178dc155bfe6001ba0921d74d6e01356bd77bcec3c68344269e907",
+      "size_bytes": 5846
+    },
+    {
+      "path": "docs/GLOSSARY.md",
+      "sha256": "db8eab0aaefecd0887776ff1971d67331102a6bba1aae33f8dc41bf1dc70cf9e",
+      "size_bytes": 20872
+    }
+  ],
+  "context_access": {
+    "record": "research/continuation/reconstruction.md",
+    "baseline_read": false,
+    "predecessor_derivation_or_history_read": false,
+    "referenced_manifest_read": true,
+    "new_source_pool_amendment": false,
+    "source_pdfs_read_in_E": []
+  },
+  "manifest_records": [
+    {
+      "path": "research/continuation/checks/manifest.json",
+      "sha256": "9dadfe2eabdc2d0082eb846c9966074250a5ced04cb1c3a82a4b01872f2c1183",
+      "size_bytes": 4215
+    },
+    {
+      "path": "research/continuation/checks/timing-manifest.json",
+      "sha256": "b83b0abdaf54de801ad27d9c4379a5f4e7297140aae99a61994e37bb3df386ae",
+      "size_bytes": 1390
+    },
+    {
+      "path": "research/continuation/verification-contract.json",
+      "sha256": "536aa2993a74cdf719484c3f0b8eb4b5396c239a95391944ee44daa2a43cecce",
+      "size_bytes": 3632
+    }
+  ],
+  "search": {
+    "executed": false,
+    "reason": "Constructive obligation with explicit boundary controls; no parameter search or repeat of predecessor result"
+  },
+  "remaining_gaps": [
+    "General child has written derivation only; Lean/formal proof and independent F review remain.",
+    "Dynamics-to-residual equivalence remains a written reconstruction, not human-approved source correspondence.",
+    "No fresh literature/novelty assessment or general capability evidence.",
+    "One style diagnostic failed and later planned style check was not run.",
+    "Historical D2 scientific observations and Ruff failure are inherited reports, not repaired or re-certified."
+  ],
+  "resources": {
+    "first_recorded_utc": "2026-11-13T01:25:23Z",
+    "first_recorded_utc_scope": "early inventory timestamp, not exact worker start",
+    "terminal_reporting_utc": "2026-11-13T01:33:37.423983+00:00",
+    "tool_call_count": "final count recorded in handoff; includes codemode wrappers and nested calls",
+    "scientific_subprocess_wall_seconds": 0.20811706501990557,
+    "model": "current connection only; no model switch; effective provider settings not independently audited",
+    "usage": null,
+    "provider_billing": null,
+    "native_retry_settings": "unknown; no worker retry or model fallback",
+    "preparation_cost": "mandatory authority/packet reading, two small local scripts and fixed-input preparation; upstream packet preparation costs not remeasured",
+    "filesystem_scope": "instructional separation; no private-isolation claim",
+    "temp_policy": "worker subprocess TMPDIR/TMP/TEMP campaign-local; observed automatic harness response spill to /tmp is disclosed in reconstruction.md",
+    "initial_preflight": "first inventory command exited 2 at absent .tmp after successful root/branch/status checks; no write or scientific execution in that command"
+  },
+  "constraints": {
+    "tracker_writes": false,
+    "nested_agents_or_workflows": false,
+    "installs": false,
+    "commits_or_pushes": false,
+    "live_scientific_writes": false,
+    "private_trials": false,
+    "human_attestation": false
+  },
+  "safeToContinue": true,
+  "safeToContinue_scope": "bounded read-only independent F review and separate final campaign accounting; not scientific acceptance"
+}

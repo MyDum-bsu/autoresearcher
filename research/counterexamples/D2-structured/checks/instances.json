@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "candidate_id": "D2-triangle-v1",
+  "T": 2,
+  "r": 1,
+  "n": 2,
+  "m": 2,
+  "d": 2,
+  "x_initial": [0, 0],
+  "A": [[[0, 0], [0, 0]], [[0, 0], [0, 0]]],
+  "B": [[[0, 0], [0, 0]], [[1, 0], [0, 1]]],
+  "E": [[[0, 0], [0, 0]], [[1, 0], [0, 1]]],
+  "boxes": [[[0, 0], [0, 0]], [[0, 0], [2, 2]]],
+  "first_program": [0, 0],
+  "H": [[-1, 0], [0, -1]],
+  "h": [0, 0],
+  "c": [1, 1],
+  "d0": 0,
+  "paths": [
+    {"id": "p1", "w": [[0, 0], [-1, 0]]},
+    {"id": "p2", "w": [[1, 0], [0, -1]]},
+    {"id": "p3", "w": [[0, 1], [0, 0]]}
+  ],
+  "prefix_witnesses": {"p1": [1, 0], "p2": [0, 1], "p3": [0, 0]},
+  "pair_witnesses_at_q1": [
+    {"prefixes": ["p1", "p2"], "b": [1, 1]},
+    {"prefixes": ["p1", "p3"], "b": [1, 0]},
+    {"prefixes": ["p2", "p3"], "b": [0, 1]}
+  ],
+  "joint_witness_at_q2": [1, 1],
+  "false_joint_witness_at_q1": [1, 1],
+  "joint_certificate_at_q1": [
+    {"path": "p1", "row": "hard-0", "lambda": 1},
+    {"path": "p2", "row": "hard-1", "lambda": 1},
+    {"path": "p3", "row": "cost", "lambda": 1}
+  ],
+  "timing_control": {
+    "candidate_id": "D2-same-prefix-v1",
+    "paths": [
+      {"id": "t1", "w": [[0, 0], [-1, 0]]},
+      {"id": "t2", "w": [[0, 0], [0, -1]]}
+    ],
+    "common_witness_at_q1": [1, 1],
+    "illegal_clairvoyant_witnesses_at_q0": {"t1": [1, 0], "t2": [0, 1]},
+    "certificate_at_q0": [
+      {"path": "t1", "row": "hard-0", "lambda": 1},
+      {"path": "t2", "row": "hard-1", "lambda": 1},
+      {"path": "t1", "row": "cost", "lambda": 1}
+    ]
+  },
+  "signature_control": {
+    "candidate_id": "D2-nonidentical-signatures-v1",
+    "q": 2,
+    "common_witness": [1, 1]
+  }
+}

@@ -1,0 +1,5 @@
+# F3 proof development plan
+
+Keep sealed definitions, targets, parent proofs and all earlier evidence readonly. Prove the chronological response decomposition using F1 expansion/run_add. Expand each disturbance vector in the finite standard basis and push the row through linear maps and finite sums. Bound each signed coefficient times a box coordinate and construct a per-coordinate sign witness in the actual NoiseBlock. Derive universal robust-row equivalence from the bound and attained witness, then apply it separately to both terminal sides and the signed cost with the same fixed deviation policy. Compile the exact four inventory declarations; print their full types and transitive axioms and verify protected identities before/after. Whole-transfer acceptance remains false; independent final replay/controls belong to the next stage.
+
+All compiler development attempts are numbered and preserved. No provider call, transport initialization, network request, nested worker or automatic retry is performed by this proof worker. The proxied host owns transport configuration.

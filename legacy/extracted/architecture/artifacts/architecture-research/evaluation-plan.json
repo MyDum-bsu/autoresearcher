@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "task": "aro-discovery-i24",
+  "status": "proposed_not_authorized_or_run",
+  "families": [
+    "model_scope",
+    "falsification",
+    "proof_construction",
+    "research_decisions"
+  ],
+  "counts": {
+    "public_development_episodes": 4,
+    "private_episodes_per_family": 2,
+    "configurations": 2,
+    "attempts_per_private_episode": 3,
+    "private_episodes": 8,
+    "allocated_private_attempts": 48
+  },
+  "budget_policy": "Calibrate per-family caps on public development, freeze before private comparison; no new limit or threshold activated.",
+  "interpretation": "Small diagnostic panel, not a general reliability certificate.",
+  "scientific_status_change": false
+}

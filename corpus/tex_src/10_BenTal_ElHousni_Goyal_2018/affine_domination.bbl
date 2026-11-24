@@ -1,0 +1,174 @@
+\begin{thebibliography}{10}
+
+\bibitem{ayoub2016decomposition}
+J.~Ayoub and M.~Poss.
+\newblock Decomposition for adjustable robust linear optimization subject to
+  uncertainty polytope.
+\newblock {\em Computational Management Science}, 13(2):219--239, 2016.
+
+\bibitem{BNE10}
+A.~Ben-Tal, L.~El~Ghaoui, and A.~Nemirovski.
+\newblock {\em {Robust optimization}}.
+\newblock Princeton University press, 2009.
+
+\bibitem{Ben-Tal04}
+A.~Ben-Tal, A.~Goryashko, E.~Guslitzer, and A.~Nemirovski.
+\newblock {Adjustable robust solutions of uncertain linear programs}.
+\newblock {\em Mathematical Programming}, 99(2):351--376, 2004.
+
+\bibitem{BN98}
+A.~Ben-Tal and A.~Nemirovski.
+\newblock {Robust convex optimization}.
+\newblock {\em Mathematics of Operations Research}, 23(4):769--805, 1998.
+
+\bibitem{BN99}
+A.~Ben-Tal and A.~Nemirovski.
+\newblock {Robust solutions of uncertain linear programs}.
+\newblock {\em Operations Research Letters}, 25(1):1--14, 1999.
+
+\bibitem{Ben-Tal02}
+A.~Ben-Tal and A.~Nemirovski.
+\newblock {Robust optimization--methodology and applications}.
+\newblock {\em Mathematical Programming}, 92(3):453--480, 2002.
+
+\bibitem{BB15}
+D.~Bertsimas and H.~Bidkhori.
+\newblock On the performance of affine policies for two-stage adaptive
+  optimization: a geometric perspective.
+\newblock {\em Mathematical Programming}, 153(2):577--594, 2015.
+
+\bibitem{BBC08}
+D.~Bertsimas, D.~Brown, and C.~Caramanis.
+\newblock Theory and applications of robust optimization.
+\newblock {\em SIAM review}, 53(3):464--501, 2011.
+
+\bibitem{bertsimas2010finite}
+D.~Bertsimas and C.~Caramanis.
+\newblock Finite adaptability in multistage linear optimization.
+\newblock {\em Automatic Control, IEEE Transactions on}, 55(12):2751--2766,
+  2010.
+
+\bibitem{BD15}
+D.~Bertsimas and I.~Dunning.
+\newblock Multistage robust mixed integer optimization with adaptive
+  partitions.
+\newblock {\em Under Review}, 2015.
+
+\bibitem{bertsimas2015design}
+D.~Bertsimas and A.~Georghiou.
+\newblock Design of near optimal decision rules in multistage adaptive
+  mixed-integer optimization.
+\newblock {\em Operations Research}, 63(3):610--627, 2015.
+
+\bibitem{BG10}
+D.~Bertsimas and V.~Goyal.
+\newblock {On the Power and Limitations of Affine Policies in Two-Stage
+  Adaptive Optimization}.
+\newblock {\em Mathematical Programming}, 134(2):491--531, 2012.
+
+\bibitem{BGS10}
+D.~Bertsimas, V.~Goyal, and X.~Sun.
+\newblock A geometric characterization of the power of finite adaptability in
+  multistage stochastic and adaptive optimization.
+\newblock {\em Mathematics of Operations Research}, 36(1):24--54, 2011.
+
+\bibitem{BIP09}
+D.~Bertsimas, D.~Iancu, and P.~Parrilo.
+\newblock {Optimality of Affine Policies in Multi-stage Robust Optimization}.
+\newblock {\em Mathematics of Operations Research}, 35:363--394, 2010.
+
+\bibitem{BS03}
+D.~Bertsimas and M.~Sim.
+\newblock {Robust Discrete Optimization and Network Flows}.
+\newblock {\em Mathematical Programming Series B}, 98:49--71, 2003.
+
+\bibitem{BS04}
+D.~Bertsimas and M.~Sim.
+\newblock {The Price of Robustness}.
+\newblock {\em Operations Research}, 52(2):35--53, 2004.
+
+\bibitem{chen2008linear}
+X.~Chen, M.~Sim, P.~Sun, and J.~Zhang.
+\newblock A linear decision-based approximation approach to stochastic
+  programming.
+\newblock {\em Operations Research}, 56(2):344--357, 2008.
+
+\bibitem{Dantzig55}
+G.~Dantzig.
+\newblock Linear programming under uncertainty.
+\newblock {\em Management Science}, 1:197--206, 1955.
+
+\bibitem{EL97}
+L.~El~Ghaoui and H.~Lebret.
+\newblock {Robust solutions to least-squares problems with uncertain data}.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  18:1035--1064, 1997.
+
+\bibitem{housni2017beyond}
+O.~El~Housni and V.~Goyal.
+\newblock Beyond worst-case: A probabilistic analysis of affine policies in
+  dynamic optimization.
+\newblock In I.~Guyon, U.~V. Luxburg, S.~Bengio, H.~Wallach, R.~Fergus,
+  S.~Vishwanathan, and R.~Garnett, editors, {\em Advances in Neural Information
+  Processing Systems 30}, pages 4759--4767. Curran Associates, Inc., 2017.
+
+\bibitem{elhousni2015piecewise}
+O.~El~Housni and V.~Goyal.
+\newblock Piecewise static policies for two-stage adjustable robust linear
+  optimization.
+\newblock {\em Mathematical Programming}, pages 1--17, 2017.
+
+\bibitem{FJMM07}
+U.~Feige, K.~Jain, M.~Mahdian, and V.~Mirrokni.
+\newblock {Robust combinatorial optimization with exponential scenarios}.
+\newblock {\em Lecture Notes in Computer Science}, 4513:439--453, 2007.
+
+\bibitem{GI03}
+D.~Goldfarb and G.~Iyengar.
+\newblock {Robust portfolio selection problems}.
+\newblock {\em Mathematics of Operations Research}, 28(1):1--38, 2003.
+
+\bibitem{ISS13}
+D.~Iancu, M.~Sharma, and M.~Sviridenko.
+\newblock Supermodularity and affine policies in dynamic robust optimization.
+\newblock {\em Operations Research}, 61(4):941--956, 2013.
+
+\bibitem{KW94}
+P.~Kall and S.~Wallace.
+\newblock {\em {Stochastic programming}}.
+\newblock Wiley New York, 1994.
+
+\bibitem{postek2016multistage}
+K.~Postek and D.~d. Hertog.
+\newblock Multistage adjustable robust mixed-integer optimization via iterative
+  splitting of the uncertainty set.
+\newblock {\em INFORMS Journal on Computing}, 28(3):553--574, 2016.
+
+\bibitem{Prekopa95}
+A.~Pr{\'e}kopa.
+\newblock {\em {Stochastic programming}}.
+\newblock Kluwer Academic Publishers, Dordrecht, Boston, 1995.
+
+\bibitem{Shapiro08}
+A.~Shapiro.
+\newblock {Stochastic programming approach to optimization under uncertainty}.
+\newblock {\em Mathematical Programming, Series B}, 112(1):183--220, 2008.
+
+\bibitem{SDR09}
+A.~Shapiro, D.~Dentcheva, and A.~Ruszczy{\'n}ski.
+\newblock {\em {Lectures on stochastic programming: modeling and theory}}.
+\newblock Society for Industrial and Applied Mathematics, 2009.
+
+\bibitem{SA73}
+A.~Soyster.
+\newblock Convex programming with set-inclusive constraints and applications to
+  inexact linear programming.
+\newblock {\em Operations research}, 21(5):1154--1157, 1973.
+
+\bibitem{zeng2011solving}
+B.~Zeng.
+\newblock Solving two-stage robust optimization problems by a
+  constraint-and-column generation method.
+\newblock {\em University of South Florida, FL, Tech. Rep}, 2011.
+
+\end{thebibliography}

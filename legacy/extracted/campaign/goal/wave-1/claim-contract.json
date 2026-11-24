@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "stage": "G3",
+  "question_id": "goal-wave-1-fixed-normal-audit-v1",
+  "actionableTarget": false,
+  "scientific_attestation": false,
+  "goal_achieved": false,
+  "target": null,
+  "proof_authorized": false,
+  "selections_considered": 1,
+  "selection_limit": 2,
+  "selections": [
+    {
+      "id": "G3-S1",
+      "candidate": "fixed-normal / Helly compatibility criterion for residual families",
+      "disposition": "not-selected",
+      "closest_sources": [
+        "DLHOR15 PDF pp1-3",
+        "ZHS18 PDF pp7-8",
+        "BT04 PDF pp3-5",
+        "MH18 PDF pp5-6"
+      ],
+      "plausible_delta": "No substantive justified delta established. Sharp grouped obstruction classification remains unaudited, not declared open.",
+      "domain_usefulness": "Potentially limits history compatibility tests, but generic intersection/elimination alone is reconstruction."
+    }
+  ],
+  "second_selection": "not used; no source-grounded non-elementary target justified",
+  "inherited_model": {
+    "path": "research/question.md",
+    "sha256": "6e6bbaff0d752c3bfe7e2f9ee78b3135e689e437e012730f4c482c3a31f786dc",
+    "size_bytes": 10744
+  },
+  "source_manifest": {
+    "path": "goal/wave-1/source-manifest.json",
+    "sha256": "cca8b324c6077cd9d7b0d60fea2b657ca130324a21b4083160c5e1e82c1c6839",
+    "size_bytes": 10450
+  },
+  "evidence_categories": {
+    "source_derived": "exact original-page comparisons only",
+    "informal_proofs": "E/Astra arguments remain inherited unproved sketches",
+    "exact_finite": "no new finite mathematical execution in G3; old evidence not promoted",
+    "general_lean_proof": "none",
+    "llm_criticism": "not a scientific verdict"
+  },
+  "next_discriminating_lead": {
+    "source_action": "Follow MH18 PDF p5 references [18,21] to originals; obtain correlated partial-observation information-state extension.",
+    "comparison": "Does the actual source preserve fixed-a robust bound feasibility using a physically available task-specific conditional support statistic, or require full conditional uncertainty history?",
+    "stop_condition": "If covered by source or elementary equality of residual systems, close; do not spend G4 on reconstruction."
+  },
+  "obligations_before_actionable": [
+    "inspect decisive original correlated-information theorem",
+    "fix physically available statistic/sensor restriction",
+    "justify nontrivial assumption/conclusion delta",
+    "freeze statement and counterexample route before proof"
+  ],
+  "counterexample_route": "same allowed observation/statistic, actual correlated suffix sets, prefix feasibility witnesses and common-continuation rational infeasibility certificate; reject suffix-dependent policies",
+  "engineering_repair_required_for_this_audit": false,
+  "billing": "unknown",
+  "native_provider_retry_behavior": "unknown",
+  "continuation_owner": "coordinator; no nested agent or objective started"
+}

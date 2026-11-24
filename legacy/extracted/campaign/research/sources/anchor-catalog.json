@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "status": "manual page-anchored catalog; final integrity check separate from failed unique-phrase extraction",
+  "page_numbering": "one-based physical PDF pages",
+  "anchors": [
+    {
+      "id": "A4-model",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 2,
+      "literal_excerpt": "x(t + 1) = Ax(t) + Bu(t) + M w(t)",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A4-polarity",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 3,
+      "literal_excerpt": "при минимуме гарантированного значения линейного терминального критерия качества",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A4-timing",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 4,
+      "literal_excerpt": "измерить текущее состояние",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A4-blocks",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 4,
+      "literal_excerpt": "wj (·) ∈ Wj",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A4-recursion",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 6,
+      "literal_excerpt": "Vj (xj ) = min max",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A4-example",
+      "source_id": "A4",
+      "pdf_path": "research/sources/A4.pdf",
+      "pdf_page_one_based": 12,
+      "literal_excerpt": "0.9950 0.0998",
+      "context_paths": [
+        "research/sources/A4-selected.txt",
+        "research/sources/A4-supplement.txt"
+      ]
+    },
+    {
+      "id": "A2-timing",
+      "source_id": "A2",
+      "pdf_path": "research/sources/A2.pdf",
+      "pdf_page_one_based": 2,
+      "literal_excerpt": "с учетом полученного измерения состояния.",
+      "context_paths": [
+        "research/sources/A2-selected.txt"
+      ]
+    },
+    {
+      "id": "A2-feasibility",
+      "source_id": "A2",
+      "pdf_path": "research/sources/A2.pdf",
+      "pdf_page_one_based": 3,
+      "literal_excerpt": "Стратегия π1 называется допустимой",
+      "context_paths": [
+        "research/sources/A2-selected.txt"
+      ]
+    },
+    {
+      "id": "A3-timing",
+      "source_id": "A3",
+      "pdf_path": "research/sources/A3.pdf",
+      "pdf_page_one_based": 4,
+      "literal_excerpt": "measure exactly the current state",
+      "context_paths": [
+        "research/sources/A3-selected.txt"
+      ]
+    },
+    {
+      "id": "A3-geometry",
+      "source_id": "A3",
+      "pdf_path": "research/sources/A3.pdf",
+      "pdf_page_one_based": 7,
+      "literal_excerpt": "piecewise affine and concave",
+      "context_paths": [
+        "research/sources/A3-selected.txt"
+      ]
+    },
+    {
+      "id": "A3-example",
+      "source_id": "A3",
+      "pdf_path": "research/sources/A3.pdf",
+      "pdf_page_one_based": 9,
+      "literal_excerpt": "closing instant T1 = 80",
+      "context_paths": [
+        "research/sources/A3-selected.txt"
+      ]
+    },
+    {
+      "id": "BT04-information",
+      "source_id": "BT04",
+      "pdf_path": "research/sources/BT04.pdf",
+      "pdf_page_one_based": 3,
+      "literal_excerpt": "may have its own information basis",
+      "context_paths": [
+        "research/sources/BT04-selected.txt"
+      ]
+    },
+    {
+      "id": "BT04-ARC-RC",
+      "source_id": "BT04",
+      "pdf_path": "research/sources/BT04.pdf",
+      "pdf_page_one_based": 3,
+      "literal_excerpt": "We define the Adjustable Robust Counterpart",
+      "context_paths": [
+        "research/sources/BT04-selected.txt"
+      ]
+    },
+    {
+      "id": "BT04-equivalence",
+      "source_id": "BT04",
+      "pdf_path": "research/sources/BT04.pdf",
+      "pdf_page_one_based": 4,
+      "literal_excerpt": "The uncertainty is constraint-wise",
+      "context_paths": [
+        "research/sources/BT04-selected.txt"
+      ]
+    },
+    {
+      "id": "BT04-vertices",
+      "source_id": "BT04",
+      "pdf_path": "research/sources/BT04.pdf",
+      "pdf_page_one_based": 5,
+      "literal_excerpt": "Theorem 2.2",
+      "context_paths": [
+        "research/sources/BT04-selected.txt"
+      ]
+    },
+    {
+      "id": "GTW20-model",
+      "source_id": "GTW20",
+      "pdf_path": "research/sources/GTW20.pdf",
+      "pdf_page_one_based": 1,
+      "literal_excerpt": "second-stage policy",
+      "context_paths": [
+        "research/sources/GTW20-selected.txt"
+      ]
+    },
+    {
+      "id": "GTW20-vertices",
+      "source_id": "GTW20",
+      "pdf_path": "research/sources/GTW20.pdf",
+      "pdf_page_one_based": 3,
+      "literal_excerpt": "Proposition 1 (Extreme Point Reformulation)",
+      "context_paths": [
+        "research/sources/GTW20-selected.txt"
+      ]
+    },
+    {
+      "id": "GTW20-random",
+      "source_id": "GTW20",
+      "pdf_path": "research/sources/GTW20.pdf",
+      "pdf_page_one_based": 4,
+      "literal_excerpt": "does not hold if problem",
+      "context_paths": [
+        "research/sources/GTW20-selected.txt"
+      ]
+    },
+    {
+      "id": "GTW25-model",
+      "source_id": "GTW25",
+      "pdf_path": "research/sources/GTW25.pdf",
+      "pdf_page_one_based": 6,
+      "literal_excerpt": "recourse matrices",
+      "context_paths": [
+        "research/sources/GTW25-selected.txt",
+        "research/sources/GTW25-supplement.txt"
+      ]
+    },
+    {
+      "id": "GTW25-condition",
+      "source_id": "GTW25",
+      "pdf_path": "research/sources/GTW25.pdf",
+      "pdf_page_one_based": 8,
+      "literal_excerpt": "positive inverse",
+      "context_paths": [
+        "research/sources/GTW25-selected.txt",
+        "research/sources/GTW25-supplement.txt"
+      ]
+    },
+    {
+      "id": "GTW25-theorem",
+      "source_id": "GTW25",
+      "pdf_path": "research/sources/GTW25.pdf",
+      "pdf_page_one_based": 8,
+      "literal_excerpt": "Assume that problem (1) attains its optimal value",
+      "context_paths": [
+        "research/sources/GTW25-selected.txt",
+        "research/sources/GTW25-supplement.txt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "purpose": "Architecture research source identities, not corpus admission or scientific verification",
+  "date": "2026-11-10",
+  "cache_policy": "Temporary review downloads removed after identity capture; immutable source URLs retained",
+  "sources": [
+    {
+      "filename": "coscientist.pdf",
+      "source_url": "https://arxiv.org/pdf/2502.18864v1",
+      "sha256": "80730ea110ad450411aa8352a785e996cfcda06afd6e1c60277cb64a65cb676a",
+      "inspected_pdf_page_range": [
+        8,
+        13
+      ]
+    },
+    {
+      "filename": "zib.pdf",
+      "source_url": "https://arxiv.org/pdf/2603.15914v1",
+      "sha256": "266aa6b61dff015c95363807afca369793785a7c858c10fbe2d177988660efdb",
+      "inspected_pdf_page_range": [
+        4,
+        9
+      ]
+    },
+    {
+      "filename": "station.pdf",
+      "source_url": "https://arxiv.org/pdf/2608.23691v1",
+      "sha256": "585afaf6996dc979a7792d41ce2ed830c701bc2505c218df957fa1fba47ec51c",
+      "inspected_pdf_page_range": [
+        2,
+        4
+      ]
+    },
+    {
+      "filename": "ae.pdf",
+      "source_url": "https://arxiv.org/pdf/2506.13131v1",
+      "sha256": "f092c8cbd65da89951ee6496374da9a54963f9035758c25ac6e4625f506df9ad",
+      "inspected_pdf_page_range": [
+        4,
+        7
+      ]
+    },
+    {
+      "filename": "zib-readme.md",
+      "source_url": "https://raw.githubusercontent.com/ZIB-IOL/The-Agentic-Researcher/82d1e3fec5f78863c70c015d2090b9823966e97b/README.md",
+      "sha256": "065bcd421bde13dd8d93e2be764795f484c57e47b82629aac0d5d1a9404c6c50",
+      "inspected_pdf_page_range": null
+    },
+    {
+      "filename": "zib-instructions.md",
+      "source_url": "https://raw.githubusercontent.com/ZIB-IOL/The-Agentic-Researcher/82d1e3fec5f78863c70c015d2090b9823966e97b/INSTRUCTIONS.md",
+      "sha256": "9fb3a7f5523e4ea9e8fac9e936406be644f5f571d86041fa4229bce0c539c38a",
+      "inspected_pdf_page_range": null
+    },
+    {
+      "filename": "funsearch-evaluator.py",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/funsearch/cc53f274237d7ab05c19df939edbc1f9616a7c19/implementation/evaluator.py",
+      "sha256": "81647818f5f12d9af535959d9042c62ffcb687385ac7d5b2ffbf01a6401542c1",
+      "inspected_pdf_page_range": null
+    }
+  ]
+}

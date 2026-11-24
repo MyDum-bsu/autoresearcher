@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task_id": "aro-discovery-k4t",
+  "wave": 2,
+  "status": "source-closure",
+  "goalAchieved": false,
+  "actionableTarget": false,
+  "proof_authorized": false,
+  "scientific_attestation": false,
+  "target": null,
+  "summary": "Two conditional-support proposals rejected: unavailable prefix information or elementary state-cell reconstruction; no useful non-elementary source delta established.",
+  "reportPath": "goal/wave-2/outcome.md",
+  "briefingPath": "reports/briefings/2026-11-13-goal-wave-2.md",
+  "outputs": [
+    {
+      "path": "goal/wave-2/literature.md",
+      "sha256": "9ae485f6279e6d6e41f36d7dcaca43840a8c7b4e68510a92281cbd68ca9a5c36",
+      "size_bytes": 11500
+    },
+    {
+      "path": "goal/wave-2/availability.md",
+      "sha256": "30762f101e5ca89d629530a3b86813b2a5c893b28758c8a98e789e9865c34bc5",
+      "size_bytes": 7869
+    },
+    {
+      "path": "goal/wave-2/source-manifest.json",
+      "sha256": "f10a175cc3b9c190574175e9dd46613fa9bed5c99092997a118ab5139fca8bb2",
+      "size_bytes": 18073
+    },
+    {
+      "path": "goal/wave-2/claim-contract.json",
+      "sha256": "7035dd98284b57262f9933481346bf2af7021f6f55866c59df3431f2c035d173",
+      "size_bytes": 4634
+    },
+    {
+      "path": "goal/wave-2/outcome.md",
+      "sha256": "513f15b2aef28a29b441ac6b0f7c434a117fc09141d007fd3521a5c48623a400",
+      "size_bytes": 5795
+    },
+    {
+      "path": "reports/briefings/2026-11-13-goal-wave-2.md",
+      "sha256": "13498535da75032ec4a9f5d27ac5c204757938da43aeeedb22abae2db83869ea",
+      "size_bytes": 6258
+    }
+  ],
+  "sources_inspected": [
+    "IY",
+    "WKR",
+    "DVM"
+  ],
+  "selections_considered": 2,
+  "blockers": [],
+  "limitations": [
+    "Final 2005 IY journal PDF unavailable",
+    "Final 2013 WKR journal PDF not acquired",
+    "Author-version theorem numbering is not asserted for final journal versions",
+    "No new mathematical experiment or proof",
+    "No global novelty or literature-closure claim"
+  ],
+  "verification": {
+    "command": "timeout 60 python3 -B artifacts/goal/wave-2/verify_delivery.py",
+    "raw_stdout": "artifacts/goal/wave-2/verification.stdout",
+    "raw_stderr": "artifacts/goal/wave-2/verification.stderr",
+    "record": "artifacts/goal/wave-2/verification.json",
+    "scope": "Delivery/source bindings only; not a mathematical judge"
+  },
+  "next_decision": "Coordinator inspects original version-qualified pages and information mapping; do not authorize proof of either rejected selection; change mathematical mechanism before another research wave.",
+  "billing": "unknown",
+  "native_provider_retry_behavior": "unknown"
+}

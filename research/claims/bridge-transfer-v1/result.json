@@ -1,0 +1,49 @@
+{
+  "actualBilling": "unknown",
+  "blockers": [],
+  "commands": [
+    {
+      "argv": [
+        "timeout",
+        "300",
+        "python3",
+        "-B",
+        "bridge/transfer-v1/check.py"
+      ],
+      "exit": 0
+    },
+    {
+      "argv": [
+        "timeout",
+        "300",
+        "python3",
+        "-B",
+        "-O",
+        "bridge/transfer-v1/check.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "coverage": "source-anchored written universal derivation plus exact interpretation of four immutable rational certificates; independent Stage B not performed",
+  "firstScientificSuccessAchieved": false,
+  "formalProof": false,
+  "fullOSContainment": "unknown",
+  "historical_files_unchanged": 159,
+  "nativeRetries": "unknown",
+  "not_run": [
+    "independent Stage B",
+    "new LP optimization",
+    "case regeneration",
+    "Lean/formal theorem",
+    "comparator",
+    "private panel",
+    "scientific writes or attestation"
+  ],
+  "novelContributionClaimed": false,
+  "raw_outputs": "artifacts/bridge/transfer-v1/author/",
+  "scientificAttestation": false,
+  "stage": "A",
+  "status": "delivered-for-coordinator-inspection",
+  "task": "aro-discovery-k4t",
+  "thesisAdmission": false
+}
