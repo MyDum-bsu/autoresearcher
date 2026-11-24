@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "run_name": "R12-RUN-02",
+  "title_en": "R12 Run-02: Falsify-First Frontier Attack on O4, G1, G2, O1, and O8",
+  "title_ru": "R12 Run-02: Falsify-First атака на открытые границы Атласа (O4, G1, G2, O1, O8)",
+  "seed": 20261124,
+  "policy": {
+    "falsify_first_required": true,
+    "significance_gate_required": true,
+    "frozen_core_immutable": true,
+    "auto_attest_forbidden": true,
+    "cross_family_review_required": true
+  },
+  "candidates": [
+    {
+      "candidate_id": "run02-o4-submodularity",
+      "target_open_node_id": "conj-o4-closure-scheduling",
+      "title": "O4 Combinatorial Structure: Submodularity vs Synergy of Closure Value G(R)",
+      "statement": "For discrete linear OGU systems with box controls and disturbances over horizon T >= 3, test whether the measurement value function G(R) = V(empty) - V(R) is submodular on closure subsets R subset {1,...,T-1}, i.e., G({r1, r2}) - G({r1}) <= G({r2}) - G(empty) for all 0 < r1 < r2 < T.",
+      "closes_gap_mechanism": "Advances conj-o4-closure-scheduling beyond Run-01 single-closure separation (thm-o4-single-closure-value) by testing whether greedy multi-closure scheduling admits a submodular approximation guarantee or exhibits strict supermodular synergy.",
+      "falsifiable_prediction": "Exact rational Vertex-LP over R in {empty, {1}, {2}, {1,2}} on T=3 systems tests diminishing returns G({1,2}) - G({1}) <= G({2}) - G(empty) across both an unconstrained terminal regime (rows=0, G identically 0) and two tightly constrained terminal box regimes.",
+      "falsifier_method": "exact_rational_lp",
+      "dimension_regime": "1D linear OGU, T=3, k in {0,1,2} closures",
+      "expected_theorem_class": "structural_property",
+      "extends_beyond_nodes": [
+        "thm-o4-single-closure-value"
+      ],
+      "expected_checks": {
+        "unconstrained_defect": "0",
+        "instance_a_defect": "0",
+        "instance_b_defect": "-1"
+      }
+    },
+    {
+      "candidate_id": "run02-g1-markov-sufficiency",
+      "target_open_node_id": "gen-multistage-k-closures",
+      "title": "G1 Multi-Closure Markov Sufficiency vs History-Dependent ARO Separation",
+      "statement": "For k = 2 closures R = {r1, r2} on the same control objective, test whether an injective 2D shift-register state observation x_{r2} = (w_0, w_1) yields V_markov(R) == V_history(R) whereas a non-injective projection s_{r2} = w_0 + w_1 on the identical problem yields strict separation V_markov(R) > V_history(R).",
+      "closes_gap_mechanism": "Advances gen-multistage-k-closures beyond thm-g1-multistage-bridge by isolating observation-map injectivity on the exact same k=2 Vertex-LP control objective.",
+      "falsifiable_prediction": "Exact rational LP on the identical k=2 control objective solves both the injective 2D shift-register state LP (checking V_markov == V_history == 0) and the merged 1D projection LP (checking V_markov = 1 > 0 = V_history).",
+      "falsifier_method": "exact_rational_lp",
+      "dimension_regime": "1D/2D linear OGU, T=3, k=2 closures",
+      "expected_theorem_class": "characterization",
+      "extends_beyond_nodes": [
+        "thm-g1-multistage-bridge",
+        "ce-d1-prefix-merge"
+      ],
+      "expected_checks": {
+        "injective_gap": "0",
+        "merged_gap": "1"
+      }
+    },
+    {
+      "candidate_id": "run02-g2-l1-vertex-lp",
+      "target_open_node_id": "gen-nonbox-conic-uncertainty",
+      "title": "G2 Non-Box Polyhedral l1 Cross-Polytope Support Tightening and Vertex-LP Exactness",
+      "statement": "When disturbance sets W_t are p-dimensional l1 cross-polytopes {w : ||w||_1 <= rho}, Minkowski support tightening h_{W_t}(r) = rho * ||r||_inf is attained at the 2p signed coordinate basis vertices and admits a finite exact Vertex-LP; on the positive-part test sum_i max(v_i, 0), 2D l1 gives V_ARO == V_ADR == 1 while 3D l1 octahedron exhibits strict gap V_ARO = 1 < V_ADR = 3/2 (general 2D l1 systems can still exhibit ADR gaps under linear maps E onto boxes).",
+      "closes_gap_mechanism": "Advances gen-nonbox-conic-uncertainty beyond thm-g2-conic-support (which treated general Minkowski tightening and 2D l2 non-polyhedrality) by verifying exact 2D and 3D l1 support attainment and separating polyhedral Vertex-LP exactness from 3D ADR failure.",
+      "falsifiable_prediction": "Exact rational LP over the 2p signed basis vertices of 2D and 3D l1 cross-polytopes verifies exact support attainment h_{W_t}(r) = rho * ||r||_inf in both dimensions and separates 2D (V_ARO == V_ADR == 1) from 3D (strict gap V_ARO = 1 < V_ADR = 3/2).",
+      "falsifier_method": "exact_rational_lp",
+      "dimension_regime": "2D/3D non-box l1 cross-polytope, r=1, q=1",
+      "expected_theorem_class": "reduction_theorem",
+      "extends_beyond_nodes": [
+        "thm-g2-conic-support",
+        "ce-t3-chen-zhang"
+      ],
+      "expected_checks": {
+        "dim2_gap": "0",
+        "dim3_gap": "1/2"
+      }
+    },
+    {
+      "candidate_id": "run02-o1-fullrank-b-2d",
+      "target_open_node_id": "conj-o1-adr-exactness-char",
+      "title": "O1 2D Bridge Recourse-Rank and Active-Constraint Interaction for ADR Exactness",
+      "statement": "In 2D single-closure Bridge systems with box disturbance (r=1, q=1, p=2), test how rank-1 recourse B = (1,1)^T interacts with active box constraints [0,4]^2 to induce a strict ADR gap V_ARO < V_ADR, whereas either relaxing the box constraints or upgrading to full-rank recourse B = I_2 restores V_ADR == V_ARO.",
+      "closes_gap_mechanism": "Advances conj-o1-adr-exactness-char beyond thm-o1-adr-simplex-1d-2d by isolating the interaction between recourse rank and active terminal box constraints alongside the full T1-T7 falsification battery.",
+      "falsifiable_prediction": "Exact rational Vertex-LP vs ADR-LP plus full T1-T7 battery (7/7) confirms strict gap V_ARO = 6 < V_ADR = 8 for rank-1 B on tight [0,4]^2, V_ARO = V_ADR = 0 for rank-1 B on relaxed [-10,10]^2, and V_ARO = V_ADR = 4 for full-rank B = I_2 on tight [0,4]^2.",
+      "falsifier_method": "exact_rational_lp+battery_t1_t7",
+      "dimension_regime": "2D Bridge box system, r=1, q=1, p=2",
+      "expected_theorem_class": "dichotomy",
+      "extends_beyond_nodes": [
+        "thm-o1-adr-simplex-1d-2d"
+      ],
+      "expected_checks": {
+        "rank1_tight_gap": "2",
+        "rank1_relaxed_gap": "0",
+        "fullrank_diag_gap": "0"
+      }
+    },
+    {
+      "candidate_id": "run02-o8-gap-vanishing-regime",
+      "target_open_node_id": "conj-o8-quantifier-gap",
+      "title": "O8 Prefix-Maximin vs Full-Trajectory Maximin Commitment Gap Dichotomy",
+      "statement": "On the 1D integrator benchmark x_2 = u_0 + u_1 + w_0 + w_1 (A=1, B=1, E=1, |u_0| <= 1, |w_t| <= rho) with terminal objective |x_2| and post-closure authority u1_max, test the dichotomy between the prefix-maximin gap V({1}) - V_prefix_mm = max(0, rho - u1_max) (vanishing at u1_max >= rho, unlike unstable A > 1 systems such as ce-o8-sion-gap) and the full-trajectory maximin gap V({1}) - V_full_mm = rho (persisting across all u1_max).",
+      "closes_gap_mechanism": "Advances conj-o8-quantifier-gap beyond ce-o8-sion-gap (single strict gap witness V({1})=2 > 0=V_mm) by separating prefix-commitment loss from irreducible future-noise loss across u1_max.",
+      "falsifiable_prediction": "Exact rational LP sweep over post-closure authority u1_max in {0, 1/2, 1, 3/2} computes exact V({1}), V_prefix_mm, and V_full_mm, checking V({1}) - V_prefix_mm = max(0, rho - u1_max) while V({1}) - V_full_mm = rho = 1 across all u1_max.",
+      "falsifier_method": "exact_rational_lp",
+      "dimension_regime": "1D box OGU, r=1, q=1, parametric u1_max sweep",
+      "expected_theorem_class": "sharp_bound",
+      "extends_beyond_nodes": [
+        "ce-o8-sion-gap"
+      ],
+      "expected_checks": {
+        "prefix_gaps": ["1", "1/2", "0", "0"],
+        "full_gaps": ["1", "1", "1", "1"]
+      }
+    }
+  ]
+}

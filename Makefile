@@ -1,10 +1,10 @@
-.PHONY: verify verify-all verify-migration verify-corpus verify-m0 verify-transfer verify-counterexamples verify-falsifiers verify-lean verify-lean-compile verify-claim verify-atlas verify-literature verify-discovery verify-guides verify-learn verify-public-hygiene
+.PHONY: verify verify-all verify-migration verify-corpus verify-m0 verify-transfer verify-counterexamples verify-falsifiers verify-lean verify-lean-compile verify-claim verify-atlas verify-literature verify-discovery verify-remote verify-run02 verify-guides verify-learn verify-public-hygiene
 
 PYTHON ?= python3
 
 verify: verify-claim
 
-verify-all: verify-migration verify-corpus verify-m0 verify-transfer verify-counterexamples verify-falsifiers verify-lean verify-claim verify-atlas verify-literature verify-discovery verify-guides verify-learn verify-public-hygiene
+verify-all: verify-migration verify-corpus verify-m0 verify-transfer verify-counterexamples verify-falsifiers verify-lean verify-claim verify-atlas verify-literature verify-discovery verify-remote verify-run02 verify-guides verify-learn verify-public-hygiene
 
 verify-migration:
 	@$(PYTHON) -B verification/gates/verify_baseline.py migration
@@ -84,6 +84,18 @@ verify-discovery:
 	@$(PYTHON) -B -O research/discovery/verify_discovery.py
 	@$(PYTHON) -B -O research/discovery/verify_discovery.py --self-test
 	@$(PYTHON) -B -O -m unittest discover -s research/discovery/tests -p 'test_*.py'
+
+verify-remote:
+	@$(PYTHON) -B research/remote/verify_remote.py
+	@$(PYTHON) -B research/remote/verify_remote.py --self-test
+	@$(PYTHON) -B -O research/remote/verify_remote.py
+	@$(PYTHON) -B -O research/remote/verify_remote.py --self-test
+
+verify-run02:
+	@$(PYTHON) -B research/discovery/significance_gate.py --self-test
+	@$(PYTHON) -B -O research/discovery/significance_gate.py --self-test
+	@$(PYTHON) -B research/discovery/run02/run02_falsify.py
+	@$(PYTHON) -B -O research/discovery/run02/run02_falsify.py
 
 verify-guides:
 	@$(PYTHON) -B verification/gates/verify_guides.py

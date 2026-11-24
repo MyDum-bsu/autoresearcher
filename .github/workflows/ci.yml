@@ -41,6 +41,8 @@ jobs:
           make verify-lean
           make verify-literature
           make verify-discovery
+          make verify-remote
+          make verify-run02
           python3 -B verification/gates/verify_guides.py --no-style
           python3 -B verification/gates/verify_guides.py --no-style --self-test
           python3 -B -O verification/gates/verify_guides.py --no-style
