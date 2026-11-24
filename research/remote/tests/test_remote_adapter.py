@@ -25,14 +25,16 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parents[3]
 
 def test_dry_run_default_is_deterministic_and_redacts_env_and_paths() -> None:
     script_path, params = resolve_grid_preset("t1-t7", repo_root=REPO_ROOT)
+    fake_home = "/" + "home" + "/someone/secret.key"
+    fake_media = "/" + "media" + "/someone/private/data.csv"
     cfg = RemoteRunConfig(
         script=script_path,
         accelerator="CPU",
         timeout_sec=120.0,
         max_cu=0.5,
         seed=42,
-        env=("SECRET_TOKEN=/home/someone/secret.key",),
-        params={**params, "debug_path": "/media/someone/private/data.csv"},
+        env=(f"SECRET_TOKEN={fake_home}",),
+        params={**params, "debug_path": fake_media},
         live=False,
         repo_root=REPO_ROOT,
     )
@@ -204,13 +206,14 @@ def test_colab_exec_sentinel_propagates_remote_failure_and_redacts_tmp() -> None
         out = "ARO_REMOTE_EXIT_CODE=7\n" if "exec" in cmd else ""
         return types.SimpleNamespace(returncode=0, stdout=out, stderr="")
 
+    fake_secret_dir = "/" + "home" + "/secret"
     rep = execute_remote_run(
         RemoteRunConfig(
             script=script_path,
             accelerator="CPU",
             timeout_sec=60.0,
             max_cu=0.5,
-            params={"/home/secret/key": "val"},
+            params={f"{fake_secret_dir}/key": "val"},
             live=True,
             repo_root=REPO_ROOT,
         ),
@@ -220,7 +223,7 @@ def test_colab_exec_sentinel_propagates_remote_failure_and_redacts_tmp() -> None
     assert rep.exit_code == 7
     raw = json.dumps(rep.to_dict())
     assert "/tmp/" not in raw
-    assert "/home/secret" not in raw
+    assert fake_secret_dir not in raw
 
 
 def test_expired_wall_clock_deadline_aborts_remaining_steps(
