@@ -78,7 +78,34 @@ def _load_manifest_corpus_paths(repo_root: pathlib.Path) -> set[str]:
     return known
 
 
-def _resolve_repo_path(repo_root: pathlib.Path, rel: str, label: str) -> pathlib.Path:
+def _load_public_omitted_corpus_paths(repo_root: pathlib.Path) -> set[str]:
+    omitted_file = repo_root / "corpus/public-omitted-pdfs.json"
+    if not omitted_file.is_file():
+        return set()
+    try:
+        data = json.loads(omitted_file.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(data, dict):
+        return set()
+    files = data.get("omitted_pdfs") if isinstance(data.get("omitted_pdfs"), dict) else data
+    return {
+        k
+        for k, v in files.items()
+        if isinstance(k, str)
+        and isinstance(v, dict)
+        and isinstance(v.get("sha256"), str)
+        and len(v["sha256"]) == 64
+    }
+
+
+def _resolve_repo_path(
+    repo_root: pathlib.Path,
+    rel: str,
+    label: str,
+    *,
+    allowed_omitted: set[str] | None = None,
+) -> pathlib.Path:
     if not isinstance(rel, str) or not rel.strip():
         raise AtlasVerificationError(f"{label}: empty or non-string path")
     raw = pathlib.Path(rel)
@@ -89,6 +116,8 @@ def _resolve_repo_path(repo_root: pathlib.Path, rel: str, label: str) -> pathlib
     if not target.is_relative_to(root_res):
         raise AtlasVerificationError(f"{label}: path escapes repository root: {rel!r}")
     if not target.is_file():
+        if allowed_omitted and rel in allowed_omitted:
+            return target
         raise AtlasVerificationError(f"{label}: referenced file does not exist: {rel!r}")
     return target
 
@@ -201,6 +230,7 @@ def validate_atlas_data(
         raise AtlasVerificationError("Atlas 'edges' must be a non-empty list")
 
     known_corpus = _load_manifest_corpus_paths(repo_root)
+    omitted_corpus = _load_public_omitted_corpus_paths(repo_root)
     node_by_id: dict[str, dict[str, Any]] = {}
     covered_lean_decls: set[str] = set()
 
@@ -260,7 +290,12 @@ def validate_atlas_data(
 
         for rel in sources if isinstance(sources, list) else []:
             try:
-                _resolve_repo_path(repo_root, rel, f"Node '{nid}' source")
+                _resolve_repo_path(
+                    repo_root,
+                    rel,
+                    f"Node '{nid}' source",
+                    allowed_omitted=omitted_corpus,
+                )
             except AtlasVerificationError as exc:
                 errors.append(str(exc))
                 continue
