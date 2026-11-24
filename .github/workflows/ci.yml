@@ -72,6 +72,7 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
           TOOLCHAIN="$(tr -d '[:space:]' < verification/lean/lean-toolchain)"
           "$HOME/.elan/bin/elan" toolchain install "$TOOLCHAIN"
+          "$HOME/.elan/bin/elan" default "$TOOLCHAIN"
 
       - name: Cache Lake packages and Mathlib oleans
         uses: actions/cache@v4
