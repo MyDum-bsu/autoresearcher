@@ -421,7 +421,10 @@ class TestPushAndPullUnit(unittest.TestCase):
             mock.patch.dict(os.environ, clean_env, clear=True),
             tempfile.TemporaryDirectory(prefix="aro-r5-isolated-pull-") as tmp,
         ):
-            graph_script = resolve_graph_script()
+            try:
+                graph_script = resolve_graph_script()
+            except ContextPullError:
+                self.skipTest("Optional external LearnHarness checkout not installed")
             data_dir = pathlib.Path(tmp) / "data"
             graph_dir = data_dir / "graph"
             graph_dir.mkdir(parents=True)

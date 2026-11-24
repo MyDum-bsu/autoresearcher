@@ -84,7 +84,7 @@ jobs:
         working-directory: verification/lean
         run: |
           lake exe cache get || true
-          LEAN_NUM_THREADS=1 lake build AroProofs.Inventory BridgeFormalV2.Proofs
+          LEAN_NUM_THREADS=1 lake build AroProofs.Inventory BridgeFormalV2.Model BridgeFormalV2.Goals
 
       - name: Run Lean 4 compile, Atlas live audit, and Gate G2/G3
         run: |
