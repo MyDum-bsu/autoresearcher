@@ -25,7 +25,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install pyyaml sympy
+          python3 -m pip install pyyaml sympy pypdf
 
       - name: Run public hygiene gate (-B and -O)
         run: make verify-public-hygiene
@@ -61,10 +61,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Python dependencies (pyyaml, sympy)
+      - name: Install Python dependencies (pyyaml, sympy, pypdf)
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install pyyaml sympy
+          python3 -m pip install pyyaml sympy pypdf
 
       - name: Install elan and pinned Lean 4 toolchain
         run: |
@@ -84,7 +84,7 @@ jobs:
         working-directory: verification/lean
         run: |
           lake exe cache get || true
-          LEAN_NUM_THREADS=1 lake build AroCore AroProofs BridgeFormalV2
+          LEAN_NUM_THREADS=1 lake build AroProofs.Inventory BridgeFormalV2.Proofs
 
       - name: Run Lean 4 compile, Atlas live audit, and Gate G2/G3
         run: |
