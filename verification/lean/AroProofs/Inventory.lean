@@ -7,6 +7,7 @@ import AroProofs.BridgeG2ConicSupport
 import AroProofs.BridgeO4ClosureValue
 import AroProofs.BridgeG1Multistage
 import AroProofs.BridgeO1ADRExactness
+import AroProofs.BridgeO8QuantifierGap
 
 -- BridgeFormalV2 F1/F2 (10 targets)
 #print axioms BridgeFormalV2.Proofs.nonempty_blocks
@@ -78,3 +79,12 @@ import AroProofs.BridgeO1ADRExactness
 #print axioms AroProofs.BridgeO1ADRExactness.bridge_adr_subset_aro_and_source
 #print axioms AroProofs.BridgeO1ADRExactness.bridge_adr_exact_1d
 #print axioms AroProofs.BridgeO1ADRExactness.exists_bridge_2d_strict_adr_gap
+
+-- Autonomous Cycle 01 O8 (partial): Minimax vs Maximin Quantifier-Order Gap Hierarchy (7 targets)
+#print axioms AroProofs.BridgeO8QuantifierGap.aro_subset_prefixMaximin
+#print axioms AroProofs.BridgeO8QuantifierGap.source_subset_prefixMaximin
+#print axioms AroProofs.BridgeO8QuantifierGap.prefixMaximin_subset_fullMaximin
+#print axioms AroProofs.BridgeO8QuantifierGap.prefixMaximin_iff_tightened
+#print axioms AroProofs.BridgeO8QuantifierGap.zero_gap_hierarchy_of_unconstrained_terminal
+#print axioms AroProofs.BridgeO8QuantifierGap.exists_strict_quantifier_gap_witness
+#print axioms AroProofs.BridgeO8QuantifierGap.exists_prefix_zero_full_strict_gap_witness
