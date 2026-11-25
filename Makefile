@@ -41,6 +41,8 @@ verify-counterexamples:
 	@$(PYTHON) -B research/counterexamples/astra-probe-AS1/checks/check.py >/dev/null && echo "ASTRA PROBE A-S1 (38 checks) OK"
 	@$(PYTHON) -B research/counterexamples/O8-sion-gap/checks/check_o8_gap.py >/dev/null && echo "COUNTEREXAMPLE O8-sion-gap (-B) OK"
 	@$(PYTHON) -B -O research/counterexamples/O8-sion-gap/checks/check_o8_gap.py >/dev/null && echo "COUNTEREXAMPLE O8-sion-gap (-B -O) OK"
+	@$(PYTHON) -B research/counterexamples/O4-supermodular-synergy/checks/check_o4_synergy.py >/dev/null && echo "COUNTEREXAMPLE O4-supermodular-synergy (-B) OK"
+	@$(PYTHON) -B -O research/counterexamples/O4-supermodular-synergy/checks/check_o4_synergy.py >/dev/null && echo "COUNTEREXAMPLE O4-supermodular-synergy (-B -O) OK"
 
 verify-falsifiers:
 	@$(PYTHON) -B -m verification.falsifiers.battery_t1_t7

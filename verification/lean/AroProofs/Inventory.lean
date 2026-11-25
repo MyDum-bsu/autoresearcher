@@ -8,6 +8,7 @@ import AroProofs.BridgeO4ClosureValue
 import AroProofs.BridgeG1Multistage
 import AroProofs.BridgeO1ADRExactness
 import AroProofs.BridgeO8QuantifierGap
+import AroProofs.BridgeO4Scheduling
 
 -- BridgeFormalV2 F1/F2 (10 targets)
 #print axioms BridgeFormalV2.Proofs.nonempty_blocks
@@ -88,3 +89,13 @@ import AroProofs.BridgeO8QuantifierGap
 #print axioms AroProofs.BridgeO8QuantifierGap.zero_gap_hierarchy_of_unconstrained_terminal
 #print axioms AroProofs.BridgeO8QuantifierGap.exists_strict_quantifier_gap_witness
 #print axioms AroProofs.BridgeO8QuantifierGap.exists_prefix_zero_full_strict_gap_witness
+
+-- Autonomous Cycle 02 O4/O7: Multi-Closure Scheduling Lattice, Supermodular Synergy & Bidirectional Dominance (8 targets)
+#print axioms AroProofs.BridgeO4Scheduling.schedEmpty_subset_schedR1
+#print axioms AroProofs.BridgeO4Scheduling.schedEmpty_subset_schedR2
+#print axioms AroProofs.BridgeO4Scheduling.schedR1_subset_schedR12
+#print axioms AroProofs.BridgeO4Scheduling.schedR2_subset_schedR12
+#print axioms AroProofs.BridgeO4Scheduling.sched_collapse_of_unconstrained_terminal
+#print axioms AroProofs.BridgeO4Scheduling.exists_strict_supermodular_synergy
+#print axioms AroProofs.BridgeO4Scheduling.exists_strict_submodular_and_early_dominance
+#print axioms AroProofs.BridgeO4Scheduling.exists_strict_late_dominance

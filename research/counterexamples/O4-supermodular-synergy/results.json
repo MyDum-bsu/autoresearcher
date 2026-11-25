@@ -1,0 +1,57 @@
+{
+  "conjecture_id": "hyp-o4-submodularity-and-single-closure-dominance",
+  "atlas_node_id": "conj-o4-closure-scheduling",
+  "verdict": "REFUTED_AT_STAGE_2_FALSIFY_FIRST_BY_EXACT_LP",
+  "supermodular_synergy_4d": {
+    "V": {
+      "empty": "1",
+      "r1": "1",
+      "r2": "1",
+      "r12": "0"
+    },
+    "G": {
+      "empty": "0",
+      "r1": "0",
+      "r2": "0",
+      "r12": "1"
+    },
+    "submodularity_defect": "1"
+  },
+  "submodular_early_dominance_1d": {
+    "V": {
+      "empty": "4",
+      "r1": "2",
+      "r2": "3",
+      "r12": "2"
+    },
+    "G": {
+      "empty": "0",
+      "r1": "2",
+      "r2": "1",
+      "r12": "2"
+    },
+    "submodularity_defect": "-1"
+  },
+  "late_dominance_1d": {
+    "V": {
+      "empty": "3/2",
+      "r1": "1",
+      "r2": "0",
+      "r12": "0"
+    },
+    "G": {
+      "empty": "0",
+      "r1": "1/2",
+      "r2": "3/2",
+      "r12": "3/2"
+    },
+    "submodularity_defect": "-1/2"
+  },
+  "sympy_continuous_certificates": {
+    "synergy_r12_identity": "u0=0, u1=-w0, u2=-w1 => x_3 = (0, 0, 0, w2), cost = 0",
+    "early_dom_r1_identity": "u0=0, u1=u2=-w0/2 => x_3 = w1 + w2 in [-2, 2]",
+    "early_dom_r2_identity": "u0=u1=1/4, u2=-(x2-1/2)/4 => x_3 = 1/2 + 3/4*(w0+w1) + w2 in [-2, 3]",
+    "late_dom_r1_identity": "u0=0, u1=-w0/2, u2=-1/2 => x_3 = -1/2 + w1/2 + w2 in [-2, 1]",
+    "late_dom_r2_identity": "u0=u1=-1, u2=-1-x2/2 => x_3 = -1 + w2 in [-2, 0]"
+  }
+}
