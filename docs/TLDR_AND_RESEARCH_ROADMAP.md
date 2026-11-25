@@ -1,17 +1,30 @@
 # TL;DR и Дорожная карта исследований `autoresearcher` (`aro-discovery` v2)
 
-> **Статус документа:** актуальный снимок состояния проекта и исследовательская дорожная карта (Decision D-23, 2026-11-25, ветка `research/autonomous-cycle-03`).
+> **Статус документа:** актуальный снимок состояния проекта и исследовательская дорожная карта (Decision D-23, 2026-11-25, ветка `research/autonomous-cycle-04`).
 > **Устав и канонические источники:** [`CHARTER.md`](../CHARTER.md), [`AGENTS.md`](../AGENTS.md), [`README.md`](../README.md), [`research/atlas/ATLAS.md`](../research/atlas/ATLAS.md), [`research/problem-map.md`](../research/problem-map.md).
 
 ---
 
 ## English Abstract
 
-`autoresearcher` (`aro-discovery` v2) is a verifier-gated mathematical research program investigating the exact bridge between **Optimal Guaranteed Control (OGU, Dmitruk school)** and **Two-Stage / Multi-Stage Adaptive Robust Optimization (ARO)** with fixed recourse, the **value of information under closure scheduling** (`O4`, `O7`), the **sharp exactness boundaries of Affine Decision Rules (ADR/LDR)** (`O1`, `O2`, `O5`), and **minimax-vs-maximin quantifier-order commitment gaps** (`O8`).
+`autoresearcher` (`aro-discovery` v2) is a verifier-gated mathematical research program investigating the exact bridge between **Optimal Guaranteed Control (OGU, Dmitruk school)** and **Two-Stage / Multi-Stage Adaptive Robust Optimization (ARO)** with fixed recourse, the **value of information under closure scheduling** (`O4`, `O7`), the **sharp exactness boundaries and lifted/piecewise-affine extensions of Affine Decision Rules (ADR/LDR)** (`O1`, `O2`, `O5`), and **minimax-vs-maximin quantifier-order commitment gaps** (`O8`).
 
 Every scientific claim follows a strict **Falsify-First** and **Dual-Lock** discipline: conjectures must survive exact rational (`fractions.Fraction`) LP / Bellman / SymPy falsifiers and the executable `T1–T7` battery before proof synthesis; Lean 4 formalizations compile against an immutable `frozen_core` (`BridgeFormalV2.Model` / `Goals`) with **0 `sorry`** and standard axioms strictly `⊆ {propext, Classical.choice, Quot.sound}`; and every formalized track is paired with a 4-file Russian study pack in `research/guides/` for **LearnHarness v0.7.0** (human-only attestation).
 
-As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 machine-checked declarations (0 `sorry`)** across 11 proof modules — **F1/F2** (10), **P1–P3** (5), **F3** (4), **F4** (9), **G2** (7), **O4 single-closure** (7), **G1** (6), **O1 part 1** (7), **O8 quantifier-gap** (7, Cycle 01), **O4/O7 multi-closure scheduling & supermodular synergy** (8, Cycle 02), and the newly formalized **O1/O2/O5 & F3 full-rank recourse refutation (`H-O1-1`), arbitrary-dimension diagonal ADR exactness, F3 support subadditivity & linear `Ω(n)` gap scaling** track (`BridgeO1FullRankRecourse.lean`, 8 declarations, Cycle 03) — complemented by exact rational oracles (`M0`, `A4 r=67,104`), exact counterexamples (`D1`, `D2`, `E-rank1`, `A-S1`, `O8-sion-gap`, `O4-supermodular-synergy`, `O1-fullrank-shear-gap`, `T2–T5`), and 5 Stage-2 **Run-02** frontier falsifiers. This document summarizes what is rigorously proved vs. oracle-verified vs. honestly open, prioritizes the immediate research queue, and outlines the deeper mathematical theory this program is building toward.
+As of `research/autonomous-cycle-04`, the formal Lean 4 kernel contains **86 machine-checked declarations (0 `sorry`)** across 12 proof modules — the 55-declaration Run-01/v2 baseline plus **31 new zero-`sorry` declarations across 4 consecutive autonomous research cycles**: **O8 quantifier-gap** (7, Cycle 01), **O4/O7 multi-closure scheduling & supermodular synergy** (8, Cycle 02), **O1/O2/O5 & F3 full-rank shear refutation (`H-O1-1`), n-D diagonal ADR exactness & linear `Ω(n)` scaling** (8, Cycle 03), and the newly formalized **O2/O5 lifted & piecewise-affine decision rules, `Ω(d)` cross-polytope ratio, refutation of coordinate-separable lifting (`H-O2-1`), and single-feature diagonal-hinge restoration** track (`BridgeO2LiftedADR.lean`, 8 declarations, Cycle 04) — complemented by exact rational oracles (`M0`, `A4 r=67,104`), exact counterexamples (`D1`, `D2`, `E-rank1`, `A-S1`, `O8-sion-gap`, `O4-supermodular-synergy`, `O1-fullrank-shear-gap`, `O2-separable-lifting-gap`, `T2–T5`), and 5 Stage-2 **Run-02** frontier falsifiers.
+
+---
+
+## Executive Summary: 4 автономных цикла исследований (Cycles 01–04)
+
+За 4 последовательных автономных цикла на ветках `research/autonomous-cycle-01..04` формальное ядро Lean 4 выросло с **55 до 86 деклараций (`+31` новая теорема, `0 sorry`, замороженное ядро `BridgeFormalV2.Model` / `Goals` нетронуто)**, проверено и заархивировано **3 новых точных контрпримера (`fractions.Fraction` LP + SymPy)** и подготовлено **4 новых русских учебных пакета (`08`–`11`)**:
+
+| Цикл | Ветка / Коммит | Модуль Lean 4 (`0 sorry`) | Контрпример / Оракул | Русский конспект | Главный научный результат |
+|---|---|---|---|---|---|
+| **Cycle 01** | `9c625ee` | `BridgeO8QuantifierGap.lean` (+7) | `O8-sion-gap` | `08-o8-quantifier-gap` | 4-уровневая иерархия квантификаторов `O8`, F3-сужение для `PrefixMM`, строгий тройной разрыв $0 < 2 < 4$ и дихотомия префиксного vs полного зазора |
+| **Cycle 02** | `cbfe0e9` | `BridgeO4Scheduling.lean` (+8) | `O4-supermodular-synergy` | `09-o4-scheduling-synergy` | Полная решётка расписаний $T=3$, **опровержение субмодулярности $G(R)$ (`H-O4-1`)** на 4D сдвиговом регистре (дефект $+1$), строгая субмодулярность (дефект $-1$) и двустороннее доминирование одиночных замыканий |
+| **Cycle 03** | `f6c617d` | `BridgeO1FullRankRecourse.lean` (+8) | `O1-fullrank-shear-gap` | `10-o1-fullrank-diagonal-boundary` | Субаддитивность опоры F3, схлопывание при `rows=0`, **произвольно-мерная диагональная точность ADR**, **опровержение `H-O1-1`** на обратимом $B \in \mathrm{SL}_2(\mathbb{Z})$ ($5 < 6$) и линейный рост $\Omega(n)$ ($6k$ vs $8k$) |
+| **Cycle 04** | `autonomous-cycle-04` | `BridgeO2LiftedADR.lean` (+8) | `O2-separable-lifting-gap` | `11-o2-lifted-adr-and-separable-refutation` | Лифтинговая иерархия и принцип лифтинговых сизигий (`O5`), **мультипликативный рост $\Omega(d)$** на $B_1^d$ vs полная точность $|\cdot|$-лифтинга, **опровержение `H-O2-1`** (провал **всех** покоординатно-разделимых правил на 2D-боксе/мосте: $5<6, 6<8$) и **100% точность одного диагонального шарнира $|\xi_0-\xi_1|$** на $[-1,1]^2$ и 2D-мосте |
 
 ---
 
@@ -31,9 +44,9 @@ As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 mac
 
 ## 2. Что уже строго доказано в Lean 4 vs. проверено точными оракулами и контрпримерами
 
-### 2.1. Формальное ядро Lean 4 (`v4.35.0-rc2`, 78 деклараций, 0 `sorry`)
+### 2.1. Формальное ядро Lean 4 (`v4.35.0-rc2`, 86 деклараций, 0 `sorry`)
 
-Все 78 деклараций проходят аудит в [`verification/lean/AroProofs/Inventory.lean`](../verification/lean/AroProofs/Inventory.lean) с разрешённым списком аксиом `{propext, Classical.choice, Quot.sound}`:
+Все 86 деклараций проходят аудит в [`verification/lean/AroProofs/Inventory.lean`](../verification/lean/AroProofs/Inventory.lean) с разрешённым списком аксиом `{propext, Classical.choice, Quot.sound}`:
 
 | Трек | Модуль Lean 4 | Кол-во | Что строго доказано | Статус |
 |---|---|---:|---|---|
@@ -48,7 +61,8 @@ As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 mac
 | **O1** | `AroProofs/BridgeO1ADRExactness.lean` | 7 | Цепочка `Static ⊆ ADR ⊆ ARO`, точность ADR на симплексе, барицентрические сизигии и разрыв Чэня–Чжана T3, 1D-точность и 2D-строгий разрыв ADR внутри `BridgeFormalV2` | `formalized` (Run-01, частичное) |
 | **O8** | `AroProofs/BridgeO8QuantifierGap.lean` | 7 | 4-уровневая иерархия `OpenLoop ⊆ ARO = Source ⊆ PrefixMM ⊆ FullMM`, F3-сужение для `PrefixMM`, схлопывание всей иерархии при `D.rows = 0`, точный тройной разрыв $0 < 2 < 4$ (`ce-o8-sion-gap`) и дихотомия $V_{\mathrm{mm}}^{\mathrm{full}} \le 0 < 1 = V_{\mathrm{mm}}^{\mathrm{prefix}} = V(\{1\})$ | `formalized` (Cycle-01) |
 | **O4 / O7 (ч.2)** | `AroProofs/BridgeO4Scheduling.lean` | 8 | Полная решётка монотонности расписаний на $T=3$ (`∅ ⊆ {1}, {2} ⊆ {1,2}`), схлопывание всех 4 расписаний при `D.rows = 0`, строгое опровержение субмодулярности $G(R)$ (4D сдвиговый регистр: $G(\{1\})=G(\{2\})=0, G(\{1,2\})=1$, дефект $+1$), строгая субмодулярность (дефект $-1$) и двустороннее доминирование одиночных замыканий ($V(\{1\}) < V(\{2\})$ и $V(\{2\}) < V(\{1\})$) | `formalized` (Cycle-02) |
-| **O1 / O2 / O5 + F3 (ч.2)** | `AroProofs/BridgeO1FullRankRecourse.lean` | 8 | Неотрицательность, симметрия и субаддитивность опорного функционала F3; схлопывание ADR при `D.rows = 0` (`O5`); **произвольно-мерная диагональная точность ADR** (`bridge_adr_exact_diagonal`, любое $n, r, q, c$); **опровержение `H-O1-1`** на биективном унимодулярном сдвиге $B = [[1,1],[0,1]] \in \mathrm{SL}_2(\mathbb{Z})$ с $H = I_2$ ($5 < 6$); **линейный рост зазора $\Omega(n)$** (`6k` vs `8k`, отношение $\ge 4/3$, `O2`) | `formalized` (Cycle-03, **NEW**) |
+| **O1 / O2 / O5 + F3 (ч.2)** | `AroProofs/BridgeO1FullRankRecourse.lean` | 8 | Неотрицательность, симметрия и субаддитивность опорного функционала F3; схлопывание ADR при `D.rows = 0` (`O5`); **произвольно-мерная диагональная точность ADR** (`bridge_adr_exact_diagonal`, любое $n, r, q, c$); **опровержение `H-O1-1`** на биективном унимодулярном сдвиге $B = [[1,1],[0,1]] \in \mathrm{SL}_2(\mathbb{Z})$ с $H = I_2$ ($5 < 6$); **линейный рост зазора $\Omega(n)$** (`6k` vs `8k`, отношение $\ge 4/3$, `O2`) | `formalized` (Cycle-03) |
+| **O2 / O5 (ч.3, лифтинг)** | `AroProofs/BridgeO2LiftedADR.lean` | 8 | Иерархия и схлопывание аффинного лифтинга (`O5`); принцип лифтинговых барицентрических сизигий; **точный мультипликативный рост $\Omega(d)$** на $B_1^d$ (`1` vs `d`); **произвольно-мерная точность $|\cdot|$-лифтинга на $B_1^d$**; **опровержение `H-O2-1`** (квадратная сизигия и строгий провал **всех** покоординатно-разделимых правил на 2D-мосте: `5 < 6` и `6 < 8`); **100% точность одного диагонального шарнира $|\xi_0 - \xi_1|$** на $[-1, 1]^2$ и 2D-мосте `BridgeFormalV2.Data` | `formalized` (Cycle-04, **NEW**) |
 
 > **Важное уточнение про статус F3 (`Support.lean`):** в ранней карте [`research/problem-map.md`](../research/problem-map.md) файл `BridgeFormalV3/Proofs/Support.lean` числился как WIP. Фактически все 4 цели F3 (`future_expansion`, `attained_support`, `robust_row`, `exact_tightening`) **полностью доказаны без `sorry`**, проходят аудит в `Inventory.lean` и активно используются как фундамент в F4, G2, O4 и O8.
 
@@ -63,7 +77,8 @@ As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 mac
 | **E-rank1 & A-S1** | `research/counterexamples/E-rank1/`, `astra-probe-AS1/` | Singleton-контрпример при $\mathrm{rank}(L) \le 1$ (E) и положительный покоординатно-разделимый подкласс при $\mathrm{rank}(L) = 2$ (A-S1, 38 проверок) |
 | **O8-sion-gap** | `research/counterexamples/O8-sion-gap/` | Точный ЛП + SymPy непрерывный сертификат строгого разрыва $V(\{1\}) = 2 > 0 = V_{\mathrm{mm}}^{\mathrm{prefix}} = V_{\mathrm{mm}}^{\mathrm{full}}$ (доказан в Lean 4, Cycle 01) |
 | **O4-supermodular-synergy** | `research/counterexamples/O4-supermodular-synergy/` | Точный ЛП + SymPy непрерывный сертификат строгого опровержения субмодулярности $G(R)$ (4D сдвиговый регистр: $G(\{1\})=G(\{2\})=0, G(\{1,2\})=1$, дефект $+1$) и двустороннего доминирования одиночных замыканий ($V(\{1\}) < V(\{2\})$ и $V(\{2\}) < V(\{1\})$); полностью доказан в Lean 4 (Cycle 02) |
-| **O1-fullrank-shear-gap** | `research/counterexamples/O1-fullrank-shear-gap/` | Точный ЛП + SymPy непрерывный сертификат **опровержения `H-O1-1`** (биективный унимодулярный сдвиг $B = [[1,1],[0,1]], \det B = 1, H = I_2, U = [-1/2, 1/2]^2$: $V_{\mathrm{ARO}} = 5 < 6 = V_{\mathrm{ADR}}$), диагонального контраста ($B_{\mathrm{diag}} = \mathrm{diag}(2, 1) \implies$ зазор $0$) и линейного роста зазора $6k$ vs $8k$ (`O2`); полностью доказан в Lean 4 (Cycle 03, **NEW**) |
+| **O1-fullrank-shear-gap** | `research/counterexamples/O1-fullrank-shear-gap/` | Точный ЛП + SymPy непрерывный сертификат **опровержения `H-O1-1`** (биективный унимодулярный сдвиг $B = [[1,1],[0,1]], \det B = 1, H = I_2, U = [-1/2, 1/2]^2$: $V_{\mathrm{ARO}} = 5 < 6 = V_{\mathrm{ADR}}$), диагонального контраста ($B_{\mathrm{diag}} = \mathrm{diag}(2, 1) \implies$ зазор $0$) и линейного роста зазора $6k$ vs $8k$ (`O2`); полностью доказан в Lean 4 (Cycle 03) |
+| **O2-separable-lifting-gap** | `research/counterexamples/O2-separable-lifting-gap/` | Точный ЛП + SymPy непрерывный сертификат **опровержения `H-O2-1`** (покоординатный $|\cdot|$-лифтинг и **все** покоординатно-разделимые правила дают нулевой выигрыш на 2D-мостах: $5 < 6$ и $6 < 8$), роста $\Omega(d)$ на $B_1^d$ ($d = 2..5$) с обнулением через $|\xi_i|$ и **100% восстановления точности одним диагональным шарниром $|\xi_0 - \xi_1|$** (триангуляция Куна); полностью доказан в Lean 4 (Cycle 04, **NEW**) |
 | **Батарея T1–T7** | `verification/falsifiers/battery_t1_t7.py` | Исполнимая 7-тестовая батарея точности ADR: положительные (`T1` мост-класс, `T6` покомпонентный бокс, `T7` симплекс) и отрицательные (`T2` SOC Сюй–Бюрер, `T3` Чэнь–Чжан, `T4` GTW25, `T5` BEG18 $\Omega(\sqrt{m})$) |
 | **Run-02 Falsifiers** | `research/discovery/run02/run02_falsify.py` | 5 Stage-2 точных рациональных ЛП-зондов (прошли Significance Gate 5/5): O4 субмодулярность на 1D-интеграторе (`defect = -1 ≤ 0`, субмодулярность выжила на 1D, но опровергнута в Cycle 02 на 4D сдвиговом регистре!), G1 марковская достаточность при инъективном сдвиговом регистре, G2 $\ell_1$-вершинная ЛП (2D exact vs 3D gap $1/2$), O1 ранг рекурса $B$ и активные ограничения в 2D, O8 параметрическая дихотомия по $u_{1,\max}$ |
 
@@ -83,11 +98,12 @@ As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 mac
 - **Что уже сделано:** мост `HistoryState = Multistage ARO` для любого $k$ и строгое разделение `Markov < History` при $k=2$ (`BridgeG1Multistage.lean`), плюс зонд `run02-g1-markov-sufficiency` (инъективный 2D сдвиговый регистр $x_2 = (w_0, w_1)$ даёт нулевой зазор, а слитая проекция $s_2 = w_0 + w_1$ даёт зазор $1$ на той же задаче).
 - **Ближайшая цель:** формализовать в Lean 4 **теорему достаточности марковских политик** при инъективности отображения истории в состояние $x_{r_j}$ (наблюдаемость префикса), а также **многоэтапную конечную вершинную ЛП** для независимых боксовых возмущений (обобщение F4 на $k \ge 2$).
 
-### Приоритет 3 — **O1 / O2 / O5: Геометрическая граница точности ADR/LDR (`conj-o1-adr-exactness-char`)**
-- **Что уже сделано (обновлено в Cycle 03!):**
+### Приоритет 3 — **O1 / O2 / O5: Геометрическая граница точности ADR/LDR и лифтинговых правил (`conj-o1-adr-exactness-char`)**
+- **Что уже сделано (обновлено в Cycle 04!):**
   - В `BridgeO1ADRExactness.lean` (7 теорем): симплекс, барицентрические сизигии, T3 Чэнь–Чжан, 1D-точность и 2D-строгий зазор.
   - В `BridgeO1FullRankRecourse.lean` (8 теорем, Cycle 03) + контрпример `O1-fullrank-shear-gap`: субаддитивность/симметрия/неотрицательность опорной функции F3; схлопывание ADR при `D.rows = 0` (`O5`); **произвольно-мерная диагональная точность ADR** (`bridge_adr_exact_diagonal`, любое $n, r, q, c$); **строгое опровержение `H-O1-1`** на биективном унимодулярном сдвиге $B = [[1,1],[0,1]] \in \mathrm{SL}_2(\mathbb{Z})$ с $H = I_2$ ($V_{\mathrm{ARO}} = 5 < 6 = V_{\mathrm{ADR}}$); и **линейный рост зазора $\Omega(n)$** ($6k$ против $8k$, отношение $\ge 4/3$, `O2`).
-- **Ближайшая цель:** атаковать полную геометрическую характеризацию недиагональных $(A, B, E, H)$ через согласованность конуса активных ограничений с пространством сизигий зонотопа $\Xi$, а также проверить достижимость сверхконстантного мультипликативного роста $\Omega(\sqrt{n})$ внутри замороженного `BridgeFormalV2.Data` (`O2`).
+  - В `BridgeO2LiftedADR.lean` (8 теорем, Cycle 04) + контрпример `O2-separable-lifting-gap`: иерархия и схлопывание аффинного лифтинга (`O5`), принцип лифтинговых сизигий, **точный мультипликативный рост $\Omega(d)$ на $B_1^d$** и его обнуление $|\cdot|$-лифтингом в любой размерности $d$, **опровержение `H-O2-1`** (любое покоординатно-разделимое правило $f_0(\xi_0) + f_1(\xi_1)$ сохраняет квадратную сизигию и даёт $5 < 6$ и $6 < 8$), и **100% точность одного диагонального шарнира $|\xi_0 - \xi_1|$** на $[-1, 1]^2$ и 2D-мосте `BridgeFormalV2.Data`.
+- **Ближайшая цель:** обобщить диагонально-шарнирный лифтинг на $d \ge 3$ (минимальное число парных признаков $|\xi_i - \xi_j|$ для структурных подклассов $(A, B, E, H)$) и проверить достижимость сверхконстантного мультипликативного роста $\Omega(\sqrt{n})$ внутри замороженного `BridgeFormalV2.Data` (`O2`).
 
 ### Приоритет 4 — **G2: Коническая двойственность и полиэдральная граница (`gen-nonbox-conic-uncertainty`)**
 - **Что уже сделано:** общее сужение Минковского на компактах, $\ell_1/\ell_2$ опорные функции и неполиэдральность 2D $\ell_2$-шара (`BridgeG2ConicSupport.lean`); зонд `run02-g2-l1-vertex-lp` отделил конечную вершинную ЛП на $\ell_1$-кросс-политопе (точную в любой размерности) от провала ADR в 3D (зазор $1/2$).
@@ -126,6 +142,7 @@ As of `research/autonomous-cycle-03`, the formal Lean 4 kernel contains **78 mac
 | **H-G1-1** | Инъективность наблюдения $\implies V_{\mathrm{Markov}}(R) = V_{\mathrm{History}}(R)$ для произвольного $k \ge 2$ | Прошёл на $k=2$ в `run02_falsify.py` (`injective_gap = 0`, `merged_gap = 1`) | `BridgeG1MarkovSufficiency.lean`: общая теорема для любого $k$ при левой обратимости карты истории |
 | **H-G2-1** | Точная конечная $2p$-вершинная ЛП для $\ell_1$-кросс-политопа при строгом провале ADR в размерности $p \ge 3$ | Прошёл в `run02_falsify.py` (`dim2_gap = 0`, `dim3_gap = 1/2`) | `BridgeG2L1VertexLP.lean`: эквивалентность $2p$-вершинной ЛП и 3D-разрыв ADR |
 | **H-O1-1** | В 2D-мосте с полным рангом рекурса ($B$ обратим) и покоординатным терминальным боксом ($H = I_2$) ADR точен ($V_{\mathrm{ADR}} = V_{\mathrm{ARO}}$), тогда как $\mathrm{rank}(B) = 1$ даёт строгий зазор | **ОПРОВЕРГНУТО (Cycle 03):** унимодулярный сдвиг `O1-fullrank-shear-gap` ($B = [[1,1],[0,1]], \det B = 1, H = I_2 \implies 5 < 6$); зато диагональные $(A, B, E, H)$ точны в любой размерности $n$ | **ДОКАЗАНО В LEAN 4:** `BridgeO1FullRankRecourse.lean` (8 теорем, 0 `sorry`) + конспект `10-o1-fullrank-diagonal-boundary` |
+| **H-O2-1** | Покоординатный $|\cdot|$-лифтинг (или произвольное покоординатно-разделимое правило $f_0(\xi_0) + f_1(\xi_1)$), закрывающий зазор $\Omega(d)$ на $B_1^d$, закрывает или уменьшает зазор ADR на 2D-боксе $[-1, 1]^2$ и 2D-мосте | **ОПРОВЕРГНУТО (Cycle 04):** `O2-separable-lifting-gap` — любое разделимое правило даёт нулевой выигрыш ($5<6, 6<8$); зато **один диагональный шарнир $|\xi_0 - \xi_1|$** даёт 100% точность | **ДОКАЗАНО В LEAN 4:** `BridgeO2LiftedADR.lean` (8 теорем, 0 `sorry`) + конспект `11-o2-lifted-adr-and-separable-refutation` |
 | **H-O8-1** | Параметрическая формула зазора $V(\{1\}) - V_{\mathrm{mm}}^{\mathrm{prefix}} = \max(0, \rho - u_{1,\max})$ и многомерное условие суффиксного покрытия $\Xi \subseteq \mathrm{Reach}_q(U)$ для обнуления префиксного зазора | Прошёл 1D-свип в `run02_falsify.py`; проверить 2D-гипотезу суффиксного покрытия точным ЛП | Расширение `BridgeO8QuantifierGap.lean` параметрической и многомерной теоремами |
 
 ---
@@ -138,10 +155,10 @@ make verify-public-hygiene verify-migration verify-corpus verify-m0 verify-trans
      verify-counterexamples verify-falsifiers verify-lean verify-literature \
      verify-discovery verify-remote verify-run02 verify-learn
 
-# Проверка всех 10 русских учебных пакетов (Gate G5, включая 08-o8-quantifier-gap, 09-o4-scheduling-synergy и 10-o1-fullrank-diagonal-boundary):
+# Проверка всех 11 русских учебных пакетов (Gate G5, включая 08–11 за Cycles 01–04):
 python3 -B verification/gates/verify_guides.py --no-style
 
-# Сборка ядра Lean 4 (78 деклараций, 0 sorry) и живые Lean-гейты:
+# Сборка ядра Lean 4 (86 деклараций, 0 sorry) и живые Lean-гейты:
 cd verification/lean && LEAN_NUM_THREADS=2 lake build AroProofs.Inventory && cd ../..
 LEAN_NUM_THREADS=1 make verify-lean-compile verify-atlas verify-claim
 ```

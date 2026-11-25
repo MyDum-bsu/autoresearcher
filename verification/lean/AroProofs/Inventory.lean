@@ -10,6 +10,7 @@ import AroProofs.BridgeO1ADRExactness
 import AroProofs.BridgeO8QuantifierGap
 import AroProofs.BridgeO4Scheduling
 import AroProofs.BridgeO1FullRankRecourse
+import AroProofs.BridgeO2LiftedADR
 
 -- BridgeFormalV2 F1/F2 (10 targets)
 #print axioms BridgeFormalV2.Proofs.nonempty_blocks
@@ -110,3 +111,13 @@ import AroProofs.BridgeO1FullRankRecourse
 #print axioms AroProofs.BridgeO1FullRankRecourse.shearRecourse_bijective
 #print axioms AroProofs.BridgeO1FullRankRecourse.exists_bridge_2d_fullrank_invertible_strict_adr_gap
 #print axioms AroProofs.BridgeO1FullRankRecourse.exists_bridge_linear_adr_gap_scaling
+
+-- Autonomous Cycle 04 O2/O5: Lifted & Piecewise-Affine Decision Rules, Omega(d) Cross-Polytope Ratio, Separable Refutation (H-O2-1) & Diagonal-Hinge Restoration (8 targets)
+#print axioms AroProofs.BridgeO2LiftedADR.lifted_adr_hierarchy_and_affine_collapse
+#print axioms AroProofs.BridgeO2LiftedADR.lifted_barycentric_syzygy_coupling
+#print axioms AroProofs.BridgeO2LiftedADR.l1_cross_polytope_adr_ratio_linear
+#print axioms AroProofs.BridgeO2LiftedADR.segregated_ladr_exact_on_l1_cross_polytope
+#print axioms AroProofs.BridgeO2LiftedADR.separable_rule_square_syzygy
+#print axioms AroProofs.BridgeO2LiftedADR.exists_bridge_2d_separable_strict_gap
+#print axioms AroProofs.BridgeO2LiftedADR.diagonal_lifted_adr_exact_on_box2d
+#print axioms AroProofs.BridgeO2LiftedADR.bridge_diagonal_lifted_adr_exact_2d_box

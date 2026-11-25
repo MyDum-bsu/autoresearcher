@@ -1,0 +1,60 @@
+{
+  "bridge_rank1_lifting_comparison": {
+    "adr": "8",
+    "aro": "6",
+    "diag_ladr": "6",
+    "seg_ladr": "8",
+    "separable": "8"
+  },
+  "bridge_shear_lifting_comparison": {
+    "adr": "6",
+    "aro": "5",
+    "diag_ladr": "5",
+    "seg_ladr": "6",
+    "separable": "6"
+  },
+  "counterexample_id": "O2-separable-lifting-gap",
+  "hypothesis_refuted": "H-O2-1",
+  "l1_cross_polytope_scaling": [
+    {
+      "V_ADR": "2",
+      "V_ARO": "1",
+      "V_SegLADR": "1",
+      "adr_ratio": "2",
+      "d": 2,
+      "seg_ladr_gap": "0"
+    },
+    {
+      "V_ADR": "3",
+      "V_ARO": "1",
+      "V_SegLADR": "1",
+      "adr_ratio": "3",
+      "d": 3,
+      "seg_ladr_gap": "0"
+    },
+    {
+      "V_ADR": "4",
+      "V_ARO": "1",
+      "V_SegLADR": "1",
+      "adr_ratio": "4",
+      "d": 4,
+      "seg_ladr_gap": "0"
+    },
+    {
+      "V_ADR": "5",
+      "V_ARO": "1",
+      "V_SegLADR": "1",
+      "adr_ratio": "5",
+      "d": 5,
+      "seg_ladr_gap": "0"
+    }
+  ],
+  "sympy_continuous_box_certificate": {
+    "kuhn_triangle1_residual": "0",
+    "kuhn_triangle2_residual": "0",
+    "separable_square_syzygy_residual": "0",
+    "syzygy_defect_coefficient_Z": "(y_mp + y_pm - y_mm - y_pp)/4"
+  },
+  "target_open_node_id": "conj-o1-adr-exactness-char",
+  "verdict": "REFUTED"
+}
