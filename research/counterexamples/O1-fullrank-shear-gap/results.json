@@ -1,0 +1,85 @@
+{
+  "counterexample_id": "O1-fullrank-shear-gap",
+  "diagonal_contrast": {
+    "B": [
+      [
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "V_ADR": "4",
+    "V_ARO": "4",
+    "gap": "0"
+  },
+  "fullrank_shear_witness": {
+    "B": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "H": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "V_ADR": "6",
+    "V_ARO": "5",
+    "c": [
+      "1",
+      "1"
+    ],
+    "det_B": "1",
+    "gap": "1",
+    "gmax": [
+      "4",
+      "3"
+    ],
+    "gmin": [
+      "0",
+      "-1"
+    ],
+    "ratio": "6/5",
+    "rho": "1",
+    "umax": "1/2"
+  },
+  "hypothesis_refuted": "H-O1-1",
+  "o2_linear_scaling": [
+    {
+      "V_ADR": "8",
+      "V_ARO": "6",
+      "gap": "2",
+      "k": 1,
+      "n": 2,
+      "ratio": "4/3"
+    },
+    {
+      "V_ADR": "16",
+      "V_ARO": "12",
+      "gap": "4",
+      "k": 2,
+      "n": 4,
+      "ratio": "4/3"
+    }
+  ],
+  "sympy_continuous_box_certificate": {
+    "continuous_box_max_cost": "5",
+    "continuous_box_regions_verified": 3,
+    "square_syzygy_residual": "0"
+  },
+  "target_open_node_id": "conj-o1-adr-exactness-char",
+  "verdict": "REFUTED"
+}

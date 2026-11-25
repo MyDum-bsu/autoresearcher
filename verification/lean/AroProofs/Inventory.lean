@@ -9,6 +9,7 @@ import AroProofs.BridgeG1Multistage
 import AroProofs.BridgeO1ADRExactness
 import AroProofs.BridgeO8QuantifierGap
 import AroProofs.BridgeO4Scheduling
+import AroProofs.BridgeO1FullRankRecourse
 
 -- BridgeFormalV2 F1/F2 (10 targets)
 #print axioms BridgeFormalV2.Proofs.nonempty_blocks
@@ -99,3 +100,13 @@ import AroProofs.BridgeO4Scheduling
 #print axioms AroProofs.BridgeO4Scheduling.exists_strict_supermodular_synergy
 #print axioms AroProofs.BridgeO4Scheduling.exists_strict_submodular_and_early_dominance
 #print axioms AroProofs.BridgeO4Scheduling.exists_strict_late_dominance
+
+-- Autonomous Cycle 03 O1/O2/O5 & F3: Diagonal Exactness, Full-Rank Shear Refutation (H-O1-1) & Linear Gap Scaling (8 targets)
+#print axioms AroProofs.BridgeO1FullRankRecourse.futureRowSupport_nonneg
+#print axioms AroProofs.BridgeO1FullRankRecourse.futureRowSupport_neg
+#print axioms AroProofs.BridgeO1FullRankRecourse.futureRowSupport_add_le
+#print axioms AroProofs.BridgeO1FullRankRecourse.bridge_adr_exact_of_unconstrained_terminal
+#print axioms AroProofs.BridgeO1FullRankRecourse.bridge_adr_exact_diagonal
+#print axioms AroProofs.BridgeO1FullRankRecourse.shearRecourse_bijective
+#print axioms AroProofs.BridgeO1FullRankRecourse.exists_bridge_2d_fullrank_invertible_strict_adr_gap
+#print axioms AroProofs.BridgeO1FullRankRecourse.exists_bridge_linear_adr_gap_scaling

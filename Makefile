@@ -43,6 +43,8 @@ verify-counterexamples:
 	@$(PYTHON) -B -O research/counterexamples/O8-sion-gap/checks/check_o8_gap.py >/dev/null && echo "COUNTEREXAMPLE O8-sion-gap (-B -O) OK"
 	@$(PYTHON) -B research/counterexamples/O4-supermodular-synergy/checks/check_o4_synergy.py >/dev/null && echo "COUNTEREXAMPLE O4-supermodular-synergy (-B) OK"
 	@$(PYTHON) -B -O research/counterexamples/O4-supermodular-synergy/checks/check_o4_synergy.py >/dev/null && echo "COUNTEREXAMPLE O4-supermodular-synergy (-B -O) OK"
+	@$(PYTHON) -B research/counterexamples/O1-fullrank-shear-gap/checks/check_o1_shear_gap.py >/dev/null && echo "COUNTEREXAMPLE O1-fullrank-shear-gap (-B) OK"
+	@$(PYTHON) -B -O research/counterexamples/O1-fullrank-shear-gap/checks/check_o1_shear_gap.py >/dev/null && echo "COUNTEREXAMPLE O1-fullrank-shear-gap (-B -O) OK"
 
 verify-falsifiers:
 	@$(PYTHON) -B -m verification.falsifiers.battery_t1_t7
